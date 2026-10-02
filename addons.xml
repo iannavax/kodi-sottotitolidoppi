@@ -19,7 +19,7 @@
     </assets>
   </extension>
 </addon>
-<addon id="script.sottotitolidoppi" name="Sottotitoli Doppi" version="1.2.0" provider-name="Sottotitoli Doppi">
+<addon id="script.sottotitolidoppi" name="Sottotitoli Doppi" version="1.10.7" provider-name="Sottotitoli Doppi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -27,12 +27,29 @@
     <provides>executable video</provides>
   </extension>
   <extension point="xbmc.service" library="service.py"/>
-  <extension point="xbmc.subtitle.module" library="default.py"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="it_IT">Sottotitoli originali e traduzione insieme</summary>
     <summary lang="en_GB">Original subtitles and their translation together</summary>
     <description lang="it_IT">Crea un file di sottotitoli doppio: in ogni riga l'originale e, sotto, la traduzione colorata. L'originale viene dai sottotitoli accanto al video, da quelli scaricati con gli add-on di Kodi, da un file scelto a mano, oppure dalla trascrizione dell'audio con Whisper (serve ffmpeg). Traduzione con Google (gratis), Gemini, Groq, OpenRouter, DeepL, Claude o un modello sul computer.</description>
     <description lang="en_GB">Creates a dual subtitle file: in every line the original and, below it, the coloured translation.</description>
+    <platform>all</platform>
+    <license>MIT</license>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+<addon id="service.subtitles.sottotitolidoppi" name="Sottotitoli Doppi" version="1.0.0" provider-name="Sottotitoli Doppi">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.sottotitolidoppi" version="1.3.0"/>
+  </requires>
+  <extension point="xbmc.subtitle.module" library="service_subtitles.py"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="it_IT">Sottotitoli Doppi nel menu dei sottotitoli del lettore</summary>
+    <summary lang="en_GB">Dual subtitles in the player's subtitle menu</summary>
+    <description lang="it_IT">Mentre guardi un film: Sottotitoli → Scarica → Sottotitoli Doppi. Traduce i sottotitoli originali del film e mostra l'originale con la traduzione sotto. Usa le impostazioni dell'add-on Sottotitoli Doppi.</description>
+    <description lang="en_GB">While watching: Subtitles → Download → Sottotitoli Doppi. Translates the original subtitles and shows them with the translation below.</description>
     <platform>all</platform>
     <license>MIT</license>
     <assets>
