@@ -19,7 +19,7 @@
     </assets>
   </extension>
 </addon>
-<addon id="script.sottotitolidoppi" name="Sottotitoli Doppi" version="1.1.0" provider-name="Sottotitoli Doppi">
+<addon id="script.sottotitolidoppi" name="Sottotitoli Doppi" version="1.2.0" provider-name="Sottotitoli Doppi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -27,6 +27,7 @@
     <provides>executable video</provides>
   </extension>
   <extension point="xbmc.service" library="service.py"/>
+  <extension point="xbmc.subtitle.module" library="default.py"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="it_IT">Sottotitoli originali e traduzione insieme</summary>
     <summary lang="en_GB">Original subtitles and their translation together</summary>
