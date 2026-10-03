@@ -19,7 +19,7 @@
     </assets>
   </extension>
 </addon>
-<addon id="script.sottotitolidoppi" name="Sottotitoli Doppi" version="1.10.7" provider-name="Sottotitoli Doppi">
+<addon id="script.sottotitolidoppi" name="Sottotitoli Doppi" version="1.10.10" provider-name="Sottotitoli Doppi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
