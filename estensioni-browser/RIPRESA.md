@@ -5,8 +5,8 @@ L'archivio `sottotitoli-doppi-progetto.zip` contiene tutto il codice sorgente e 
 
 ## 0. Come ripartire (istruzioni per Claude)
 1. Scompatta l'archivio caricato: `cd /home/claude && unzip -q /mnt/user-data/uploads/sottotitoli-doppi-progetto.zip`
-2. Estensione: `cd sottotitoli-doppi-progetto/estensione && ./build.sh 5.20.0` (per una versione nuova cambia `version` nei due manifest e `head.*.md`, e aggiungi le novità in cima a `novita57.md` o in un nuovo `novitaXX.md` elencato in build.sh) crea `build/chrome`, `build/firefox` e i pacchetti.
-3. Parole al Volo: `cd sottotitoli-doppi-progetto/parole-al-volo && ./build.sh 1.13.0` (poi LEGGIMI.html con release/md2html.py e rifare zip/xpi) (prende config.js, background.js e tts.js da ../estensione/src). Prova: `python3 test-volo/tvolo.py parole-al-volo/build/chrome` (servizi e AnkiConnect simulati, indipendente dal banco di prova sotto).
+2. Estensione: `cd sottotitoli-doppi-progetto/estensione && ./build.sh 5.21.0` (per una versione nuova cambia `version` nei due manifest e `head.*.md`, e aggiungi le novità in cima a `novita57.md` o in un nuovo `novitaXX.md` elencato in build.sh) crea `build/chrome`, `build/firefox` e i pacchetti.
+3. Parole al Volo: `cd sottotitoli-doppi-progetto/parole-al-volo && ./build.sh 1.15.0` (poi LEGGIMI.html con release/md2html.py e rifare zip/xpi) (prende config.js, background.js e tts.js da ../estensione/src). Prova: `python3 test-volo/tvolo.py parole-al-volo/build/chrome` (servizi e AnkiConnect simulati, indipendente dal banco di prova sotto).
 4. Banco di prova: `mkdir -p /home/claude/e2e && cp -r test-estensione/* /home/claude/e2e/ && chmod +x /home/claude/e2e/fake/* && python3 /home/claude/e2e/crea_audio.py` (gli script si aspettano la cartella `/home/claude/e2e`). Le prove si lanciano passando la build: `python3 tidiom.py /percorso/build/chrome`. Per quelle che leggono `dualsubDebug` usa una copia della build con `cat sonda.js >> content.js`. Stremio: copia `stremio` in `/home/claude/stremio` e `bash test.sh "" 300` + `python3 test.py '{...}'`. Kodi: copia `kodi` in `/home/claude/kodi`, crea il film di prova con `python3 test/crea_film_mkv.py` (serve alle prove 6-9 e 13) e `python3 test/test_kodi.py` … `test_kodi14.py`. **Attenzione**: nei comandi usa percorsi assoluti per copiare indietro nel progetto (un `cd` + percorsi relativi ha cancellato le cartelle una volta).
 5. Rispondi sempre in **italiano**, semplice e chiaro.
 
@@ -20,9 +20,9 @@ L'archivio `sottotitoli-doppi-progetto.zip` contiene tutto il codice sorgente e 
 ## 2. Stato attuale dei componenti
 | Componente | Versione | Stato |
 |---|---|---|
-| Estensione browser (Chrome/Edge + Firefox) | **5.20.0** | Consegnata; provata nel banco di prova Chromium con servizi simulati |
-| Estensione **Parole al Volo** (nuova, sorella per i testi) | **1.13.0** | Consegnata; provata con servizi e AnkiConnect simulati, mai con Anki vero né in Firefox |
-| Estensione **unica** «Sottotitoli Doppi + Parole al Volo» (`unica/`) | **1.0.0** | Nuova; provata con le prove di tutte e due (Chromium); mai in Firefox vero |
+| Estensione browser (Chrome/Edge + Firefox) | **5.21.0** | Consegnata; provata nel banco di prova Chromium con servizi simulati |
+| Estensione **Parole al Volo** (nuova, sorella per i testi) | **1.15.0** | Consegnata; provata con servizi e AnkiConnect simulati, mai con Anki vero né in Firefox |
+| Estensione **unica** «Sottotitoli Doppi + Parole al Volo» (`unica/`) | **1.2.0** | Nuova; provata con le prove di tutte e due (Chromium); mai in Firefox vero |
 | Add-on Kodi `script.sottotitolidoppi` | **1.11.0** (+ `service.subtitles.sottotitolidoppi` 1.0.0) | Consegnato; provato con un Kodi simulato (prove 1–14), non su Kodi vero |
 | Repository Kodi `repository.sottotitolidoppi` | **1.0.0** | Pubblicato dall'utente (iannavax/kodi-sottotitolidoppi); da ricaricare con la cartella `kodi/kodi-sottotitolidoppi` rigenerata |
 | Add-on Stremio (server Node.js) | **1.3.0** | Consegnato; provato con servizi simulati, non con Stremio vero |
