@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.0 — Guide</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.1 — Guide</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Version 1.4.0</em></p>
+<body><main><p><em>Version 1.4.1</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-browser-extension">Sottotitoli Doppi + Parole al Volo — browser extension</h1>
 <p><em>Versione italiana → <a href="LEGGIMI.html">LEGGIMI</a></em></p>
 <p><strong>Learn languages by watching videos and reading.</strong> One extension for two things:</p>
@@ -75,7 +75,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 </tr>
 <tr>
 <td>👆 <strong>Interactive words</strong></td>
-<td>Hover a word to see what it means in that sentence; click for a full explanation.</td>
+<td>Hover a word to see its meaning; <strong>✨ Spiega con…</strong> (<em>explain with…</em>) gives the full explanation in that sentence.</td>
 </tr>
 <tr>
 <td>🔗 <strong>Translation ↔ original</strong></td>
@@ -205,7 +205,8 @@ pre{white-space:pre-wrap;word-break:break-word}
 <h3 id="the-word-card">The word card</h3>
 <ul>
 <li><strong>Hover</strong> a word in the original line: the video pauses and a card shows its meaning from Google's dictionary (free, no quota used).</li>
-<li><strong>Click</strong> the word: the card stays open and asks your chosen service (Gemini, Groq, Mistral, Claude…) for <strong>its meaning in that sentence</strong>: base form (e.g. <em>went → go</em>), part of speech, explanation and an example. One request, only when you want it.</li>
+<li><strong>Click</strong> the word: the card stays open, with Google's meaning (no tokens used).</li>
+<li><strong>✨ Spiega con …</strong> (<em>explain with…</em>, the button in the card): asks your chosen service (Gemini, Groq, Mistral, Claude…) for <strong>its meaning in that sentence</strong>: base form (e.g. <em>went → go</em>), part of speech, explanation and an example, plus pronunciation and etymology if missing. One request, <strong>only when you press the button</strong>: the model never starts by itself.</li>
 <li>On the card:</li>
 <li><strong>🔈</strong> pronunciation with the synthetic voice (the code next to it, e.g. <em>DA</em>, shows the language); when a real recording of the word exists (Wiktionary), <strong>🔊</strong> appears next to it. Everywhere: <strong>🔊</strong> = real recording, <strong>🔈</strong> = synthetic voice;</li>
 <li><strong>☆</strong> save to your vocabulary;</li>
@@ -221,13 +222,13 @@ pre{white-space:pre-wrap;word-break:break-word}
 <h3 id="from-the-translation-back-to-the-original">From the translation back to the original</h3>
 <ul>
 <li><strong>Hover a word in the translation</strong>: the original word it comes from lights up and a label shows it. Click → card for the original word.</li>
-<li>With Gemini and the other AI models the link is precise (requested for 8 lines at a time, in one request). With Google it's approximate: the label says "circa" (<em>approximately</em>).</li>
+<li>By default Google makes the link (free, approximate: the label says "circa"). Turn on <strong>Altro → Modi di dire e collegamento preciso con il modello</strong> in the popup to have the AI model make it precise (one request every 8 lines, while hovering).</li>
 <li><strong>Particles</strong>: articles, prepositions and auxiliaries that the translation adds but that don't translate any original word are <strong>dotted-underlined</strong>. Hover one and the "particella" label tells you which part of the original it belongs to.</li>
-<li><strong>The other way round</strong>: hovering an original word highlights its translation (particles more faintly).</li>
+<li><strong>The other way round</strong>: hovering an original word highlights its translation (particles more faintly); without the model, Google dictionary translations of the word are used, matched even with a different ending.</li>
 </ul>
 <h3 id="phrases-and-expressions">Phrases and expressions</h3>
 <ul>
-<li><strong>Idioms</strong>: with an AI model, expressions that can't be translated word by word (<em>break the ice</em>, <em>give up</em>…) are <strong>underlined in orange</strong>. Hover one and the whole expression lights up with its real meaning. (Turn off: <strong>Altro → Evidenzia i modi di dire</strong>.)</li>
+<li><strong>Idioms</strong>: with an AI model, expressions that can't be translated word by word (<em>break the ice</em>, <em>give up</em>…) are <strong>underlined in orange</strong>. Hover one and the whole expression lights up with its real meaning. (Only with the option above turned on; off by default.)</li>
 <li><strong>Select in the original</strong>: press on the first word and drag to the last → card with the meaning of the whole expression.</li>
 <li><strong>Select in the translation</strong>: drag across several translated words → the matching part of the original lights up; the label offers <strong>Spiega</strong> (<em>explain</em>), <strong>Copia</strong> (<em>copy</em>) and the lookup links. Close with Esc.</li>
 </ul>
@@ -239,7 +240,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <h2 id="8-on-web-pages">8. On web pages</h2>
 <p>On any page (articles, Wikipedia, online books…) words in another language have their card. Over video subtitles these cards don't appear: the ones from <a href="#7-learning-with-words">section 7</a> are already there.</p>
 <ul>
-<li><strong>Hover a word</strong> (stay still a moment): the card shows the word, its translation and Google's dictionary, <strong>IPA pronunciation</strong> and Latin-letter transcription for other alphabets, <strong>etymology</strong> from Wiktionary (following the chain back to the root, even through other languages), the <strong>sentence</strong> with its translation, 🔈/🔊 to listen, ☆ to save, copy buttons and links to Google Translate, DeepL, Reverso, WordReference and Wiktionary, plus the same learning tools as in videos.</li>
+<li><strong>Hover a word</strong> (stay still a moment): the card shows the word, its translation and Google's dictionary, <strong>IPA pronunciation</strong> and Latin-letter transcription for other alphabets, <strong>etymology</strong> from Wiktionary (following the chain back to the root, even through other languages; for inflected forms taken from the parent word when the link is certain), the <strong>sentence</strong> with its translation, 🔈/🔊 to listen, ☆ to save, copy buttons and links to Google Translate, DeepL, Reverso, WordReference and Wiktionary, plus the same learning tools as in videos.</li>
 <li>With a <strong>Gemini or Groq</strong> key, <strong>"Spiega con Gemini"</strong> (<em>explain with…</em>, one request) gives the meaning <em>in that sentence</em>, the base form, whether it's part of an idiom, an example, and in the same request etymology, IPA, false friends (only real ones, compared with words of your language), related words and a spelling score. Everything is written in the language you translate into: an answer in the wrong language is asked again or dropped.</li>
 <li><strong>Idioms</strong>: the card reports the idiom the word belongs to (the other words get a light dashed underline); it is remembered, and <strong>☆ Salva il modo di dire</strong> (<em>save the idiom</em>) puts it in your vocabulary.</li>
 <li><strong>Selecting several words</strong> opens a panel with the translation of the whole text, transcription, IPA on request, listening, ☆ and Anki; with a model also <strong>"Traduci meglio"</strong> (<em>translate better</em>).</li>
@@ -489,6 +490,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <hr />
 <h2 id="whats-new">What's new</h2>
 <ul>
+<li><strong>1.4.1</strong>: <strong>🌳 etymology trees</strong> from Wiktionary in the card (branches from the oldest root down to the word; the Google dictionary image when Wiktionary has none); no more Groq error «max_tokens must be less than or equal to 4096» (it retries with the model's limit by itself); an <strong>idiom</strong> is shown only if it really is part of the sentence, in its language (never a translated expression); <strong>the model never starts by itself</strong>: in videos the explanation comes only with the <strong>✨ Spiega con …</strong> (<em>explain with…</em>) button (before, clicking a word asked the model); model-based translation↔original linking and idioms are off by default (turn them on in the popup), and without the model hovering an original word still highlights its translation (Google dictionary). <strong>📖 Google dictionary</strong> in the card (the one in Google Search, Oxford Languages data): recorded pronunciation, meanings with examples, synonyms and antonyms, word forms, origin with the etymology tree when available, and <strong>📈 uso nel tempo</strong> (<em>use over time</em>, Google Books Ngram); its origin is used when Wiktionary has no etymology (🌳 tree button). Not an official Google service: if Google changes it, the row simply doesn't appear. Also: etymology taken from the parent word for inflected forms (cases, verb tenses: <em>подошве</em> → <em>подошва</em>), only when the link is certain — Wiktionary says it's a form of it, or the form really appears in the parent word's declension/conjugation table. The card says where it comes from; <strong>⚑ → lemma sbagliato?</strong> (<em>wrong lemma?</em>) lets you type the right one, or none; <strong>🔍 cerca radice</strong> (<em>search for the root</em>) lists the Wiktionary words containing that form, with ✓ on the certain ones, to pick with one click.</li>
 <li><strong>1.4.0</strong> (from now on only this extension is released, with this single guide):</li>
 <li><strong>Interface in the language you translate into</strong> (tick <strong>Interfaccia in questa lingua</strong> in the popup).</li>
 <li><strong>Explanations always in your language</strong>: an answer in another language is asked again or dropped; a false friend appears only when it is real and concerns a word of your language.</li>

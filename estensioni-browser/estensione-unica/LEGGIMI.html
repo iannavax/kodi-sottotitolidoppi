@@ -1,5 +1,5 @@
 <!doctype html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.0 — Guida</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.1 — Guida</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Versione 1.4.0</em></p>
+<body><main><p><em>Versione 1.4.1</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-estensione-per-il-browser">Sottotitoli Doppi + Parole al Volo — estensione per il browser</h1>
 <p><em>English version → <a href="GUIDE.en.html">GUIDE.en</a></em></p>
 <p><strong>Impara le lingue guardando video e leggendo.</strong> Una sola estensione per due cose:</p>
@@ -75,7 +75,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 </tr>
 <tr>
 <td>👆 <strong>Parole interattive</strong></td>
-<td>Passi il mouse su una parola e vedi il significato in quella frase; clicchi per una spiegazione completa.</td>
+<td>Passi il mouse su una parola e vedi il significato; con <strong>✨ Spiega con…</strong> la spiegazione completa in quella frase.</td>
 </tr>
 <tr>
 <td>🔗 <strong>Traduzione ↔ originale</strong></td>
@@ -207,13 +207,13 @@ pre{white-space:pre-wrap;word-break:break-word}
 <h3 id="pronuncia-ipa-delle-parole">Pronuncia IPA delle parole</h3>
 <p>Nella scheda della parola, sotto la parola, c'è la sua <strong>pronuncia IPA</strong> (alfabeto fonetico internazionale) e, per gli alfabeti diversi dal nostro, la <strong>trascrizione in caratteri latini</strong> (<em>кошка</em> → koshka).
 - L'IPA viene <strong>sempre da Wiktionary</strong>, gratis e senza token (prima quello inglese, poi quello della lingua della parola, il tuo e i più grandi). Passando il mouse sulla pronuncia leggi da dove viene.
-- Se Wiktionary non l'ha (capita con le forme flesse), <strong>clicca la parola</strong>: la pronuncia arriva <strong>nella stessa richiesta</strong> della spiegazione del modello, mai con una richiesta a parte. Questo succede solo con l'opzione <strong>Aspetto → IPA anche dal modello, se manca su Wiktionary</strong> accesa; spenta, solo Wiktionary.</p>
+- Se Wiktionary non l'ha (capita con le forme flesse), premi <strong>✨ Spiega con …</strong>: la pronuncia arriva <strong>nella stessa richiesta</strong> della spiegazione del modello, mai con una richiesta a parte. Questo succede solo con l'opzione <strong>Aspetto → IPA anche dal modello, se manca su Wiktionary</strong> accesa; spenta, solo Wiktionary.</p>
 <h3 id="etimologia-delle-parole">Etimologia delle parole</h3>
 <p>Nella scheda di una parola, sotto il significato, c'è la sua <strong>etimologia</strong>: da dove viene (per esempio <em>bread</em> → dall'inglese antico <em>brēad</em>, imparentato con il tedesco <em>Brot</em>).</p>
 <ul>
 <li>Viene da <strong>Wiktionary</strong> (gratis, senza chiave), tradotta nella tua lingua con Google; il collegamento "Wiktionary" apre la pagina completa. Per le forme flesse (<em>walked</em>, <em>went</em>) cerca la forma base.</li>
 <li>Si chiede solo se la scheda resta aperta un attimo, poi resta salvata. Finisce anche nel vocabolario e nelle carte per Anki.</li>
-<li>Se Wiktionary non la ha, <strong>clicca la parola</strong>: la spiegazione nel contesto di Gemini (o del servizio scelto) porta anche l'etimologia, nella stessa richiesta (una sola, non due).</li>
+<li>Se Wiktionary non la ha, premi <strong>✨ Spiega con …</strong>: la spiegazione nel contesto di Gemini (o del servizio scelto) porta anche l'etimologia, nella stessa richiesta (una sola, non due).</li>
 <li>Si accende e spegne nel popup → <strong>Aspetto → Etimologia nella scheda della parola</strong>.</li>
 </ul>
 <h3 id="aspetto">Aspetto</h3>
@@ -224,7 +224,8 @@ pre{white-space:pre-wrap;word-break:break-word}
 <h3 id="la-scheda-di-una-parola">La scheda di una parola</h3>
 <ul>
 <li><strong>Passa il mouse</strong> su una parola della riga originale: il video si ferma e compare una scheda con il significato dal dizionario di Google (gratis, nessuna richiesta consumata).</li>
-<li><strong>Clicca</strong> la parola: la scheda si fissa, mostra subito il significato di Google e chiede al servizio scelto (Gemini, Groq, Mistral, Claude…) <strong>il significato in quella frase</strong>: forma base (per esempio <em>went → go</em>), tipo di parola, spiegazione ed esempio. Una sola richiesta, solo quando la vuoi.</li>
+<li><strong>Clicca</strong> la parola: la scheda si fissa (resta aperta), sempre con il significato di Google: nessun token consumato.</li>
+<li><strong>✨ Spiega con …</strong> (il pulsante nella scheda, con il nome del servizio scelto: Gemini, Groq, Mistral, Claude…): chiede <strong>il significato in quella frase</strong>: forma base (per esempio <em>went → go</em>), tipo di parola, spiegazione ed esempio, e insieme pronuncia ed etimologia se mancano. Una sola richiesta, <strong>solo quando premi il pulsante</strong>: il modello non parte mai da solo.</li>
 <li>Nella scheda:</li>
 <li><strong>🔈</strong> pronuncia con la voce sintetica (la sigla accanto, per esempio <em>DA</em>, dice in che lingua); quando esiste una registrazione vera della parola (Wiktionary), accanto compare anche <strong>🔊</strong>, la voce di una persona. In tutta l'estensione <strong>🔊</strong> = registrazione vera, <strong>🔈</strong> = voce sintetica;</li>
 <li><strong>☆</strong> salva nel vocabolario;</li>
@@ -253,26 +254,29 @@ pre{white-space:pre-wrap;word-break:break-word}
 - <strong>Dirette in anticipo</strong> (popup → Video senza sottotitoli → «Dirette: sottotitoli in anticipo»): nelle dirette di YouTube il video resta qualche secondo indietro e yt-dlp legge l'audio più avanti, così i sottotitoli trascritti arrivano in orario invece che 5–10 secondi dopo. Serve il programma per yt-dlp (con ffmpeg, che l'installatore scarica da solo su Windows; su Mac e Linux va installato a parte).
 - <strong>Dirette: normali o sincronizzate</strong>: quando guardi una diretta, il popup mostra in alto «🔴 Questo video è una diretta» con la scelta; sul video il pulsante <strong>⏱</strong> accanto ai sottotitoli fa lo stesso.
 - <strong>Kanji e caratteri</strong>: nel riquadro di un kanji i distintivi si cliccano (ordine dei tratti, elenco di tutti i kanji di quel livello JLPT/classe/HSK, radicale…).
-- <strong>Scrittura</strong>: se la parola è scritta bene. Senza modello lo controlla LanguageTool (o, per le lingue che non conosce, il dizionario: "parola presente nel dizionario"); cliccando la parola, il modello dà anche un <strong>voto da 0 a 100</strong> e la forma corretta. Utile con i sottotitoli automatici, che a volte sbagliano.
+- <strong>Scrittura</strong>: se la parola è scritta bene. Senza modello lo controlla LanguageTool (o, per le lingue che non conosce, il dizionario: "parola presente nel dizionario"); con <strong>✨ Spiega con …</strong> il modello dà anche un <strong>voto da 0 a 100</strong> e la forma corretta. Utile con i sottotitoli automatici, che a volte sbagliano.
 - <strong>Registrazione vera</strong>: quando Wiktionary ha la parola registrata da una persona, in alto nella scheda compare <strong>🔊</strong> accanto a 🔈 (si spegne con "Pronuncia di madrelingua" nel popup). Vale solo per la parola esatta, non per la forma base.
-- <strong>Etimologia</strong>: da Wiktionary, tradotta nella tua lingua (le parole straniere citate restano come sono). Quando Wiktionary dà solo un rimando («participio di <em>embarazar</em>», «dal portoghese <em>embaraçar</em>»), la scheda segue la catena fino a 3 passaggi, anche in altre lingue, e arriva alla radice (<em>embarazada</em> ← <em>embarazar</em> ← portoghese <em>embaraçar</em> ← <em>baraço</em>, «corda»). Vale per tutte le parole, gratis, senza modello. <strong>originale</strong> la mostra com'è scritta su Wiktionary; <strong>⚑</strong> se è sbagliata: ritraduci, rifai con Gemini/Groq, correggi a mano (resta salvata).
+- <strong>Etimologia</strong>: da Wiktionary, tradotta nella tua lingua (le parole straniere citate restano come sono). Quando Wiktionary dà solo un rimando («participio di <em>embarazar</em>», «dal portoghese <em>embaraçar</em>»), la scheda segue la catena fino a 3 passaggi, anche in altre lingue, e arriva alla radice (<em>embarazada</em> ← <em>embarazar</em> ← portoghese <em>embaraçar</em> ← <em>baraço</em>, «corda»). Vale per tutte le parole, gratis, senza modello.
+- <strong>🌳 Albero etimologico</strong>: quando Wiktionary ha l'albero dell'etimologia (i rami dalla radice più antica fino alla parola, per esempio indoeuropeo → germanico → inglese antico → inglese), nella riga dell'etimologia c'è <strong>🌳 albero etimologico</strong>: lo apri e lo chiudi con un clic. Se Wiktionary non l'ha, si usa quello del dizionario di Google (un'immagine), quando c'è. Anche l'albero si prende dal lemma o dalla catena dei rimandi se la parola non ne ha uno suo.
+- <strong>📖 Dizionario di Google</strong> (lo stesso delle ricerche di Google, dati Oxford Languages; si spegne nel popup → Strumenti per imparare → «Dizionario di Google (Oxford)»): nella scheda c'è la riga «📖 Dizionario di Google · 3 significati · origine · albero»; cliccandola si apre con la <strong>pronuncia</strong> (🔊 registrata), i <strong>significati</strong> con esempi (ognuno con «traduci»), <strong>sinonimi e contrari</strong>, le <strong>forme</strong> della parola (plurale, passato…), l'<strong>origine</strong> e, quando c'è, l'<strong>albero etimologico</strong> (immagine); <strong>📈 uso nel tempo</strong> mostra quanto la parola compare nei libri dal 1800 a oggi (Google Books Ngram). Lingue: inglese, spagnolo, francese, tedesco, italiano, portoghese, russo, hindi, giapponese, coreano, arabo, turco (l'uso nel tempo: inglese, francese, tedesco, italiano, spagnolo, russo, ebraico, cinese). Gratis, una richiesta per parola. Quando <strong>Wiktionary non ha l'etimologia</strong>, la scheda usa l'origine del dizionario di Google (tradotta) e, se c'è l'albero, il pulsante <strong>🌳 albero etimologico</strong>. Nota: non è un servizio ufficiale di Google; se Google lo cambia, la riga semplicemente non compare.
+- <strong>Etimologia dal lemma</strong>: le forme flesse (declinazioni, tempi verbali: <em>подошве</em>, <em>cantavamo</em>…) spesso non hanno un'etimologia loro. La scheda la prende dal <strong>lemma</strong>, cioè la forma del dizionario (<em>подошва</em>, <em>cantare</em>) quando può risalirci con certezza: Wiktionary dice che è una sua forma, oppure la forma compare davvero nella tabella di declinazione o coniugazione del lemma (le parole che non la contengono vengono scartate). Accanto all'etimologia c'è scritto «(di «подошва», lemma…)» e come è stata trovata. Se il lemma è sbagliato: <strong>⚑ → lemma sbagliato?</strong> e scrivi quello giusto, oppure <strong>nessuno</strong>; resta salvato. Se una forma flessa non viene riconosciuta da sola, premi <strong>🔍 cerca radice</strong> (accanto a «Etimologia: non trovata», o nel ⚑ → «lemma sbagliato?»): compaiono le parole di Wiktionary che contengono quella forma, con <strong>✓</strong> su quelle sicure (la forma è nella loro tabella); un clic e l'etimologia si prende da lì. Con <strong>scrivilo tu…</strong> lo scrivi a mano. <strong>originale</strong> la mostra com'è scritta su Wiktionary; <strong>⚑</strong> se è sbagliata: ritraduci, rifai con Gemini/Groq, correggi a mano (resta salvata).
 - <strong>▦ tabella</strong>: coniugazione del verbo o declinazione del nome (Wiktionary; per le forme flesse quella della forma base).
 - <strong>Esempi veri</strong> (Tatoeba): fino a 3 frasi scritte da persone, con la traduzione; <strong>🔊</strong> = registrata da un madrelingua, <strong>🔈</strong> = voce sintetica.
-- <strong>Falsi amici e parole parenti</strong>: arrivano cliccando la parola, <strong>nella stessa richiesta</strong> della spiegazione (nessuna richiesta in più). Il falso amico compare solo se esiste davvero una parola simile <strong>nella tua lingua</strong> con un altro significato (per <em>embarazada</em> in italiano: «imbarazzata»); se non c'è, non compare niente.
+- <strong>Falsi amici e parole parenti</strong>: arrivano con <strong>✨ Spiega con …</strong>, <strong>nella stessa richiesta</strong> della spiegazione (nessuna richiesta in più). Il falso amico compare solo se esiste davvero una parola simile <strong>nella tua lingua</strong> con un altro significato (per <em>embarazada</em> in italiano: «imbarazzata»); se non c'è, non compare niente.
 - <strong>Tutto nella tua lingua</strong>: spiegazione, falso amico, etimologia e note sono scritte nella lingua di «Traduci in». Se un servizio risponde in un'altra lingua (per esempio in inglese), la richiesta viene rifatta con istruzioni più rigide; se sbaglia ancora, quella parte non compare.
 - <strong>🐢 lenta</strong> e <strong>🔁 ×3</strong> accanto a "↺ Riascolta la frase": riascolti la frase più lentamente o tre volte di fila.
 - <strong>Immagine nelle carte di Anki</strong> (popup → Anki → "Metti un'immagine nelle carte di Anki", spenta di serie): quando salvi la parola cerca un'immagine su Wikimedia Commons e la mette sul fronte della carta (con l'invio diretto Anki la scarica; nel file si vede quando sei collegato a internet).</p>
 <h3 id="dalla-traduzione-alloriginale">Dalla traduzione all'originale</h3>
 <ul>
 <li><strong>Passa il mouse su una parola della traduzione</strong>: si illumina la parola originale da cui viene, e un'etichetta la scrive. Clic → scheda della parola originale.</li>
-<li>Con Gemini e gli altri modelli il collegamento è preciso (si chiede per 8 frasi alla volta, in una richiesta). Con Google è approssimato: l'etichetta dice "circa".</li>
+<li>Di serie il collegamento lo fa Google (gratis, approssimato: l'etichetta dice "circa"). Se nel popup accendi <strong>Altro → Modi di dire e collegamento preciso con il modello (consuma richieste)</strong>, Gemini o gli altri modelli lo fanno preciso (una richiesta ogni 8 frasi, passando il mouse).</li>
 <li><strong>Particelle</strong>: articoli, preposizioni e ausiliari che la traduzione aggiunge ma che non traducono una parola dell'originale (per esempio <em>i</em> in <em>i gatti</em> per l'inglese <em>cats</em>) sono <strong>sottolineati a puntini</strong>. Passandoci sopra, l'etichetta "particella" spiega a quale parte dell'originale appartengono.</li>
-<li><strong>Al contrario</strong>: passando su una parola originale si illumina la sua traduzione (le particelle più tenui).</li>
+<li><strong>Al contrario</strong>: passando su una parola originale si illumina la sua traduzione (le particelle più tenui). Senza il modello si usano le traduzioni del dizionario di Google della parola, riconoscendole anche con un'altra desinenza (<em>bread</em> → «pani»).</li>
 </ul>
 <h3 id="pezzi-di-frase-ed-espressioni">Pezzi di frase ed espressioni</h3>
 <ul>
 <li><strong>Modo di dire nella scheda</strong>: quando la spiegazione dice che la parola fa parte di un modo di dire (<em>к сожалению</em> per <em>сожалению</em>), la scheda lo segnala e le altre parole si illuminano con un tratteggio leggero. Il modo di dire resta <strong>ricordato</strong>: se rifai la spiegazione con un altro servizio che non lo riporta, la scheda lo mostra lo stesso. <strong>☆ Salva il modo di dire</strong> lo mette nel vocabolario (e in Anki, se l'invio automatico è acceso).</li>
-<li><strong>Modi di dire</strong>: con un modello, le espressioni che non si traducono parola per parola (<em>break the ice</em>, <em>give up</em>…) vengono <strong>sottolineate in arancione</strong>. Passandoci sopra si illumina tutta l'espressione e la scheda ne dà il significato. (Si spegne in <strong>Altro → Evidenzia i modi di dire</strong>.)</li>
+<li><strong>Modi di dire</strong> (solo con l'opzione «Modi di dire e collegamento preciso con il modello» accesa, spenta di serie): con un modello, le espressioni che non si traducono parola per parola (<em>break the ice</em>, <em>give up</em>…) vengono <strong>sottolineate in arancione</strong>. Passandoci sopra si illumina tutta l'espressione e la scheda ne dà il significato. </li>
 <li><strong>Selezione a mano nell'originale</strong>: tieni premuto sulla prima parola e trascina fino all'ultima → scheda con il significato dell'espressione intera.</li>
 <li><strong>Selezione nella traduzione</strong>: trascina su più parole tradotte → nell'originale si illumina la parte corrispondente; l'etichetta ha <strong>Spiega</strong>, <strong>Copia</strong> e i collegamenti ai servizi. Si chiude con Esc.</li>
 </ul>
@@ -299,7 +303,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <h3 id="il-testo-selezionato">Il testo selezionato</h3>
 <p><strong>Selezionando più parole</strong> (trascinando con il mouse) compare il pannello con la traduzione di tutto il testo insieme, la trascrizione in caratteri latini, il pulsante <strong>Pronuncia IPA</strong> (solo se lo premi), 🔊 per ascoltarlo, ☆ e Anki. Con Gemini o Groq c'è anche <strong>"Traduci meglio"</strong>, una traduzione che tiene conto del contesto.</p>
 <h3 id="modi-di-dire">Modi di dire</h3>
-<p>Quando la scheda resta aperta, il modello cerca da solo i modi di dire nella frase (una richiesta piccola per frase, una volta sola; si spegne nel popup). La scheda li segnala; le altre parole dell'espressione si illuminano con un tratteggio, diverso dalla parola selezionata. La selezione resta sempre tua. Restano ricordati, e <strong>☆ Salva il modo di dire</strong> li mette nel vocabolario.</p>
+<p>Se nel popup accendi la ricerca automatica dei modi di dire (spenta di serie, perché consuma richieste), quando la scheda resta aperta il modello li cerca nella frase (una richiesta piccola per frase, una volta sola); altrimenti arrivano con «Spiega con…». La scheda li segnala; le altre parole dell'espressione si illuminano con un tratteggio, diverso dalla parola selezionata. La selezione resta sempre tua. Restano ricordati, e <strong>☆ Salva il modo di dire</strong> li mette nel vocabolario.</p>
 <h3 id="correzioni">Correzioni</h3>
 <ul>
 <li><strong>⚑ Traduzione sbagliata?</strong> In fondo alla scheda e al pannello: <strong>↻ Rifai con Google</strong>, <strong>Rifai con Gemini/Groq</strong> (significato nel contesto e traduzione della frase), <strong>✎ Correggi a mano</strong> (resta salvata, segnata con ✎; "Togli la correzione" per tornare indietro), <strong>Lingua sbagliata</strong>.</li>
@@ -481,7 +485,7 @@ Con <strong>Se finiscono le richieste gratuite, continua con un altro servizio d
 <ul>
 <li><strong>Niente si traduce due volte</strong>: traduzioni, trascrizioni, spiegazioni e correzioni restano salvate. Rivedere un video, anche guardato solo in parte, non costa niente.</li>
 <li>La traduzione si chiede a <strong>gruppi di 120 frasi</strong>: un film di due ore costa circa 12 richieste a Gemini.</li>
-<li>Al passaggio del mouse si usa il dizionario di Google (gratis); il modello solo quando clicchi.</li>
+<li>Al passaggio del mouse e al clic si usa il dizionario di Google (gratis); il modello solo quando premi <strong>✨ Spiega con …</strong> (o «Spiega con…» sulle pagine).</li>
 <li>Il modello predefinito di Gemini è <strong>gemini-flash-lite-latest</strong>, quello con più richieste gratuite al giorno.</li>
 <li>Le quote di Gemini si azzerano verso le <strong>9 del mattino</strong> (ora italiana). Quanto hai usato lo vedi su aistudio.google.com.</li>
 <li>Per un film intero senza toccare le quote: <strong>Copia trascrizione / Incolla traduzione</strong> con una chat (<a href="#12-la-pagina-trascrizione-e-traduzione">sezione 12</a>).</li>
@@ -577,6 +581,7 @@ Con <strong>Se finiscono le richieste gratuite, continua con un altro servizio d
 <hr />
 <h2 id="novita">Novità</h2>
 <ul>
+<li><strong>1.4.1</strong>: <strong>🌳 alberi etimologici</strong> di Wiktionary nella scheda; niente più errore di Groq «max_tokens must be less than or equal to 4096» (si riprova da sola con il limite del modello); un <strong>modo di dire</strong> compare solo se è davvero un pezzo della frase, nella sua lingua (mai un'espressione tradotta come «in the secret life» per una parola araba); <strong>il modello non parte mai da solo</strong>: nei video la spiegazione arriva solo con il pulsante <strong>✨ Spiega con …</strong> (prima partiva al clic sulla parola); il collegamento traduzione ↔ originale e i modi di dire con il modello sono spenti di serie (si accendono nel popup), e senza modello passando su una parola dell'originale si illumina comunque la sua traduzione (dizionario di Google). <strong>📖 Dizionario di Google</strong> nella scheda (pronuncia, significati, sinonimi, forme, origine, albero etimologico, uso nel tempo) e la sua origine quando Wiktionary non ha l'etimologia; etimologia presa dal lemma per le forme flesse (declinazioni, tempi verbali), solo se la parentela è sicura; si corregge con ⚑ → «lemma sbagliato?»; pulsante <strong>🔍 cerca radice</strong> per le forme non riconosciute da sole.</li>
 <li><strong>1.4.0</strong> (da qui in poi esce solo questa estensione, con questa guida unica):</li>
 <li><strong>Interfaccia nella lingua di «Traduci in»</strong> (casella <strong>Interfaccia in questa lingua</strong> nel popup).</li>
 <li><strong>Spiegazioni sempre nella tua lingua</strong>: una risposta in un'altra lingua (per esempio in inglese dopo averla rifatta con Groq) viene richiesta di nuovo o tolta; il falso amico compare solo se è vero e riguarda una parola della tua lingua (niente più «embarrassed in inglese» o frasi come «non è un falso amico…»).</li>
