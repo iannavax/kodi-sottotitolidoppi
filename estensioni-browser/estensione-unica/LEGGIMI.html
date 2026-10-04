@@ -1,0 +1,587 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.0 — Guida</title><style>
+:root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
+@media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:40px 22px 80px;background:var(--paper);min-height:100vh;box-shadow:0 0 0 1px var(--line)}
+h1{font-size:2.1em;line-height:1.2;margin:.2em 0 .4em;border-bottom:3px solid var(--accent);padding-bottom:.3em}
+h2{font-size:1.45em;margin:2.2em 0 .6em;padding-top:.4em;border-top:1px solid var(--line)}
+h3{font-size:1.15em;margin:1.6em 0 .4em;color:var(--accent)}
+a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+p,li{color:var(--ink)} li{margin:.25em 0}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--accent);background:var(--code);border-radius:0 8px 8px 0}
+code{background:var(--code);padding:.1em .35em;border-radius:5px;font-size:.92em}
+pre{background:var(--code);padding:14px 16px;border-radius:10px;overflow:auto;line-height:1.45} pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+hr + h2{border-top:0;margin-top:.6em;padding-top:0}
+pre{white-space:pre-wrap;word-break:break-word}
+.toc-note{color:var(--soft)}
+</style></head>
+<body><main><p><em>Versione 1.4.0</em></p>
+<h1 id="sottotitoli-doppi-parole-al-volo-estensione-per-il-browser">Sottotitoli Doppi + Parole al Volo — estensione per il browser</h1>
+<p><em>English version → <a href="GUIDE.en.html">GUIDE.en</a></em></p>
+<p><strong>Impara le lingue guardando video e leggendo.</strong> Una sola estensione per due cose:</p>
+<ul>
+<li><strong>🎬 nei video</strong> (Sottotitoli Doppi): sotto i sottotitoli originali compare la traduzione nella tua lingua, in un altro colore. Ogni parola si tocca con il mouse per vederne il significato in quella frase, sentirne la pronuncia e salvarla in un vocabolario personale. Funziona su YouTube e su quasi tutti i siti con video o audio; se un video non ha sottotitoli, l'estensione ascolta l'audio e li scrive da sola;</li>
+<li><strong>📄 sulle pagine e nei PDF</strong> (Parole al Volo): passi il mouse su una parola di qualsiasi pagina e compare la sua scheda; selezioni un pezzo di testo e te lo traduce tutto insieme.</li>
+</ul>
+<p>Vocabolario, parole che conosci, chiavi dei servizi, voci e Anki sono gli stessi per tutte e due.</p>
+<p>Browser: <strong>Edge, Chrome, Brave</strong> (e gli altri basati su Chromium) e <strong>Firefox</strong>.</p>
+<blockquote>
+<p><strong>Lingua dell'interfaccia.</strong> Le scritte dell'estensione sono in italiano. Nel popup, sotto <strong>Traduci in</strong>, accendi <strong>Interfaccia in questa lingua</strong>: popup, schede e pagine compaiono nella lingua in cui traduci (tradotte una volta con Google Traduttore e ricordate; le parole, le traduzioni e i sottotitoli non cambiano). Spegnendola torna l'italiano.</p>
+</blockquote>
+<hr />
+<h2 id="indice">Indice</h2>
+<ol>
+<li><a href="#1-cosa-fa-in-breve">Cosa fa, in breve</a></li>
+<li><a href="#2-installazione-e-aggiornamenti">Installazione e aggiornamenti</a></li>
+<li><a href="#3-primi-passi-5-minuti">Primi passi (5 minuti)</a></li>
+<li><a href="#4-il-popup-video-e-pagine">Il popup: Video e Pagine</a></li>
+<li><a href="#5-dove-funziona">Dove funziona</a></li>
+<li><a href="#6-i-sottotitoli-sul-video">I sottotitoli sul video</a></li>
+<li><a href="#7-imparare-con-le-parole">Imparare con le parole</a></li>
+<li><a href="#8-sulle-pagine-web">Sulle pagine web</a></li>
+<li><a href="#9-i-pdf">I PDF</a></li>
+<li><a href="#10-il-vocabolario-personale">Il vocabolario personale</a></li>
+<li><a href="#11-video-senza-sottotitoli-la-trascrizione-dellaudio">Video senza sottotitoli: la trascrizione dell'audio</a></li>
+<li><a href="#12-la-pagina-trascrizione-e-traduzione">La pagina "Trascrizione e traduzione"</a></li>
+<li><a href="#13-i-servizi-di-traduzione">I servizi di traduzione</a></li>
+<li><a href="#14-consumare-meno-richieste-gratuite">Consumare meno richieste gratuite</a></li>
+<li><a href="#15-un-modello-di-traduzione-sul-tuo-computer">Un modello di traduzione sul tuo computer</a></li>
+<li><a href="#16-se-qualcosa-non-va">Se qualcosa non va</a></li>
+<li><a href="#17-privacy-e-note">Privacy e note</a></li>
+</ol>
+<hr />
+<h2 id="1-cosa-fa-in-breve">1. Cosa fa, in breve</h2>
+<table>
+<thead>
+<tr>
+<th>Funzione</th>
+<th>Cosa fa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🎬 <strong>Doppia riga</strong></td>
+<td>Originale sopra, traduzione sotto (o al contrario), sul video stesso.</td>
+</tr>
+<tr>
+<td>🧠 <strong>Traduzione che capisce il discorso</strong></td>
+<td>Con Gemini e gli altri modelli la traduzione tiene conto delle frasi vicine, non riga per riga.</td>
+</tr>
+<tr>
+<td>👆 <strong>Parole interattive</strong></td>
+<td>Passi il mouse su una parola e vedi il significato in quella frase; clicchi per una spiegazione completa.</td>
+</tr>
+<tr>
+<td>🔗 <strong>Traduzione ↔ originale</strong></td>
+<td>Passando su una parola tradotta si illumina quella originale da cui viene. Articoli e preposizioni "aggiunte" dalla traduzione sono segnalate.</td>
+</tr>
+<tr>
+<td>🗣️ <strong>Pronuncia</strong></td>
+<td>Ogni parola si può ascoltare; il video si abbassa da solo mentre parla.</td>
+</tr>
+<tr>
+<td>⭐ <strong>Vocabolario</strong></td>
+<td>Salvi parole ed espressioni con la frase e il punto del video; esporti tutto per Anki.</td>
+</tr>
+<tr>
+<td>🎙️ <strong>Trascrizione dell'audio</strong></td>
+<td>Video senza sottotitoli? L'audio viene trascritto con Whisper (gratis con una chiave Groq).</td>
+</tr>
+<tr>
+<td>📄 <strong>Testo completo</strong></td>
+<td>Una pagina con tutto il testo del video, da leggere, copiare o scaricare (.txt, .srt).</td>
+</tr>
+<tr>
+<td>✏️ <strong>Correzioni</strong></td>
+<td>Una frase tradotta o trascritta male si rifà con un clic, o si corregge a mano.</td>
+</tr>
+<tr>
+<td>📄 <strong>Pagine web</strong></td>
+<td>Su qualsiasi pagina: scheda della parola passando il mouse, traduzione del testo che selezioni.</td>
+</tr>
+<tr>
+<td>📕 <strong>PDF</strong></td>
+<td>Un lettore PDF suo, con le stesse schede (anche i libri scansionati con il testo riconosciuto).</td>
+</tr>
+<tr>
+<td>💸 <strong>Pochi consumi</strong></td>
+<td>Tutto viene salvato: rivedere un video non costa niente. Se un servizio gratuito finisce le richieste, si passa da soli a un altro.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-installazione-e-aggiornamenti">2. Installazione e aggiornamenti</h2>
+<h3 id="edge-chrome-brave">Edge, Chrome, Brave</h3>
+<ol>
+<li>Estrai lo zip <code>sottotitoli-parole-chrome-vX.Y.Z.zip</code> in una cartella <strong>che non cancellerai</strong> (per esempio <code>Documenti\Sottotitoli Doppi</code>).</li>
+<li>Apri <code>edge://extensions</code> (su Chrome <code>chrome://extensions</code>).</li>
+<li>Attiva <strong>Modalità sviluppatore</strong> (interruttore in basso a sinistra su Edge, in alto a destra su Chrome).</li>
+<li>Premi <strong>Carica estensione non pacchettizzata</strong> e scegli la cartella del punto 1.</li>
+<li>Fissa l'icona dell'estensione nella barra (icona del puzzle → puntina), così il popup è a un clic.</li>
+</ol>
+<h3 id="firefox">Firefox</h3>
+<ol>
+<li>Con le versioni normali di Firefox le estensioni non firmate non si installano: usa <strong>Firefox Nightly</strong> o <strong>Developer Edition</strong> e in <code>about:config</code> metti <code>xpinstall.signatures.required</code> su <strong>false</strong>.</li>
+<li>Apri <code>about:addons</code>, premi l'ingranaggio ⚙ → <strong>Installa componente aggiuntivo da file…</strong> e scegli <code>sottotitoli-parole-firefox-vX.Y.Z.xpi</code>.</li>
+<li>In <code>about:addons</code> → l'estensione → <strong>Permessi</strong>: deve essere acceso "Accedere ai dati su tutti i siti". Se nel popup compare <strong>Concedi accesso</strong>, cliccalo.</li>
+</ol>
+<h3 id="aggiornare-senza-perdere-niente">Aggiornare senza perdere niente</h3>
+<ul>
+<li><strong>Edge/Chrome:</strong> estrai la nuova versione <strong>nella stessa cartella</strong>, sostituendo i file vecchi, poi in <code>edge://extensions</code> premi ↻ sulla scheda dell'estensione e ricarica le pagine aperte.</li>
+<li><strong>Firefox:</strong> installa il nuovo .xpi sopra quello vecchio.</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Non rimuovere mai l'estensione per aggiornarla</strong>: con lei si cancellano le chiavi, le traduzioni salvate e il vocabolario.</p>
+</blockquote>
+<h3 id="video-e-audio-sul-tuo-computer">Video e audio sul tuo computer</h3>
+<p>Per i file aperti con doppio clic nel browser (indirizzi che iniziano con <code>file:///</code>): in <code>edge://extensions</code> apri <strong>Dettagli</strong> dell'estensione e attiva <strong>Consenti l'accesso agli URL dei file</strong>.</p>
+<h3 id="se-usavi-le-due-estensioni-separate">Se usavi le due estensioni separate</h3>
+<p>Sottotitoli Doppi e Parole al Volo separate non vengono più aggiornate: questa le sostituisce tutte e due. È un'estensione nuova, quindi parte vuota:
+1. installala accanto alle due vecchie (non toglierle subito);
+2. porta qui le <strong>parole che conosci</strong> (tutte le lingue insieme) e il <strong>vocabolario</strong>, in uno di questi due modi:
+   - <strong>senza file</strong>: qui premi <strong>⇄ Sincronizza adesso</strong> nella pagina <strong>Parole che conosco</strong>, e nel vocabolario <strong>⇄ Sincronizza con le altre estensioni</strong>: prende da tutte e due le vecchie, se sono installate (servono almeno Sottotitoli Doppi 5.20.1 e Parole al Volo 1.13.1);
+   - <strong>con un file</strong> (funziona anche con le versioni più vecchie): nell'estensione vecchia apri <strong>Parole che conosco</strong> e premi <strong>Esporta in un file</strong>, poi qui, nella stessa pagina, <strong>Importa da un file…</strong>. Per il vocabolario: <strong>Il mio vocabolario → ⇄ Esporta</strong> nella vecchia e <strong>⇄ Importa…</strong> qui;
+3. le <strong>chiavi</strong> (Gemini, Groq…) e le <strong>impostazioni</strong> passano anche loro con ⇄ (solo quelle che qui non hai ancora scelto). Se il messaggio dice che le chiavi non sono arrivate, premi ⇄ anche dentro l'estensione vecchia; altrimenti inseriscile a mano nel popup;
+4. per il programma per yt-dlp: apri la sua pagina dal popup (🎬 Video → Video senza sottotitoli → Programma per yt-dlp) e rilancia l'installatore, così riconosce anche questa estensione;
+5. quando tutto funziona, togli le due vecchie. Non usare le vecchie e la nuova insieme: le schede comparirebbero due volte.</p>
+<hr />
+<h2 id="3-primi-passi-5-minuti">3. Primi passi (5 minuti)</h2>
+<ol>
+<li><strong>Apri il popup</strong> (clic sull'icona dell'estensione), scheda <strong>🎬 Video</strong>, e in alto scegli <strong>Traduci in</strong>: la tua lingua.</li>
+<li>Nella sezione <strong>Traduzione → Come tradurre</strong> lascia <strong>Google Traduttore</strong> per cominciare subito, senza chiavi.</li>
+<li>Apri un video di YouTube nella lingua che studi e accendi i sottotitoli (<strong>CC</strong>). Compare la doppia riga.</li>
+<li>Passa il mouse su una parola della riga originale: il video si ferma e compare la scheda con il significato.</li>
+</ol>
+<p><strong>Per una traduzione molto migliore (consigliato, gratis):</strong>
+1. Vai su <strong>aistudio.google.com/apikey</strong> con il tuo account Google e premi <em>Create API key</em> (non serve la carta).
+2. Nel popup scegli <strong>Come tradurre → Gemini</strong>, incolla la chiave in <strong>Chiave API</strong> e premi Invio. Il modello si sceglie da solo.</p>
+<p><strong>Sulle pagine</strong> non serve fare niente: passa il mouse su una parola di un articolo in un'altra lingua e compare la sua scheda (dettagli nella <a href="#8-sulle-pagine-web">sezione 8</a>).</p>
+<p><strong>Per i video senza sottotitoli</strong> serve anche una chiave <strong>Groq</strong>, gratuita: vedi la <a href="#11-video-senza-sottotitoli-la-trascrizione-dellaudio">sezione 11</a>.</p>
+<hr />
+<h2 id="4-il-popup-video-e-pagine">4. Il popup: Video e Pagine</h2>
+<p>Il pulsante dell'estensione apre il popup con due schede in alto. Il popup si riapre sull'ultima scheda che hai usato.</p>
+<ul>
+<li><strong>🎬 Video</strong>: tutto quello che riguarda i video (sottotitoli, aspetto, trascrizione, dirette, servizio di traduzione dei sottotitoli, pronuncia, Anki…). Quando questa guida dice «popup → …» parlando di video, è qui.</li>
+<li><strong>📄 Pagine</strong>: le pagine web e i PDF (scheda passando il mouse, traduzione quando evidenzi, lettore PDF, servizio per spiegare le parole…). Vedi la <a href="#8-sulle-pagine-web">sezione 8</a>.</li>
+</ul>
+<p>Sotto <strong>Traduci in</strong> c'è <strong>Interfaccia in questa lingua</strong>: accesa, tutte le scritte dell'estensione (popup, schede, pagine del vocabolario, della trascrizione, del lettore PDF…) compaiono in quella lingua. La prima volta servono un paio di secondi (le scritte si traducono con Google, gratis), poi sono ricordate. Le pagine già aperte si aggiornano da sole.</p>
+<p>In comune tra le due schede: le chiavi dei servizi (Gemini, Groq…), la lingua in cui traduci (e quella dell'interfaccia), il <strong>vocabolario</strong>, le <strong>parole che conosci</strong>, le voci della pronuncia, Anki, il programma per yt-dlp.</p>
+<p>Separati (hanno lo stesso nome ma servono a cose diverse): il servizio scelto (nei video traduce i sottotitoli, sulle pagine spiega le parole; finché nelle «Pagine» non ne scegli uno, si usa quello dei «Video»), i siti in cui è spenta, il mazzo di Anki unico, il colore delle parole che conosci sulla pagina, le lettere latine «Aa».</p>
+<hr />
+<h2 id="5-dove-funziona">5. Dove funziona</h2>
+<ul>
+<li><strong>YouTube</strong>, anche nei video di YouTube inseriti in altri siti.</li>
+<li><strong>Qualsiasi sito con un video o un audio</strong>: Vimeo, VK, siti di notizie, podcast, corsi online, siti di TV in diretta. Se il video ha già dei sottotitoli propri li usa e li traduce; altrimenti puoi farli trascrivere.</li>
+<li><strong>File aperti direttamente nel browser</strong>, da un link o dal computer (mp4, webm, mp3, m4a, ogg, wav, flac…): la trascrizione parte da sola premendo Play.</li>
+<li><strong>Non funziona</strong> con i siti a contenuti protetti (Netflix, Disney+, Prime Video…): il browser non lascia ascoltarne l'audio. La riga di stato del popup te lo dice.</li>
+<li><strong>Su qualsiasi pagina web e nei PDF</strong> per le parole scritte: <a href="#8-sulle-pagine-web">sezione 8</a> e <a href="#9-i-pdf">sezione 9</a>.</li>
+<li>Se su un sito l'estensione non ti serve: popup → 🎬 Video → <strong>Altro</strong> → togli l'attivazione su quel sito (per le pagine: 📄 Pagine → <strong>Attiva su questo sito</strong>).</li>
+</ul>
+<hr />
+<h2 id="6-i-sottotitoli-sul-video">6. I sottotitoli sul video</h2>
+<h3 id="accendere-e-spegnere-il-pulsante-ds">Accendere e spegnere: il pulsante DS</h3>
+<ul>
+<li><strong>Su YouTube</strong> c'è il pulsante <strong>DS</strong> nella barra dei comandi del video, accanto a CC. <strong>Sugli altri siti</strong> è un piccolo "DS" in alto a destra del video.</li>
+<li><strong>Acceso</strong> (bordo giallo): si vedono i sottotitoli doppi. <strong>Spento</strong>: spariscono e la trascrizione si ferma, così non consuma quota.</li>
+<li>Se i sottotitoli doppi spariscono per qualsiasi motivo, premi DS: tornano.</li>
+<li>La stessa cosa si fa nel popup, <strong>Altro → Sottotitoli doppi attivi</strong>.</li>
+</ul>
+<h3 id="i-pulsanti-accanto-ai-sottotitoli">I pulsanti accanto ai sottotitoli</h3>
+<p>Passando il mouse sui sottotitoli compaiono a destra:
+- <strong>⚑ — Frase sbagliata?</strong> Apre una scheda con:
+  - <strong>↻ Ritraduci</strong>: chiede di nuovo la traduzione di quella frase (passa davanti alle altre richieste);
+  - <strong>🎙 Ritrascrivi</strong> (solo per le frasi trascritte dall'audio): la fa riascoltare a Whisper con il modello più preciso;
+  - <strong>✎ Correggi a mano</strong>: scrivi tu l'originale e/o la traduzione giusta;
+  - <strong>✕ Togli</strong>: per le frasi inventate durante la musica.</p>
+<p>Le correzioni restano salvate con il video e valgono anche nei file scaricati.
+- <strong>⧉ — Copia o consulta la frase.</strong> Ferma il video e mostra la frase, selezionabile con il mouse:
+  - <strong>Copia originale</strong>, <strong>Copia traduzione</strong>, <strong>Copia tutte e due</strong> (se selezioni una parte, copiano solo quella);
+  - <strong>Apri in: Google Traduttore · DeepL · Reverso</strong>: la frase (o la parte selezionata) si apre in un'altra scheda, con le lingue già impostate. Reverso mostra le parole dentro tante frasi vere. Per le lingue che Reverso non apre già pronte (per esempio il ceco) il testo viene copiato: incollalo nella sua casella.
+- <strong>Sigla della lingua (per esempio EN)</strong> — solo per le frasi trascritte dall'audio: se la trascrizione è nella lingua sbagliata, cliccala e scegli quella giusta (vedi "La lingua della trascrizione").</p>
+<h3 id="pronuncia-ipa-delle-parole">Pronuncia IPA delle parole</h3>
+<p>Nella scheda della parola, sotto la parola, c'è la sua <strong>pronuncia IPA</strong> (alfabeto fonetico internazionale) e, per gli alfabeti diversi dal nostro, la <strong>trascrizione in caratteri latini</strong> (<em>кошка</em> → koshka).
+- L'IPA viene <strong>sempre da Wiktionary</strong>, gratis e senza token (prima quello inglese, poi quello della lingua della parola, il tuo e i più grandi). Passando il mouse sulla pronuncia leggi da dove viene.
+- Se Wiktionary non l'ha (capita con le forme flesse), <strong>clicca la parola</strong>: la pronuncia arriva <strong>nella stessa richiesta</strong> della spiegazione del modello, mai con una richiesta a parte. Questo succede solo con l'opzione <strong>Aspetto → IPA anche dal modello, se manca su Wiktionary</strong> accesa; spenta, solo Wiktionary.</p>
+<h3 id="etimologia-delle-parole">Etimologia delle parole</h3>
+<p>Nella scheda di una parola, sotto il significato, c'è la sua <strong>etimologia</strong>: da dove viene (per esempio <em>bread</em> → dall'inglese antico <em>brēad</em>, imparentato con il tedesco <em>Brot</em>).</p>
+<ul>
+<li>Viene da <strong>Wiktionary</strong> (gratis, senza chiave), tradotta nella tua lingua con Google; il collegamento "Wiktionary" apre la pagina completa. Per le forme flesse (<em>walked</em>, <em>went</em>) cerca la forma base.</li>
+<li>Si chiede solo se la scheda resta aperta un attimo, poi resta salvata. Finisce anche nel vocabolario e nelle carte per Anki.</li>
+<li>Se Wiktionary non la ha, <strong>clicca la parola</strong>: la spiegazione nel contesto di Gemini (o del servizio scelto) porta anche l'etimologia, nella stessa richiesta (una sola, non due).</li>
+<li>Si accende e spegne nel popup → <strong>Aspetto → Etimologia nella scheda della parola</strong>.</li>
+</ul>
+<h3 id="aspetto">Aspetto</h3>
+<p>Popup → <strong>Aspetto dei sottotitoli</strong>: cosa mostrare (entrambe, solo originale, solo traduzione), traduzione sopra o sotto, dimensione del testo e della traduzione, colori, sfondo, altezza sul video, carattere. Le modifiche si vedono subito; <strong>Ripristina l'aspetto predefinito</strong> rimette tutto com'era.</p>
+<p>Popup → <strong>Altro → Nascondi i sottotitoli del sito</strong>: nasconde quelli originali del sito, per non vederli due volte.</p>
+<hr />
+<h2 id="7-imparare-con-le-parole">7. Imparare con le parole</h2>
+<h3 id="la-scheda-di-una-parola">La scheda di una parola</h3>
+<ul>
+<li><strong>Passa il mouse</strong> su una parola della riga originale: il video si ferma e compare una scheda con il significato dal dizionario di Google (gratis, nessuna richiesta consumata).</li>
+<li><strong>Clicca</strong> la parola: la scheda si fissa, mostra subito il significato di Google e chiede al servizio scelto (Gemini, Groq, Mistral, Claude…) <strong>il significato in quella frase</strong>: forma base (per esempio <em>went → go</em>), tipo di parola, spiegazione ed esempio. Una sola richiesta, solo quando la vuoi.</li>
+<li>Nella scheda:</li>
+<li><strong>🔈</strong> pronuncia con la voce sintetica (la sigla accanto, per esempio <em>DA</em>, dice in che lingua); quando esiste una registrazione vera della parola (Wiktionary), accanto compare anche <strong>🔊</strong>, la voce di una persona. In tutta l'estensione <strong>🔊</strong> = registrazione vera, <strong>🔈</strong> = voce sintetica;</li>
+<li><strong>☆</strong> salva nel vocabolario;</li>
+<li><strong>↺ Riascolta la frase</strong>: torna all'inizio della frase e si ferma alla fine;</li>
+<li><strong>Copia la parola / Copia la frase</strong>;</li>
+<li><strong>Apri in:</strong> Google Traduttore, DeepL, Reverso, <strong>WordReference</strong> (tra inglese e italiano, spagnolo, francese, tedesco, portoghese) e <strong>Wiktionary</strong> (spiega quasi ogni parola di quasi ogni lingua).</li>
+<li>La scheda si chiude con <strong>×</strong> o <strong>Esc</strong>. Spostando il mouse via dai sottotitoli il video riparte da solo (si può spegnere: <strong>Altro → Pausa quando passi sulle parole</strong>).</li>
+<li>Le spiegazioni restano salvate, anche chiudendo il browser: la stessa parola nella stessa frase non si richiede più.</li>
+</ul>
+<h3 id="strumenti-per-imparare">Strumenti per imparare</h3>
+<p>Nella scheda di una parola, sotto il significato, ci sono altri aiuti. Sono tutti <strong>gratis e senza chiavi</strong> e ognuno si spegne nel popup → <strong>Strumenti per imparare</strong>. Si chiedono solo se la scheda resta aperta almeno un attimo, e restano salvati.
+- <strong>Dizionario di Google</strong> (nella stessa richiesta della traduzione, gratis): <strong>traduzioni con il loro peso</strong> (la più usata in evidenza, una barretta per quanto è comune; passando il mouse le traduzioni al contrario), <strong>definizioni nella lingua della parola</strong> con un esempio, <strong>sinonimi</strong> e <strong>"vedi anche"</strong>, e <strong>"Forse cercavi…"</strong> nel controllo della scrittura. Google a volte non dà alcune parti: in quel caso non compaiono. Le <strong>definizioni</strong> arrivano anche dal Wiktionary della lingua della parola (e, se mancano, da quello inglese), ognuna con <strong>traduci</strong>; le altre con <strong>altre ›</strong>.
+- <strong>Lettere latine sopra le lettere</strong>: con <strong>Aa</strong> accanto ai sottotitoli (o nel popup → Aspetto) sopra ogni lettera di cirillico, greco, armeno, georgiano, ebraico, kana giapponesi e coreano compare la trascrizione; in arabo, persiano, urdu e hindi sopra ogni parola. Tabelle scritte nell'estensione, nessun servizio. Per kanji e caratteri cinesi c'è la lettura della riga intera (Google, gratis). Le grandezze si regolano separatamente nel popup → Aspetto: «Lettere sopra i caratteri» e «Lettura della riga (romaji)».
+- <strong>Immagine per Anki</strong> (popup → Anki): nella scheda la vedi e la cambi con ‹ ›, «altre…» (cerca, scegli la fonte, incolla un indirizzo) o ✕; nel vocabolario con 🖼.
+- <strong>Parole che conosco</strong> (pulsante in alto nel popup): l'elenco delle parole più usate, con lingua, «segna le prime N», <strong>⇄ Sincronizza adesso</strong> (scambia le parole conosciute con le estensioni vecchie, senza file), esporta e importa. Nel vocabolario ⇄ Esporta/Importa salva e ricarica vocabolario e parole conosciute in un file.
+- <strong>Livelli</strong>: «livello ≈ B1 ›» accanto alla frequenza (indicativo, A1…C2 dalla posizione nell'elenco) apre le parole di quel livello; per il giapponese «JLPT N5 ›» apre tutte le parole di quel livello JLPT (Jisho), con «la conosco?».
+- <strong>Modi di dire sottolineati</strong>: il primo clic su una parola apre tutta l'espressione, il secondo la parola da sola (e così via).
+- <strong>🔊*</strong> arancione: la registrazione è di un'altra forma della parola (te lo dice passando il mouse).
+- <strong>⚑ Traduzione sbagliata?</strong> sotto il significato: rifai con Google, rifai con il modello nel contesto, o correggi a mano (resta salvata).
+- <strong>Frequenza</strong>: quanto è usata la parola (per esempio "molto comune · tra le 1000 più usate"). L'elenco della lingua si scarica una volta sola. <strong>Cliccandola</strong> si apre l'elenco delle parole più usate di quella lingua, con la parola evidenziata al suo posto, la ricerca e «la conosco?» per segnare quelle che sai.
+- <strong>«la conosco?»</strong>: premilo per le parole che sai già. Diventano <strong>verdi</strong> nei sottotitoli, e in cima al popup leggi <strong>quante parole del video conosci</strong> (per esempio "Conosci il 72% delle parole di questo video"). Anche "Segna come imparata" nel vocabolario la aggiunge.
+- <strong>Genere</strong> dei nomi (maschile, femminile, neutro; in tedesco anche <em>der/die/das</em>).
+- <strong>Giapponese</strong>: dal dizionario <strong>Jisho</strong> (gratis) la lettura in kana, il livello JLPT, se è una parola comune e il significato in inglese.
+- <strong>Kanji e caratteri cinesi uno per uno</strong>: nella scheda di una parola giapponese o cinese, la riga «Kanji uno per uno» ha un pulsante per ogni carattere. Cliccandolo vedi solo quel kanji: significato, letture nella lingua del testo e nelle altre (on/kun, pinyin, cantonese, coreano, vietnamita), parti e radicale cliccabili, forma semplificata/tradizionale, tratti, livelli JLPT/classe, HSK, hanja scolastico; «lo conosco?», Jisho, Wiktionary e «scheda del carattere ›» per aprirlo come una parola (vocabolario, Anki) e poi «‹ Torna alla parola». ☆ salva il kanji / ☆ salva tutti i kanji: i singoli caratteri nel vocabolario. Gratis, nessuna richiesta a Gemini o Groq.
+- <strong>↺ a sinistra dei sottotitoli</strong>: riascolta la frase; se intanto il video è andato avanti (è giallo) torna alla frase che stavi leggendo.
+- <strong>Dirette in anticipo</strong> (popup → Video senza sottotitoli → «Dirette: sottotitoli in anticipo»): nelle dirette di YouTube il video resta qualche secondo indietro e yt-dlp legge l'audio più avanti, così i sottotitoli trascritti arrivano in orario invece che 5–10 secondi dopo. Serve il programma per yt-dlp (con ffmpeg, che l'installatore scarica da solo su Windows; su Mac e Linux va installato a parte).
+- <strong>Dirette: normali o sincronizzate</strong>: quando guardi una diretta, il popup mostra in alto «🔴 Questo video è una diretta» con la scelta; sul video il pulsante <strong>⏱</strong> accanto ai sottotitoli fa lo stesso.
+- <strong>Kanji e caratteri</strong>: nel riquadro di un kanji i distintivi si cliccano (ordine dei tratti, elenco di tutti i kanji di quel livello JLPT/classe/HSK, radicale…).
+- <strong>Scrittura</strong>: se la parola è scritta bene. Senza modello lo controlla LanguageTool (o, per le lingue che non conosce, il dizionario: "parola presente nel dizionario"); cliccando la parola, il modello dà anche un <strong>voto da 0 a 100</strong> e la forma corretta. Utile con i sottotitoli automatici, che a volte sbagliano.
+- <strong>Registrazione vera</strong>: quando Wiktionary ha la parola registrata da una persona, in alto nella scheda compare <strong>🔊</strong> accanto a 🔈 (si spegne con "Pronuncia di madrelingua" nel popup). Vale solo per la parola esatta, non per la forma base.
+- <strong>Etimologia</strong>: da Wiktionary, tradotta nella tua lingua (le parole straniere citate restano come sono). Quando Wiktionary dà solo un rimando («participio di <em>embarazar</em>», «dal portoghese <em>embaraçar</em>»), la scheda segue la catena fino a 3 passaggi, anche in altre lingue, e arriva alla radice (<em>embarazada</em> ← <em>embarazar</em> ← portoghese <em>embaraçar</em> ← <em>baraço</em>, «corda»). Vale per tutte le parole, gratis, senza modello. <strong>originale</strong> la mostra com'è scritta su Wiktionary; <strong>⚑</strong> se è sbagliata: ritraduci, rifai con Gemini/Groq, correggi a mano (resta salvata).
+- <strong>▦ tabella</strong>: coniugazione del verbo o declinazione del nome (Wiktionary; per le forme flesse quella della forma base).
+- <strong>Esempi veri</strong> (Tatoeba): fino a 3 frasi scritte da persone, con la traduzione; <strong>🔊</strong> = registrata da un madrelingua, <strong>🔈</strong> = voce sintetica.
+- <strong>Falsi amici e parole parenti</strong>: arrivano cliccando la parola, <strong>nella stessa richiesta</strong> della spiegazione (nessuna richiesta in più). Il falso amico compare solo se esiste davvero una parola simile <strong>nella tua lingua</strong> con un altro significato (per <em>embarazada</em> in italiano: «imbarazzata»); se non c'è, non compare niente.
+- <strong>Tutto nella tua lingua</strong>: spiegazione, falso amico, etimologia e note sono scritte nella lingua di «Traduci in». Se un servizio risponde in un'altra lingua (per esempio in inglese), la richiesta viene rifatta con istruzioni più rigide; se sbaglia ancora, quella parte non compare.
+- <strong>🐢 lenta</strong> e <strong>🔁 ×3</strong> accanto a "↺ Riascolta la frase": riascolti la frase più lentamente o tre volte di fila.
+- <strong>Immagine nelle carte di Anki</strong> (popup → Anki → "Metti un'immagine nelle carte di Anki", spenta di serie): quando salvi la parola cerca un'immagine su Wikimedia Commons e la mette sul fronte della carta (con l'invio diretto Anki la scarica; nel file si vede quando sei collegato a internet).</p>
+<h3 id="dalla-traduzione-alloriginale">Dalla traduzione all'originale</h3>
+<ul>
+<li><strong>Passa il mouse su una parola della traduzione</strong>: si illumina la parola originale da cui viene, e un'etichetta la scrive. Clic → scheda della parola originale.</li>
+<li>Con Gemini e gli altri modelli il collegamento è preciso (si chiede per 8 frasi alla volta, in una richiesta). Con Google è approssimato: l'etichetta dice "circa".</li>
+<li><strong>Particelle</strong>: articoli, preposizioni e ausiliari che la traduzione aggiunge ma che non traducono una parola dell'originale (per esempio <em>i</em> in <em>i gatti</em> per l'inglese <em>cats</em>) sono <strong>sottolineati a puntini</strong>. Passandoci sopra, l'etichetta "particella" spiega a quale parte dell'originale appartengono.</li>
+<li><strong>Al contrario</strong>: passando su una parola originale si illumina la sua traduzione (le particelle più tenui).</li>
+</ul>
+<h3 id="pezzi-di-frase-ed-espressioni">Pezzi di frase ed espressioni</h3>
+<ul>
+<li><strong>Modo di dire nella scheda</strong>: quando la spiegazione dice che la parola fa parte di un modo di dire (<em>к сожалению</em> per <em>сожалению</em>), la scheda lo segnala e le altre parole si illuminano con un tratteggio leggero. Il modo di dire resta <strong>ricordato</strong>: se rifai la spiegazione con un altro servizio che non lo riporta, la scheda lo mostra lo stesso. <strong>☆ Salva il modo di dire</strong> lo mette nel vocabolario (e in Anki, se l'invio automatico è acceso).</li>
+<li><strong>Modi di dire</strong>: con un modello, le espressioni che non si traducono parola per parola (<em>break the ice</em>, <em>give up</em>…) vengono <strong>sottolineate in arancione</strong>. Passandoci sopra si illumina tutta l'espressione e la scheda ne dà il significato. (Si spegne in <strong>Altro → Evidenzia i modi di dire</strong>.)</li>
+<li><strong>Selezione a mano nell'originale</strong>: tieni premuto sulla prima parola e trascina fino all'ultima → scheda con il significato dell'espressione intera.</li>
+<li><strong>Selezione nella traduzione</strong>: trascina su più parole tradotte → nell'originale si illumina la parte corrispondente; l'etichetta ha <strong>Spiega</strong>, <strong>Copia</strong> e i collegamenti ai servizi. Si chiude con Esc.</li>
+</ul>
+<h3 id="pronuncia">Pronuncia</h3>
+<p>La lingua si prende dalla parola o dal video. La voce è quella del computer (le voci "Natural" di Edge sono ottime); se manca, si usa la voce online di Google. Durante la pronuncia il video si abbassa e poi torna al volume di prima.</p>
+<p>Popup → <strong>Pronuncia delle parole</strong>: lingua (con ricerca tra 98 lingue), voce, <strong>Prova la voce</strong>.</p>
+<p><strong>Voce per ogni lingua.</strong> Nella scheda della parola <strong>⚙</strong> accanto a 🔈 apre le voci per quella lingua: quella che scegli resta salvata e si usa sempre per quella lingua (anche dal popup → Pronuncia delle parole → "Aggiungi una lingua…"). Senza scelta l'estensione prende da sola la migliore: Azure (se acceso), poi le voci "Natural" del computer, poi le altre voci del computer, poi Google. Dopo aver premuto 🔈, passandoci sopra il mouse leggi quale voce ha parlato.</p>
+<p><strong>Voci naturali di Microsoft (Azure Speech), anche in Firefox.</strong> Firefox non vede le voci "Natural" di Edge; con una chiave gratuita di Azure Speech (500.000 caratteri al mese gratis) l'estensione usa le stesse voci in quasi tutte le lingue. Come fare: crea un account su portal.azure.com → "Crea una risorsa" → <strong>Servizi di riconoscimento vocale</strong> (Speech) con il piano gratuito <strong>F0</strong> → "Chiavi ed endpoint": copia la <strong>chiave</strong> e la <strong>regione</strong> (per esempio <em>westeurope</em>) nel popup → Pronuncia delle parole, poi <strong>Prova la chiave</strong>.</p>
+<hr />
+<h2 id="8-sulle-pagine-web">8. Sulle pagine web</h2>
+<p>Su qualsiasi pagina (articoli, Wikipedia, libri online…) le parole scritte in un'altra lingua hanno la loro scheda. Sopra i sottotitoli dei video queste schede non compaiono: lì ci sono già quelle della <a href="#7-imparare-con-le-parole">sezione 7</a>.</p>
+<h3 id="la-scheda-passando-il-mouse">La scheda passando il mouse</h3>
+<p><strong>Passando il mouse su una parola</strong> (dopo un attimo fermo) compare la scheda con:
+- la parola, la sua traduzione e le altre traduzioni del dizionario di Google (nomi, verbi…);
+- la <strong>pronuncia IPA</strong> e, per gli alfabeti diversi dal nostro (russo, greco, giapponese, cinese, arabo…), la <strong>trascrizione in caratteri latini</strong> (<em>кошка</em> → koshka);
+- l'<strong>etimologia</strong> da Wiktionary, tradotta nella tua lingua;
+- la <strong>frase</strong> in cui si trova la parola, con la sua traduzione;
+- 🔈 per ascoltare la parola (🔊 quando c'è la registrazione di una persona), "🔈 frase" e "🔈 lenta";
+- ☆ per salvarla nel <strong>vocabolario</strong> (con l'invio automatico ad Anki, se acceso);
+- "Copia", "Copia la frase" e i collegamenti a Google Traduttore, DeepL, Reverso, WordReference e Wiktionary;
+- gli stessi <strong>strumenti per imparare</strong> dei video (frequenza, «la conosco?», livelli, genere, Jisho e kanji uno per uno, scrittura, tabelle, esempi di Tatoeba…), che si spengono nel popup → 📄 Pagine → "Strumenti per imparare".</p>
+<p>Con una chiave di <strong>Gemini o Groq</strong>, il pulsante <strong>"Spiega con Gemini"</strong> (una sola richiesta) dà il significato della parola <em>in quella frase</em>, la forma base (per esempio <em>went</em> → go), se fa parte di un modo di dire, e un esempio; nella stessa richiesta anche l'etimologia (se manca), la pronuncia IPA, i falsi amici, le parole parenti e il voto alla scrittura.</p>
+<p>Le schede si chiudono con <strong>Esc</strong>, con un clic fuori, o allontanando il mouse (se ci entri dentro restano aperte). Un <strong>doppio clic</strong> su una parola apre la sua scheda, che resta aperta. Dentro le caselle di testo la scheda non compare, per non disturbare mentre scrivi.</p>
+<h3 id="il-testo-selezionato">Il testo selezionato</h3>
+<p><strong>Selezionando più parole</strong> (trascinando con il mouse) compare il pannello con la traduzione di tutto il testo insieme, la trascrizione in caratteri latini, il pulsante <strong>Pronuncia IPA</strong> (solo se lo premi), 🔊 per ascoltarlo, ☆ e Anki. Con Gemini o Groq c'è anche <strong>"Traduci meglio"</strong>, una traduzione che tiene conto del contesto.</p>
+<h3 id="modi-di-dire">Modi di dire</h3>
+<p>Quando la scheda resta aperta, il modello cerca da solo i modi di dire nella frase (una richiesta piccola per frase, una volta sola; si spegne nel popup). La scheda li segnala; le altre parole dell'espressione si illuminano con un tratteggio, diverso dalla parola selezionata. La selezione resta sempre tua. Restano ricordati, e <strong>☆ Salva il modo di dire</strong> li mette nel vocabolario.</p>
+<h3 id="correzioni">Correzioni</h3>
+<ul>
+<li><strong>⚑ Traduzione sbagliata?</strong> In fondo alla scheda e al pannello: <strong>↻ Rifai con Google</strong>, <strong>Rifai con Gemini/Groq</strong> (significato nel contesto e traduzione della frase), <strong>✎ Correggi a mano</strong> (resta salvata, segnata con ✎; "Togli la correzione" per tornare indietro), <strong>Lingua sbagliata</strong>.</li>
+<li><strong>Lingua riconosciuta male?</strong> In fondo alla scheda c'è "Lingua del testo: … — <strong>sbagliata? cambia</strong>": cerca la lingua giusta, premi Invio e la traduzione viene rifatta. Con <strong>Ricorda per questo sito</strong> la scelta vale per tutte le pagine del sito.</li>
+<li>I testi già nella tua lingua vengono ignorati: passando il mouse su un articolo in italiano non compare niente.</li>
+</ul>
+<h3 id="il-popup-pagine">Il popup → 📄 Pagine</h3>
+<ul>
+<li>L'interruttore in alto accende e spegne tutto. Con la tastiera: <strong>Alt+Maiusc+Y</strong>.</li>
+<li><strong>Scheda passando il mouse</strong> (tastiera <strong>Alt+Maiusc+M</strong>) e <strong>Traduzione quando evidenzi</strong> (tastiera <strong>Alt+Maiusc+S</strong>): si usano separatamente; si spengono anche dalla scheda e dal pannello. Quando li cambi compare per un attimo un avviso in basso sulla pagina. Le scorciatoie si cambiano in <code>edge://extensions/shortcuts</code> (Chrome: <code>chrome://extensions/shortcuts</code>; Firefox: about:addons → ⚙ → Gestisci scorciatoie delle estensioni).</li>
+<li><strong>Attiva su questo sito</strong>: per spegnerla solo su un sito.</li>
+<li><strong>Lingua del testo</strong>: di solito <em>riconosciuta da sola</em>; se sbaglia spesso, scegli qui la lingua giusta per tutti i siti, o solo per il sito aperto.</li>
+<li><strong>La scheda compare</strong>: <em>subito</em> oppure <em>solo tenendo premuto Alt</em>; <strong>Attesa prima della scheda</strong>: quanto tempo fermo sulla parola prima che compaia.</li>
+<li><strong>Traduzione della frase nella scheda</strong>, <strong>Pronuncia IPA</strong>, <strong>Etimologia della parola</strong>: si accendono e spengono qui.</li>
+<li><strong>Colora sulla pagina le parole che conosco</strong>: diventano verde chiaro nel testo; in alto leggi <strong>quante parole della pagina conosci</strong>.</li>
+<li><strong>Traduzione e chiavi</strong>: gli stessi servizi dei video. Con Google tutto è gratis; con Gemini, Groq o un altro modello compaiono «Spiega con…» e «Traduci meglio»; con DeepL o Microsoft traducono loro la frase e il testo selezionato.</li>
+</ul>
+<h3 id="quante-richieste-consuma">Quante richieste consuma</h3>
+<ul>
+<li><strong>Google</strong> (significato, traduzione della frase e del testo, trascrizione in caratteri latini, voce): gratis, nessuna chiave.</li>
+<li><strong>Pronuncia IPA</strong>: da Wiktionary (gratis); se manca, la scrive il modello solo dentro la richiesta di «Spiega con…». Si chiede solo per la parola che guardi, quando la scheda resta aperta almeno un attimo.</li>
+<li><strong>Spiega nel contesto</strong> e <strong>Traduci meglio</strong>: una richiesta ogni volta che premi il pulsante, mai da sole.</li>
+</ul>
+<hr />
+<h2 id="9-i-pdf">9. I PDF</h2>
+<p>Il lettore PDF del browser non lascia entrare le estensioni, quindi l'estensione ha un lettore suo (pdf.js di Mozilla). Lì la scheda passando il mouse e la traduzione del testo evidenziato funzionano come sulle pagine.</p>
+<ul>
+<li>Popup → 📄 Pagine → <strong>«📄 Apri questo PDF con Parole al Volo»</strong> quando la scheda aperta è un PDF, oppure <strong>«📄 Lettore PDF»</strong> → «📂 Apri un PDF…» per un file del computer.</li>
+<li>Con <strong>«Apri sempre i PDF con Parole al Volo»</strong> i PDF si aprono da soli nel lettore.</li>
+<li>In alto: zoom, numero di pagine e <strong>«Caratteri»</strong>.</li>
+<li><strong>Lettere strane</strong> («Pøíliš», «P¯ÌliöÌ», «Ïðèâåò» invece di «Příliš», «Привет»): molti PDF un po' vecchi hanno il testo in una codifica ma ne dichiarano un'altra (per esempio quelli fatti con Word sul Mac). Il lettore se ne accorge da solo e corregge, controllando con il riconoscimento della lingua del browser che ne esca davvero una lingua: Europa centrale (ceco, slovacco, polacco, ungherese…), cirillico (Windows, KOI8, DOS, Mac), greco, turco, baltico, ebraico, arabo, thai, vietnamita, codifiche Mac e DOS, UTF-8 letto male («Ã©» invece di «é»), cinese, giapponese e coreano. Accanto a «Caratteri» compare quale codifica ha corretto; se sbaglia, scegli tu dall'elenco. I titoli già giusti non vengono toccati, e i PDF giusti (francese, tedesco…) restano come sono. Anche gli accenti scritti a parte (PDF fatti con LaTeX: «ˇcesk´y») vengono riuniti alla loro lettera.</li>
+<li><strong>Libri scansionati</strong> (archive.org, Google Libri…): le pagine sono immagini (JBIG2, JPEG 2000) e si vedono; se il PDF contiene anche il testo riconosciuto (OCR), le schede funzionano. Se un PDF non contiene il testo vero, accanto a «Caratteri» lo dice.</li>
+</ul>
+<hr />
+<h2 id="10-il-vocabolario-personale">10. Il vocabolario personale</h2>
+<ul>
+<li>Nella scheda di una parola o di un'espressione premi <strong>☆</strong>: viene salvata con la frase, la traduzione e il punto del video.</li>
+<li>Le parole salvate compaiono <strong>sottolineate in azzurro</strong> nei sottotitoli di tutti i video e sulle pagine.</li>
+<li>Popup → <strong>Il mio vocabolario</strong>: cerca, riapri il video nel punto giusto, segna una parola come imparata (non viene più evidenziata in azzurro, e conta tra le parole che conosci) o eliminala.</li>
+<li><strong>Anki direttamente</strong> (consigliato): installa in Anki il componente aggiuntivo <strong>AnkiConnect</strong> (Strumenti → Componenti aggiuntivi → Scarica, codice <strong>2055492159</strong>) e riavvia Anki. Con Anki aperto premi <strong>Anki</strong> nella scheda della parola (o <strong>Manda ad Anki</strong> nel vocabolario); la prima volta Anki chiede il permesso: premi <strong>Yes</strong>. Popup → <strong>Anki</strong>: <strong>un mazzo per ogni lingua</strong> ("Lingue::Inglese", "Lingue::Ceco"…), oppure un mazzo unico; invio automatico quando salvi con ☆; prova del collegamento.</li>
+<li><strong>Immagine nelle carte di Anki</strong> (popup → Anki, spenta di serie): la carta riceve anche un'immagine della parola da Wikimedia Commons, da vedere e cambiare prima di salvare (‹ ›, altre…, ✕) e nel vocabolario (🖼).</li>
+<li><strong>Esporta per Anki</strong>: scarica un file di testo (con il mazzo di ogni carta). In Anki: <em>File → Importa</em> → scegli il file (tipo di nota "Base"). Sul fronte la parola con la frase, sul retro significato, traduzione e link al video.</li>
+</ul>
+<hr />
+<h2 id="11-video-senza-sottotitoli-la-trascrizione-dellaudio">11. Video senza sottotitoli: la trascrizione dell'audio</h2>
+<p>Se un video non ha sottotitoli, l'estensione ascolta l'audio e lo trascrive con <strong>Whisper</strong>; le frasi vengono poi tradotte come le altre, con le parole interattive.</p>
+<h3 id="preparazione-una-volta-sola">Preparazione (una volta sola)</h3>
+<ol>
+<li>Crea una chiave gratuita su <strong>console.groq.com/keys</strong> (senza carta).</li>
+<li>Popup → <strong>Video senza sottotitoli → Chiave Groq</strong>: incollala e premi Invio.</li>
+</ol>
+<h3 id="tre-modi-di-trascrivere-popup-video-senza-sottotitoli">Tre modi di trascrivere (popup → Video senza sottotitoli)</h3>
+<ul>
+<li><strong>Mentre guardo</strong>: trascrive quello che stai guardando, con pochi secondi di ritardo. L'audio viene mandato a pezzi (al massimo 9 secondi, tagliati nelle pause): quando un pezzo arriva con le sue frasi già passate, le frasi vengono mostrate tutte, in ordine, ognuna almeno il tempo per leggerla, e il ritardo si recupera piano piano (nelle pause del parlato sparisce). Se vuoi sottotitoli sempre in pari con il video, usa <strong>Completa</strong>. Se in modalità Completa lo scaricamento dell'audio va per le lunghe, dopo 12 secondi parte intanto la trascrizione mentre guardi; se è fermo da un minuto e mezzo viene interrotto con un messaggio. La traduzione compare subito in una versione rapida di Google (un po' trasparente) e poi viene sostituita da quella del servizio scelto.</li>
+<li><strong>Completa</strong>: appena apri il video, l'audio intero viene scaricato e trascritto in pezzi, a partire dal punto in cui sei. I sottotitoli sono in pari con il video, anche saltando avanti e indietro. Su YouTube, Vimeo e simili serve il <strong>programma per yt-dlp</strong> (qui sotto); sui file diretti no.</li>
+<li><strong>Spenta</strong>: non parte da sola; si avvia con <strong>Trascrivi l'audio di questo video</strong>.</li>
+</ul>
+<p>Puoi scegliere una <strong>modalità predefinita</strong> e una diversa <strong>per questo video</strong>. "Completa solo fino a… minuti" evita di consumare la quota con un film aperto per sbaglio.</p>
+<h3 id="il-programma-per-yt-dlp-solo-per-completa-su-youtube-e-simili">Il programma per yt-dlp (solo per "Completa" su YouTube e simili)</h3>
+<p>Il browser non permette alle estensioni di scaricare l'audio da YouTube: serve un piccolo programma, installato una volta.
+1. Popup → <strong>Video senza sottotitoli → Programma per yt-dlp</strong>.
+2. <strong>Scarica l'installatore</strong> e lancialo (su Windows doppio clic; se Windows avvisa: <em>Ulteriori informazioni → Esegui comunque</em>).
+3. Torna sulla pagina e premi <strong>Verifica di nuovo</strong>: deve comparire "Installato e funzionante".</p>
+<p>Si aggiorna da solo. L'audio viene usato solo per la trascrizione e poi cancellato (i termini di YouTube non permettono di scaricare i video).</p>
+<h3 id="la-lingua-della-trascrizione">La lingua della trascrizione</h3>
+<p><strong>Se la trascrizione è nella lingua sbagliata</strong> (succede soprattutto con le canzoni: Whisper sente una canzone ceca e scrive in inglese), clicca il pulsante con la sigla della lingua accanto ai sottotitoli (per esempio <strong>EN</strong>), oppure ⚑ → <strong>🌐 Lingua sbagliata?</strong>: cerca la lingua giusta e la trascrizione di quel video viene rifatta in quella lingua. La scelta resta per quel video e vince su quella del popup; "Automatica" la toglie.</p>
+<ul>
+<li><strong>Video con i sottotitoli automatici di YouTube</strong>: se chiedi la trascrizione, è sempre nella loro lingua (quella dell'audio), anche con "Rileva da sola", e quei sottotitoli aiutano Whisper a capire le parole. Un pezzo che arriva in inglese o in un altro alfabeto viene rifatto (anche con il modello più preciso) e, se resta sbagliato, saltato.</li>
+<li><strong>Lingua parlata</strong>: lasciala su "Rileva da sola". L'estensione decide la lingua dai primi pezzi con abbastanza parlato e poi la <strong>impone a Whisper</strong>, così non cambia lingua e non scrive la traduzione in inglese al posto della trascrizione. Un vero cambio di lingua nel video viene seguito.</li>
+<li>Se Whisper sbaglia lingua in un video, scegli tu la lingua parlata (c'è una casella di ricerca).</li>
+</ul>
+<h3 id="trascrizione-corretta">Trascrizione corretta</h3>
+<p><strong>Correggi la grammatica della trascrizione</strong> (attiva di serie): le frasi capite male vengono corrette prima di essere tradotte (solo piccole correzioni nella stessa lingua: le frasi non vengono riscritte). Con Gemini e gli altri modelli avviene nella stessa richiesta della traduzione; con Google o DeepL la fa Gemini (o Groq) a gruppi.</p>
+<h3 id="trascrivere-sul-tuo-computer">Trascrivere sul tuo computer</h3>
+<p>Con un server Whisper compatibile (per esempio Speaches): <strong>Trascrizione con → Server sul tuo computer</strong>, indirizzo (di solito <code>http://localhost:8000/v1</code>) e modello.</p>
+<h3 id="firefox_1">Firefox</h3>
+<p>Per catturare l'audio Firefox deve ammutolire il video, e l'estensione lo rimanda subito alle casse. Se non senti l'audio o la trascrizione non parte, clicca una volta sul video.</p>
+<hr />
+<h2 id="12-la-pagina-trascrizione-e-traduzione">12. La pagina "Trascrizione e traduzione"</h2>
+<p>Si apre dal popup con <strong>Trascrizione e traduzione</strong>. Contiene tutto il testo del video aperto.</p>
+<ul>
+<li><strong>Testo unico</strong>: originale e traduzione a paragrafi (o solo uno dei due), da leggere.</li>
+<li><strong>Frase per frase (e correzioni)</strong>: ogni frase con il suo tempo e i pulsanti <strong>⧉</strong> (copia), <strong>↻</strong> (ritraduci), <strong>🎙</strong> (ritrascrivi), <strong>✎</strong> (correggi), <strong>✕</strong> (togli).</li>
+<li><strong>Selezionare e copiare</strong>: seleziona una parte con il mouse → sopra compare una barra con <strong>Copia</strong> e i collegamenti a Google Traduttore, DeepL, Reverso (se selezioni nella traduzione, il verso è al contrario). La pagina non si ridisegna mentre selezioni.</li>
+<li><strong>Copia il testo</strong>, <strong>Scarica testo (.txt)</strong>, <strong>Sottotitoli originali / tradotti / doppi (.srt)</strong>: per tenerli o usarli in un altro lettore.</li>
+<li><strong>Trascrivere un file intero</strong>: dal computer o dal video della scheda, senza doverlo guardare. Funziona anche senza nessun video aperto.</li>
+<li><strong>Carica sottotitoli da file (.srt, .vtt)</strong>: per i film scaricati con i sottotitoli a parte.</li>
+<li><strong>Rifai la traduzione / Rifai la trascrizione</strong>: cancellano quello salvato per il video e lo rifanno (le correzioni a mano restano).</li>
+</ul>
+<h3 id="tradurre-con-una-chat-senza-consumare-quote">Tradurre con una chat, senza consumare quote</h3>
+<ol>
+<li>Premi <strong>Copia trascrizione</strong>: copia le frasi numerate con le istruzioni (per i video lunghi a parti di 250: il pulsante dice quale parte copierà).</li>
+<li>Incollale in una chat (ChatGPT, Claude, Gemini…) e copia la sua risposta.</li>
+<li>Premi <strong>Incolla traduzione</strong>, incolla la risposta e conferma. L'estensione legge le righe numerate, controlla che sia davvero una traduzione e la usa sul video. Resta salvata.</li>
+</ol>
+<hr />
+<h2 id="13-i-servizi-di-traduzione">13. I servizi di traduzione</h2>
+<p>Si scelgono nel popup, <strong>Traduzione → Come tradurre</strong>. Scegli il servizio, incolla la chiave in <strong>Chiave API</strong>, premi Invio: il modello si sceglie da solo (per cambiarlo: <strong>Carica modelli</strong>).</p>
+<table>
+<thead>
+<tr>
+<th>Servizio</th>
+<th>Costo</th>
+<th>Qualità</th>
+<th>Cosa serve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google Traduttore</td>
+<td>gratis</td>
+<td>discreta</td>
+<td>niente</td>
+</tr>
+<tr>
+<td><strong>Gemini</strong> ⭐ consigliato</td>
+<td>gratis</td>
+<td>ottima, capisce il discorso</td>
+<td>chiave da aistudio.google.com/apikey</td>
+</tr>
+<tr>
+<td>Groq</td>
+<td>gratis</td>
+<td>buona, velocissimo</td>
+<td>chiave da console.groq.com/keys (la stessa della trascrizione)</td>
+</tr>
+<tr>
+<td>Mistral</td>
+<td>gratis</td>
+<td>buona, ottima per le lingue europee</td>
+<td>chiave da console.mistral.ai</td>
+</tr>
+<tr>
+<td>OpenRouter</td>
+<td>gratis (modelli ":free")</td>
+<td>varia</td>
+<td>chiave da openrouter.ai/keys</td>
+</tr>
+<tr>
+<td>Microsoft Translator</td>
+<td>gratis fino a 2 milioni di caratteri al mese</td>
+<td>molto buona</td>
+<td>account Azure, risorsa "Translator" piano F0: chiave e <strong>area</strong> (es. <em>westeurope</em>)</td>
+</tr>
+<tr>
+<td>DeepL</td>
+<td>gratis fino a un limite mensile</td>
+<td>molto alta</td>
+<td>chiave "API Free" da deepl.com/pro-api (chiede una carta per verifica)</td>
+</tr>
+<tr>
+<td>Modello sul computer</td>
+<td>gratis, senza limiti</td>
+<td>dipende dal PC</td>
+<td>Ollama o LM Studio (<a href="#15-un-modello-di-traduzione-sul-tuo-computer">sezione 15</a>)</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>a pagamento (pochi centesimi a video)</td>
+<td>ottima</td>
+<td>chiave da console.anthropic.com</td>
+</tr>
+<tr>
+<td>YouTube riga per riga</td>
+<td>gratis</td>
+<td>scarsa</td>
+<td>niente</td>
+</tr>
+</tbody>
+</table>
+<p>Gemini, Groq, Mistral, OpenRouter, Claude e il modello sul computer sono <strong>modelli linguistici</strong>: oltre a tradurre capiscono il discorso, spiegano le parole nel contesto, trovano i modi di dire e correggono la trascrizione. Google, Microsoft e DeepL sono <strong>traduttori classici</strong>: traducono bene, ma non fanno il resto.</p>
+<p>Le chiavi si vedono e si copiano con i pulsanti <strong>Mostra</strong> e <strong>Copia</strong> accanto alla casella (utile per l'add-on di Kodi). Non mostrarle in video o in foto: chi le vede le può usare.</p>
+<h3 id="servizi-di-riserva">Servizi di riserva</h3>
+<p>Quando il servizio scelto ha finito le richieste gratuite di oggi, nel popup sotto "Come tradurre" compare un avviso giallo: dice a che ora tornano (le quote di Gemini si azzerano a mezzanotte della California, verso le 9 in Italia) e quale servizio si usa intanto. Con <strong>"Riprova … adesso"</strong> la traduzione del video riprende subito con il servizio scelto (utile se hai cambiato chiave o modello).
+Con <strong>Se finiscono le richieste gratuite, continua con un altro servizio di cui hai la chiave</strong> (attiva di serie), quando un servizio esaurisce la quota del giorno l'estensione continua da sola con il primo altro servizio di cui hai inserito la chiave, in quest'ordine: <strong>Gemini → Groq → Mistral → OpenRouter → Microsoft → DeepL</strong>, e alla fine <strong>Google</strong>. Il servizio esaurito viene saltato fino al giorno dopo.</p>
+<p>Per inserire più chiavi: scegli un servizio, incolla la sua chiave, poi torna al servizio che preferisci. Sotto la casella vedi l'elenco dei servizi pronti e di quelli finiti per oggi.</p>
+<hr />
+<h2 id="14-consumare-meno-richieste-gratuite">14. Consumare meno richieste gratuite</h2>
+<ul>
+<li><strong>Niente si traduce due volte</strong>: traduzioni, trascrizioni, spiegazioni e correzioni restano salvate. Rivedere un video, anche guardato solo in parte, non costa niente.</li>
+<li>La traduzione si chiede a <strong>gruppi di 120 frasi</strong>: un film di due ore costa circa 12 richieste a Gemini.</li>
+<li>Al passaggio del mouse si usa il dizionario di Google (gratis); il modello solo quando clicchi.</li>
+<li>Il modello predefinito di Gemini è <strong>gemini-flash-lite-latest</strong>, quello con più richieste gratuite al giorno.</li>
+<li>Le quote di Gemini si azzerano verso le <strong>9 del mattino</strong> (ora italiana). Quanto hai usato lo vedi su aistudio.google.com.</li>
+<li>Per un film intero senza toccare le quote: <strong>Copia trascrizione / Incolla traduzione</strong> con una chat (<a href="#12-la-pagina-trascrizione-e-traduzione">sezione 12</a>).</li>
+</ul>
+<hr />
+<h2 id="15-un-modello-di-traduzione-sul-tuo-computer">15. Un modello di traduzione sul tuo computer</h2>
+<p>Gratis, senza limiti e privato. Serve un PC abbastanza potente (16 GB di RAM consigliati).</p>
+<h3 id="con-ollama">Con Ollama</h3>
+<ol>
+<li>Installa Ollama da <strong>ollama.com</strong>.</li>
+<li>Scarica un modello: <code>ollama pull gemma3:12b</code> (o <code>gemma3:4b</code> se il PC è meno potente).</li>
+<li>Permetti le richieste del browser (senza questo passaggio Ollama le rifiuta):
+   - <strong>Windows</strong>: nel prompt dei comandi <code>setx OLLAMA_ORIGINS "chrome-extension://*,moz-extension://*"</code>, poi chiudi Ollama (icona vicino all'orologio → Quit) e riaprilo;
+   - <strong>Mac</strong>: <code>launchctl setenv OLLAMA_ORIGINS "chrome-extension://*,moz-extension://*"</code>, poi riapri Ollama;
+   - <strong>Linux</strong>: <code>sudo systemctl edit ollama</code>, aggiungi <code>[Service]</code> e <code>Environment="OLLAMA_ORIGINS=chrome-extension://*,moz-extension://*"</code>, poi <code>sudo systemctl restart ollama</code>.</li>
+<li>Nel popup scegli <strong>Modello sul tuo computer</strong> (indirizzo <code>http://localhost:11434/v1</code>) e premi <strong>Carica modelli</strong>.</li>
+</ol>
+<h3 id="con-lm-studio">Con LM Studio</h3>
+<p>Scarica un modello, nella sezione <em>Developer</em> avvia il server e attiva <strong>Enable CORS</strong>. Nel popup scrivi l'indirizzo <code>http://localhost:1234/v1</code> e premi <strong>Carica modelli</strong>.</p>
+<hr />
+<h2 id="16-se-qualcosa-non-va">16. Se qualcosa non va</h2>
+<p>Guarda prima la <strong>riga di stato in fondo al popup</strong>: dice cosa sta facendo l'estensione e perché si è fermata.</p>
+<table>
+<thead>
+<tr>
+<th>Cosa vedi</th>
+<th>Cosa fare</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Nessun segnale da YouTube"</td>
+<td>Premi <strong>Concedi accesso</strong> se compare, poi ricarica la pagina.</td>
+</tr>
+<tr>
+<td>I sottotitoli doppi non compaiono</td>
+<td>Controlla che <strong>DS</strong> sia acceso e che il video abbia i sottotitoli (CC) accesi. Su YouTube, se non basta, cambia lingua dei sottotitoli dall'ingranaggio e rimetti quella giusta.</td>
+</tr>
+<tr>
+<td>"Hai finito i minuti di trascrizione" (Groq)</td>
+<td>La quota gratuita di Whisper è finita (all'ora o al giorno): il messaggio dice tra quanto si libera. Le frasi già trascritte restano.</td>
+</tr>
+<tr>
+<td>"Limite di richieste raggiunto"</td>
+<td>Il servizio ha rifiutato perché hai superato la quota: l'estensione aspetta e riprova da sola (al minuto) o passa a un servizio di riserva (al giorno). Non si perde niente.</td>
+</tr>
+<tr>
+<td>"Chiave non valida"</td>
+<td>Ricopia la chiave (pulsante <strong>Mostra</strong> per controllarla).</td>
+</tr>
+<tr>
+<td>La trascrizione è nella lingua sbagliata</td>
+<td>Imposta <strong>Lingua parlata</strong>, poi nella pagina "Trascrizione e traduzione" premi <strong>Rifai la trascrizione</strong>.</td>
+</tr>
+<tr>
+<td>Una frase è tradotta o trascritta male</td>
+<td>Pulsante <strong>⚑</strong> sui sottotitoli → Ritraduci, Ritrascrivi o Correggi a mano.</td>
+</tr>
+<tr>
+<td>Netflix, Disney+, Prime Video</td>
+<td>Non si può: il browser protegge l'audio di questi siti.</td>
+</tr>
+<tr>
+<td>Firefox: il video resta muto</td>
+<td>Clicca una volta sul video.</td>
+</tr>
+<tr>
+<td>Sulle pagine non compare la scheda</td>
+<td>Controlla nel popup → 📄 Pagine l'interruttore generale, "Scheda passando il mouse", "Traduzione quando evidenzi" e "Attiva su questo sito". Dopo l'installazione ricarica le pagine già aperte. Nelle pagine interne del browser (impostazioni, negozio delle estensioni) le estensioni non funzionano. In Firefox: about:addons → l'estensione → <strong>Permessi</strong> → "Accedere ai dati su tutti i siti".</td>
+</tr>
+<tr>
+<td>Un PDF si apre senza schede</td>
+<td>Apri il PDF con il lettore dell'estensione (<a href="#9-i-pdf">sezione 9</a>). Se le parole escono strane prova «Caratteri»; se è una scansione senza testo riconosciuto, non ci sono parole da leggere.</td>
+</tr>
+<tr>
+<td>Anki non risponde</td>
+<td>Anki deve essere aperto, con AnkiConnect installato; se la finestra del permesso è stata chiusa con "No", riprova con "Prova il collegamento con Anki".</td>
+</tr>
+<tr>
+<td>Le schede compaiono due volte</td>
+<td>Sono ancora accese le estensioni vecchie (Sottotitoli Doppi o Parole al Volo separate): toglile.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="17-privacy-e-note">17. Privacy e note</h2>
+<ul>
+<li>Le chiavi e tutto quello che salvi (traduzioni, vocabolario, correzioni) restano <strong>nel tuo browser</strong>. Non c'è nessun server dell'estensione.</li>
+<li>I testi vengono mandati solo al servizio che scegli (Google, Gemini, Groq…): sulle pagine, le parole e le frasi su cui passi il mouse. Gli strumenti per imparare mandano la parola (e, per il controllo della scrittura, la frase) a Wiktionary, Tatoeba, LanguageTool e Wikimedia Commons; si spengono nel popup. Con i piani gratuiti alcuni servizi (per esempio Gemini) possono usare i testi per migliorare i loro modelli.</li>
+<li>Anki riceve le carte solo sul tuo computer (127.0.0.1).</li>
+<li>Il programma per yt-dlp scarica l'audio solo per trascriverlo e lo cancella subito.</li>
+</ul>
+<hr />
+<h2 id="novita">Novità</h2>
+<ul>
+<li><strong>1.4.0</strong> (da qui in poi esce solo questa estensione, con questa guida unica):</li>
+<li><strong>Interfaccia nella lingua di «Traduci in»</strong> (casella <strong>Interfaccia in questa lingua</strong> nel popup).</li>
+<li><strong>Spiegazioni sempre nella tua lingua</strong>: una risposta in un'altra lingua (per esempio in inglese dopo averla rifatta con Groq) viene richiesta di nuovo o tolta; il falso amico compare solo se è vero e riguarda una parola della tua lingua (niente più «embarrassed in inglese» o frasi come «non è un falso amico…»).</li>
+<li><strong>Modi di dire ricordati</strong> nella scheda anche quando una spiegazione rifatta non li riporta, e <strong>☆ Salva il modo di dire</strong>.</li>
+<li><strong>Etimologie più complete</strong>: la catena di Wiktionary si segue fino alla radice, anche attraverso altre lingue.</li>
+<li><strong>PDF</strong>: lettere strane corrette in tutte le codifiche comuni (anche i PDF fatti con Word sul Mac, come «Blues pro bláznivou holku» di Hrabě); i libri scansionati di archive.org non restano più con le pagine bianche.</li>
+<li><strong>1.3.0</strong>: traduzione in lingua sbagliata (per esempio in arabo) rifiutata, con «Rifai tutta la traduzione» nel ⚑; dirette sincronizzate più robuste; prima correzione dei PDF cechi.</li>
+</ul></main></body></html>

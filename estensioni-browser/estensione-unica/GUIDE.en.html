@@ -1,0 +1,499 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.0 — Guide</title><style>
+:root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
+@media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:40px 22px 80px;background:var(--paper);min-height:100vh;box-shadow:0 0 0 1px var(--line)}
+h1{font-size:2.1em;line-height:1.2;margin:.2em 0 .4em;border-bottom:3px solid var(--accent);padding-bottom:.3em}
+h2{font-size:1.45em;margin:2.2em 0 .6em;padding-top:.4em;border-top:1px solid var(--line)}
+h3{font-size:1.15em;margin:1.6em 0 .4em;color:var(--accent)}
+a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+p,li{color:var(--ink)} li{margin:.25em 0}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--accent);background:var(--code);border-radius:0 8px 8px 0}
+code{background:var(--code);padding:.1em .35em;border-radius:5px;font-size:.92em}
+pre{background:var(--code);padding:14px 16px;border-radius:10px;overflow:auto;line-height:1.45} pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+hr + h2{border-top:0;margin-top:.6em;padding-top:0}
+pre{white-space:pre-wrap;word-break:break-word}
+.toc-note{color:var(--soft)}
+</style></head>
+<body><main><p><em>Version 1.4.0</em></p>
+<h1 id="sottotitoli-doppi-parole-al-volo-browser-extension">Sottotitoli Doppi + Parole al Volo — browser extension</h1>
+<p><em>Versione italiana → <a href="LEGGIMI.html">LEGGIMI</a></em></p>
+<p><strong>Learn languages by watching videos and reading.</strong> One extension for two things:</p>
+<ul>
+<li><strong>🎬 in videos</strong> (Sottotitoli Doppi): under the original subtitles you see the translation in your language, in a different colour. Every word can be hovered to see its meaning in that sentence, hear it and save it to your personal vocabulary. It works on YouTube and on almost every website with video or audio; if a video has no subtitles, the extension listens to the audio and writes them itself;</li>
+<li><strong>📄 on web pages and PDFs</strong> (Parole al Volo): hover a word on any page to get its card; select some text to translate it all at once.</li>
+</ul>
+<p>Vocabulary, known words, service keys, voices and Anki are shared by both.</p>
+<p>Browsers: <strong>Edge, Chrome, Brave</strong> (and other Chromium-based browsers) and <strong>Firefox</strong>.</p>
+<blockquote>
+<p><strong>Interface language.</strong> The extension's menus are in Italian. Tick <strong>Interfaccia in questa lingua</strong> (<em>interface in this language</em>) under <strong>Traduci in</strong> (<em>translate into</em>) in the popup and the whole interface — popup, cards, pages — is shown in the language you translate into (translated once with Google Translate and remembered). In this guide buttons are written as they appear in Italian, in <strong>bold</strong>, followed by their meaning.</p>
+</blockquote>
+<hr />
+<h2 id="contents">Contents</h2>
+<ol>
+<li><a href="#1-what-it-does">What it does</a></li>
+<li><a href="#2-installing-and-updating">Installing and updating</a></li>
+<li><a href="#3-getting-started-5-minutes">Getting started (5 minutes)</a></li>
+<li><a href="#4-the-popup-video-and-pages">The popup: Video and Pages</a></li>
+<li><a href="#5-where-it-works">Where it works</a></li>
+<li><a href="#6-subtitles-on-the-video">Subtitles on the video</a></li>
+<li><a href="#7-learning-with-words">Learning with words</a></li>
+<li><a href="#8-on-web-pages">On web pages</a></li>
+<li><a href="#9-pdf-files">PDF files</a></li>
+<li><a href="#10-your-vocabulary">Your vocabulary</a></li>
+<li><a href="#11-videos-without-subtitles-transcribing-the-audio">Videos without subtitles: transcribing the audio</a></li>
+<li><a href="#12-the-trascrizione-e-traduzione-page">The "Trascrizione e traduzione" page</a></li>
+<li><a href="#13-translation-services">Translation services</a></li>
+<li><a href="#14-using-fewer-free-requests">Using fewer free requests</a></li>
+<li><a href="#15-a-translation-model-on-your-own-computer">A translation model on your own computer</a></li>
+<li><a href="#16-troubleshooting">Troubleshooting</a></li>
+<li><a href="#17-privacy">Privacy</a></li>
+</ol>
+<hr />
+<h2 id="1-what-it-does">1. What it does</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🎬 <strong>Two lines</strong></td>
+<td>Original on top, translation below (or the other way round), right on the video.</td>
+</tr>
+<tr>
+<td>🧠 <strong>Translation that follows the conversation</strong></td>
+<td>With Gemini and the other AI models, each line is translated with the surrounding lines in mind.</td>
+</tr>
+<tr>
+<td>👆 <strong>Interactive words</strong></td>
+<td>Hover a word to see what it means in that sentence; click for a full explanation.</td>
+</tr>
+<tr>
+<td>🔗 <strong>Translation ↔ original</strong></td>
+<td>Hover a translated word and the original word it comes from lights up. Articles and prepositions that only the translation needs are marked.</td>
+</tr>
+<tr>
+<td>🗣️ <strong>Pronunciation</strong></td>
+<td>Hear any word; the video volume drops automatically while it speaks.</td>
+</tr>
+<tr>
+<td>⭐ <strong>Vocabulary</strong></td>
+<td>Save words and expressions with their sentence and the moment in the video; export everything to Anki.</td>
+</tr>
+<tr>
+<td>🎙️ <strong>Audio transcription</strong></td>
+<td>Video without subtitles? The audio is transcribed with Whisper (free with a Groq key).</td>
+</tr>
+<tr>
+<td>📄 <strong>Full text</strong></td>
+<td>A page with the whole text of the video, to read, copy or download (.txt, .srt).</td>
+</tr>
+<tr>
+<td>✏️ <strong>Corrections</strong></td>
+<td>Redo or fix a badly translated or transcribed line with one click.</td>
+</tr>
+<tr>
+<td>💸 <strong>Low usage</strong></td>
+<td>Everything is saved: watching a video again costs nothing. If a free service runs out of requests, another one takes over automatically.</td>
+</tr>
+<tr>
+<td>📄 <strong>Web pages</strong></td>
+<td>On any page: word card on hover, translation of the text you select.</td>
+</tr>
+<tr>
+<td>📕 <strong>PDF</strong></td>
+<td>A PDF reader of its own with the same cards (scanned books too, when they contain recognised text).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-installing-and-updating">2. Installing and updating</h2>
+<h3 id="edge-chrome-brave">Edge, Chrome, Brave</h3>
+<ol>
+<li>Unzip <code>sottotitoli-parole-chrome-vX.Y.Z.zip</code> into a folder you <strong>won't delete</strong> (for example <code>Documents\Sottotitoli Doppi</code>).</li>
+<li>Open <code>edge://extensions</code> (in Chrome: <code>chrome://extensions</code>).</li>
+<li>Turn on <strong>Developer mode</strong>.</li>
+<li>Click <strong>Load unpacked</strong> and choose the folder from step 1.</li>
+<li>Pin the extension icon to the toolbar (puzzle icon → pin) so the popup is one click away.</li>
+</ol>
+<h3 id="firefox">Firefox</h3>
+<ol>
+<li>Unsigned extensions only install in <strong>Firefox Nightly</strong> or <strong>Developer Edition</strong>: in <code>about:config</code> set <code>xpinstall.signatures.required</code> to <strong>false</strong>.</li>
+<li>Open <code>about:addons</code>, click the gear ⚙ → <strong>Install Add-on From File…</strong> and choose <code>sottotitoli-parole-firefox-vX.Y.Z.xpi</code>.</li>
+<li>In <code>about:addons</code> → the extension → <strong>Permissions</strong>, "Access your data for all websites" must be on. If <strong>Concedi accesso</strong> (<em>grant access</em>) appears in the popup, click it.</li>
+</ol>
+<h3 id="updating-without-losing-anything">Updating without losing anything</h3>
+<ul>
+<li><strong>Edge/Chrome:</strong> unzip the new version <strong>into the same folder</strong>, replacing the old files, then click ↻ on the extension's card in <code>edge://extensions</code> and reload open tabs.</li>
+<li><strong>Firefox:</strong> install the new .xpi over the old one.</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Never remove the extension to update it</strong>: removing it also deletes your keys, saved translations and vocabulary.</p>
+</blockquote>
+<h3 id="videos-and-audio-files-on-your-computer">Videos and audio files on your computer</h3>
+<p>For files opened in the browser (addresses starting with <code>file:///</code>): in <code>edge://extensions</code> open the extension's <strong>Details</strong> and turn on <strong>Allow access to file URLs</strong>.</p>
+<h3 id="if-you-used-the-two-separate-extensions">If you used the two separate extensions</h3>
+<p>Sottotitoli Doppi and Parole al Volo are no longer released separately: this one replaces both. It starts empty:
+1. install it next to the old ones (don't remove them yet);
+2. bring over your <strong>known words</strong> and <strong>vocabulary</strong>: here press <strong>⇄ Sincronizza adesso</strong> on the <strong>Parole che conosco</strong> page and <strong>⇄ Sincronizza con le altre estensioni</strong> in the vocabulary (needs Sottotitoli Doppi 5.20.1 / Parole al Volo 1.13.1 or later), or use <strong>Esporta in un file</strong> in the old one and <strong>Importa da un file…</strong> here;
+3. <strong>keys</strong> and <strong>settings</strong> come along with ⇄ (only those you haven't set here yet);
+4. for the yt-dlp helper: open its page from the popup (🎬 Video → Video senza sottotitoli → Programma per yt-dlp) and run the installer again;
+5. when everything works, remove the old two: with both active, cards appear twice.</p>
+<hr />
+<h2 id="3-getting-started-5-minutes">3. Getting started (5 minutes)</h2>
+<ol>
+<li><strong>Open the popup</strong> (click the extension icon) and at the top choose <strong>Traduci in</strong> (<em>translate into</em>): your language.</li>
+<li>Under <strong>Traduzione → Come tradurre</strong> (<em>translation → how to translate</em>) leave <strong>Google Traduttore</strong> to start straight away, with no keys.</li>
+<li>Open a YouTube video in the language you're learning and turn on subtitles (<strong>CC</strong>). The two lines appear.</li>
+<li>Hover a word in the original line: the video pauses and a card shows its meaning.</li>
+</ol>
+<p><strong>For much better translations (recommended, free):</strong>
+1. Go to <strong>aistudio.google.com/apikey</strong> with your Google account and click <em>Create API key</em> (no credit card needed).
+2. In the popup choose <strong>Come tradurre → Gemini</strong>, paste the key into <strong>Chiave API</strong> (<em>API key</em>) and press Enter. The model is chosen automatically.</p>
+<p><strong>For videos without subtitles</strong> you also need a free <strong>Groq</strong> key: see <a href="#11-videos-without-subtitles-transcribing-the-audio">section 11</a>.</p>
+<hr />
+<h2 id="4-the-popup-video-and-pages">4. The popup: Video and Pages</h2>
+<p>The extension button opens the popup with two tabs at the top; it reopens on the last tab you used.</p>
+<ul>
+<li><strong>🎬 Video</strong>: everything about videos (subtitles, appearance, transcription, live streams, subtitle translation service, pronunciation, Anki…).</li>
+<li><strong>📄 Pagine</strong> (<em>pages</em>): web pages and PDFs (card on hover, translation of selected text, PDF reader, service for explaining words…). See <a href="#8-on-web-pages">section 8</a>.</li>
+</ul>
+<p>Shared by both: service keys, the language you translate into (and the interface language), <strong>vocabulary</strong>, <strong>known words</strong>, voices, Anki, the yt-dlp helper. Separate: the chosen service (in videos it translates subtitles, on pages it explains words; until you pick one under Pages, the Video one is used), disabled sites, the single Anki deck, the colour of known words on pages, the «Aa» Latin letters.</p>
+<hr />
+<h2 id="5-where-it-works">5. Where it works</h2>
+<ul>
+<li><strong>YouTube</strong>, including YouTube videos embedded in other websites.</li>
+<li><strong>Any website with video or audio</strong>: Vimeo, VK, news sites, podcasts, online courses, live TV sites. If the video has its own subtitles they are used and translated; otherwise you can have them transcribed.</li>
+<li><strong>Media files opened directly in the browser</strong>, from a link or from your computer (mp4, webm, mp3, m4a, ogg, wav, flac…): transcription starts by itself when you press Play.</li>
+<li><strong>It does not work</strong> on DRM-protected sites (Netflix, Disney+, Prime Video…): the browser doesn't let extensions listen to their audio. The popup's status line tells you.</li>
+<li>To turn the extension off on a particular site: popup → <strong>Altro</strong> (<em>more</em>) → turn off activation on that site.</li>
+</ul>
+<hr />
+<h2 id="6-subtitles-on-the-video">6. Subtitles on the video</h2>
+<h3 id="turning-them-on-and-off-the-ds-button">Turning them on and off: the DS button</h3>
+<ul>
+<li><strong>On YouTube</strong> there's a <strong>DS</strong> button in the player's control bar, next to CC. <strong>On other sites</strong> it's a small "DS" in the top-right corner of the video.</li>
+<li><strong>On</strong> (yellow border): dual subtitles are shown. <strong>Off</strong>: they disappear and transcription stops, so no quota is used.</li>
+<li>If the dual subtitles disappear for any reason, press DS and they come back.</li>
+<li>The same switch is in the popup: <strong>Altro → Sottotitoli doppi attivi</strong>.</li>
+</ul>
+<h3 id="the-two-buttons-next-to-the-subtitles">The two buttons next to the subtitles</h3>
+<p>Hover the subtitles and two buttons appear on the right:
+- <strong>⚑ — Wrong line?</strong> Opens a card with:
+  - <strong>↻ Ritraduci</strong> (<em>translate again</em>): asks for that line's translation again (it jumps the queue);
+  - <strong>🎙 Ritrascrivi</strong> (<em>transcribe again</em>, only for transcribed lines): Whisper listens to that line again with its most accurate model;
+  - <strong>✎ Correggi a mano</strong> (<em>correct by hand</em>): type the right original and/or translation yourself;
+  - <strong>✕ Togli</strong> (<em>remove</em>): for invented lines, e.g. during music.</p>
+<p>Corrections are saved with the video and are included in downloaded files.
+- <strong>⧉ — Copy or look up the line.</strong> Pauses the video and shows the line, which you can select with the mouse:
+  - <strong>Copia originale</strong>, <strong>Copia traduzione</strong>, <strong>Copia tutte e due</strong> (<em>copy original / translation / both</em>): if you select part of the text, only that part is copied;
+  - <strong>Apri in: Google Traduttore · DeepL · Reverso</strong> (<em>open in</em>): the line (or the selected part) opens in a new tab with the languages already set. Reverso shows words inside many real sentences. For language pairs Reverso can't open directly (e.g. Czech), the text is copied: just paste it into Reverso's box.</p>
+<h3 id="appearance">Appearance</h3>
+<p>Popup → <strong>Aspetto dei sottotitoli</strong> (<em>subtitle appearance</em>): what to show (both lines, original only, translation only), translation above or below, text size and translation size, colours, background, height on the video, font. Changes show immediately; <strong>Ripristina l'aspetto predefinito</strong> restores the defaults.</p>
+<p>Popup → <strong>Altro → Nascondi i sottotitoli del sito</strong>: hides the site's own subtitles so you don't see them twice.</p>
+<hr />
+<h2 id="7-learning-with-words">7. Learning with words</h2>
+<h3 id="the-word-card">The word card</h3>
+<ul>
+<li><strong>Hover</strong> a word in the original line: the video pauses and a card shows its meaning from Google's dictionary (free, no quota used).</li>
+<li><strong>Click</strong> the word: the card stays open and asks your chosen service (Gemini, Groq, Mistral, Claude…) for <strong>its meaning in that sentence</strong>: base form (e.g. <em>went → go</em>), part of speech, explanation and an example. One request, only when you want it.</li>
+<li>On the card:</li>
+<li><strong>🔈</strong> pronunciation with the synthetic voice (the code next to it, e.g. <em>DA</em>, shows the language); when a real recording of the word exists (Wiktionary), <strong>🔊</strong> appears next to it. Everywhere: <strong>🔊</strong> = real recording, <strong>🔈</strong> = synthetic voice;</li>
+<li><strong>☆</strong> save to your vocabulary;</li>
+<li><strong>↺ Riascolta la frase</strong> (<em>replay the line</em>): goes back to the start of the line and stops at the end;</li>
+<li><strong>Copia la parola / Copia la frase</strong> (<em>copy word / line</em>);</li>
+<li><strong>Apri in:</strong> Google Translate, DeepL, Reverso, <strong>WordReference</strong> (between English and Italian, Spanish, French, German, Portuguese) and <strong>Wiktionary</strong> (explains almost any word in almost any language).</li>
+<li>Close the card with <strong>×</strong> or <strong>Esc</strong>. When you move the mouse away from the subtitles the video resumes (you can turn this off: <strong>Altro → Pausa quando passi sulle parole</strong>).</li>
+<li>Explanations are saved even after closing the browser: the same word in the same sentence is never requested twice.</li>
+</ul>
+<h3 id="learning-tools">Learning tools</h3>
+<p><strong>Google dictionary</strong> (same request as the translation, free): translations ranked by usage with reverse translations on hover, definitions in the word's own language, synonyms and "see also", and "Did you mean…" in the spelling check. Definitions also come from the Wiktionary edition of the word's language (or English Wiktionary), each with <strong>translate</strong>. <strong>Aa</strong> next to the subtitles shows Latin letters above each letter of Cyrillic, Greek, Armenian, Georgian, Hebrew, Japanese kana and Korean (above each word for Arabic, Persian, Urdu, Hindi): built-in tables, no service; kanji/Chinese lines get a whole-line reading from Google (free). Anki images can be checked and changed before saving (‹ ›, «altre…», ✕) and in the vocabulary (🖼); sources in popup → Anki. <strong>Parole che conosco</strong> (popup) opens the frequency list with import/export and <strong>⇄ Sincronizza adesso</strong> (direct sync of known words with Parole al Volo, no file); <strong>⇄</strong> in the vocabulary page moves vocabulary and known words to and from Parole al Volo. Level badges are clickable: «livello ≈ B1 ›» (indicative A1–C2 from the frequency rank) opens the words of that level, and for Japanese «JLPT N5 ›» opens the whole JLPT level word list (Jisho). <strong>Kanji / Chinese characters one by one</strong>: in the card of a Japanese or Chinese word, «Kanji uno per uno» has a button per character; it shows that character alone (meaning, readings in every language — on/kun, pinyin, Cantonese, Korean, Vietnamese —, clickable parts and radical, simplified/traditional form, strokes, JLPT/grade, HSK, Korean school hanja) with «scheda del carattere ›» to open it as a word (vocabulary, Anki) and «‹ Torna alla parola» to go back. Free (built-in Unihan/KANJIDIC/HSK data + Google), no model requests; «☆ salva il kanji» / «☆ salva tutti i kanji» save the single characters to the vocabulary. <strong>↺</strong> left of the subtitles replays the sentence, or (yellow) jumps back to the sentence you were reading while the video moved on. <strong>Live streams ahead of time</strong> (popup → videos without subtitles): on YouTube live streams the video is kept a few seconds behind while yt-dlp reads the audio ahead, so transcribed subtitles appear on time (needs the yt-dlp helper with ffmpeg). An orange <strong>🔊*</strong> means the recording is of another form of the word. <strong>⚑ Wrong translation?</strong> under the meaning lets you redo it with Google or the model, or fix it by hand.</p>
+<p>Below the meaning, the word card shows extra help, all <strong>free and without keys</strong>; each one can be switched off in the popup → <strong>Strumenti per imparare</strong>: word <strong>frequency</strong>, <strong>"la conosco?"</strong> (known words turn green in the subtitles and the popup shows what percentage of the video's words you know), noun <strong>gender</strong>, a <strong>spelling check</strong> (LanguageTool or the dictionary; when you click the word, the model also gives a 0-100 score in the same request), the word's <strong>etymology</strong>, a <strong>native speaker recording</strong> (the 🔊 button at the top of the card) and a <strong>conjugation/declension table</strong> (Wiktionary), and up to 3 <strong>real example sentences</strong> (Tatoeba). Clicking the word, the single request to the model also brings <strong>false friends</strong> and <strong>related words</strong>. Next to "↺ Riascolta la frase" there are <strong>🐢 slow</strong> and <strong>🔁 ×3</strong>. Optional (off by default): an <strong>image</strong> from Wikimedia Commons on your Anki cards.</p>
+<h3 id="from-the-translation-back-to-the-original">From the translation back to the original</h3>
+<ul>
+<li><strong>Hover a word in the translation</strong>: the original word it comes from lights up and a label shows it. Click → card for the original word.</li>
+<li>With Gemini and the other AI models the link is precise (requested for 8 lines at a time, in one request). With Google it's approximate: the label says "circa" (<em>approximately</em>).</li>
+<li><strong>Particles</strong>: articles, prepositions and auxiliaries that the translation adds but that don't translate any original word are <strong>dotted-underlined</strong>. Hover one and the "particella" label tells you which part of the original it belongs to.</li>
+<li><strong>The other way round</strong>: hovering an original word highlights its translation (particles more faintly).</li>
+</ul>
+<h3 id="phrases-and-expressions">Phrases and expressions</h3>
+<ul>
+<li><strong>Idioms</strong>: with an AI model, expressions that can't be translated word by word (<em>break the ice</em>, <em>give up</em>…) are <strong>underlined in orange</strong>. Hover one and the whole expression lights up with its real meaning. (Turn off: <strong>Altro → Evidenzia i modi di dire</strong>.)</li>
+<li><strong>Select in the original</strong>: press on the first word and drag to the last → card with the meaning of the whole expression.</li>
+<li><strong>Select in the translation</strong>: drag across several translated words → the matching part of the original lights up; the label offers <strong>Spiega</strong> (<em>explain</em>), <strong>Copia</strong> (<em>copy</em>) and the lookup links. Close with Esc.</li>
+</ul>
+<h3 id="pronunciation">Pronunciation</h3>
+<p><strong>Voice per language</strong>: ⚙ next to 🔈 in the word card lets you pick the voice for that language (saved). <strong>Azure Speech</strong> (free key, 500,000 characters a month): Microsoft's "Natural" voices in any browser, Firefox included — popup → Pronuncia delle parole.</p>
+<p>The language is taken from the word or the video. The voice is your computer's (Edge's "Natural" voices are excellent); if missing, Google's online voice is used. While it speaks, the video is turned down and then restored.</p>
+<p>Popup → <strong>Pronuncia delle parole</strong> (<em>word pronunciation</em>): language (searchable list of 98 languages), voice, <strong>Prova la voce</strong> (<em>test the voice</em>).</p>
+<hr />
+<h2 id="8-on-web-pages">8. On web pages</h2>
+<p>On any page (articles, Wikipedia, online books…) words in another language have their card. Over video subtitles these cards don't appear: the ones from <a href="#7-learning-with-words">section 7</a> are already there.</p>
+<ul>
+<li><strong>Hover a word</strong> (stay still a moment): the card shows the word, its translation and Google's dictionary, <strong>IPA pronunciation</strong> and Latin-letter transcription for other alphabets, <strong>etymology</strong> from Wiktionary (following the chain back to the root, even through other languages), the <strong>sentence</strong> with its translation, 🔈/🔊 to listen, ☆ to save, copy buttons and links to Google Translate, DeepL, Reverso, WordReference and Wiktionary, plus the same learning tools as in videos.</li>
+<li>With a <strong>Gemini or Groq</strong> key, <strong>"Spiega con Gemini"</strong> (<em>explain with…</em>, one request) gives the meaning <em>in that sentence</em>, the base form, whether it's part of an idiom, an example, and in the same request etymology, IPA, false friends (only real ones, compared with words of your language), related words and a spelling score. Everything is written in the language you translate into: an answer in the wrong language is asked again or dropped.</li>
+<li><strong>Idioms</strong>: the card reports the idiom the word belongs to (the other words get a light dashed underline); it is remembered, and <strong>☆ Salva il modo di dire</strong> (<em>save the idiom</em>) puts it in your vocabulary.</li>
+<li><strong>Selecting several words</strong> opens a panel with the translation of the whole text, transcription, IPA on request, listening, ☆ and Anki; with a model also <strong>"Traduci meglio"</strong> (<em>translate better</em>).</li>
+<li><strong>⚑ Traduzione sbagliata?</strong> (<em>wrong translation?</em>): redo with Google or with the model, correct by hand (saved), or change the detected language (also for the whole site).</li>
+<li>Popup → 📄 Pagine: master switch (<strong>Alt+Shift+Y</strong>), <strong>card on hover</strong> (<strong>Alt+Shift+M</strong>) and <strong>translation when selecting</strong> (<strong>Alt+Shift+S</strong>), per-site switch, text language, when the card appears and after how long, colour of the words you know.</li>
+<li>Requests: Google is free; the model only when you press its buttons.</li>
+</ul>
+<hr />
+<h2 id="9-pdf-files">9. PDF files</h2>
+<p>The browser's PDF viewer doesn't let extensions in, so the extension has its own reader (Mozilla's pdf.js) with the same cards and selection translation.</p>
+<ul>
+<li>Popup → 📄 Pagine → <strong>«📄 Apri questo PDF con Parole al Volo»</strong> when the tab shows a PDF, or <strong>«📄 Lettore PDF»</strong> → «📂 Apri un PDF…» for a file on your computer; <strong>«Apri sempre i PDF con Parole al Volo»</strong> opens every PDF there automatically.</li>
+<li><strong>Wrong characters</strong> («Pøíliš», «P¯ÌliöÌ», «Ïðèâåò» instead of «Příliš», «Привет»): many older PDFs store text in one encoding but declare another. The reader notices and fixes it by itself (Central European, Cyrillic, Greek, Turkish, Baltic, Hebrew, Arabic, Thai, Vietnamese, Mac and DOS encodings, double-encoded UTF-8, Chinese/Japanese/Korean); the bar says which encoding it fixed, and <strong>«Caratteri»</strong> lets you choose by hand. Accents written separately (LaTeX: «ˇcesk´y») are joined to their letter.</li>
+<li><strong>Scanned books</strong> (archive.org, Google Books…): the pages are images (JBIG2, JPEG 2000) and are shown; when the PDF contains the recognised text (OCR), cards work too.</li>
+</ul>
+<hr />
+<h2 id="10-your-vocabulary">10. Your vocabulary</h2>
+<ul>
+<li>On a word or expression card press <strong>☆</strong>: it's saved with the sentence, its translation and the moment in the video.</li>
+<li>Saved words are <strong>underlined in light blue</strong> in the subtitles of every video.</li>
+<li>Popup → <strong>Il mio vocabolario</strong> (<em>my vocabulary</em>): search, reopen the video at the right moment, mark a word as learned (it's no longer highlighted) or delete it.</li>
+<li><strong>Esporta per Anki</strong> (<em>export for Anki</em>): downloads a text file. In Anki: <em>File → Import</em> → choose the file (note type "Basic"). Front: the word with its sentence; back: meaning, translation and link to the video.</li>
+</ul>
+<hr />
+<h2 id="11-videos-without-subtitles-transcribing-the-audio">11. Videos without subtitles: transcribing the audio</h2>
+<p>If a video has no subtitles, the extension listens to the audio and transcribes it with <strong>Whisper</strong>; the lines are then translated like any others, with interactive words.</p>
+<h3 id="one-time-setup">One-time setup</h3>
+<ol>
+<li>Create a free key at <strong>console.groq.com/keys</strong> (no credit card).</li>
+<li>Popup → <strong>Video senza sottotitoli → Chiave Groq</strong> (<em>videos without subtitles → Groq key</em>): paste it and press Enter.</li>
+</ol>
+<h3 id="three-ways-to-transcribe-popup-video-senza-sottotitoli">Three ways to transcribe (popup → Video senza sottotitoli)</h3>
+<ul>
+<li><strong>Mentre guardo</strong> (<em>while watching</em>): transcribes what you're watching, a few seconds behind. A quick Google translation appears first (slightly transparent) and is then replaced by your chosen service's translation.</li>
+<li><strong>Completa</strong> (<em>complete</em>): as soon as you open the video, the whole audio is downloaded and transcribed in chunks, starting from where you are. Subtitles stay in sync even when you skip around. On YouTube, Vimeo and similar sites it needs the <strong>yt-dlp helper</strong> (below); direct media files don't.</li>
+<li><strong>Spenta</strong> (<em>off</em>): doesn't start by itself; start it with <strong>Trascrivi l'audio di questo video</strong> (<em>transcribe this video's audio</em>).</li>
+</ul>
+<p>You can choose a <strong>default mode</strong> and a different one <strong>for this video</strong>. "Completa solo fino a… minuti" (<em>complete only up to… minutes</em>) prevents a long film opened by mistake from using up your quota.</p>
+<h3 id="the-yt-dlp-helper-only-for-completa-on-youtube-and-similar">The yt-dlp helper (only for "Completa" on YouTube and similar)</h3>
+<p>Browsers don't let extensions download audio from YouTube, so a small helper program is installed once.
+1. Popup → <strong>Video senza sottotitoli → Programma per yt-dlp</strong>.
+2. Download the installer and run it (on Windows double-click; if Windows warns you: <em>More info → Run anyway</em>).
+3. Go back to the page and press the check button: it must say it is installed and working.</p>
+<p>It updates itself. The audio is only used for transcription and then deleted (YouTube's terms don't allow downloading videos).</p>
+<h3 id="transcription-language">Transcription language</h3>
+<ul>
+<li><strong>Lingua parlata</strong> (<em>spoken language</em>): leave it on automatic detection. The extension decides the language from the first chunks with enough speech and then <strong>forces it on Whisper</strong>, so it doesn't switch languages or write an English translation instead of a transcription. Real language changes in the video are still followed.</li>
+<li>If Whisper gets a video's language wrong, choose it yourself (the list has a search box).</li>
+</ul>
+<h3 id="corrected-transcription">Corrected transcription</h3>
+<p><strong>Correggi la grammatica della trascrizione</strong> (<em>correct the transcription's grammar</em>, on by default): misheard words are fixed before translation. With Gemini and the other AI models this happens in the same request as the translation; with Google or DeepL, Gemini (or Groq) does it in batches.</p>
+<h3 id="transcribing-on-your-own-computer">Transcribing on your own computer</h3>
+<p>With a Whisper server compatible with the OpenAI API (e.g. Speaches): <strong>Trascrizione con → Server sul tuo computer</strong>, its address (usually <code>http://localhost:8000/v1</code>) and model.</p>
+<h3 id="firefox_1">Firefox</h3>
+<p>To capture audio Firefox has to mute the video; the extension immediately sends the sound back to your speakers. If you hear nothing or transcription doesn't start, click the video once.</p>
+<hr />
+<h2 id="12-the-trascrizione-e-traduzione-page">12. The "Trascrizione e traduzione" page</h2>
+<p>Open it from the popup with <strong>Trascrizione e traduzione</strong> (<em>transcription and translation</em>). It contains the whole text of the current video.</p>
+<ul>
+<li><strong>Testo unico</strong> (<em>single text</em>): original and translation in paragraphs (or just one of them), for reading.</li>
+<li><strong>Frase per frase (e correzioni)</strong> (<em>line by line, with corrections</em>): every line with its time and the buttons <strong>⧉</strong> (copy), <strong>↻</strong> (translate again), <strong>🎙</strong> (transcribe again), <strong>✎</strong> (correct), <strong>✕</strong> (remove).</li>
+<li><strong>Select and copy</strong>: select part of the text with the mouse → a bar appears above it with <strong>Copia</strong> (<em>copy</em>) and links to Google Translate, DeepL, Reverso (if you select in the translation, the direction is reversed). The page never redraws while you're selecting.</li>
+<li><strong>Copia il testo</strong> (<em>copy the text</em>), <strong>Scarica testo (.txt)</strong>, <strong>Sottotitoli originali / tradotti / doppi (.srt)</strong>: to keep them or use them in another player.</li>
+<li><strong>Trascrivere un file intero</strong> (<em>transcribe a whole file</em>): from your computer or from the tab's video, without watching it. Works even with no video open.</li>
+<li><strong>Carica sottotitoli da file (.srt, .vtt)</strong>: for films that come with separate subtitle files.</li>
+<li><strong>Rifai la traduzione / Rifai la trascrizione</strong> (<em>redo the translation / transcription</em>): deletes what's saved for the video and does it again (your manual corrections are kept).</li>
+</ul>
+<h3 id="translating-with-a-chat-without-using-any-quota">Translating with a chat, without using any quota</h3>
+<ol>
+<li>Press <strong>Copia trascrizione</strong> (<em>copy transcription</em>): it copies the numbered lines with instructions (long videos in parts of 250 lines: the button tells you which part it will copy).</li>
+<li>Paste them into a chat (ChatGPT, Claude, Gemini…) and copy its answer.</li>
+<li>Press <strong>Incolla traduzione</strong> (<em>paste translation</em>), paste the answer and confirm. The extension reads the numbered lines, checks that it really is a translation and uses it on the video. It stays saved.</li>
+</ol>
+<hr />
+<h2 id="13-translation-services">13. Translation services</h2>
+<p>Choose in the popup: <strong>Traduzione → Come tradurre</strong>. Pick the service, paste its key into <strong>Chiave API</strong>, press Enter: the model is chosen automatically (to change it: <strong>Carica modelli</strong>, <em>load models</em>).</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Cost</th>
+<th>Quality</th>
+<th>What you need</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google Translate</td>
+<td>free</td>
+<td>fair</td>
+<td>nothing</td>
+</tr>
+<tr>
+<td><strong>Gemini</strong> ⭐ recommended</td>
+<td>free</td>
+<td>excellent, follows the conversation</td>
+<td>key from aistudio.google.com/apikey</td>
+</tr>
+<tr>
+<td>Groq</td>
+<td>free</td>
+<td>good, very fast</td>
+<td>key from console.groq.com/keys (the same as for transcription)</td>
+</tr>
+<tr>
+<td>Mistral</td>
+<td>free</td>
+<td>good, great for European languages</td>
+<td>key from console.mistral.ai</td>
+</tr>
+<tr>
+<td>OpenRouter</td>
+<td>free (":free" models)</td>
+<td>varies</td>
+<td>key from openrouter.ai/keys</td>
+</tr>
+<tr>
+<td>Microsoft Translator</td>
+<td>free up to 2 million characters a month</td>
+<td>very good</td>
+<td>Azure account, "Translator" resource on the F0 plan: key and <strong>region</strong> (e.g. <em>westeurope</em>)</td>
+</tr>
+<tr>
+<td>DeepL</td>
+<td>free up to a monthly limit</td>
+<td>very high</td>
+<td>"API Free" key from deepl.com/pro-api (asks for a card for verification)</td>
+</tr>
+<tr>
+<td>Model on your computer</td>
+<td>free, unlimited</td>
+<td>depends on your PC</td>
+<td>Ollama or LM Studio (<a href="#15-a-translation-model-on-your-own-computer">section 15</a>)</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>paid (a few cents per video)</td>
+<td>excellent</td>
+<td>key from console.anthropic.com</td>
+</tr>
+<tr>
+<td>YouTube line by line</td>
+<td>free</td>
+<td>poor</td>
+<td>nothing</td>
+</tr>
+</tbody>
+</table>
+<p>Gemini, Groq, Mistral, OpenRouter, Claude and local models are <strong>AI language models</strong>: besides translating, they understand the conversation, explain words in context, find idioms and correct transcriptions. Google, Microsoft and DeepL are <strong>classic translators</strong>: they translate well but don't do the rest.</p>
+<p>Keys can be shown and copied with the <strong>Mostra</strong> (<em>show</em>) and <strong>Copia</strong> (<em>copy</em>) buttons next to the box (handy for the Kodi add-on). Don't show them in videos or screenshots: anyone who sees a key can use it.</p>
+<h3 id="backup-services">Backup services</h3>
+<p>With <strong>Se finiscono le richieste gratuite, continua con un altro servizio di cui hai la chiave</strong> (<em>if free requests run out, continue with another service you have a key for</em>, on by default), when a service uses up its daily quota the extension carries on with the first other service you've entered a key for, in this order: <strong>Gemini → Groq → Mistral → OpenRouter → Microsoft → DeepL</strong>, and finally <strong>Google</strong>. The exhausted service is skipped until the next day.</p>
+<p>To enter several keys: choose a service, paste its key, then switch back to your preferred service. Below the box you'll see which backup services are ready and which are used up for today.</p>
+<hr />
+<h2 id="14-using-fewer-free-requests">14. Using fewer free requests</h2>
+<ul>
+<li><strong>Nothing is translated twice</strong>: translations, transcriptions, explanations and corrections are all saved. Watching a video again, even one you only partly watched, costs nothing.</li>
+<li>Translations are requested in <strong>groups of 120 lines</strong>: a two-hour film costs about 12 Gemini requests.</li>
+<li>Hovering uses Google's free dictionary; the AI model is only used when you click.</li>
+<li>Gemini's default model is <strong>gemini-flash-lite-latest</strong>, the one with the most free daily requests.</li>
+<li>Gemini quotas reset at midnight Pacific Time. You can see your usage at aistudio.google.com.</li>
+<li>For a whole film without touching any quota: <strong>Copia trascrizione / Incolla traduzione</strong> with a chat (<a href="#12-the-trascrizione-e-traduzione-page">section 12</a>).</li>
+</ul>
+<hr />
+<h2 id="15-a-translation-model-on-your-own-computer">15. A translation model on your own computer</h2>
+<p>Free, unlimited and private. You need a reasonably powerful PC (16 GB of RAM recommended).</p>
+<h3 id="with-ollama">With Ollama</h3>
+<ol>
+<li>Install Ollama from <strong>ollama.com</strong>.</li>
+<li>Download a model: <code>ollama pull gemma3:12b</code> (or <code>gemma3:4b</code> on a less powerful PC).</li>
+<li>Allow requests from the browser (without this Ollama refuses them):
+   - <strong>Windows</strong>: in a command prompt <code>setx OLLAMA_ORIGINS "chrome-extension://*,moz-extension://*"</code>, then quit Ollama (icon near the clock → Quit) and start it again;
+   - <strong>Mac</strong>: <code>launchctl setenv OLLAMA_ORIGINS "chrome-extension://*,moz-extension://*"</code>, then restart Ollama;
+   - <strong>Linux</strong>: <code>sudo systemctl edit ollama</code>, add <code>[Service]</code> and <code>Environment="OLLAMA_ORIGINS=chrome-extension://*,moz-extension://*"</code>, then <code>sudo systemctl restart ollama</code>.</li>
+<li>In the popup choose <strong>Modello sul tuo computer</strong> (<em>model on your computer</em>, address <code>http://localhost:11434/v1</code>) and press <strong>Carica modelli</strong>.</li>
+</ol>
+<h3 id="with-lm-studio">With LM Studio</h3>
+<p>Download a model, start the server in the <em>Developer</em> section and turn on <strong>Enable CORS</strong>. In the popup enter the address <code>http://localhost:1234/v1</code> and press <strong>Carica modelli</strong>.</p>
+<hr />
+<h2 id="16-troubleshooting">16. Troubleshooting</h2>
+<p>First look at the <strong>status line at the bottom of the popup</strong>: it says what the extension is doing and why it stopped.</p>
+<table>
+<thead>
+<tr>
+<th>What you see</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Nessun segnale da YouTube" (<em>no signal from YouTube</em>)</td>
+<td>Press <strong>Concedi accesso</strong> (<em>grant access</em>) if it appears, then reload the page.</td>
+</tr>
+<tr>
+<td>Dual subtitles don't appear</td>
+<td>Check that <strong>DS</strong> is on and the video's subtitles (CC) are on. On YouTube, if that's not enough, change the subtitle language in the gear menu and switch it back.</td>
+</tr>
+<tr>
+<td>"Hai finito i minuti di trascrizione" (<em>transcription minutes used up</em>, Groq)</td>
+<td>Groq's free Whisper quota is used up (hourly or daily): the message says when it frees up. Lines already transcribed stay.</td>
+</tr>
+<tr>
+<td>"Limite di richieste raggiunto" (<em>request limit reached</em>)</td>
+<td>The service refused because you exceeded its quota: the extension waits and retries (per-minute limit) or switches to a backup service (daily limit). Nothing is lost.</td>
+</tr>
+<tr>
+<td>"Chiave non valida" (<em>invalid key</em>)</td>
+<td>Copy the key again (use <strong>Mostra</strong> to check it).</td>
+</tr>
+<tr>
+<td>Transcription in the wrong language</td>
+<td>Set <strong>Lingua parlata</strong>, then on the "Trascrizione e traduzione" page press <strong>Rifai la trascrizione</strong>.</td>
+</tr>
+<tr>
+<td>A line is badly translated or transcribed</td>
+<td><strong>⚑</strong> button on the subtitles → translate again, transcribe again or correct by hand.</td>
+</tr>
+<tr>
+<td>Netflix, Disney+, Prime Video</td>
+<td>Not possible: the browser protects these sites' audio.</td>
+</tr>
+<tr>
+<td>Firefox: the video stays muted</td>
+<td>Click the video once.</td>
+</tr>
+<tr>
+<td>No card on web pages</td>
+<td>Check in popup → 📄 Pagine the master switch, card on hover, translation when selecting and the per-site switch; reload pages that were open before installing. Browser internal pages don't allow extensions.</td>
+</tr>
+<tr>
+<td>A PDF opens without cards</td>
+<td>Open it in the extension's reader (<a href="#9-pdf-files">section 9</a>); if words look wrong try «Caratteri»; a scan without recognised text has no words to read.</td>
+</tr>
+<tr>
+<td>Cards appear twice</td>
+<td>The old separate extensions are still on: remove them.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="17-privacy">17. Privacy</h2>
+<ul>
+<li>Your keys and everything you save (translations, vocabulary, corrections) stay <strong>in your browser</strong>. There is no server behind the extension.</li>
+<li>Text is only sent to the services you choose (Google, Gemini, Groq…). On free plans some services (e.g. Gemini) may use the text to improve their models.</li>
+<li>The yt-dlp helper downloads audio only to transcribe it and deletes it straight away.</li>
+</ul>
+<hr />
+<h2 id="whats-new">What's new</h2>
+<ul>
+<li><strong>1.4.0</strong> (from now on only this extension is released, with this single guide):</li>
+<li><strong>Interface in the language you translate into</strong> (tick <strong>Interfaccia in questa lingua</strong> in the popup).</li>
+<li><strong>Explanations always in your language</strong>: an answer in another language is asked again or dropped; a false friend appears only when it is real and concerns a word of your language.</li>
+<li><strong>Idioms remembered</strong> in the card even when a redone explanation leaves them out, and <strong>☆ Salva il modo di dire</strong> to save them.</li>
+<li><strong>Fuller etymologies</strong>: the Wiktionary chain is followed back to the root, across languages too.</li>
+<li><strong>PDF</strong>: wrong characters fixed for all common encodings (including PDFs made with Word on the Mac); scanned books from archive.org no longer show blank pages.</li>
+<li><strong>1.3.0</strong>: translations in the wrong language (e.g. Arabic) are rejected, with "redo the whole translation" in ⚑; sturdier synced live streams; first fix for Czech PDFs.</li>
+</ul></main></body></html>
