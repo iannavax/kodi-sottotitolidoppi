@@ -1,5 +1,5 @@
 <!doctype html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.7 — Guida</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.8 — Guida</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Versione 1.4.7</em></p>
+<body><main><p><em>Versione 1.4.8</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-estensione-per-il-browser">Sottotitoli Doppi + Parole al Volo — estensione per il browser</h1>
 <p><em>English version → <a href="GUIDE.en.html">GUIDE.en</a></em></p>
 <p><strong>Impara le lingue guardando video e leggendo.</strong> Una sola estensione per due cose:</p>
@@ -591,6 +591,7 @@ Con <strong>Se finiscono le richieste gratuite, continua con un altro servizio d
 <hr />
 <h2 id="novita">Novità</h2>
 <ul>
+<li><strong>1.4.8</strong>: <strong>📈 uso nel tempo</strong> si vede di nuovo: sulle pagine la curva spariva e gli anni erano neri (lo stile di base delle schede cancellava il disegno), e sui siti con regole proprie per i disegni (anche YouTube) poteva succedere lo stesso; ora colori e forme sono fissati sul grafico. tolto il «/no_think» aggiunto nella 1.4.7: il <code>qwen3:4b</code> di Ollama è la versione di Qwen 3 che ragiona sempre e lo prendeva come testo da tradurre. Ora <strong>Prova</strong>, se il modello sul computer è lento perché ragiona prima di ogni risposta, lo dice e consiglia un modello senza ragionamento (per esempio <code>gemma3:4b</code>).</li>
 <li><strong>1.4.7</strong>: <strong>Qwen 3 sul computer</strong> non «pensa» più prima di rispondere (prima, con alcune versioni di Ollama, scriveva migliaia di parole di ragionamento e ci metteva più di un minuto anche per «good morning»): l'estensione aggiunge alla richiesta l'interruttore di Qwen, <code>/no_think</code>, che funziona con tutte le versioni.</li>
 <li><strong>1.4.6</strong>: <strong>Whisper sul computer</strong> (Speaches, faster-whisper-server…): se il server non conosce il nome del modello (quello predefinito è di Groq: prima ogni pezzo dava «il modello scelto non esiste più» e i sottotitoli non comparivano), l'estensione legge i modelli del server, sceglie il migliore (turbo) e se lo ricorda; nel popup c'è <strong>Carica modelli</strong> anche per la trascrizione. <strong>Modello sul computer</strong> (Ollama, LM Studio): se il modello scritto nel popup non c'è più (per esempio cancellato), ne sceglie uno installato e se lo ricorda; se non ce n'è nessuno lo dice, con il comando per scaricarne uno.</li>
 <li><strong>1.4.5</strong>: <strong>📈 uso nel tempo</strong> come il grafico vero: dati della raccolta 2022 di Google Books (quella che mostra Ngram Viewer, fino al 2022), curva morbida invece dei segmenti dritti (niente più scalini e salite che sembravano errori). <strong>Modello per ogni compito</strong> nel popup (sopra «Ordine dei servizi»): una tendina per ogni lavoro, cioè sottotitoli dei video, testi delle pagine e PDF, trascrizione dell'audio (Whisper di Groq o sul computer), spiegazioni, correzione della trascrizione, pronuncia IPA del testo selezionato, collegamento parole e modi di dire. «Automatico» usa il primo modello pronto della fila; un modello scelto che non risponde o ha finito le richieste viene sostituito dal primo pronto. Per esempio: sottotitoli con Gemini, spiegazioni e pronuncia con Ollama, correzione con Groq.</li>

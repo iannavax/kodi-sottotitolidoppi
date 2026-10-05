@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.7 — Guide</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.8 — Guide</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Version 1.4.7</em></p>
+<body><main><p><em>Version 1.4.8</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-browser-extension">Sottotitoli Doppi + Parole al Volo — browser extension</h1>
 <p><em>Versione italiana → <a href="LEGGIMI.html">LEGGIMI</a></em></p>
 <p><strong>Learn languages by watching videos and reading.</strong> One extension for two things:</p>
@@ -500,6 +500,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <hr />
 <h2 id="whats-new">What's new</h2>
 <ul>
+<li><strong>1.4.8</strong>: <strong>📈 usage over time</strong> shows again: on pages the curve disappeared and the years were black (the cards' base style wiped the drawing), and sites with their own drawing rules (YouTube too) could do the same; now colours and shapes are fixed on the chart. removed the «/no_think» added in 1.4.7: Ollama's <code>qwen3:4b</code> is the Qwen 3 version that always reasons and took it as text to translate. Now <strong>Prova</strong>, when the local model is slow because it reasons before every answer, says so and suggests a model without reasoning (e.g. <code>gemma3:4b</code>).</li>
 <li><strong>1.4.7</strong>: <strong>Qwen 3 on your computer</strong> no longer "thinks" before answering (before, with some Ollama versions, it wrote thousands of words of reasoning and took over a minute even for «good morning»): the extension adds Qwen's own switch, <code>/no_think</code>, which works with every version.</li>
 <li><strong>1.4.6</strong>: <strong>Whisper on your computer</strong> (Speaches, faster-whisper-server…): if the server doesn't know the model name (the default one is Groq's: before, every chunk failed with «il modello scelto non esiste più» and no subtitles appeared), the extension reads the server's models, picks the best (turbo) and remembers it; the popup has <strong>Carica modelli</strong> for transcription too. <strong>Model on your computer</strong> (Ollama, LM Studio): if the model written in the popup is gone (e.g. deleted), it picks an installed one and remembers it; if there is none it says so, with the command to download one.</li>
 <li><strong>1.4.5</strong>: <strong>📈 usage over time</strong> like the real chart: data from the 2022 Google Books collection (the one Ngram Viewer shows, up to 2022), a smooth curve instead of straight segments (no more steps and climbs that looked like glitches). <strong>Modello per ogni compito</strong> (<em>model for each task</em>) in the popup (above «Ordine dei servizi»): one menu per job, i.e. video subtitles, page and PDF text, audio transcription (Groq's Whisper or on your computer), explanations, transcript correction, IPA for selected text, word and idiom linking. «Automatico» uses the first ready model in the queue; a chosen model that doesn't answer or is out of requests is replaced by the first ready one. For example: subtitles with Gemini, explanations and pronunciation with Ollama, correction with Groq.</li>
