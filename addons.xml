@@ -19,7 +19,7 @@
     </assets>
   </extension>
 </addon>
-<addon id="script.sottotitolidoppi" name="Sottotitoli Doppi" version="1.10.10" provider-name="Sottotitoli Doppi">
+<addon id="script.sottotitolidoppi" name="Sottotitoli Doppi" version="1.12.0" provider-name="Sottotitoli Doppi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -50,6 +50,24 @@
     <summary lang="en_GB">Dual subtitles in the player's subtitle menu</summary>
     <description lang="it_IT">Mentre guardi un film: Sottotitoli → Scarica → Sottotitoli Doppi. Traduce i sottotitoli originali del film e mostra l'originale con la traduzione sotto. Usa le impostazioni dell'add-on Sottotitoli Doppi.</description>
     <description lang="en_GB">While watching: Subtitles → Download → Sottotitoli Doppi. Translates the original subtitles and shows them with the translation below.</description>
+    <platform>all</platform>
+    <license>MIT</license>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+<addon id="service.subtitles.subdl" name="SubDL" version="1.0.0" provider-name="Sottotitoli Doppi">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.sottotitolidoppi" version="1.12.0"/>
+  </requires>
+  <extension point="xbmc.subtitle.module" library="service.py"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="it_IT">Sottotitoli da SubDL (subdl.com) nel menu dei sottotitoli del lettore</summary>
+    <summary lang="en_GB">Subtitles from SubDL (subdl.com) in the player's subtitle menu</summary>
+    <description lang="it_IT">Mentre guardi un film o una serie: Sottotitoli → Scarica → SubDL. Cerca i sottotitoli su subdl.com (tantissimi film e serie, in molte lingue). Serve la chiave gratuita di SubDL (subdl.com → API: 20.000 richieste al giorno), da scrivere nelle impostazioni di questo add-on o di Sottotitoli Doppi.</description>
+    <description lang="en_GB">While watching: Subtitles → Download → SubDL. Searches subdl.com. Needs the free SubDL API key.</description>
     <platform>all</platform>
     <license>MIT</license>
     <assets>
