@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.1 — Guide</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.2 — Guide</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Version 1.4.1</em></p>
+<body><main><p><em>Version 1.4.2</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-browser-extension">Sottotitoli Doppi + Parole al Volo — browser extension</h1>
 <p><em>Versione italiana → <a href="LEGGIMI.html">LEGGIMI</a></em></p>
 <p><strong>Learn languages by watching videos and reading.</strong> One extension for two things:</p>
@@ -392,7 +392,13 @@ pre{white-space:pre-wrap;word-break:break-word}
 <p>Gemini, Groq, Mistral, OpenRouter, Claude and local models are <strong>AI language models</strong>: besides translating, they understand the conversation, explain words in context, find idioms and correct transcriptions. Google, Microsoft and DeepL are <strong>classic translators</strong>: they translate well but don't do the rest.</p>
 <p>Keys can be shown and copied with the <strong>Mostra</strong> (<em>show</em>) and <strong>Copia</strong> (<em>copy</em>) buttons next to the box (handy for the Kodi add-on). Don't show them in videos or screenshots: anyone who sees a key can use it.</p>
 <h3 id="backup-services">Backup services</h3>
-<p>With <strong>Se finiscono le richieste gratuite, continua con un altro servizio di cui hai la chiave</strong> (<em>if free requests run out, continue with another service you have a key for</em>, on by default), when a service uses up its daily quota the extension carries on with the first other service you've entered a key for, in this order: <strong>Gemini → Groq → Mistral → OpenRouter → Microsoft → DeepL</strong>, and finally <strong>Google</strong>. The exhausted service is skipped until the next day.</p>
+<p>With <strong>Se finiscono le richieste gratuite, continua con un altro servizio di cui hai la chiave</strong> (<em>if free requests run out, continue with another service you have a key for</em>, on by default), when a service uses up its daily quota the extension carries on with the first other service you've entered a key for, in the order set under <strong>Ordine dei servizi</strong> (by default <strong>Gemini → Groq → Mistral → OpenRouter → Ollama/LM Studio → Claude → Microsoft → DeepL</strong>), and finally <strong>Google</strong>. The exhausted service is skipped until the next day.</p>
+<h3 id="service-order">Service order</h3>
+<p>Below, <strong>Ordine dei servizi</strong> (<em>service order</em>) lists every service with its state (ready, key missing, model missing, used up for today):
+- <strong>↑ ↓</strong> change the order; unticking the <strong>box</strong> removes a service from the queue;
+- <strong>Usa adesso</strong> (<em>use now</em>) moves it to the top and selects it right away for translating too, then runs a test;
+- <strong>Prova</strong> (<em>test</em>) translates a sample sentence and shows <em>✓ Funziona</em> (with the translation and the seconds taken) or <em>✗ Non funziona</em> with the reason (for Ollama: program not running, OLLAMA_ORIGINS missing, no model chosen…).</p>
+<p>The order is used for backup services, for <strong>✨ Spiega con…</strong> (when translating with Google, DeepL or Microsoft, the first ready model in the queue — only when you press the button), for IPA pronunciation and for transcript correction. To try Ollama: choose «Modello sul tuo computer», press «Carica modelli», then <strong>Usa adesso</strong>.</p>
 <p>To enter several keys: choose a service, paste its key, then switch back to your preferred service. Below the box you'll see which backup services are ready and which are used up for today.</p>
 <hr />
 <h2 id="14-using-fewer-free-requests">14. Using fewer free requests</h2>
@@ -490,6 +496,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <hr />
 <h2 id="whats-new">What's new</h2>
 <ul>
+<li><strong>1.4.2</strong>: <strong>Service order</strong> in the popup: move models up and down, turn them off, <strong>Usa adesso</strong> selects a service immediately (e.g. Ollama) and <strong>Prova</strong> tells you whether it answers. <strong>synced live</strong>: when YouTube won't jump back, the video pauses for those seconds (with a countdown) and resumes behind the live edge instead of turning the mode off; live streams no longer restart from scratch (losing the subtitles) every time YouTube reloads the stream. <strong>🌳 Etymology tree</strong> almost always (built from Wiktionary's etymology chain, with cognates). <strong>Recordings from the lemma</strong> (and from the Google dictionary). <strong>🔍 cerca radice</strong> also suggests words with the same root and the "see also" words. The <strong>📖 Google dictionary</strong> now says why when it doesn't answer.</li>
 <li><strong>1.4.1</strong>: <strong>🌳 etymology trees</strong> from Wiktionary in the card (branches from the oldest root down to the word; the Google dictionary image when Wiktionary has none); no more Groq error «max_tokens must be less than or equal to 4096» (it retries with the model's limit by itself); an <strong>idiom</strong> is shown only if it really is part of the sentence, in its language (never a translated expression); <strong>the model never starts by itself</strong>: in videos the explanation comes only with the <strong>✨ Spiega con …</strong> (<em>explain with…</em>) button (before, clicking a word asked the model); model-based translation↔original linking and idioms are off by default (turn them on in the popup), and without the model hovering an original word still highlights its translation (Google dictionary). <strong>📖 Google dictionary</strong> in the card (the one in Google Search, Oxford Languages data): recorded pronunciation, meanings with examples, synonyms and antonyms, word forms, origin with the etymology tree when available, and <strong>📈 uso nel tempo</strong> (<em>use over time</em>, Google Books Ngram); its origin is used when Wiktionary has no etymology (🌳 tree button). Not an official Google service: if Google changes it, the row simply doesn't appear. Also: etymology taken from the parent word for inflected forms (cases, verb tenses: <em>подошве</em> → <em>подошва</em>), only when the link is certain — Wiktionary says it's a form of it, or the form really appears in the parent word's declension/conjugation table. The card says where it comes from; <strong>⚑ → lemma sbagliato?</strong> (<em>wrong lemma?</em>) lets you type the right one, or none; <strong>🔍 cerca radice</strong> (<em>search for the root</em>) lists the Wiktionary words containing that form, with ✓ on the certain ones, to pick with one click.</li>
 <li><strong>1.4.0</strong> (from now on only this extension is released, with this single guide):</li>
 <li><strong>Interface in the language you translate into</strong> (tick <strong>Interfaccia in questa lingua</strong> in the popup).</li>
