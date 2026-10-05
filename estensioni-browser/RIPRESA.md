@@ -53,6 +53,12 @@ Ancora in 1.4.2:
   - `llmText` toglie un eventuale `<think>…</think>` iniziale.
   - Gemma 4 su Ollama «pensa» di serie ed era lentissima: da lì veniva «Receiving end does not exist».
   - In `tordine.py` l'Ollama finto controlla i parametri; con `NO_THINK_PARAM=1` rifiuta e verifica il secondo tentativo.
+- **📖 Dizionario di Google tolto.** Nel 2026 Google mostra solo l'AI Overview (anche con hl=en&gl=us) e `async/callback:5493` risponde 400.
+  - `GDICT_ON = false` in background.js: `googleWebDict` restituisce `{entries: [], gone: true}` senza fare richieste.
+  - `GW_ON = false` in learn.js: niente richiesta e niente riquadro.
+  - «📈 uso nel tempo» è ora `ngramRow(ctx)`, una riga a sé.
+  - La voce del popup «Dizionario di Google (Oxford)» è nascosta (`style="display:none"`); `learnGweb` resta.
+  - Per riaccenderlo basta mettere `true` nelle due costanti.
 - **Repository Kodi.** Il ramo `main` (GitHub Pages) è aggiornato con script 1.12.0 e service.subtitles.subdl 1.0.0, solo i file Kodi.
 
 Aggiunta in 1.4.2 (richiesta dopo): **Ordine dei servizi** modificabile e selezione immediata.
