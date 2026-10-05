@@ -30,6 +30,31 @@ L'archivio `sottotitoli-doppi-progetto.zip` contiene tutto il codice sorgente e 
 
 Ultimo lavoro (unica 1.4.2 e Kodi 1.12.0 + nuovo add-on service.subtitles.subdl 1.0.0). Richieste: diretta sincronizzata che non porta il video indietro e sottotitoli delle dirette che «si rompono»; «dove sono gli alberi etimologici?» e dizionario di Google che non compare; registrazioni dal lemma; «Vedi anche» nella ricerca dei lemmi e ricerca della parola più vicina con etimologia; Kodi: solo la trascrizione originale appena pronta, preparazione lentissima ferma al 48%, menu più pulito, nome del servizio disponibile invece di «Gemini», integrazione con subdl.com anche nella finestra «Scarica sottotitoli».
 
+Ancora in 1.4.2:
+- **«Could not establish connection. Receiving end does not exist» con Ollama.** Chrome spegne il service worker se aspetta una risposta per più di 30 secondi.
+  - `background.js`: le richieste passano da `dsRoute(msg, sender)`. `dsKeepAlive` chiama `chrome.runtime.getPlatformInfo` ogni 20 s finché c'è una richiesta in corso.
+  - Nuova porta `ds-long`: la pagina manda `{ping}` ogni 15 s; le risposte tornano come `{res}`.
+  - `config.js`: `dsSendLong(msg)`. Si usa per `define` (words.js), `etymLlm` (etym.js) e, in volo.js, per `send` delle richieste ai modelli (define, idiomsFind, etymLlm, translate, align).
+  - Test `tlong.py`: Gemini risponde dopo 40 s e la spiegazione arriva lo stesso.
+- **Albero dalla catena.** I pezzi della parola non sono più antenati.
+  - In `etyChain` un pezzo è `part`: un affisso, oppure due parole citate unite da «+».
+  - `of` è l'antenato della stessa frase, altrimenti la parola della pagina (nei salti, `pg.title`).
+  - Gli antenati della pagina di un pezzo diventano `via`.
+  - In `chainTree` c'è il nodo «formata da: a + b (← origine del pezzo)».
+  - La cache passa a `tv` 10.
+  - Test `tetym_parts.py` (начинать, bread, embarazar); pagine начинать e начать aggiunte in charness.
+- **«Spiegazioni con»** (`explainEngine`, in sync, `SYNC_DEFAULTS` e `PAV_DEFAULTS`): una tendina in `DS_ENGINES_UI.order` (`.ds-explain-engine`).
+  - `wordsDefineEngine` e `explainEngine` (volo) la usano per prima, se è pronta e non ha finito le richieste.
+  - Se risponde con un errore o con `fallback` (il background rimanda il significato di Google), per 5 minuti si usa la fila (`wordsOwnSkipUntil`/`ownSkipUntil`) e la richiesta si rifà subito.
+  - Test `texplain_engine.py`, anche con `OLLAMA_DOWN=1`. charness ora risponde anche come Ollama finto su localhost:11434.
+- **«Prova»** usa `dsSendLong`, conta i secondi e dà un consiglio sulla velocità per il modello sul computer.
+- **Niente «Thinking…» per il modello sul computer.**
+  - `ENGINES.local.extra = { reasoning_effort: "none", think: false }`; se Ollama o LM Studio rispondono 400, `llmText` riprova senza extra.
+  - `llmText` toglie un eventuale `<think>…</think>` iniziale.
+  - Gemma 4 su Ollama «pensa» di serie ed era lentissima: da lì veniva «Receiving end does not exist».
+  - In `tordine.py` l'Ollama finto controlla i parametri; con `NO_THINK_PARAM=1` rifiuta e verifica il secondo tentativo.
+- **Repository Kodi.** Il ramo `main` (GitHub Pages) è aggiornato con script 1.12.0 e service.subtitles.subdl 1.0.0, solo i file Kodi.
+
 Aggiunta in 1.4.2 (richiesta dopo): **Ordine dei servizi** modificabile e selezione immediata.
 - `config.js`: `ORDERABLE` (gemini, groq, mistral, openrouter, local, claude, microsoft, deepl) e `DS_CONFIG.engineOrder(s, all)`, che restituisce la fila scelta (`engineOrder`) senza i servizi spenti (`engineOff`); le due chiavi sono in `SYNC_DEFAULTS` e in `PAV_DEFAULTS`. `FALLBACK` resta solo come vecchio ordine di serie.
 - `engines-ui.js`: `DS_ENGINES_UI.order(box, {store, onUse})`. Ogni riga ha casella acceso/spento, ↑ ↓, «Usa adesso» (mette il servizio primo, imposta `engine` nello store, poi fa la prova) e «Prova» (messaggio `translate` di una frase, mostra ✓ con la traduzione e i secondi, oppure ✗ con l'errore). È montata dentro `mount()` (Parole al Volo) e nel popup di Sottotitoli Doppi (`#orderBox`).
