@@ -5,7 +5,7 @@ L'archivio `sottotitoli-doppi-progetto.zip` contiene tutto il codice sorgente e 
 
 ## 0. Come ripartire (istruzioni per Claude)
 1. Scompatta l'archivio caricato: `cd /home/claude && unzip -q /mnt/user-data/uploads/sottotitoli-doppi-progetto.zip`
-2. **Da consegnare**: `cd sottotitoli-doppi-progetto/unica && ./build.sh 1.4.3` (zip, xpi, guida .md/.html dentro; novità in fondo a `unica/GUIDA.md` e `GUIDE.en.md`). Per le prove servono anche le build delle due estensioni: `cd sottotitoli-doppi-progetto/estensione && ./build.sh 5.22.1` (per una versione nuova cambia `version` nei due manifest e `head.*.md`, e aggiungi le novità in cima a `novita57.md` o in un nuovo `novitaXX.md` elencato in build.sh) crea `build/chrome`, `build/firefox` e i pacchetti.
+2. **Da consegnare**: `cd sottotitoli-doppi-progetto/unica && ./build.sh 1.4.4` (zip, xpi, guida .md/.html dentro; novità in fondo a `unica/GUIDA.md` e `GUIDE.en.md`). Per le prove servono anche le build delle due estensioni: `cd sottotitoli-doppi-progetto/estensione && ./build.sh 5.22.1` (per una versione nuova cambia `version` nei due manifest e `head.*.md`, e aggiungi le novità in cima a `novita57.md` o in un nuovo `novitaXX.md` elencato in build.sh) crea `build/chrome`, `build/firefox` e i pacchetti.
 3. Parole al Volo: `cd sottotitoli-doppi-progetto/parole-al-volo && ./build.sh 1.16.0` (poi LEGGIMI.html con release/md2html.py e rifare zip/xpi) (prende config.js, background.js e tts.js da ../estensione/src). Prova: `python3 test-volo/tvolo.py parole-al-volo/build/chrome` (servizi e AnkiConnect simulati, indipendente dal banco di prova sotto).
 4. Banco di prova: `mkdir -p /home/claude/e2e && cp -r test-estensione/* /home/claude/e2e/ && chmod +x /home/claude/e2e/fake/* && python3 /home/claude/e2e/crea_audio.py` (gli script si aspettano la cartella `/home/claude/e2e`). Le prove si lanciano passando la build: `python3 tidiom.py /percorso/build/chrome`. Per quelle che leggono `dualsubDebug` usa una copia della build con `cat sonda.js >> content.js`. Stremio: copia `stremio` in `/home/claude/stremio` e `bash test.sh "" 300` + `python3 test.py '{...}'`. Kodi: copia `kodi` in `/home/claude/kodi`, crea il film di prova con `python3 test/crea_film_mkv.py` (serve alle prove 6-9 e 13) e `python3 test/test_kodi.py` … `test_kodi14.py`. **Attenzione**: nei comandi usa percorsi assoluti per copiare indietro nel progetto (un `cd` + percorsi relativi ha cancellato le cartelle una volta).
 5. Rispondi sempre in **italiano**, semplice e chiaro.
@@ -22,13 +22,28 @@ L'archivio `sottotitoli-doppi-progetto.zip` contiene tutto il codice sorgente e 
 |---|---|---|
 | Estensione browser (Chrome/Edge + Firefox) | **5.22.1** (non più consegnata da sola) | Ultima consegnata 5.22.0; ora vive dentro l'unica |
 | Estensione **Parole al Volo** (sorella per i testi) | **1.16.1** (non più consegnata da sola) | Ultima consegnata 1.16.0; ora vive dentro l'unica |
-| Estensione **unica** «Sottotitoli Doppi + Parole al Volo» (`unica/`) | **1.4.3** | **L'unica consegnata**; provata con le prove di tutte e due (Chromium); mai in Firefox vero |
+| Estensione **unica** «Sottotitoli Doppi + Parole al Volo» (`unica/`) | **1.4.4** | **L'unica consegnata**; provata con le prove di tutte e due (Chromium); mai in Firefox vero |
 | Add-on Kodi `script.sottotitolidoppi` | **1.12.0** (+ `service.subtitles.sottotitolidoppi` 1.0.0, `service.subtitles.subdl` 1.0.0) | Consegnato; provato con un Kodi simulato (prove 1–14), non su Kodi vero |
 | Repository Kodi `repository.sottotitolidoppi` | **1.0.0** | Pubblicato dall'utente (iannavax/kodi-sottotitolidoppi); da ricaricare con la cartella `kodi/kodi-sottotitolidoppi` rigenerata |
 | Add-on Stremio (server Node.js) | **1.3.0** | Consegnato; provato con servizi simulati, non con Stremio vero |
 | Programma per yt-dlp (dentro l'estensione) | 1.0 | Provato su Linux con yt-dlp finto. **Installatore Windows mai eseguito** (solo riletto) |
 
-Ultimo lavoro (unica 1.4.3): la versione va alzata a **ogni consegna**; la 1.4.2 era stata consegnata più volte con lo stesso numero e l'utente l'ha fatto notare.
+Ultimo lavoro (unica 1.4.4, programma per yt-dlp 1.3)
+- **Albero etimologico vero.** L'utente ha caricato le pagine salvate di Wiktionary: embarazado, diabolically, Template:etymon e la categoria. Ora sono in `test-volo/fixtures/wikt-*.htm`.
+  - Wiktionary (`{{etymon|…|tree=1}}`) mette nella pagina `<ul class="etymonid" data-lang data-title data-ety-tree-json="…">`. Il JSON ha `{term, alt, lang, lang_name, transliteration, gloss, is_duplicate, children: [{keyword, keyword_label, keyword_abbrev, is_group, is_uncertain, is_invisible, terms: [...]}]}`; le keyword viste sono bor, lbor, inherited, derived, from, affix, influence, root, afeq.
+  - Lo stesso albero è disegnato con `.etytree-body` / `.etytree-branch-group` / `.etytree-branch` / `.etytree-block`. Le etichette (`.etytree-label abbr[title]`) dicono come la casella SOTTO viene da quella. Il vecchio `parseTree` cercava `ul`/`li`, quindi l'albero veniva vuoto.
+  - `etyFromJson` (preferito, anche se il disegno viene prima nella pagina) e `parseEtytree` (dal disegno) danno `{ety: nodo}` con nodo `{lang, code, term, tr, gloss, rel, unc, dup, parents, side, parts}`. `affix` diventa le parti; `influence`/`contamination` vanno in `side`; `root` e `afeq` sono nascosti.
+  - In learn.js `etyTreeView`: dall'alto (più antica) alla parola; catene senza bivi in colonna con «↓ prestito/ereditata/derivata…» (`ETY_REL`); i bivi diventano «è formata da: a + b» con un `<details>` per parte («origine di «x» — la più antica: …»). I nomi delle lingue passano da `ETY_PROTO` (protolingue e lingue antiche in italiano), poi `Intl.DisplayNames`, poi il nome inglese.
+  - Cache `tv` 11.
+  - Lemma: nel «form of» si salta il collegamento al glossario (`Appendix:Glossary`), che prima diventava il «lemma» di embarazado. «(di …, lemma)» compare solo se l'etimologia viene da un'altra pagina.
+  - Test `test-volo/tetytree_volo.py <build> [png]`. In `tvolo.detect` ho aggiunto lo spagnolo.
+- **📈 uso nel tempo**: anni a 11,5 px, chiari con bordo scuro; riga «Dati: Google Books Ngram Viewer (libri in …)» con un collegamento al grafico vero (`books.google.com/ngrams/graph`, stesso `corpus` che ha risposto: `ngram` in background.js ora restituisce `corpus` e `word`).
+- **Diretta sincronizzata ferma «a metà».** Dal registro dell'utente: yt-dlp avviato, nessun audio e nessun errore per 4 minuti (stato `aligning`).
+  - `aheadWatch` ogni 5 s: dopo 20 s senza audio lo scrive nel registro; dopo 60 s chiama `aheadFail`, che riporta il video alla diretta, con l'ultimo messaggio del programma. Con audio non allineato per 2 minuti fa lo stesso.
+  - `sd_host.py` 1.3: un watchdog manda dopo 20 s lo stato «yt-dlp non manda ancora l'audio» con l'ultima riga di stderr, e dopo 60 s ferma yt-dlp e ffmpeg, così arriva un errore vero. `maybe_update` gira anche prima della diretta. helper.js segnala «vecchio» sotto la 1.3.
+  - Prova: `FAKE_LIVE_SILENT=1 SHOWLOG=1 python3 tahead.py <copia con sonda>` (fake/yt-dlp, copiato anche in /home/claude/e2e/fake).
+
+Prima (unica 1.4.3): la versione va alzata a **ogni consegna**; la 1.4.2 era stata consegnata più volte con lo stesso numero e l'utente l'ha fatto notare.
 - **Diretta sincronizzata, sottotitoli sfasati.** Il video ora torna indietro (con la pausa), ma i sottotitoli restavano sfasati.
   - `liveSchedule` (live.js): le frasi della diretta sincronizzata (`item.ahead`, senza `availVt`) si mostrano esattamente a `c.start`. Prima il tempo minimo di lettura (1,1–2,5 s per frase) le faceva slittare una dopo l'altra, fino a 12 s, nel parlato fitto.
   - `aheadAlign`: quando l'allineamento cambia di più di 0,4 s, sposta anche le frasi già pronte e i pezzi in coda (prima restavano col vecchio allineamento) e lo scrive nel registro. Il controllo si rifà ogni 10 s invece di 20.
