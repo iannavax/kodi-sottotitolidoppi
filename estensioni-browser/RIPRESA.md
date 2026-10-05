@@ -5,7 +5,7 @@ L'archivio `sottotitoli-doppi-progetto.zip` contiene tutto il codice sorgente e 
 
 ## 0. Come ripartire (istruzioni per Claude)
 1. Scompatta l'archivio caricato: `cd /home/claude && unzip -q /mnt/user-data/uploads/sottotitoli-doppi-progetto.zip`
-2. **Da consegnare**: `cd sottotitoli-doppi-progetto/unica && ./build.sh 1.4.5` (zip, xpi, guida .md/.html dentro; novità in fondo a `unica/GUIDA.md` e `GUIDE.en.md`). Per le prove servono anche le build delle due estensioni: `cd sottotitoli-doppi-progetto/estensione && ./build.sh 5.22.1` (per una versione nuova cambia `version` nei due manifest e `head.*.md`, e aggiungi le novità in cima a `novita57.md` o in un nuovo `novitaXX.md` elencato in build.sh) crea `build/chrome`, `build/firefox` e i pacchetti.
+2. **Da consegnare**: `cd sottotitoli-doppi-progetto/unica && ./build.sh 1.4.6` (zip, xpi, guida .md/.html dentro; novità in fondo a `unica/GUIDA.md` e `GUIDE.en.md`). Per le prove servono anche le build delle due estensioni: `cd sottotitoli-doppi-progetto/estensione && ./build.sh 5.22.1` (per una versione nuova cambia `version` nei due manifest e `head.*.md`, e aggiungi le novità in cima a `novita57.md` o in un nuovo `novitaXX.md` elencato in build.sh) crea `build/chrome`, `build/firefox` e i pacchetti.
 3. Parole al Volo: `cd sottotitoli-doppi-progetto/parole-al-volo && ./build.sh 1.16.0` (poi LEGGIMI.html con release/md2html.py e rifare zip/xpi) (prende config.js, background.js e tts.js da ../estensione/src). Prova: `python3 test-volo/tvolo.py parole-al-volo/build/chrome` (servizi e AnkiConnect simulati, indipendente dal banco di prova sotto).
 4. Banco di prova: `mkdir -p /home/claude/e2e && cp -r test-estensione/* /home/claude/e2e/ && chmod +x /home/claude/e2e/fake/* && python3 /home/claude/e2e/crea_audio.py` (gli script si aspettano la cartella `/home/claude/e2e`). Le prove si lanciano passando la build: `python3 tidiom.py /percorso/build/chrome`. Per quelle che leggono `dualsubDebug` usa una copia della build con `cat sonda.js >> content.js`. Stremio: copia `stremio` in `/home/claude/stremio` e `bash test.sh "" 300` + `python3 test.py '{...}'`. Kodi: copia `kodi` in `/home/claude/kodi`, crea il film di prova con `python3 test/crea_film_mkv.py` (serve alle prove 6-9 e 13) e `python3 test/test_kodi.py` … `test_kodi14.py`. **Attenzione**: nei comandi usa percorsi assoluti per copiare indietro nel progetto (un `cd` + percorsi relativi ha cancellato le cartelle una volta).
 5. Rispondi sempre in **italiano**, semplice e chiaro.
@@ -22,13 +22,20 @@ L'archivio `sottotitoli-doppi-progetto.zip` contiene tutto il codice sorgente e 
 |---|---|---|
 | Estensione browser (Chrome/Edge + Firefox) | **5.22.1** (non più consegnata da sola) | Ultima consegnata 5.22.0; ora vive dentro l'unica |
 | Estensione **Parole al Volo** (sorella per i testi) | **1.16.1** (non più consegnata da sola) | Ultima consegnata 1.16.0; ora vive dentro l'unica |
-| Estensione **unica** «Sottotitoli Doppi + Parole al Volo» (`unica/`) | **1.4.5** | **L'unica consegnata**; provata con le prove di tutte e due (Chromium); mai in Firefox vero |
+| Estensione **unica** «Sottotitoli Doppi + Parole al Volo» (`unica/`) | **1.4.6** | **L'unica consegnata**; provata con le prove di tutte e due (Chromium); mai in Firefox vero |
 | Add-on Kodi `script.sottotitolidoppi` | **1.12.0** (+ `service.subtitles.sottotitolidoppi` 1.0.0, `service.subtitles.subdl` 1.0.0) | Consegnato; provato con un Kodi simulato (prove 1–14), non su Kodi vero |
 | Repository Kodi `repository.sottotitolidoppi` | **1.0.0** | Pubblicato dall'utente (iannavax/kodi-sottotitolidoppi); da ricaricare con la cartella `kodi/kodi-sottotitolidoppi` rigenerata |
 | Add-on Stremio (server Node.js) | **1.3.0** | Consegnato; provato con servizi simulati, non con Stremio vero |
 | Programma per yt-dlp (dentro l'estensione) | 1.0 | Provato su Linux con yt-dlp finto. **Installatore Windows mai eseguito** (solo riletto) |
 
-Ultimo lavoro (unica 1.4.5): **Modello per ogni compito** («separa nelle opzioni i modelli: uno per le traduzioni, uno per le trascrizioni, uno per le spiegazioni ecc»).
+Ultimo lavoro (unica 1.4.6): registro dell'utente con Speaches (Whisper in Docker, http://localhost:8000/v1) e Qwen su Ollama.
+- **Whisper.** Ogni pezzo dava «Il server di trascrizione: il modello scelto non esiste più», perché `sttModel` era quello di Groq.
+  - Ora `transcribe` (locale) su 404/400/422 con «model» chiama `sttLocalModels(base)` (GET /models, solo Whisper), sceglie con `sttBestModel` (turbo, poi large-v3…), riprova e salva `sttModel`. Senza modelli: errore con `curl.exe -X POST …/models/deepdml/faster-whisper-large-v3-turbo-ct2`.
+  - Nuovo messaggio `sttModels`. Nel popup c'è «Carica modelli» (`#sttLoad`, `#sttMsg`), automatico quando scegli «Server sul tuo computer», quando cambi indirizzo e all'apertura se il modello è uno di Groq.
+- **Ollama/LM Studio.** `llmText`, se il programma locale risponde 404 «model», usa `listModels` (esclusi embed/whisper/tts), sceglie il suggerito, riprova e salva `models.local`. Senza modelli: «ollama pull …».
+- Test: `tspeaches.py` (Speaches finto in charness su localhost:8000) e `tqwen.py` (`FAKE_OLLAMA_MODELS`: l'Ollama finto rifiuta i modelli che non ha).
+
+Prima (unica 1.4.5): **Modello per ogni compito** («separa nelle opzioni i modelli: uno per le traduzioni, uno per le trascrizioni, uno per le spiegazioni ecc»).
 - `tasksPanel` in `DS_ENGINES_UI.order`, sopra la fila. Righe: «Sottotitoli dei video» (`engine`), «Testi delle pagine e PDF» (`pavEngine` nell'unica, `engine` di Parole al Volo da sola), «Trascrizione dell'audio» (`stt`: groq/local), «Spiegazioni» (`explainEngine`, classe `ds-explain-engine`), «Correzione della trascrizione» (`cleanEngine`), «Pronuncia IPA del testo selezionato» (`ipaEngine`), «Collegamento parole e modi di dire» (`alignEngine`). Il valore "" vuol dire automatico, cioè la fila.
 - Per riconoscere l'unica: `PAV_SYNC` oppure il nome nel manifest. Nell'unica il pannello mostra tutte le righe anche nel popup dei video.
 - Uso:

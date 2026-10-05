@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.5 — Guide</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.6 — Guide</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Version 1.4.5</em></p>
+<body><main><p><em>Version 1.4.6</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-browser-extension">Sottotitoli Doppi + Parole al Volo — browser extension</h1>
 <p><em>Versione italiana → <a href="LEGGIMI.html">LEGGIMI</a></em></p>
 <p><strong>Learn languages by watching videos and reading.</strong> One extension for two things:</p>
@@ -500,6 +500,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <hr />
 <h2 id="whats-new">What's new</h2>
 <ul>
+<li><strong>1.4.6</strong>: <strong>Whisper on your computer</strong> (Speaches, faster-whisper-server…): if the server doesn't know the model name (the default one is Groq's: before, every chunk failed with «il modello scelto non esiste più» and no subtitles appeared), the extension reads the server's models, picks the best (turbo) and remembers it; the popup has <strong>Carica modelli</strong> for transcription too. <strong>Model on your computer</strong> (Ollama, LM Studio): if the model written in the popup is gone (e.g. deleted), it picks an installed one and remembers it; if there is none it says so, with the command to download one.</li>
 <li><strong>1.4.5</strong>: <strong>📈 usage over time</strong> like the real chart: data from the 2022 Google Books collection (the one Ngram Viewer shows, up to 2022), a smooth curve instead of straight segments (no more steps and climbs that looked like glitches). <strong>Modello per ogni compito</strong> (<em>model for each task</em>) in the popup (above «Ordine dei servizi»): one menu per job, i.e. video subtitles, page and PDF text, audio transcription (Groq's Whisper or on your computer), explanations, transcript correction, IPA for selected text, word and idiom linking. «Automatico» uses the first ready model in the queue; a chosen model that doesn't answer or is out of requests is replaced by the first ready one. For example: subtitles with Gemini, explanations and pronunciation with Ollama, correction with Groq.</li>
 <li><strong>1.4.4</strong>: <strong>📈 usage over time</strong>: bigger, readable years, and the source below (Google Books Ngram Viewer) with «Apri il grafico completo ↗» (<em>open the full chart</em>). <strong>🌳 real Wiktionary etymology trees</strong> in every language, read from the data Wiktionary puts in the page (before, it came out empty, e.g. for <em>embarazado</em>). It reads top to bottom, from the oldest origin to the word: each step with the language, the word, the transliteration and the meaning, and between steps how it came (borrowing, learned borrowing, inherited, derived…); compound words («embarazado è formata da: embarazar + -ado») have each part's origin in a box that opens; influences are shown apart. <strong>Synced live</strong>: if yt-dlp sends no audio, after 20 s the log says so (with yt-dlp's last message) and after 60 s the mode stops and the video goes back to live, instead of staying half-way forever; the yt-dlp helper (1.3, re-run the installer) updates yt-dlp before reading a live stream.</li>
 <li><strong>1.4.3</strong>: <strong>synced live</strong>: subtitles no longer drift later during fast speech (each sentence appears exactly at its moment) and, when the audio read by yt-dlp shifts, sentences already prepared are re-timed too; the ⏱ notice above the subtitles is no longer squeezed (it wrapped after every word); when YouTube only jumps back part of the way, the rest is made up with a short pause (before, the video ended up too far behind), and alignment is no longer interrupted by a second jump too early. <strong>📈 uso nel tempo</strong> (<em>usage over time</em>) is clearer: years under the chart in the right place, a scale («times per million words»), a summary (peak year, trend over the last 50 years) and, on hover, each year's value.</li>
