@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi for Stremio 1.3.0 — Guide</title><style>
+:root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
+@media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:40px 22px 80px;background:var(--paper);min-height:100vh;box-shadow:0 0 0 1px var(--line)}
+h1{font-size:2.1em;line-height:1.2;margin:.2em 0 .4em;border-bottom:3px solid var(--accent);padding-bottom:.3em}
+h2{font-size:1.45em;margin:2.2em 0 .6em;padding-top:.4em;border-top:1px solid var(--line)}
+h3{font-size:1.15em;margin:1.6em 0 .4em;color:var(--accent)}
+a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+p,li{color:var(--ink)} li{margin:.25em 0}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--accent);background:var(--code);border-radius:0 8px 8px 0}
+code{background:var(--code);padding:.1em .35em;border-radius:5px;font-size:.92em}
+pre{background:var(--code);padding:14px 16px;border-radius:10px;overflow:auto;line-height:1.45} pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+hr + h2{border-top:0;margin-top:.6em;padding-top:0}
+pre{white-space:pre-wrap;word-break:break-word}
+.toc-note{color:var(--soft)}
+</style></head>
+<body><main><h1 id="sottotitoli-doppi-for-stremio">Sottotitoli Doppi for Stremio</h1>
+<p><em>Versione italiana → <a href="LEGGIMI.html">LEGGIMI</a></em></p>
+<p>A subtitle add-on for Stremio: for films and series it offers the subtitles in the original language with <strong>the translation under every line</strong> (in yellow).</p>
+<h2 id="how-it-works">How it works</h2>
+<p>A Stremio add-on isn't installed inside the app: it's a small service running on your computer that Stremio asks for subtitles when you open a film or an episode.
+1. The add-on takes subtitles from the OpenSubtitles service Stremio already uses, in <strong>every language available</strong> for that film (except the one you translate into).
+2. In Stremio's subtitle list you'll find a dual version for each language, e.g. <strong>"Doppi: Francese → Italiano"</strong> (<em>dual: French → Italian</em>): choose the one in the language the film is spoken in. Any language works.
+3. The dual file has the original on top and the translation below. If it's out of sync, you can ask for 2 or 3 versions per language in the configuration and try the next one.</p>
+<p>The film's language is recognised from its country of production and listed first ("lingua del film", <em>film's language</em>).</p>
+<p><strong>When to translate</strong> (setting "Quando tradurre", since 1.3): Stremio asks for the subtitle list for every film you open, even those you won't use dual subtitles for. By default the add-on only downloads the original file of the first language (free) and <strong>translates only when you pick a "Doppi" version</strong>: no Gemini quota wasted. Choose "In anticipo" (<em>in advance</em>) to translate the first language as soon as you open a film (faster the first time, but it uses quota even for films where you don't use them). Films translated once are saved and load at once either way. If you always want one language only, choose it in "Lingue originali da proporre" (<em>original languages to offer</em>).</p>
+<p>Translation starts as soon as you open the film's page. Stremio only waits a few seconds for the file, so with Gemini any lines not yet translated are completed instantly with Google and the subtitle always loads. Gemini keeps working and its version is saved: next time you open that film (or if you reselect it after a few minutes) you get Gemini's full translation.</p>
+<h2 id="installation-stremio-for-desktop">Installation (Stremio for desktop)</h2>
+<ol>
+<li>Install <strong>Node.js</strong> (LTS version) from nodejs.org, if you don't have it.</li>
+<li>Unzip the archive into a folder.</li>
+<li>Start the add-on:
+   - <strong>Windows</strong>: double-click <code>avvia-windows.bat</code>.
+   - <strong>Mac / Linux</strong>: <code>sh avvia-mac-linux.sh</code> in the Terminal.</li>
+</ol>
+<p>The configuration page opens and a black window stays open: <strong>leave it open</strong> while you use Stremio.
+4. On the page choose the language to translate into and the service. For Gemini, Groq and the others paste your key (the same keys as the browser extension).
+5. Press <strong>Installa in Stremio</strong> (<em>install in Stremio</em>). If Stremio doesn't open, press <strong>Copia l'indirizzo</strong> (<em>copy address</em>) and paste it into the search bar of Stremio's Add-ons section.</p>
+<p>To change settings: in Stremio, Add-ons → Sottotitoli Doppi → Configure, then reinstall.</p>
+<h2 id="phones-tablets-tvs">Phones, tablets, TVs</h2>
+<p>Stremio's apps on these devices only accept add-ons reachable over the Internet with an <strong>https</strong> address. The add-on therefore has to be put online: for example on a Node.js hosting service, or on your computer behind an https tunnel such as Cloudflare Tunnel. Start it with:
+- <code>HOST=0.0.0.0</code> to accept outside connections;
+- <code>PUBLIC_URL=https://public-address</code> so subtitle links point to the right address.</p>
+<p>Warning: your translation service key is part of the add-on's address, so don't share it.</p>
+<h2 id="advanced-settings-environment-variables">Advanced settings (environment variables)</h2>
+<ul>
+<li><code>PORT</code>: port (default 7000).</li>
+<li><code>SD_WAIT_MS</code>: how many milliseconds to wait for the chosen service before completing with Google (default 3000).</li>
+<li><code>SD_FILL_MS</code>: maximum time to complete with Google before answering anyway (default 6000).</li>
+</ul>
+<p>Translations are saved in the <code>cache</code> folder. You can delete it at any time.</p>
+<h2 id="updating">Updating</h2>
+<p>Close the black window, replace the files in the same folder (you can keep the <code>cache</code> folder) and start it again. No need to reinstall the add-on in Stremio.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>The black window logs every request from Stremio, with the time and how long the file took: if a subtitle doesn't appear, the reason is there.</p>
+<h2 id="limitations">Limitations</h2>
+<ul>
+<li>The film needs original subtitles on OpenSubtitles: for content without them, the add-on offers nothing. Audio transcription isn't possible, because Stremio add-ons have no access to the video (for films on your computer, use the Kodi add-on).</li>
+<li>The add-on only reads OpenSubtitles. If Stremio lists subtitles in a language with no "Doppi" version, they may come from another subtitle add-on you've installed.</li>
+<li>The translation colour works in Stremio for desktop. If on a device you see codes like <code>&lt;font…&gt;</code>, turn on <strong>"Traduzione senza colore"</strong> (<em>translation without colour</em>) in the configuration.</li>
+<li>Words can't be clicked as in the browser extension.</li>
+</ul></main></body></html>
