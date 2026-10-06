@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.11 — Guide</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.12 — Guide</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Version 1.4.11</em></p>
+<body><main><p><em>Version 1.4.12</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-browser-extension">Sottotitoli Doppi + Parole al Volo — browser extension</h1>
 <p><em>Versione italiana → <a href="LEGGIMI.html">LEGGIMI</a></em></p>
 <p><strong>Learn languages by watching videos and reading.</strong> One extension for two things:</p>
@@ -500,6 +500,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <hr />
 <h2 id="whats-new">What's new</h2>
 <ul>
+<li><strong>1.4.12</strong>: <strong>synced live, real cause found</strong>: the new ffmpeg (the one the installer downloads) rejects YouTube live segments because their addresses don't end in «.ts» (in the log: «Invalid data found when processing input»); for the same reason yt-dlp stayed silent too. Helper <strong>1.6</strong> (re-run the installer) downloads the stream itself and hands ffmpeg only the segments. <strong>Word card on pages</strong> (also a Google Books PDF in fullscreen): when it grows after «✨ Explain with…», the tree or the images it no longer runs off the bottom of the screen; it uses the space below or above the word and scrolls inside. <strong>🎙 Redo the transcription</strong>: an explicit button in the popup (under «Trascrivi l'audio di questo video», shown when the video already has a transcription) and in the ⚑ card on the video («Tutta la trascrizione di questo video è sbagliata?»). With Groq there is also «Rifalla con il modello più preciso» (whisper-large-v3: slower, fewer wrong words). <strong>📋 Copia il registro per il debug</strong> (popup, Video tab, at the top): copies what happened in the video tab (DS clicks, captions taken from YouTube, translation, transcription, errors), the current state and the failed requests; paste it when you report a problem. It contains no keys (only which services have one).</li>
 <li><strong>1.4.11</strong>: <strong>synced live without yt-dlp</strong>: the extension takes the stream address from the YouTube player and the helper (version <strong>1.5</strong>, re-run the installer) reads it directly with ffmpeg; yt-dlp remains as a fallback, with its step-by-step messages in the live log. Groq Whisper no longer stops with «il modello scelto non esiste più» when the popup still had a local server's model name.</li>
 <li><strong>1.4.10</strong>: <strong>synced live</strong>, yt-dlp helper <strong>1.4</strong> (re-run the installer): yt-dlp is no longer "silent" (its messages go to the live log, so you can see why no audio arrives) and, if no audio arrives within 25 s, there is a <strong>plan B</strong>: yt-dlp only gives the stream address and ffmpeg reads it directly. If YouTube refuses (error 403), the message says so.</li>
 <li><strong>1.4.9</strong>: <strong>word card</strong>: always stays inside the screen, even in fullscreen and when it grows after opening (etymology, tree, images: before, its end could no longer be reached); clicking the Anki image arrows keeps your place (before, it jumped back at every click). <strong>Prova</strong> says when a local model is slow because it reasons before every answer.</li>
