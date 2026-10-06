@@ -1,5 +1,5 @@
 <!doctype html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.5.2 — Guida</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.5.3 — Guida</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Versione 1.5.2</em></p>
+<body><main><p><em>Versione 1.5.3</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-estensione-per-il-browser">Sottotitoli Doppi + Parole al Volo — estensione per il browser</h1>
 <p><em>English version → <a href="GUIDE.en.html">GUIDE.en</a></em></p>
 <p><strong>Impara le lingue guardando video e leggendo.</strong> Una sola estensione per due cose:</p>
@@ -260,7 +260,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <ul>
 <li>Viene da <strong>Wiktionary</strong> (gratis, senza chiave), tradotta nella tua lingua con Google; il collegamento "Wiktionary" apre la pagina completa. Per le forme flesse (<em>walked</em>, <em>went</em>) cerca la forma base.</li>
 <li><strong>✨ Spiegala meglio con …</strong> (Gemini o il modello scelto): se quella di Wiktionary è scarna, il modello la spiega e la completa nella tua lingua (una richiesta). Resta salvata <strong>accanto</strong> a quella di Wiktionary: con <strong>‹ ›</strong> passi dall'una all'altra.</li>
-<li>Il collegamento <strong>Etymology Explorer</strong> apre la stessa parola su etymologyexplorer.com, con la mappa delle sue origini e delle parole parenti (in un'altra scheda).</li>
+<li>Il collegamento <strong>Etymology Explorer</strong> apre la stessa parola su etymologyexplorer.com, con la mappa delle sue origini e delle parole parenti (in un'altra scheda). Se lì la parola non c'è («404 This page could not be found»), nell'<strong>🌳 albero etimologico</strong> ogni antenato ha il suo <strong>↗</strong>: apri quello più vicino.</li>
 <li>Si chiede solo se la scheda resta aperta un attimo, poi resta salvata. Finisce anche nel vocabolario e nelle carte per Anki.</li>
 <li>Se Wiktionary non la ha, premi <strong>✨ Spiega con …</strong>: la spiegazione nel contesto di Gemini (o del servizio scelto) porta anche l'etimologia, nella stessa richiesta (una sola, non due).</li>
 <li>Si accende e spegne nel popup → <strong>📖 Scheda delle parole → Etimologia</strong>.</li>
@@ -647,6 +647,7 @@ Con <strong>Finite le richieste gratuite, passa a un altro servizio con la chiav
 <hr />
 <h2 id="novita">Novità</h2>
 <ul>
+<li><strong>1.5.3</strong>: <strong>dirette sincronizzate</strong> (programma per yt-dlp <strong>1.9</strong>, rilancia l'installatore): il programma legge anche i 2 minuti di diretta già passati, non solo il punto più recente. Prima il pezzo che stavi guardando non era nell'audio letto (il video di YouTube è già indietro rispetto alla diretta), l'audio non si metteva a tempo e il video veniva portato indietro di 15 secondi alla volta: tolto. Nel registro, ogni 15 secondi, una <strong>misura</strong>: quanto audio è arrivato e a che velocità, quanto somiglia a quello del video e quanto è avanti. <strong>Etimologia</strong>: nell'🌳 albero ogni antenato ha il suo <strong>↗</strong> per aprirlo su Etymology Explorer (utile quando lì la parola moderna non c'è).</li>
 <li><strong>1.5.2</strong>: <strong>dirette sincronizzate</strong> (programma per yt-dlp <strong>1.8</strong>, rilancia l'installatore): trovate le due cause per cui yt-dlp «non rispondeva mai». La prima: si chiedeva un formato con audio e video insieme, che molte dirette non hanno (ora si chiede l'audio da solo). La seconda: su Windows yt-dlp e Deno ricevevano il canale del browser e il programma di appoggio restava bloccato invece di ricevere l'errore. Inoltre yt-dlp cerca l'indirizzo della diretta subito, insieme al primo tentativo; l'indirizzo trovato resta ricordato per qualche ora (riaprendo la stessa diretta, o riaccendendo ⏱, l'audio parte in un attimo); mentre cerca, il registro mostra da quanti secondi e l'ultima riga di yt-dlp. La traduzione rapida di Google riprova da sola dopo un errore momentaneo («500»).</li>
 <li><strong>1.5.1</strong>: <strong>Dirette sincronizzate</strong>, programma per yt-dlp <strong>1.7</strong> (rilancia l'installatore): YouTube rifiuta i pezzi della diretta presi dall'indirizzo del lettore («403»); ora il programma se ne accorge in pochi secondi e passa subito all'indirizzo dato da yt-dlp, invece di aspettare e arrendersi. <strong>🗒 Aspetto delle schede</strong> (nuova sezione del popup): grandezza del testo, larghezza, colori di sfondo, testo e significato, opacità, e la posizione (nei video sopra la parola o sempre a sinistra/destra del video; sulle pagine vicino alla parola o sempre a destra/sinistra). <strong>Etimologia</strong>: «✨ Spiegala meglio con …» chiede al modello una spiegazione più completa, che resta accanto a quella di Wiktionary: si passa dall'una all'altra con ‹ ›; accanto a «Wiktionary» c'è anche il collegamento <strong>Etymology Explorer</strong> (la mappa delle origini). <strong>Modi di dire</strong>: «✎ Correggi il modo di dire» cambia l'espressione stessa, non solo il significato; un modo di dire segnato come «non è un modo di dire» si recupera dalla scheda di una sua parola («🚫 … annulla»).</li>
 <li><strong>1.5.0</strong>: <strong>un popup solo</strong>, per i video e per le pagine (prima c'erano le due schede 🎬 Video e 📄 Pagine). In alto i due interruttori generali e <strong>Traduci in</strong>; sotto le sezioni 🌐 Traduzione e modelli, 🎙 Trascrizione, 📄 Pagine e PDF, 📖 Scheda delle parole, 🎨 Aspetto dei sottotitoli, 🔈 Voce, 🗃 Anki, ⚙ Altro. Le impostazioni della scheda delle parole (pronuncia IPA, etimologia, strumenti per imparare) sono una volta sola e valgono per video e pagine. <strong>Modello per ogni compito</strong> e <strong>Ordine dei servizi</strong> sono chiusi in due sottomenu. Scritte dei pulsanti e delle pagine riviste (per esempio il programma per yt-dlp, che serve sia alla trascrizione completa sia alle dirette sincronizzate). Guida aggiornata al nuovo popup.</li>

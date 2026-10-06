@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.5.2 — Guide</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.5.3 — Guide</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Version 1.5.2</em></p>
+<body><main><p><em>Version 1.5.3</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-browser-extension">Sottotitoli Doppi + Parole al Volo — browser extension</h1>
 <p><em>Versione italiana → <a href="LEGGIMI.html">LEGGIMI</a></em></p>
 <p><strong>Learn languages by watching videos and reading.</strong> One extension for two things:</p>
@@ -558,6 +558,7 @@ With <strong>Finite le richieste gratuite, passa a un altro servizio con la chia
 <hr />
 <h2 id="whats-new">What's new</h2>
 <ul>
+<li><strong>1.5.3</strong>: <strong>synced live streams</strong> (yt-dlp helper <strong>1.9</strong>, re-run the installer): the helper also reads the last 2 minutes of the stream, not only the most recent point. Before, the piece you were watching wasn't in the audio read (YouTube's video is already behind the live edge), the audio couldn't be aligned and the video was moved back 15 seconds at a time: removed. Every 15 seconds the log shows a <strong>measurement</strong>: how much audio arrived and how fast, how similar it is to the video's and how far ahead. <strong>Etymology</strong>: in the 🌳 tree every ancestor has its own <strong>↗</strong> to open it on Etymology Explorer (useful when the modern word isn't there).</li>
 <li><strong>1.5.2</strong>: <strong>synced live streams</strong> (yt-dlp helper <strong>1.8</strong>, re-run the installer): found the two reasons why yt-dlp «never answered». First: a format with audio and video together was requested, which many live streams don't have (now audio only is requested). Second: on Windows yt-dlp and Deno inherited the browser's channel and the helper stayed stuck instead of receiving the error. Also, yt-dlp looks for the stream address right away, together with the first attempt; the address found is remembered for a few hours (reopening the same stream, or turning ⏱ on again, starts the audio at once); while it searches, the log shows for how long and yt-dlp's last line. Google's quick translation retries by itself after a temporary error («500»).</li>
 <li><strong>1.5.1</strong>: <strong>Synced live streams</strong>, yt-dlp helper <strong>1.7</strong> (re-run the installer): YouTube refuses the stream pieces taken from the player's address («403»); the helper now notices within seconds and switches straight to the address given by yt-dlp, instead of waiting and giving up. <strong>🗒 Aspetto delle schede</strong> (<em>card appearance</em>, new popup section): text size, width, background, text and meaning colours, opacity, and position (in videos above the word or always left/right of the video; on pages near the word or always right/left). <strong>Etymology</strong>: «✨ Spiegala meglio con …» (<em>explain it better with…</em>) asks the model for a fuller explanation, kept next to Wiktionary's: switch between them with ‹ ›; next to «Wiktionary» there's also the <strong>Etymology Explorer</strong> link. <strong>Idioms</strong>: «✎ Correggi il modo di dire» (<em>correct the idiom</em>) changes the expression itself, not only its meaning; an idiom marked «non è un modo di dire» (<em>not an idiom</em>) can be restored from the card of one of its words («🚫 … annulla»).</li>
 <li><strong>1.5.0</strong>: <strong>one popup</strong>, for videos and pages (before there were the two tabs 🎬 Video and 📄 Pagine). At the top the two main switches and <strong>Traduci in</strong>; below, the sections 🌐 Traduzione e modelli, 🎙 Trascrizione, 📄 Pagine e PDF, 📖 Scheda delle parole, 🎨 Aspetto dei sottotitoli, 🔈 Voce, 🗃 Anki, ⚙ Altro. The word-card settings (IPA, etymology, learning tools) appear once and apply to videos and pages. <strong>Modello per ogni compito</strong> and <strong>Ordine dei servizi</strong> are folded into two sub-menus. Button and page texts reviewed (for example the yt-dlp helper, which serves both full transcription and synced live streams). Guide updated to the new popup.</li>
