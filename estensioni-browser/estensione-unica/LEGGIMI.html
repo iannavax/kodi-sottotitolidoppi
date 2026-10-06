@@ -1,5 +1,5 @@
 <!doctype html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.10 — Guida</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.4.11 — Guida</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Versione 1.4.10</em></p>
+<body><main><p><em>Versione 1.4.11</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-estensione-per-il-browser">Sottotitoli Doppi + Parole al Volo — estensione per il browser</h1>
 <p><em>English version → <a href="GUIDE.en.html">GUIDE.en</a></em></p>
 <p><strong>Impara le lingue guardando video e leggendo.</strong> Una sola estensione per due cose:</p>
@@ -591,6 +591,7 @@ Con <strong>Se finiscono le richieste gratuite, continua con un altro servizio d
 <hr />
 <h2 id="novita">Novità</h2>
 <ul>
+<li><strong>1.4.11</strong>: <strong>diretta sincronizzata senza yt-dlp</strong>: l'estensione prende l'indirizzo della diretta dal lettore di YouTube e il programma (versione <strong>1.5</strong>, rilancia l'installatore) la legge direttamente con ffmpeg; yt-dlp resta come riserva, con i suoi messaggi passo passo nel registro. Groq Whisper non si ferma più con «il modello scelto non esiste più» se nel popup era rimasto il nome di un modello del server sul computer.</li>
 <li><strong>1.4.10</strong>: <strong>diretta sincronizzata</strong>, programma per yt-dlp <strong>1.4</strong> (rilancia l'installatore): yt-dlp non è più «muto» (i suoi messaggi finiscono nel registro della diretta, così si vede perché non manda l'audio) e, se dopo 25 s non arriva audio, c'è un <strong>piano B</strong>: yt-dlp dà solo l'indirizzo della diretta e la legge direttamente ffmpeg. Se YouTube rifiuta (errore 403) il messaggio lo dice.</li>
 <li><strong>1.4.9</strong>: <strong>scheda della parola</strong>: resta sempre dentro lo schermo, anche a schermo intero e quando cresce dopo l'apertura (etimologia, albero, immagini: prima la fine non si raggiungeva più); cliccando le frecce delle immagini per Anki resta dov'eri (prima tornava su a ogni clic). Il pulsante <strong>Prova</strong> dice quando un modello sul computer è lento perché ragiona prima di ogni risposta.</li>
 <li><strong>1.4.8</strong>: <strong>📈 uso nel tempo</strong> si vede di nuovo: sulle pagine la curva spariva e gli anni erano neri (lo stile di base delle schede cancellava il disegno), e sui siti con regole proprie per i disegni (anche YouTube) poteva succedere lo stesso; ora colori e forme sono fissati sul grafico. tolto il «/no_think» aggiunto nella 1.4.7: il <code>qwen3:4b</code> di Ollama è la versione di Qwen 3 che ragiona sempre e lo prendeva come testo da tradurre. Ora <strong>Prova</strong>, se il modello sul computer è lento perché ragiona prima di ogni risposta, lo dice e consiglia un modello senza ragionamento (per esempio <code>gemma3:4b</code>).</li>

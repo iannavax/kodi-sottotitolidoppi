@@ -5,7 +5,7 @@ L'archivio `sottotitoli-doppi-progetto.zip` contiene tutto il codice sorgente e 
 
 ## 0. Come ripartire (istruzioni per Claude)
 1. Scompatta l'archivio caricato: `cd /home/claude && unzip -q /mnt/user-data/uploads/sottotitoli-doppi-progetto.zip`
-2. **Da consegnare**: `cd sottotitoli-doppi-progetto/unica && ./build.sh 1.4.10` (zip, xpi, guida .md/.html dentro; novità in fondo a `unica/GUIDA.md` e `GUIDE.en.md`). Per le prove servono anche le build delle due estensioni: `cd sottotitoli-doppi-progetto/estensione && ./build.sh 5.22.1` (per una versione nuova cambia `version` nei due manifest e `head.*.md`, e aggiungi le novità in cima a `novita57.md` o in un nuovo `novitaXX.md` elencato in build.sh) crea `build/chrome`, `build/firefox` e i pacchetti.
+2. **Da consegnare**: `cd sottotitoli-doppi-progetto/unica && ./build.sh 1.4.11` (zip, xpi, guida .md/.html dentro; novità in fondo a `unica/GUIDA.md` e `GUIDE.en.md`). Per le prove servono anche le build delle due estensioni: `cd sottotitoli-doppi-progetto/estensione && ./build.sh 5.22.1` (per una versione nuova cambia `version` nei due manifest e `head.*.md`, e aggiungi le novità in cima a `novita57.md` o in un nuovo `novitaXX.md` elencato in build.sh) crea `build/chrome`, `build/firefox` e i pacchetti.
 3. Parole al Volo: `cd sottotitoli-doppi-progetto/parole-al-volo && ./build.sh 1.16.0` (poi LEGGIMI.html con release/md2html.py e rifare zip/xpi) (prende config.js, background.js e tts.js da ../estensione/src). Prova: `python3 test-volo/tvolo.py parole-al-volo/build/chrome` (servizi e AnkiConnect simulati, indipendente dal banco di prova sotto).
 4. Banco di prova: `mkdir -p /home/claude/e2e && cp -r test-estensione/* /home/claude/e2e/ && chmod +x /home/claude/e2e/fake/* && python3 /home/claude/e2e/crea_audio.py` (gli script si aspettano la cartella `/home/claude/e2e`). Le prove si lanciano passando la build: `python3 tidiom.py /percorso/build/chrome`. Per quelle che leggono `dualsubDebug` usa una copia della build con `cat sonda.js >> content.js`. Stremio: copia `stremio` in `/home/claude/stremio` e `bash test.sh "" 300` + `python3 test.py '{...}'`. Kodi: copia `kodi` in `/home/claude/kodi`, crea il film di prova con `python3 test/crea_film_mkv.py` (serve alle prove 6-9 e 13) e `python3 test/test_kodi.py` … `test_kodi14.py`. **Attenzione**: nei comandi usa percorsi assoluti per copiare indietro nel progetto (un `cd` + percorsi relativi ha cancellato le cartelle una volta).
 5. Rispondi sempre in **italiano**, semplice e chiaro.
@@ -22,13 +22,20 @@ L'archivio `sottotitoli-doppi-progetto.zip` contiene tutto il codice sorgente e 
 |---|---|---|
 | Estensione browser (Chrome/Edge + Firefox) | **5.22.1** (non più consegnata da sola) | Ultima consegnata 5.22.0; ora vive dentro l'unica |
 | Estensione **Parole al Volo** (sorella per i testi) | **1.16.1** (non più consegnata da sola) | Ultima consegnata 1.16.0; ora vive dentro l'unica |
-| Estensione **unica** «Sottotitoli Doppi + Parole al Volo» (`unica/`) | **1.4.10** | **L'unica consegnata**; provata con le prove di tutte e due (Chromium); mai in Firefox vero |
+| Estensione **unica** «Sottotitoli Doppi + Parole al Volo» (`unica/`) | **1.4.11** | **L'unica consegnata**; provata con le prove di tutte e due (Chromium); mai in Firefox vero |
 | Add-on Kodi `script.sottotitolidoppi` | **1.12.0** (+ `service.subtitles.sottotitolidoppi` 1.0.0, `service.subtitles.subdl` 1.0.0) | Consegnato; provato con un Kodi simulato (prove 1–14), non su Kodi vero |
 | Repository Kodi `repository.sottotitolidoppi` | **1.0.0** | Pubblicato dall'utente (iannavax/kodi-sottotitolidoppi); da ricaricare con la cartella `kodi/kodi-sottotitolidoppi` rigenerata |
 | Add-on Stremio (server Node.js) | **1.3.0** | Consegnato; provato con servizi simulati, non con Stremio vero |
 | Programma per yt-dlp (dentro l'estensione) | 1.0 | Provato su Linux con yt-dlp finto. **Installatore Windows mai eseguito** (solo riletto) |
 
-Ultimo lavoro (unica 1.4.10, programma per yt-dlp 1.4): registro dell'utente con il programma 1.3. «yt-dlp non manda ancora l'audio (20 s), nessun messaggio», poi fallita dopo 60 s. yt-dlp girava con `--quiet --no-warnings`, quindi gli avvisi (pezzi rifiutati, nuovi tentativi) non si vedevano.
+Ultimo lavoro (unica 1.4.11, programma per yt-dlp 1.5). Registro dell'utente con la 1.4: yt-dlp resta muto anche senza `--quiet`, e anche `yt-dlp -g` (piano B) si blocca, quindi ffmpeg non parte.
+- **Piano 0 senza yt-dlp.** inject.js risponde a `hlsUrl` con `getPlayerResponse().streamingData.hlsManifestUrl`; content.js gestisce `hlsResult`; ahead.js `aheadHlsUrl()` (attesa 1,5 s) lo manda nella porta `{url, hls}`; background lo passa al programma (`cmd: live, hls`).
+- `sd_host.py` 1.5: piano 0 → `_hls_variant` (variante più leggera dalla playlist principale, con urllib) + `_ffmpeg_live` (si arrende a 20 s). Poi `maybe_update` (spostato qui: prima bloccava tutto), piano A con `yt-dlp -v`, piano B.
+- ahead.js si arrende a 150 s; helper.js segnala «vecchio» sotto la 1.5.
+- Groq Whisper con un nome di modello sconosciuto (quello di Speaches rimasto): torna a `whisper-large-v3-turbo` e lo salva. Il popup, tornando a Groq, rimette il modello di Groq.
+- charness: `FAKE_PAGE_HLS` mette `streamingData.hlsManifestUrl` nel lettore finto. Prova: `FAKE_PAGE_HLS=file:/tmp/speech.wav FAKE_LIVE_SILENT=1 SHOWLOG=1 python3 tahead.py <copia con sonda>`: audio subito, a tempo con 11 s di anticipo, frasi con 0,0–0,2 s di ritardo.
+
+Prima (unica 1.4.10, programma per yt-dlp 1.4): registro dell'utente con il programma 1.3. «yt-dlp non manda ancora l'audio (20 s), nessun messaggio», poi fallita dopo 60 s. yt-dlp girava con `--quiet --no-warnings`, quindi gli avvisi (pezzi rifiutati, nuovi tentativi) non si vedevano.
 - `sd_host.py` 1.4: `live_run` → piano A (yt-dlp `--no-progress`, senza quiet, | ffmpeg; `_pump` dice cosa succede a 12 s e si arrende a 25 s) → piano B (`yt-dlp -g -f 91/92/93/94/95/96/b` → `ffmpeg -i <HLS>`; si arrende a 30 s). I messaggi sono le ultime righe di stderr (`_tail`). `friendly_error` riconosce il 403.
 - ahead.js: si arrende a 110 s invece che a 60. helper.js segnala «vecchio» sotto la 1.4.
 - fake/yt-dlp: con `-g` stampa `file:<wav>` (ffmpeg lo legge con `-re`). Prova: `FAKE_LIVE_SILENT=1 SHOWLOG=1 python3 tahead.py <copia con sonda>`: il piano B legge l'audio e si mette a tempo.
