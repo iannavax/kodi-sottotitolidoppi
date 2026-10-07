@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.5.4 — Guide</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.6.0 — Guide</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Version 1.5.4</em></p>
+<body><main><p><em>Version 1.6.0</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-browser-extension">Sottotitoli Doppi + Parole al Volo — browser extension</h1>
 <p><em>Versione italiana → <a href="LEGGIMI.html">LEGGIMI</a></em></p>
 <p><strong>Learn languages by watching videos and reading.</strong> One extension for two things:</p>
@@ -50,7 +50,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <li><a href="#11-videos-without-subtitles-transcribing-the-audio">Videos without subtitles: transcribing the audio</a></li>
 <li><a href="#12-the-trascrizione-e-traduzione-page">The "Trascrizione e traduzione" page</a></li>
 <li><a href="#13-translation-services">Translation services</a></li>
-<li><a href="#14-using-fewer-free-requests">Using fewer free requests</a></li>
+<li><a href="#14-request-usage">Request usage</a></li>
 <li><a href="#15-a-translation-model-on-your-own-computer">A translation model on your own computer</a></li>
 <li><a href="#16-troubleshooting">Troubleshooting</a></li>
 <li><a href="#17-privacy">Privacy</a></li>
@@ -167,6 +167,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <li><strong>📜 Testo del video</strong> (<em>the video's text</em>: every line of the open video, with its translation — <a href="#12-the-trascrizione-e-traduzione-page">section 12</a>), <strong>📒 Vocabolario</strong> (<em>vocabulary</em>) and <strong>✓ Parole che conosco</strong> (<em>words I know</em>);</li>
 <li>the two master switches: <strong>Sottotitoli doppi nei video</strong> (<em>dual subtitles in videos</em>) and <strong>Parole al Volo sulle pagine e nei PDF</strong> (<em>Parole al Volo on pages and in PDFs</em>, <strong>Alt+Shift+Y</strong>);</li>
 <li><strong>Traduci in</strong> (<em>translate into</em>): your language, for everything. Below it, <strong>Interfaccia in questa lingua</strong> (<em>interface in this language</em>): when ticked, all the extension's text (popup, cards, vocabulary, transcription and PDF reader pages…) is shown in that language. The first time takes a couple of seconds (the text is translated with Google, free), then it's remembered;</li>
+<li><strong>Consumo delle richieste</strong> (<em>request usage</em>): how much the extension uses the services with a key on its own, from best quality to lowest usage (🏆 Qualità, ⚖️ Bilanciato, 💰 Risparmio, 🆓 Solo gratis: <a href="#14-request-usage">section 14</a>);</li>
 <li>when you're watching a <strong>live stream</strong>, the «🔴 Questo video è una diretta» (<em>this video is a live stream</em>) box with the choice between normal and synced subtitles.</li>
 </ul>
 <p>Then the sections, each opening with a click:</p>
@@ -180,7 +181,11 @@ pre{white-space:pre-wrap;word-break:break-word}
 <tbody>
 <tr>
 <td><strong>🌐 Traduzione e modelli</strong> (<em>translation and models</em>)</td>
-<td>The service that translates subtitles, its key, the model; <strong>Modello per ogni compito</strong> (<em>model for each task</em>) and <strong>Ordine dei servizi</strong> (<em>service order</em>), collapsed sub-menus that open with a click (<a href="#13-translation-services">section 13</a>).</td>
+<td>The service that translates subtitles, its key, the model (<a href="#13-translation-services">section 13</a>).</td>
+</tr>
+<tr>
+<td><strong>📊 Consumo e modelli</strong> (<em>usage and models</em>)</td>
+<td>The more technical choices: today's requests per service, backup services, <strong>Modello per ogni compito</strong> (<em>model for each task</em>: service and exact model), <strong>Ordine dei servizi</strong> (<em>service order</em>), daily request limit, maximum lead of synced live streams (<a href="#13-translation-services">sections 13</a> and <a href="#14-request-usage">14</a>).</td>
 </tr>
 <tr>
 <td><strong>🎙 Trascrizione</strong> (<em>transcription</em>)</td>
@@ -216,7 +221,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 </tr>
 </tbody>
 </table>
-<p>Everything is shared between videos and pages: keys, language, vocabulary, known words, voices, Anki, the yt-dlp helper. These have a setting of their own instead: the service for pages (under <strong>Modello per ogni compito → Testi delle pagine e PDF</strong>, <em>page and PDF text</em>), disabled sites, known words coloured on pages and the Latin letters in the page card.</p>
+<p>Everything is shared between videos and pages: keys, language, vocabulary, known words, voices, Anki, the yt-dlp helper. These have a setting of their own instead: the service for pages (under <strong>📊 Consumo e modelli → Modello per ogni compito → Testi delle pagine e PDF</strong>, <em>page and PDF text</em>), disabled sites, known words coloured on pages and the Latin letters in the page card.</p>
 <hr />
 <h2 id="5-where-it-works">5. Where it works</h2>
 <ul>
@@ -266,18 +271,18 @@ pre{white-space:pre-wrap;word-break:break-word}
 <li>Explanations are saved even after closing the browser: the same word in the same sentence is never requested twice.</li>
 </ul>
 <h3 id="learning-tools">Learning tools</h3>
-<p><strong>Google dictionary</strong> (same request as the translation, free): translations ranked by usage with reverse translations on hover, definitions in the word's own language, synonyms and "see also", and "Did you mean…" in the spelling check. Definitions also come from the Wiktionary edition of the word's language (or English Wiktionary), each with <strong>translate</strong>. <strong>Aa</strong> next to the subtitles shows Latin letters above each letter of Cyrillic, Greek, Armenian, Georgian, Hebrew, Japanese kana and Korean (above each word for Arabic, Persian, Urdu, Hindi): built-in tables, no service; kanji/Chinese lines get a whole-line reading from Google (free). Anki images can be checked and changed before saving (‹ ›, «altre…», ✕) and in the vocabulary (🖼); sources in popup → Anki. <strong>Parole che conosco</strong> (popup) opens the frequency list with import/export and <strong>⇄ Sincronizza adesso</strong> (direct sync of known words with Parole al Volo, no file); <strong>⇄</strong> in the vocabulary page moves vocabulary and known words to and from Parole al Volo. Level badges are clickable: «livello ≈ B1 ›» (indicative A1–C2 from the frequency rank) opens the words of that level, and for Japanese «JLPT N5 ›» opens the whole JLPT level word list (Jisho). <strong>Kanji / Chinese characters one by one</strong>: in the card of a Japanese or Chinese word, «Kanji uno per uno» has a button per character; it shows that character alone (meaning, readings in every language — on/kun, pinyin, Cantonese, Korean, Vietnamese —, clickable parts and radical, simplified/traditional form, strokes, JLPT/grade, HSK, Korean school hanja) with «scheda del carattere ›» to open it as a word (vocabulary, Anki) and «‹ Torna alla parola» to go back. Free (built-in Unihan/KANJIDIC/HSK data + Google), no model requests; «☆ salva il kanji» / «☆ salva tutti i kanji» save the single characters to the vocabulary. <strong>↺</strong> left of the subtitles replays the sentence, or (yellow) jumps back to the sentence you were reading while the video moved on. <strong>Synced live streams</strong> (popup → <strong>🎙 Trascrizione → «Dirette sincronizzate»</strong>): on YouTube live streams the video is kept a few seconds behind while the yt-dlp helper reads the audio further on, so transcribed subtitles appear on time (needs the yt-dlp helper with ffmpeg). An orange <strong>🔊*</strong> means the recording is of another form of the word. <strong>⚑ Wrong translation?</strong> under the meaning lets you redo it with Google or the model, or fix it by hand.</p>
+<p><strong>Google dictionary</strong> (same request as the translation, free): translations ranked by usage with reverse translations on hover, definitions in the word's own language, synonyms and "see also", and "Did you mean…" in the spelling check. Definitions also come from the Wiktionary edition of the word's language (or English Wiktionary), each with <strong>translate</strong>. <strong>Aa</strong> next to the subtitles shows Latin letters above each letter of Cyrillic, Greek, Armenian, Georgian, Hebrew, Japanese kana and Korean (above each word for Arabic, Persian, Urdu, Hindi): built-in tables, no service; kanji/Chinese lines get a whole-line reading from Google (free). Anki images can be checked and changed before saving (‹ ›, «altre…», ✕) and in the vocabulary (🖼); sources in popup → Anki. <strong>Parole che conosco</strong> (popup) opens the frequency list with import/export and <strong>⇄ Sincronizza adesso</strong> (direct sync of known words with Parole al Volo, no file); <strong>⇄</strong> in the vocabulary page moves vocabulary and known words to and from Parole al Volo. Level badges are clickable: «livello ≈ B1 ›» (indicative A1–C2 from the frequency rank) opens the words of that level, and for Japanese «JLPT N5 ›» opens the whole JLPT level word list (Jisho). <strong>Kanji / Chinese characters one by one</strong>: in the card of a Japanese or Chinese word, «Kanji uno per uno» has a button per character; it shows that character alone (meaning, readings in every language — on/kun, pinyin, Cantonese, Korean, Vietnamese —, clickable parts and radical, simplified/traditional form, strokes, JLPT/grade, HSK, Korean school hanja) with «scheda del carattere ›» to open it as a word (vocabulary, Anki) and «‹ Torna alla parola» to go back. Free (built-in Unihan/KANJIDIC/HSK data + Google), no model requests; «☆ salva il kanji» / «☆ salva tutti i kanji» save the single characters to the vocabulary. <strong>↺</strong> left of the subtitles replays the sentence, or (yellow) jumps back to the sentence you were reading while the video moved on. <strong>Synced live streams</strong> (popup → <strong>🎙 Trascrizione → «Dirette sincronizzate»</strong>): on YouTube live streams the video is kept behind while the yt-dlp helper reads the audio further on, so transcribed subtitles appear on time (needs the yt-dlp helper with ffmpeg); how far behind: <a href="#how-far-behind-the-live-stream">section 11</a>. An orange <strong>🔊*</strong> means the recording is of another form of the word. <strong>⚑ Wrong translation?</strong> under the meaning lets you redo it with Google or the model, or fix it by hand.</p>
 <p>Below the meaning, the word card shows extra help, all <strong>free and without keys</strong>; each one can be switched off in the popup → <strong>📖 Scheda delle parole</strong> (<em>word card</em>): word <strong>frequency</strong>, <strong>"la conosco?"</strong> (known words turn green in the subtitles and the popup shows what percentage of the video's words you know), noun <strong>gender</strong>, a <strong>spelling check</strong> (LanguageTool or the dictionary; when you click the word, the model also gives a 0-100 score in the same request), the word's <strong>etymology</strong>, a <strong>native speaker recording</strong> (the 🔊 button at the top of the card) and a <strong>conjugation/declension table</strong> (Wiktionary), and up to 3 <strong>real example sentences</strong> (Tatoeba). Clicking the word, the single request to the model also brings <strong>false friends</strong> and <strong>related words</strong>. Next to "↺ Riascolta la frase" there are <strong>🐢 slow</strong> and <strong>🔁 ×3</strong>. Optional (off by default): an <strong>image</strong> from Wikimedia Commons on your Anki cards.</p>
 <h3 id="from-the-translation-back-to-the-original">From the translation back to the original</h3>
 <ul>
 <li><strong>Hover a word in the translation</strong>: the original word it comes from lights up and a label shows it. Click → card for the original word.</li>
-<li>By default Google makes the link (free, approximate: the label says "circa"). Turn on <strong>📖 Scheda delle parole → Modi di dire e collegamento preciso tra le parole</strong> (<em>idioms and precise word linking</em>) in the popup to have the AI model make it precise (one request every 8 lines, while hovering).</li>
+<li>By default Google makes the link (free, approximate: the label says "circa"). Turn on <strong>📖 Scheda delle parole → Modi di dire e collegamento tra le parole anche dal modello</strong> (<em>idioms and word linking from the model too</em>) in the popup to have the AI model make it precise (one request every 8 lines, while hovering).</li>
 <li><strong>Particles</strong>: articles, prepositions and auxiliaries that the translation adds but that don't translate any original word are <strong>dotted-underlined</strong>. Hover one and the "particella" label tells you which part of the original it belongs to.</li>
 <li><strong>The other way round</strong>: hovering an original word highlights its translation (particles more faintly); without the model, Google dictionary translations of the word are used, matched even with a different ending.</li>
 </ul>
 <h3 id="phrases-and-expressions">Phrases and expressions</h3>
 <ul>
-<li><strong>Idioms</strong>: with an AI model, expressions that can't be translated word by word (<em>break the ice</em>, <em>give up</em>…) are <strong>underlined in orange</strong>. Hover one and the whole expression lights up with its real meaning. (Only with the option above turned on; off by default.)</li>
+<li><strong>Idioms</strong>: expressions that can't be translated word by word (<em>break the ice</em>, <em>kick the bucket</em>…) are <strong>underlined in orange</strong>, with no extra requests: from Wiktionary's idiom dictionary (downloaded once per language, searched on your computer; simple inflections like «kicked the bucket» and person slots like «pulling my leg» are recognised), from the translation when a model translates the subtitles (it lists them <strong>in the same request</strong>), and the ones already seen. Hover one and the whole expression lights up with its meaning. In a word's card, <strong>🔎 Modi di dire con questa parola</strong> (<em>idioms with this word</em>) asks the model (one request). Asking the model on its own — <strong>Modi di dire e collegamento tra le parole anche dal modello</strong> (videos, one request every 8 lines on hover) and <strong>Modi di dire anche dal modello, da soli</strong> (pages) — is off by default and on only in «🏆 Qualità»; <strong>Modi di dire sottolineati nei sottotitoli (gratis)</strong> and <strong>Modi di dire sottolineati sulle pagine (gratis)</strong> turn the underlining off.</li>
 <li><strong>Select in the original</strong>: press on the first word and drag to the last → card with the meaning of the whole expression.</li>
 <li><strong>Select in the translation</strong>: drag across several translated words → the matching part of the original lights up; the label offers <strong>Spiega</strong> (<em>explain</em>), <strong>Copia</strong> (<em>copy</em>) and the lookup links. Close with Esc.</li>
 </ul>
@@ -291,7 +296,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <ul>
 <li><strong>Hover a word</strong> (stay still a moment): the card shows the word, its translation and Google's dictionary, <strong>IPA pronunciation</strong> and Latin-letter transcription for other alphabets, <strong>etymology</strong> from Wiktionary (following the chain back to the root, even through other languages; for inflected forms taken from the parent word when the link is certain), the <strong>sentence</strong> with its translation, 🔈/🔊 to listen, ☆ to save, copy buttons and links to Google Translate, DeepL, Reverso, WordReference and Wiktionary, plus the same learning tools as in videos.</li>
 <li>With a <strong>Gemini or Groq</strong> key, <strong>"Spiega con Gemini"</strong> (<em>explain with…</em>, one request) gives the meaning <em>in that sentence</em>, the base form, whether it's part of an idiom, an example, and in the same request etymology, IPA, false friends (only real ones, compared with words of your language), related words and a spelling score. Everything is written in the language you translate into: an answer in the wrong language is asked again or dropped.</li>
-<li><strong>Idioms</strong>: the card reports the idiom the word belongs to (the other words get a light dashed underline); it is remembered, and <strong>☆ Salva il modo di dire</strong> (<em>save the idiom</em>) puts it in your vocabulary.</li>
+<li><strong>Idioms</strong>: the card reports the idiom the word belongs to (the other words get a light dashed underline): from Wiktionary's idiom dictionary (free, with a link to its page; the meaning comes with «Spiega con…»), or found earlier. <strong>🔎 Modi di dire con questa parola</strong> asks the model for the idioms of the sentence containing that word (one request). They are remembered, and <strong>☆ Salva il modo di dire</strong> (<em>save the idiom</em>) puts it in your vocabulary.</li>
 <li><strong>Selecting several words</strong> opens a panel with the translation of the whole text, transcription, IPA on request, listening, ☆ and Anki; with a model also <strong>"Traduci meglio"</strong> (<em>translate better</em>).</li>
 <li><strong>⚑ Traduzione sbagliata?</strong> (<em>wrong translation?</em>): redo with Google or with the model, correct by hand (saved), or change the detected language (also for the whole site).</li>
 <li>Popup → <strong>📄 Pagine e PDF</strong> (<em>pages and PDFs</em>):</li>
@@ -301,7 +306,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <li><strong>Lingua del testo</strong> (<em>text language</em>): usually detected automatically; if it's often wrong, set it here for all sites or just the open one;</li>
 <li>known words in green on the page, vocabulary words underlined, idioms found and underlined, Latin letters in the card;</li>
 <li><strong>📄 Apri questo PDF qui</strong>, <strong>📄 Lettore PDF</strong> and <strong>Apri sempre i PDF nel lettore dell'estensione</strong> (<a href="#9-pdf-files">section 9</a>).</li>
-<li>The service for pages is chosen under <strong>🌐 Traduzione e modelli → Modello per ogni compito → Testi delle pagine e PDF</strong>. IPA, etymology and the other card tools are in <strong>📖 Scheda delle parole</strong>, shared with videos.</li>
+<li>The service for pages is chosen under <strong>📊 Consumo e modelli → Modello per ogni compito → Testi delle pagine e PDF</strong>. IPA, etymology and the other card tools are in <strong>📖 Scheda delle parole</strong>, shared with videos.</li>
 <li>Requests: Google is free; the model only when you press its buttons.</li>
 </ul>
 <hr />
@@ -348,7 +353,18 @@ pre{white-space:pre-wrap;word-break:break-word}
 <li>If Whisper gets a video's language wrong, choose it yourself (the list has a search box).</li>
 </ul>
 <h3 id="corrected-transcription">Corrected transcription</h3>
-<p><strong>Correggi la grammatica della trascrizione</strong> (<em>correct the transcription's grammar</em>, on by default): misheard words are fixed before translation. With Gemini and the other AI models this happens in the same request as the translation; with Google or DeepL, Gemini (or Groq) does it in batches.</p>
+<p><strong>✎ Correggi la trascrizione</strong> (<em>correct the transcription</em>): a model fixes the words Whisper misheard and removes sentences invented during music or noise, before translation (small corrections in the same language only).
+- <strong>solo le frasi incerte</strong> (<em>only uncertain sentences</em>, default): Whisper says how sure it is of each sentence; only the uncertain ones are corrected. About half the requests;
+- <strong>tutte le frasi</strong> (<em>all sentences</em>);
+- <strong>spenta</strong> (<em>off</em>): sentences stay as Whisper heard them.</p>
+<p>With Gemini and the other models that translate, the correction happens in the same request as the translation (no extra request). With Google, DeepL or Microsoft a separate model (Gemini or Groq) does it, in batches. DeepL translates very well, but it also translates the misheard words: the correction is still useful. With YouTube subtitles it's never needed (no Whisper).</p>
+<h3 id="how-far-behind-the-live-stream">How far behind the live stream</h3>
+<p>With <strong>synced live streams</strong> (popup → 🎙 Trascrizione → <strong>Quanto indietro guardi la diretta</strong>, <em>how far behind you watch the stream</em>): 20 s (fast), 45 s (balanced), 90 s (saving), 2 minutes (maximum saving).</p>
+<p>The further the video is behind the live edge, the more time there is to prepare subtitles before they're needed, and the less you spend:
+- audio goes to Whisper in <strong>longer pieces</strong> (about 5–10 s with 20 s; 20–30 s with 2 minutes): fewer Groq requests, and Whisper understands better with more context;
+- transcribed sentences <strong>wait and are translated in groups</strong>. A group is sent when there are enough sentences (12 with 20 s, up to 24 with 2 minutes) or when the first waiting sentence is about to appear on the video: <strong>20 seconds before</strong> with 20 s, <strong>15</strong> with 45 s, <strong>10</strong> with 90 s and 2 minutes.</p>
+<p>Why waiting until 10 seconds before instead of 20 saves requests: the sentences to translate are always the same (each one is translated once). Only <strong>how many requests</strong> they are split into changes. Example: sentence A is ready 35 seconds before it appears. Translating 20 seconds before means waiting 15 seconds and sending A with the sentences that arrived in those 15 seconds (about 3). Translating 10 seconds before means waiting 25 seconds (about 5 sentences). Same sentences, fewer requests; tokens are nearly the same (slightly fewer: the model's instructions are repeated less often). Free quotas mostly count requests. If the good translation arrives late, Google's quick one is shown meanwhile.</p>
+<p>In exchange, the further behind you are, the later you see the stream (the chat runs ahead of you). When paused nothing is transcribed beyond the <strong>maximum lead</strong> (90 s by default, in 📊 Consumo e modelli).</p>
 <h3 id="transcribing-on-your-own-computer">Transcribing on your own computer</h3>
 <p>With a Whisper server compatible with the OpenAI API (e.g. Speaches): <strong>Trascrizione con → Server sul tuo computer</strong>, its address (usually <code>http://localhost:8000/v1</code>) and model.</p>
 <h3 id="firefox_1">Firefox</h3>
@@ -452,7 +468,46 @@ pre{white-space:pre-wrap;word-break:break-word}
 <p>When the chosen service has used up today's free requests, a yellow notice appears in the popup under «Traduci i sottotitoli con»: it says when they come back (Gemini quotas reset at midnight Pacific Time) and which service is used meanwhile. <strong>"Riprova … adesso"</strong> (<em>retry … now</em>) resumes the video's translation with the chosen service straight away (handy if you changed key or model).
 With <strong>Finite le richieste gratuite, passa a un altro servizio con la chiave</strong> (<em>when free requests run out, switch to another service with a key</em>, on by default), when a service uses up its daily quota the extension carries on with the first other service you've entered a key for, in the order set under <strong>Ordine dei servizi</strong> (by default <strong>Gemini → Groq → Mistral → OpenRouter → Ollama/LM Studio → Claude → Microsoft → DeepL</strong>), and finally <strong>Google</strong>. The exhausted service is skipped until the next day.</p>
 <h3 id="model-for-each-task">Model for each task</h3>
-<p>In <strong>🌐 Traduzione e modelli</strong>, below the service, the <strong>Modello per ogni compito</strong> sub-menu (opens with a click) has one menu per job: <strong>video subtitles</strong>, <strong>page and PDF text</strong>, <strong>audio transcription</strong>, <strong>explanations («✨ Spiega con…»)</strong>, <strong>transcript correction</strong>, <strong>IPA for selected text</strong> and <strong>word and idiom linking</strong>. «Automatico» uses the first ready model in <strong>Ordine dei servizi</strong>; if the chosen model doesn't answer or is out of requests for today, the first ready one replaces it.</p>
+<p>In <strong>📊 Consumo e modelli</strong>, the <strong>Modello per ogni compito</strong> sub-menu (opens with a click) has one menu per job: <strong>page and PDF text</strong>, <strong>explanations («✨ Spiega con…»)</strong> (etymologies too), <strong>transcript correction</strong>, <strong>IPA for selected text</strong> and <strong>word and idiom linking</strong>. «Automatico» uses the first ready model in <strong>Ordine dei servizi</strong>; if the chosen model doesn't answer or is out of requests for today, the first ready one replaces it. The <strong>video subtitles</strong> service is chosen in 🌐 Traduzione e modelli and the <strong>audio transcription</strong> one in 🎙 Trascrizione dell'audio: here, for subtitles, there's only the exact model.</p>
+<p>Under each menu there's also <strong>Modello (service)</strong>: the exact model for that task, for the service shown (the one actually doing the task now). Empty = the model chosen for that service in 🌐 Traduzione e modelli. <strong>↻</strong> loads the service's model list. On Gemini, free limits are <strong>per model</strong>: a light model for translating and a better one for explaining split the requests between the two.</p>
+<p>Which models for which task (suggestions):</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>What matters</th>
+<th>Suggested</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Video subtitles and live streams</td>
+<td>many lines, speed, many daily requests</td>
+<td><strong>gemini-flash-lite-latest</strong>; Groq (very fast); a light model on your computer (<a href="#15-a-translation-model-on-your-own-computer">section 15</a>)</td>
+</tr>
+<tr>
+<td>Explanations and etymologies</td>
+<td>quality, few requests</td>
+<td><strong>gemini-flash-latest</strong>; Mistral (European languages); Claude (paid)</td>
+</tr>
+<tr>
+<td>Transcript correction</td>
+<td>understanding misheard words</td>
+<td>gemini-flash-lite-latest or Groq</td>
+</tr>
+<tr>
+<td>Word and idiom linking</td>
+<td>speed</td>
+<td>as for subtitles</td>
+</tr>
+<tr>
+<td>IPA for selected text</td>
+<td>knowing phonetics</td>
+<td>gemini-flash-latest</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>request usage</strong> modes (section 14) set Gemini's models by themselves: Flash-Lite for translating and correcting, Flash for explaining (Flash for everything in «Qualità»).</p>
 <h3 id="service-order">Service order</h3>
 <p>The <strong>Ordine dei servizi</strong> (<em>service order</em>) sub-menu lists every service with its state (ready, key missing, model missing, used up for today):
 - <strong>↑ ↓</strong> change the order; unticking the <strong>box</strong> removes a service from the queue;
@@ -463,22 +518,106 @@ With <strong>Finite le richieste gratuite, passa a un altro servizio con la chia
 <p>Models that "think" before answering (Gemma 4, Qwen 3…: Ollama shows "Thinking…") answer without the reasoning when used by the extension, much faster. If your computer struggles (fans, external screen dropping out), use a smaller model such as <code>gemma4:e2b</code>.</p>
 <p>To enter several keys: choose a service, paste its key, then switch back to your preferred service. Below the box you'll see which backup services are ready and which are used up for today.</p>
 <hr />
-<h2 id="14-using-fewer-free-requests">14. Using fewer free requests</h2>
-<ul>
-<li><strong>Nothing is translated twice</strong>: translations, transcriptions, explanations and corrections are all saved. Watching a video again, even one you only partly watched, costs nothing.</li>
-<li>Translations are requested in <strong>groups of 120 lines</strong>: a two-hour film costs about 12 Gemini requests.</li>
-<li>Hovering uses Google's free dictionary; the AI model is only used when you click.</li>
-<li>Gemini's default model is <strong>gemini-flash-lite-latest</strong>, the one with the most free daily requests.</li>
-<li>Gemini quotas reset at midnight Pacific Time. You can see your usage at aistudio.google.com.</li>
-<li>For a whole film without touching any quota: <strong>Copia trascrizione / Incolla traduzione</strong> with a chat (<a href="#12-the-trascrizione-e-traduzione-page">section 12</a>).</li>
-</ul>
+<h2 id="14-request-usage">14. Request usage</h2>
+<p>At the top of the popup, <strong>Consumo delle richieste</strong> (<em>request usage</em>) chooses how much the extension uses the services with a key on its own. It sets the other menus (live stream, correction, idioms, Gemini models); if you then change one by hand, the menu shows <strong>✎ Personalizzato</strong> (<em>custom</em>).</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Synced live stream</th>
+<th>Transcript correction</th>
+<th>Idioms from the model, on its own</th>
+<th>Gemini models</th>
+<th>Gemini requests (about)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🏆 Qualità</strong> (<em>quality</em>)</td>
+<td>20 s behind</td>
+<td>all sentences</td>
+<td>yes</td>
+<td>Flash for everything</td>
+<td>150–250 per hour of live stream</td>
+</tr>
+<tr>
+<td><strong>⚖️ Bilanciato</strong> (<em>balanced</em>, recommended, default)</td>
+<td>45 s</td>
+<td>uncertain only</td>
+<td>no (dictionary and translation yes)</td>
+<td>Flash-Lite to translate, Flash to explain</td>
+<td>60–90 per hour of live stream; a video with subtitles about 10</td>
+</tr>
+<tr>
+<td><strong>💰 Risparmio</strong> (<em>saving</em>)</td>
+<td>90 s</td>
+<td>off</td>
+<td>no</td>
+<td>as Balanced</td>
+<td>30–60 per hour of live stream; a video with subtitles about 10</td>
+</tr>
+<tr>
+<td><strong>🆓 Solo gratis</strong> (<em>free only</em>)</td>
+<td>2 min</td>
+<td>off</td>
+<td>no</td>
+<td>—</td>
+<td>none on its own</td>
+</tr>
+</tbody>
+</table>
+<p>In <strong>Solo gratis</strong> Google Translate translates (your chosen service stays saved for when you change mode) and transcription of videos without subtitles only starts if you start it. Models work only when you press a button («✨ Spiega con…», «🔎 Modi di dire con questa parola»…).</p>
+<p>In <strong>📊 Consumo e modelli</strong>:
+- <strong>Richieste di oggi</strong> (<em>today's requests</em>) per service (Gemini, Groq Whisper…), counted by the extension. The quota day ends at midnight Pacific Time;
+- <strong>Limite di richieste al giorno</strong> (<em>daily request limit</em>) per service: once reached, the backup service takes over as when the free quota runs out (e.g. Gemini 300, to keep some for explanations);
+- <strong>Diretta sincronizzata: trascrivi al massimo così avanti rispetto al video</strong> (<em>maximum lead</em>, 60 s – 4 min): beyond that, audio waits; also when paused.</p>
+<p>Other ways to save:
+- <strong>Nothing is translated twice</strong>: translations, transcriptions, explanations and corrections are all saved. Watching a video again, even one you only partly watched, costs nothing.
+- Translations are requested in <strong>groups of 120 lines</strong>: a two-hour film costs about 12 Gemini requests.
+- Hovering uses Google's free dictionary; the AI model is only used when you click.
+- Gemini's default model is <strong>gemini-flash-lite-latest</strong>, the one with the most free daily requests.
+- Gemini quotas reset at midnight Pacific Time. You can see your usage at aistudio.google.com.
+- For a whole film without touching any quota: <strong>Copia trascrizione / Incolla traduzione</strong> with a chat (<a href="#12-the-trascrizione-e-traduzione-page">section 12</a>).</p>
 <hr />
 <h2 id="15-a-translation-model-on-your-own-computer">15. A translation model on your own computer</h2>
-<p>Free, unlimited and private. You need a reasonably powerful PC (16 GB of RAM recommended).</p>
+<p>Free, unlimited and private. It's slower than online services, small models make more mistakes with less common languages, etymologies and long explanations, and it answers one request at a time. A good use: <strong>subtitles and live streams with the model on your computer, explanations with Gemini</strong> (📊 Consumo e modelli → Modello per ogni compito).</p>
+<p>Light models good for languages (approximate download sizes; the memory needed is about the size plus 1–2 GB, ideally on the graphics card; without one they work but much more slowly):</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Download</th>
+<th>Good for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen3:4b-instruct</code> (Qwen 3 4B, non-thinking version)</td>
+<td>about 2.5–3 GB</td>
+<td>good with Japanese and Chinese too; fast</td>
+</tr>
+<tr>
+<td><code>gemma4:e2b</code></td>
+<td>about 7 GB (<code>e2b-it-qat</code> version: about 4.3 GB)</td>
+<td>European languages, very light to run</td>
+</tr>
+<tr>
+<td><code>gemma4:e4b</code></td>
+<td>about 9.6 GB (<code>e4b-it-qat</code> version: about 6 GB)</td>
+<td>more accurate than e2b; needs an 8 GB graphics card</td>
+</tr>
+<tr>
+<td><code>gemma4:12b</code></td>
+<td>about 7 GB as <code>12b-it-qat</code></td>
+<td>good quality for explanations too; 12 GB graphics card</td>
+</tr>
+</tbody>
+</table>
+<p>For translating, avoid models that always "think" (non-instruct Qwen 3, QwQ, DeepSeek-R1): they answer much more slowly. Sizes change between versions: check the model's page on ollama.com. To delete a model: <code>ollama rm name</code> (e.g. <code>ollama rm gemma3:4b</code>); <code>ollama list</code> shows the downloaded ones.</p>
 <h3 id="with-ollama">With Ollama</h3>
 <ol>
 <li>Install Ollama from <strong>ollama.com</strong>.</li>
-<li>Download a model: <code>ollama pull gemma3:12b</code> (or <code>gemma3:4b</code> on a less powerful PC).</li>
+<li>Download a model: for example <code>ollama pull qwen3:4b-instruct</code> (see the table above).</li>
 <li>Allow requests from the browser (without this Ollama refuses them):
    - <strong>Windows</strong>: in a command prompt <code>setx OLLAMA_ORIGINS "chrome-extension://*,moz-extension://*"</code>, then quit Ollama (icon near the clock → Quit) and start it again;
    - <strong>Mac</strong>: <code>launchctl setenv OLLAMA_ORIGINS "chrome-extension://*,moz-extension://*"</code>, then restart Ollama;
@@ -558,6 +697,7 @@ With <strong>Finite le richieste gratuite, passa a un altro servizio con la chia
 <hr />
 <h2 id="whats-new">What's new</h2>
 <ul>
+<li><strong>1.6.0</strong>: <strong>Consumo delle richieste</strong> (<em>request usage</em>) at the top of the popup: 🏆 Qualità, ⚖️ Bilanciato (default), 💰 Risparmio, 🆓 Solo gratis. Each mode sets live stream, correction, idioms and Gemini models by itself; updating switches to «Bilanciato» (<a href="#14-request-usage">section 14</a>). New section <strong>📊 Consumo e modelli</strong>: today's requests per service, backup services, <strong>Modello per ogni compito</strong> with the <strong>exact model</strong> per task (e.g. Gemini Flash-Lite to translate and Flash to explain: Gemini's free limits are per model), service order, <strong>daily request limit</strong> per service, maximum lead of the live stream. <strong>Quanto indietro guardi la diretta</strong> (<em>how far behind</em>: 20 s, 45 s, 90 s, 2 min): further behind means longer audio pieces for Whisper and bigger translation groups (<a href="#how-far-behind-the-live-stream">section 11</a>, with the "20 or 10 seconds before" explanation). <strong>Transcript correction</strong>: uncertain sentences only (default), all, or off. <strong>Idioms with no extra requests</strong>: from Wiktionary's dictionary (downloaded once per language), from the translation request itself and the ones already seen, underlined in the subtitles; in the cards <strong>🔎 Modi di dire con questa parola</strong>. Removed the old IPA-line code under the subtitles (no longer shown). Guide: which models for which task, and light models for Ollama.</li>
 <li><strong>1.5.4</strong>: <strong>⇄ Other model</strong> in the cards (videos and pages): the same word explained by another model, to compare. It lists the ready models (with a key and requests left today) and you pick one: one request, only to that one. This explanation too stays in the 🗂 saved ones. <strong>Synced live streams, fewer requests</strong>: nothing is transcribed (so nothing translated) more than 90 seconds ahead of the video; if you pause, it stops there and resumes when you play (before, with the video paused it kept using the free requests: in your log Gemini used up today's 500 and translation moved by itself to the backup service, Mistral, which answered «rate limit»). Sentences to translate are collected in groups: translated together when there are enough or when the first is about to appear. <strong>Model on your computer (Ollama)</strong>: Ollama answers one request at a time, and the live stream sent it big groups of sentences: the explanation asked from the card waited behind them. Now with Ollama the groups are small and, while you wait for an explanation, the live stream sends it nothing else. <strong>Groq Whisper</strong>: «prompt length must be 896 characters or fewer» with Japanese (each character counts 3): the hint for Whisper shortens itself, and if that's not enough it retries without.</li>
 <li><strong>1.5.3</strong>: <strong>synced live streams</strong> (yt-dlp helper <strong>1.9</strong>, re-run the installer): the helper also reads the last 2 minutes of the stream, not only the most recent point. Before, the piece you were watching wasn't in the audio read (YouTube's video is already behind the live edge), the audio couldn't be aligned and the video was moved back 15 seconds at a time: removed. Every 15 seconds the log shows a <strong>measurement</strong>: how much audio arrived and how fast, how similar it is to the video's and how far ahead. <strong>Etymology</strong>: in the 🌳 tree every ancestor has its own <strong>↗</strong> to open it on Etymology Explorer (useful when the modern word isn't there).</li>
 <li><strong>1.5.2</strong>: <strong>synced live streams</strong> (yt-dlp helper <strong>1.8</strong>, re-run the installer): found the two reasons why yt-dlp «never answered». First: a format with audio and video together was requested, which many live streams don't have (now audio only is requested). Second: on Windows yt-dlp and Deno inherited the browser's channel and the helper stayed stuck instead of receiving the error. Also, yt-dlp looks for the stream address right away, together with the first attempt; the address found is remembered for a few hours (reopening the same stream, or turning ⏱ on again, starts the audio at once); while it searches, the log shows for how long and yt-dlp's last line. Google's quick translation retries by itself after a temporary error («500»).</li>

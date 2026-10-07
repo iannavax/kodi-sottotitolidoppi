@@ -1,5 +1,5 @@
 <!doctype html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.5.4 — Guida</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.6.0 — Guida</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Versione 1.5.4</em></p>
+<body><main><p><em>Versione 1.6.0</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-estensione-per-il-browser">Sottotitoli Doppi + Parole al Volo — estensione per il browser</h1>
 <p><em>English version → <a href="GUIDE.en.html">GUIDE.en</a></em></p>
 <p><strong>Impara le lingue guardando video e leggendo.</strong> Una sola estensione per due cose:</p>
@@ -50,7 +50,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <li><a href="#11-video-senza-sottotitoli-la-trascrizione-dellaudio">Video senza sottotitoli: la trascrizione dell'audio</a></li>
 <li><a href="#12-la-pagina-trascrizione-e-traduzione">La pagina "Trascrizione e traduzione"</a></li>
 <li><a href="#13-i-servizi-di-traduzione">I servizi di traduzione</a></li>
-<li><a href="#14-consumare-meno-richieste-gratuite">Consumare meno richieste gratuite</a></li>
+<li><a href="#14-consumo-delle-richieste">Consumo delle richieste</a></li>
 <li><a href="#15-un-modello-di-traduzione-sul-tuo-computer">Un modello di traduzione sul tuo computer</a></li>
 <li><a href="#16-se-qualcosa-non-va">Se qualcosa non va</a></li>
 <li><a href="#17-privacy-e-note">Privacy e note</a></li>
@@ -170,6 +170,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <li><strong>📜 Testo del video</strong> (tutte le frasi del video aperto, con la traduzione: <a href="#12-la-pagina-trascrizione-e-traduzione">sezione 12</a>), <strong>📒 Vocabolario</strong> e <strong>✓ Parole che conosco</strong>;</li>
 <li>i due interruttori generali: <strong>Sottotitoli doppi nei video</strong> e <strong>Parole al Volo sulle pagine e nei PDF</strong> (Alt+Maiusc+Y);</li>
 <li><strong>Traduci in</strong>: la tua lingua, per tutto. Sotto, <strong>Interfaccia in questa lingua</strong>: accesa, tutte le scritte dell'estensione (popup, schede, pagine del vocabolario, della trascrizione, del lettore PDF…) compaiono in quella lingua. La prima volta servono un paio di secondi (le scritte si traducono con Google, gratis), poi sono ricordate;</li>
+<li><strong>Consumo delle richieste</strong>: quanto l'estensione usa da sola i servizi con la chiave, dalla qualità migliore al consumo più basso (🏆 Qualità, ⚖️ Bilanciato, 💰 Risparmio, 🆓 Solo gratis: <a href="#14-consumo-delle-richieste">sezione 14</a>);</li>
 <li>quando guardi una <strong>diretta</strong>, il riquadro «🔴 Questo video è una diretta» con la scelta tra sottotitoli normali e sincronizzati.</li>
 </ul>
 <p>Poi le sezioni, che si aprono con un clic:</p>
@@ -183,7 +184,11 @@ pre{white-space:pre-wrap;word-break:break-word}
 <tbody>
 <tr>
 <td><strong>🌐 Traduzione e modelli</strong></td>
-<td>Il servizio che traduce i sottotitoli, la chiave, il modello; <strong>Modello per ogni compito</strong> e <strong>Ordine dei servizi</strong> (chiusi, si aprono con un clic: <a href="#13-i-servizi-di-traduzione">sezione 13</a>).</td>
+<td>Il servizio che traduce i sottotitoli, la chiave, il modello (<a href="#13-i-servizi-di-traduzione">sezione 13</a>).</td>
+</tr>
+<tr>
+<td><strong>📊 Consumo e modelli</strong></td>
+<td>Le scelte più tecniche: richieste di oggi per servizio, servizi di riserva, <strong>Modello per ogni compito</strong> (servizio e modello preciso), <strong>Ordine dei servizi</strong>, limite di richieste al giorno, anticipo massimo della diretta sincronizzata (<a href="#13-i-servizi-di-traduzione">sezioni 13</a> e <a href="#14-consumo-delle-richieste">14</a>).</td>
 </tr>
 <tr>
 <td><strong>🎙 Trascrizione</strong></td>
@@ -219,7 +224,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 </tr>
 </tbody>
 </table>
-<p>Tutto è in comune tra video e pagine: chiavi, lingua, vocabolario, parole che conosci, voci, Anki, programma per yt-dlp. Hanno invece un'impostazione propria: il servizio delle pagine (in <strong>Modello per ogni compito → Testi delle pagine e PDF</strong>), i siti spenti, le parole conosciute colorate sulla pagina e le lettere latine nella scheda delle pagine.</p>
+<p>Tutto è in comune tra video e pagine: chiavi, lingua, vocabolario, parole che conosci, voci, Anki, programma per yt-dlp. Hanno invece un'impostazione propria: il servizio delle pagine (in <strong>📊 Consumo e modelli → Modello per ogni compito → Testi delle pagine e PDF</strong>), i siti spenti, le parole conosciute colorate sulla pagina e le lettere latine nella scheda delle pagine.</p>
 <hr />
 <h2 id="5-dove-funziona">5. Dove funziona</h2>
 <ul>
@@ -300,7 +305,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 - <strong>Giapponese</strong>: dal dizionario <strong>Jisho</strong> (gratis) la lettura in kana, il livello JLPT, se è una parola comune e il significato in inglese.
 - <strong>Kanji e caratteri cinesi uno per uno</strong>: nella scheda di una parola giapponese o cinese, la riga «Kanji uno per uno» ha un pulsante per ogni carattere. Cliccandolo vedi solo quel kanji: significato, letture nella lingua del testo e nelle altre (on/kun, pinyin, cantonese, coreano, vietnamita), parti e radicale cliccabili, forma semplificata/tradizionale, tratti, livelli JLPT/classe, HSK, hanja scolastico; «lo conosco?», Jisho, Wiktionary e «scheda del carattere ›» per aprirlo come una parola (vocabolario, Anki) e poi «‹ Torna alla parola». ☆ salva il kanji / ☆ salva tutti i kanji: i singoli caratteri nel vocabolario. Gratis, nessuna richiesta a Gemini o Groq.
 - <strong>↺ a sinistra dei sottotitoli</strong>: riascolta la frase; se intanto il video è andato avanti (è giallo) torna alla frase che stavi leggendo.
-- <strong>Dirette sincronizzate</strong> (popup → 🎙 Trascrizione → «Dirette sincronizzate»): nelle dirette di YouTube il video resta qualche secondo indietro e il programma per yt-dlp legge l'audio più avanti, così i sottotitoli trascritti arrivano in orario invece che 5–10 secondi dopo. Serve il programma per yt-dlp (con ffmpeg, che l'installatore scarica da solo su Windows; su Mac e Linux va installato a parte).
+- <strong>Dirette sincronizzate</strong> (popup → 🎙 Trascrizione → «Dirette sincronizzate»): nelle dirette di YouTube il video resta indietro e il programma per yt-dlp legge l'audio più avanti, così i sottotitoli trascritti arrivano in orario invece che 5–10 secondi dopo. Serve il programma per yt-dlp (con ffmpeg, che l'installatore scarica da solo su Windows; su Mac e Linux va installato a parte). Quanto indietro: <a href="#quanto-indietro-guardi-la-diretta">sezione 11</a>.
 - <strong>Dirette: normali o sincronizzate</strong>: quando guardi una diretta, il popup mostra in alto «🔴 Questo video è una diretta» con la scelta; sul video il pulsante <strong>⏱</strong> accanto ai sottotitoli fa lo stesso.
 - <strong>Kanji e caratteri</strong>: nel riquadro di un kanji i distintivi si cliccano (ordine dei tratti, elenco di tutti i kanji di quel livello JLPT/classe/HSK, radicale…).
 - <strong>Scrittura</strong>: se la parola è scritta bene. Senza modello lo controlla LanguageTool (o, per le lingue che non conosce, il dizionario: "parola presente nel dizionario"); con <strong>✨ Spiega con …</strong> il modello dà anche un <strong>voto da 0 a 100</strong> e la forma corretta. Utile con i sottotitoli automatici, che a volte sbagliano.
@@ -318,14 +323,14 @@ pre{white-space:pre-wrap;word-break:break-word}
 <h3 id="dalla-traduzione-alloriginale">Dalla traduzione all'originale</h3>
 <ul>
 <li><strong>Passa il mouse su una parola della traduzione</strong>: si illumina la parola originale da cui viene, e un'etichetta la scrive. Clic → scheda della parola originale.</li>
-<li>Di serie il collegamento lo fa Google (gratis, approssimato: l'etichetta dice "circa"). Se nel popup accendi <strong>📖 Scheda delle parole → Modi di dire e collegamento preciso tra le parole</strong>, Gemini o gli altri modelli lo fanno preciso (una richiesta ogni 8 frasi, passando il mouse).</li>
+<li>Di serie il collegamento lo fa Google (gratis, approssimato: l'etichetta dice "circa"). Se nel popup accendi <strong>📖 Scheda delle parole → Modi di dire e collegamento tra le parole anche dal modello</strong>, Gemini o gli altri modelli lo fanno preciso (una richiesta ogni 8 frasi, passando il mouse).</li>
 <li><strong>Particelle</strong>: articoli, preposizioni e ausiliari che la traduzione aggiunge ma che non traducono una parola dell'originale (per esempio <em>i</em> in <em>i gatti</em> per l'inglese <em>cats</em>) sono <strong>sottolineati a puntini</strong>. Passandoci sopra, l'etichetta "particella" spiega a quale parte dell'originale appartengono.</li>
 <li><strong>Al contrario</strong>: passando su una parola originale si illumina la sua traduzione (le particelle più tenui). Senza il modello si usano le traduzioni del dizionario di Google della parola, riconoscendole anche con un'altra desinenza (<em>bread</em> → «pani»).</li>
 </ul>
 <h3 id="pezzi-di-frase-ed-espressioni">Pezzi di frase ed espressioni</h3>
 <ul>
 <li><strong>Modo di dire nella scheda</strong>: quando la spiegazione dice che la parola fa parte di un modo di dire (<em>к сожалению</em> per <em>сожалению</em>), la scheda lo segnala e le altre parole si illuminano con un tratteggio leggero. Il modo di dire resta <strong>ricordato</strong>: se rifai la spiegazione con un altro servizio che non lo riporta, la scheda lo mostra lo stesso. <strong>☆ Salva il modo di dire</strong> lo mette nel vocabolario (e in Anki, se l'invio automatico è acceso).</li>
-<li><strong>Modi di dire</strong> (solo con l'opzione «Modi di dire e collegamento preciso con il modello» accesa, spenta di serie): con un modello, le espressioni che non si traducono parola per parola (<em>break the ice</em>, <em>give up</em>…) vengono <strong>sottolineate in arancione</strong>. Passandoci sopra si illumina tutta l'espressione e la scheda ne dà il significato. </li>
+<li><strong>Modi di dire</strong>: le espressioni che non si traducono parola per parola (<em>break the ice</em>, <em>kick the bucket</em>…) vengono <strong>sottolineate in arancione</strong>, senza richieste in più: dal dizionario dei modi di dire di Wiktionary, dalla traduzione fatta da un modello e da quelli già visti (<a href="#modi-di-dire">sezione 8 → Modi di dire</a>). Passandoci sopra si illumina tutta l'espressione e la scheda ne dà il significato. Nella scheda di una parola, <strong>🔎 Modi di dire con questa parola</strong> li chiede al modello (una richiesta).</li>
 <li><strong>Selezione a mano nell'originale</strong>: tieni premuto sulla prima parola e trascina fino all'ultima → scheda con il significato dell'espressione intera.</li>
 <li><strong>Selezione nella traduzione</strong>: trascina su più parole tradotte → nell'originale si illumina la parte corrispondente; l'etichetta ha <strong>Spiega</strong>, <strong>Copia</strong> e i collegamenti ai servizi. Si chiude con Esc.</li>
 </ul>
@@ -352,7 +357,14 @@ pre{white-space:pre-wrap;word-break:break-word}
 <h3 id="il-testo-selezionato">Il testo selezionato</h3>
 <p><strong>Selezionando più parole</strong> (trascinando con il mouse) compare il pannello con la traduzione di tutto il testo insieme, la trascrizione in caratteri latini, il pulsante <strong>Pronuncia IPA</strong> (solo se lo premi), 🔊 per ascoltarlo, ☆ e Anki. Con Gemini o Groq c'è anche <strong>"Traduci meglio"</strong>, una traduzione che tiene conto del contesto.</p>
 <h3 id="modi-di-dire">Modi di dire</h3>
-<p>Se nel popup accendi la ricerca automatica dei modi di dire (spenta di serie, perché consuma richieste), quando la scheda resta aperta il modello li cerca nella frase (una richiesta piccola per frase, una volta sola); altrimenti arrivano con «Spiega con…». La scheda li segnala; le altre parole dell'espressione si illuminano con un tratteggio, diverso dalla parola selezionata. La selezione resta sempre tua. Restano ricordati, e <strong>☆ Salva il modo di dire</strong> li mette nel vocabolario.</p>
+<p>I modi di dire si trovano da soli <strong>senza richieste in più</strong> (nei video e sulle pagine):
+- dal <strong>dizionario dei modi di dire di Wiktionary</strong>: per ogni lingua l'elenco si scarica una volta (qualche secondo, poi resta per due mesi) e si cerca nelle frasi sul computer. Riconosce anche le forme coniugate più semplici (<em>kick the bucket</em> → «kicked the bucket») e i posti per una persona (<em>pull someone's leg</em> → «pulling my leg»);
+- nei video, quando i sottotitoli li traduce un modello (Gemini, Groq…): il modello indica i modi di dire <strong>nella stessa richiesta della traduzione</strong>;
+- quelli già visti (in una spiegazione, nella traduzione o chiesti con 🔎) restano ricordati e sottolineati.</p>
+<p>Nei sottotitoli sono sottolineati: un clic apre la scheda del modo di dire. Sulle pagine, nella scheda di una parola compare «Modo di dire: «…»» (quelli dal dizionario hanno il collegamento a Wiktionary; il significato arriva con «Spiega con…»).</p>
+<p>Se pensi che una parola faccia parte di un modo di dire non sottolineato, nella sua scheda premi <strong>🔎 Modi di dire con questa parola</strong>: il modello cerca nella frase le espressioni con quella parola (una richiesta, solo quando premi). Quelle trovate restano sottolineate.</p>
+<p>Con il modello anche da soli: <strong>📖 Scheda delle parole → Modi di dire e collegamento tra le parole anche dal modello</strong> (video: una richiesta ogni 8 frasi passando il mouse) e <strong>📄 Pagine e PDF → Modi di dire anche dal modello, da soli</strong> (una richiesta piccola per frase). Sono spenti di serie e accesi solo in «🏆 Qualità». <strong>Modi di dire sottolineati nei sottotitoli (gratis)</strong> e <strong>Modi di dire sottolineati sulle pagine (gratis)</strong> spengono le sottolineature.</p>
+<p>Le altre parole dell'espressione si illuminano con un tratteggio, diverso dalla parola selezionata. La selezione resta sempre tua. <strong>☆ Salva il modo di dire</strong> li mette nel vocabolario.</p>
 <p><strong>Modo di dire sbagliato?</strong> Nella scheda, sotto il modo di dire, <strong>⚑ modo di dire sbagliato?</strong> (vale nei video e sulle pagine):
 - <strong>Non è un modo di dire</strong>: non viene più sottolineato. Ci hai ripensato? Apri la scheda di una delle sue parole: in basso c'è «🚫 «…» segnato da te come non è un modo di dire — <strong>annulla</strong>»;
 - <strong>✎ Correggi il significato</strong>: scrivi tu il significato giusto;
@@ -373,7 +385,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <li><strong>Lingua del testo</strong>: di solito <em>riconosciuta da sola</em>; se sbaglia spesso, scegli qui la lingua giusta per tutti i siti, o solo per il sito aperto.</li>
 <li><strong>Parole che conosco in verde sulla pagina</strong>, <strong>Parole del vocabolario sottolineate</strong>, <strong>Modi di dire</strong> trovati e sottolineati, <strong>Lettere latine</strong> nella scheda.</li>
 <li><strong>📄 Apri questo PDF qui</strong>, <strong>📄 Lettore PDF</strong> e <strong>Apri sempre i PDF nel lettore dell'estensione</strong> (<a href="#9-i-pdf">sezione 9</a>).</li>
-<li>Il servizio delle pagine si sceglie in <strong>🌐 Traduzione e modelli → Modello per ogni compito → Testi delle pagine e PDF</strong>. Con Google tutto è gratis; con Gemini, Groq o un altro modello compaiono «Spiega con…» e «Traduci meglio»; con DeepL o Microsoft traducono loro la frase e il testo selezionato.</li>
+<li>Il servizio delle pagine si sceglie in <strong>📊 Consumo e modelli → Modello per ogni compito → Testi delle pagine e PDF</strong>. Con Google tutto è gratis; con Gemini, Groq o un altro modello compaiono «Spiega con…» e «Traduci meglio»; con DeepL o Microsoft traducono loro la frase e il testo selezionato.</li>
 <li>Pronuncia IPA, etimologia e gli altri strumenti della scheda sono in <strong>📖 Scheda delle parole</strong>, in comune con i video.</li>
 </ul>
 <h3 id="quante-richieste-consuma">Quante richieste consuma</h3>
@@ -432,7 +444,18 @@ pre{white-space:pre-wrap;word-break:break-word}
 <li>Se Whisper sbaglia lingua in un video, scegli tu la lingua parlata (c'è una casella di ricerca).</li>
 </ul>
 <h3 id="trascrizione-corretta">Trascrizione corretta</h3>
-<p><strong>Correggi la grammatica della trascrizione</strong> (attiva di serie): le frasi capite male vengono corrette prima di essere tradotte (solo piccole correzioni nella stessa lingua: le frasi non vengono riscritte). Con Gemini e gli altri modelli avviene nella stessa richiesta della traduzione; con Google o DeepL la fa Gemini (o Groq) a gruppi.</p>
+<p><strong>✎ Correggi la trascrizione</strong>: un modello corregge le parole che Whisper ha capito male e toglie le frasi inventate durante musica o rumore, prima della traduzione (solo piccole correzioni nella stessa lingua: le frasi non vengono riscritte).
+- <strong>solo le frasi incerte</strong> (di serie): Whisper dice quanto è sicuro di ogni frase; si correggono solo quelle di cui non è sicuro. Circa metà delle richieste;
+- <strong>tutte le frasi</strong>;
+- <strong>spenta</strong>: le frasi restano come le ha capite Whisper.</p>
+<p>Con Gemini e gli altri modelli che traducono, la correzione avviene nella stessa richiesta della traduzione (nessuna richiesta in più). Con Google, DeepL o Microsoft la fa un modello a parte (Gemini o Groq), a gruppi di frasi. DeepL traduce benissimo, ma traduce anche le parole sentite male: la correzione serve lo stesso. Con i sottotitoli di YouTube non serve mai (non c'è Whisper).</p>
+<h3 id="quanto-indietro-guardi-la-diretta">Quanto indietro guardi la diretta</h3>
+<p>Con le <strong>dirette sincronizzate</strong> (popup → 🎙 Trascrizione → <strong>Quanto indietro guardi la diretta</strong>): 20 s (veloce), 45 s (bilanciato), 90 s (risparmio), 2 minuti (massimo risparmio).</p>
+<p>Più il video è indietro rispetto alla diretta, più tempo c'è per preparare i sottotitoli prima che servano, e si spende meno:
+- l'audio va a Whisper a <strong>pezzi più lunghi</strong> (circa 5–10 s con 20 s; 20–30 s con 2 minuti): meno richieste a Groq, e Whisper capisce meglio perché sente più contesto;
+- le frasi già trascritte <strong>aspettano e si traducono a gruppi</strong>. Il gruppo parte quando le frasi sono abbastanza (12 con 20 s, fino a 24 con 2 minuti) oppure quando la prima frase in attesa sta per comparire sul video: <strong>20 secondi prima</strong> con 20 s, <strong>15</strong> con 45 s, <strong>10</strong> con 90 s e 2 minuti.</p>
+<p>Perché aspettare fino a 10 secondi prima invece di 20 fa risparmiare: le frasi da tradurre sono sempre le stesse (ogni frase si traduce una volta sola). Cambia solo <strong>in quante richieste</strong> si dividono. Esempio: la frase A è pronta 35 secondi prima di comparire. Se si traduce 20 secondi prima, si aspetta 15 secondi e insieme ad A partono le frasi arrivate in quei 15 secondi (circa 3). Se si traduce 10 secondi prima, si aspetta 25 secondi (circa 5 frasi). Stesse frasi, meno richieste; i token sono quasi uguali (anzi un po' meno: le istruzioni per il modello si ripetono meno volte). Le quote gratuite contano soprattutto le richieste. Se la traduzione buona arriva tardi, intanto c'è quella rapida di Google.</p>
+<p>In cambio, più sei indietro più vedi la diretta in ritardo (la chat va avanti rispetto a te). In pausa non si trascrive niente oltre l'<strong>anticipo massimo</strong> (di serie 90 s, in 📊 Consumo e modelli).</p>
 <h3 id="trascrivere-sul-tuo-computer">Trascrivere sul tuo computer</h3>
 <p>Con un server Whisper compatibile (per esempio Speaches): <strong>Trascrizione con → Server sul tuo computer</strong>, indirizzo (di solito <code>http://localhost:8000/v1</code>) e modello.</p>
 <h3 id="firefox_1">Firefox</h3>
@@ -536,7 +559,46 @@ pre{white-space:pre-wrap;word-break:break-word}
 <p>Quando il servizio scelto ha finito le richieste gratuite di oggi, nel popup sotto «Traduci i sottotitoli con» compare un avviso giallo: dice a che ora tornano (le quote di Gemini si azzerano a mezzanotte della California, verso le 9 in Italia) e quale servizio si usa intanto. Con <strong>"Riprova … adesso"</strong> la traduzione del video riprende subito con il servizio scelto (utile se hai cambiato chiave o modello).
 Con <strong>Finite le richieste gratuite, passa a un altro servizio con la chiave</strong> (attiva di serie), quando un servizio esaurisce la quota del giorno l'estensione continua da sola con il primo altro servizio di cui hai inserito la chiave, nell'ordine di <strong>Ordine dei servizi</strong> (di serie <strong>Gemini → Groq → Mistral → OpenRouter → Ollama/LM Studio → Claude → Microsoft → DeepL</strong>), e alla fine <strong>Google</strong>. Il servizio esaurito viene saltato fino al giorno dopo.</p>
 <h3 id="modello-per-ogni-compito">Modello per ogni compito</h3>
-<p>In <strong>🌐 Traduzione e modelli</strong>, sotto il servizio, il sottomenu <strong>Modello per ogni compito</strong> (si apre con un clic) ha una tendina per ogni lavoro: <strong>sottotitoli dei video</strong>, <strong>testi delle pagine e PDF</strong>, <strong>trascrizione dell'audio</strong>, <strong>spiegazioni («✨ Spiega con…»)</strong>, <strong>correzione della trascrizione</strong>, <strong>pronuncia IPA del testo selezionato</strong> e <strong>collegamento parole e modi di dire</strong>. «Automatico» usa il primo modello pronto dell'<strong>Ordine dei servizi</strong>; se il modello scelto non risponde o ha finito le richieste di oggi, lo sostituisce il primo pronto.</p>
+<p>In <strong>📊 Consumo e modelli</strong>, il sottomenu <strong>Modello per ogni compito</strong> (si apre con un clic) ha una tendina per ogni lavoro: <strong>testi delle pagine e PDF</strong>, <strong>spiegazioni («✨ Spiega con…»)</strong> (anche le etimologie), <strong>correzione della trascrizione</strong>, <strong>pronuncia IPA del testo selezionato</strong> e <strong>collegamento parole e modi di dire</strong>. «Automatico» usa il primo modello pronto dell'<strong>Ordine dei servizi</strong>; se il modello scelto non risponde o ha finito le richieste di oggi, lo sostituisce il primo pronto. Il servizio dei <strong>sottotitoli dei video</strong> si sceglie in 🌐 Traduzione e modelli e quello della <strong>trascrizione dell'audio</strong> in 🎙 Trascrizione dell'audio: qui per i sottotitoli c'è solo il modello preciso.</p>
+<p>Sotto ogni tendina c'è anche <strong>Modello (servizio)</strong>: il modello preciso per quel compito, per il servizio indicato (quello che fa davvero il compito adesso). Vuoto = il modello scelto per quel servizio in 🌐 Traduzione e modelli. <strong>↻</strong> carica l'elenco dei modelli del servizio. Su Gemini i limiti gratuiti sono <strong>per modello</strong>: usando un modello leggero per tradurre e uno migliore per spiegare, le richieste si dividono tra i due.</p>
+<p>Quali modelli per quale compito (consigli):</p>
+<table>
+<thead>
+<tr>
+<th>Compito</th>
+<th>Cosa conta</th>
+<th>Consigliati</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sottotitoli dei video e diretta</td>
+<td>tante frasi, velocità, molte richieste al giorno</td>
+<td><strong>gemini-flash-lite-latest</strong>; Groq (velocissimo); un modello sul computer leggero (vedi <a href="#15-un-modello-di-traduzione-sul-tuo-computer">sezione 15</a>)</td>
+</tr>
+<tr>
+<td>Spiegazioni ed etimologie</td>
+<td>qualità, poche richieste</td>
+<td><strong>gemini-flash-latest</strong>; Mistral (lingue europee); Claude (a pagamento)</td>
+</tr>
+<tr>
+<td>Correzione della trascrizione</td>
+<td>capire le parole sentite male</td>
+<td>gemini-flash-lite-latest o Groq</td>
+</tr>
+<tr>
+<td>Collegamento parole e modi di dire</td>
+<td>velocità</td>
+<td>come i sottotitoli</td>
+</tr>
+<tr>
+<td>Pronuncia IPA del testo selezionato</td>
+<td>conoscere la fonetica</td>
+<td>gemini-flash-latest</td>
+</tr>
+</tbody>
+</table>
+<p>Le modalità di <strong>Consumo delle richieste</strong> (sezione 14) impostano da sole i modelli di Gemini: Flash-Lite per tradurre e correggere, Flash per spiegare (in «Qualità» Flash per tutto).</p>
 <h3 id="ordine-dei-servizi">Ordine dei servizi</h3>
 <p>Il sottomenu <strong>Ordine dei servizi</strong> mostra la fila di tutti i servizi, ognuno con il suo stato (<em>pronto</em>, <em>manca la chiave</em>, <em>manca il modello</em>, <em>richieste finite per oggi</em>):
 - <strong>↑ ↓</strong> cambiano l'ordine; la <strong>casella</strong> spenta toglie il servizio dalla fila (non si usa mai da solo);
@@ -547,22 +609,106 @@ Con <strong>Finite le richieste gratuite, passa a un altro servizio con la chiav
 <p>I modelli che «pensano» prima di rispondere (Gemma 4, Qwen 3…: in Ollama scrivono «Thinking…») con l'estensione rispondono senza ragionamento, molto più in fretta. Se il computer fatica (ventole, schermo esterno che si stacca), usa un modello più piccolo, per esempio <code>gemma4:e2b</code>.</p>
 <p>Per inserire più chiavi: scegli un servizio, incolla la sua chiave, poi torna al servizio che preferisci. Sotto la casella vedi l'elenco dei servizi pronti e di quelli finiti per oggi.</p>
 <hr />
-<h2 id="14-consumare-meno-richieste-gratuite">14. Consumare meno richieste gratuite</h2>
-<ul>
-<li><strong>Niente si traduce due volte</strong>: traduzioni, trascrizioni, spiegazioni e correzioni restano salvate. Rivedere un video, anche guardato solo in parte, non costa niente.</li>
-<li>La traduzione si chiede a <strong>gruppi di 120 frasi</strong>: un film di due ore costa circa 12 richieste a Gemini.</li>
-<li>Al passaggio del mouse e al clic si usa il dizionario di Google (gratis); il modello solo quando premi <strong>✨ Spiega con …</strong> (o «Spiega con…» sulle pagine).</li>
-<li>Il modello predefinito di Gemini è <strong>gemini-flash-lite-latest</strong>, quello con più richieste gratuite al giorno.</li>
-<li>Le quote di Gemini si azzerano verso le <strong>9 del mattino</strong> (ora italiana). Quanto hai usato lo vedi su aistudio.google.com.</li>
-<li>Per un film intero senza toccare le quote: <strong>Copia trascrizione / Incolla traduzione</strong> con una chat (<a href="#12-la-pagina-trascrizione-e-traduzione">sezione 12</a>).</li>
-</ul>
+<h2 id="14-consumo-delle-richieste">14. Consumo delle richieste</h2>
+<p>In cima al popup, <strong>Consumo delle richieste</strong> sceglie quanto l'estensione usa da sola i servizi con la chiave. Imposta gli altri menu (diretta, correzione, modi di dire, modelli di Gemini); se poi ne cambi uno a mano, il menu mostra <strong>✎ Personalizzato</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Modalità</th>
+<th>Diretta sincronizzata</th>
+<th>Correzione della trascrizione</th>
+<th>Modi di dire dal modello, da soli</th>
+<th>Modelli di Gemini</th>
+<th>Richieste a Gemini (circa)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🏆 Qualità</strong></td>
+<td>20 s indietro</td>
+<td>tutte le frasi</td>
+<td>sì</td>
+<td>Flash per tutto</td>
+<td>150–250 per ora di diretta</td>
+</tr>
+<tr>
+<td><strong>⚖️ Bilanciato</strong> (consigliato, di serie)</td>
+<td>45 s</td>
+<td>solo le incerte</td>
+<td>no (dizionario e traduzione sì)</td>
+<td>Flash-Lite per tradurre, Flash per spiegare</td>
+<td>60–90 per ora di diretta; un video con i sottotitoli circa 10</td>
+</tr>
+<tr>
+<td><strong>💰 Risparmio</strong></td>
+<td>90 s</td>
+<td>spenta</td>
+<td>no</td>
+<td>come Bilanciato</td>
+<td>30–60 per ora di diretta; video con i sottotitoli circa 10</td>
+</tr>
+<tr>
+<td><strong>🆓 Solo gratis</strong></td>
+<td>2 min</td>
+<td>spenta</td>
+<td>no</td>
+<td>—</td>
+<td>nessuna da sola</td>
+</tr>
+</tbody>
+</table>
+<p>In <strong>Solo gratis</strong> traduce Google Traduttore (il servizio scelto resta salvato per quando cambi modalità) e la trascrizione dei video senza sottotitoli parte solo se la avvii tu. I modelli lavorano solo quando premi un pulsante («✨ Spiega con…», «🔎 Modi di dire con questa parola»…).</p>
+<p>In <strong>📊 Consumo e modelli</strong>:
+- <strong>Richieste di oggi</strong> per servizio (Gemini, Groq Whisper…), contate dall'estensione. Il giorno delle quote finisce a mezzanotte in California (verso le 9 in Italia);
+- <strong>Limite di richieste al giorno</strong> per ogni servizio: raggiunto il limite, si passa al servizio di riserva come quando finisce la quota gratuita (per esempio Gemini 300, per tenerne un po' per le spiegazioni);
+- <strong>Diretta sincronizzata: trascrivi al massimo così avanti rispetto al video</strong> (60 s – 4 min): oltre, l'audio aspetta; anche in pausa.</p>
+<p>Altri modi di risparmiare:
+- <strong>Niente si traduce due volte</strong>: traduzioni, trascrizioni, spiegazioni e correzioni restano salvate. Rivedere un video, anche guardato solo in parte, non costa niente.
+- La traduzione si chiede a <strong>gruppi di 120 frasi</strong>: un film di due ore costa circa 12 richieste a Gemini.
+- Al passaggio del mouse e al clic si usa il dizionario di Google (gratis); il modello solo quando premi <strong>✨ Spiega con …</strong> (o «Spiega con…» sulle pagine).
+- Il modello predefinito di Gemini è <strong>gemini-flash-lite-latest</strong>, quello con più richieste gratuite al giorno.
+- Le quote di Gemini si azzerano verso le <strong>9 del mattino</strong> (ora italiana). Quanto hai usato lo vedi su aistudio.google.com.
+- Per un film intero senza toccare le quote: <strong>Copia trascrizione / Incolla traduzione</strong> con una chat (<a href="#12-la-pagina-trascrizione-e-traduzione">sezione 12</a>).</p>
 <hr />
 <h2 id="15-un-modello-di-traduzione-sul-tuo-computer">15. Un modello di traduzione sul tuo computer</h2>
-<p>Gratis, senza limiti e privato. Serve un PC abbastanza potente (16 GB di RAM consigliati).</p>
+<p>Gratis, senza limiti e privato. È più lento dei servizi online e i modelli piccoli sbagliano di più con le lingue meno diffuse, le etimologie e le spiegazioni lunghe; risponde a una richiesta alla volta. Un buon uso: <strong>i sottotitoli e la diretta con il modello sul computer, le spiegazioni con Gemini</strong> (📊 Consumo e modelli → Modello per ogni compito).</p>
+<p>Modelli leggeri adatti alle lingue (dimensioni indicative del download; la memoria che serve è circa la dimensione più 1–2 GB, meglio nella scheda video; senza scheda video funzionano ma molto più lenti):</p>
+<table>
+<thead>
+<tr>
+<th>Modello</th>
+<th>Download</th>
+<th>Adatto a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen3:4b-instruct</code> (Qwen 3 4B, versione senza ragionamento)</td>
+<td>circa 2,5–3 GB</td>
+<td>buono anche con giapponese e cinese; veloce</td>
+</tr>
+<tr>
+<td><code>gemma4:e2b</code></td>
+<td>circa 7 GB (versione <code>e2b-it-qat</code>: circa 4,3 GB)</td>
+<td>lingue europee, molto leggero da far girare</td>
+</tr>
+<tr>
+<td><code>gemma4:e4b</code></td>
+<td>circa 9,6 GB (versione <code>e4b-it-qat</code>: circa 6 GB)</td>
+<td>più preciso di e2b; serve una scheda video da 8 GB</td>
+</tr>
+<tr>
+<td><code>gemma4:12b</code></td>
+<td>circa 7 GB nella versione <code>12b-it-qat</code></td>
+<td>buona qualità anche per spiegare; scheda video da 12 GB</td>
+</tr>
+</tbody>
+</table>
+<p>Evita per tradurre i modelli che «ragionano» sempre (Qwen 3 non «instruct», QwQ, DeepSeek-R1): rispondono molto più lentamente. Le dimensioni cambiano con le versioni: controllale sulla pagina del modello su ollama.com. Per cancellare un modello: <code>ollama rm nome</code> (per esempio <code>ollama rm gemma3:4b</code>); <code>ollama list</code> mostra quelli scaricati.</p>
 <h3 id="con-ollama">Con Ollama</h3>
 <ol>
 <li>Installa Ollama da <strong>ollama.com</strong>.</li>
-<li>Scarica un modello: <code>ollama pull gemma3:12b</code> (o <code>gemma3:4b</code> se il PC è meno potente).</li>
+<li>Scarica un modello: per esempio <code>ollama pull qwen3:4b-instruct</code> (vedi la tabella qui sopra).</li>
 <li>Permetti le richieste del browser (senza questo passaggio Ollama le rifiuta):
    - <strong>Windows</strong>: nel prompt dei comandi <code>setx OLLAMA_ORIGINS "chrome-extension://*,moz-extension://*"</code>, poi chiudi Ollama (icona vicino all'orologio → Quit) e riaprilo;
    - <strong>Mac</strong>: <code>launchctl setenv OLLAMA_ORIGINS "chrome-extension://*,moz-extension://*"</code>, poi riapri Ollama;
@@ -647,6 +793,7 @@ Con <strong>Finite le richieste gratuite, passa a un altro servizio con la chiav
 <hr />
 <h2 id="novita">Novità</h2>
 <ul>
+<li><strong>1.6.0</strong>: <strong>Consumo delle richieste</strong>, in cima al popup: 🏆 Qualità, ⚖️ Bilanciato (di serie), 💰 Risparmio, 🆓 Solo gratis. Ogni modalità imposta da sola diretta, correzione, modi di dire e modelli di Gemini; aggiornando si passa a «Bilanciato» (<a href="#14-consumo-delle-richieste">sezione 14</a>). Nuova sezione <strong>📊 Consumo e modelli</strong>: richieste di oggi per servizio, servizi di riserva, <strong>Modello per ogni compito</strong> con il <strong>modello preciso</strong> per ogni compito (per esempio Gemini Flash-Lite per tradurre e Flash per spiegare: i limiti gratuiti di Gemini sono per modello), Ordine dei servizi, <strong>limite di richieste al giorno</strong> per servizio, anticipo massimo della diretta. <strong>Quanto indietro guardi la diretta</strong> (20 s, 45 s, 90 s, 2 min): più indietro, pezzi d'audio più lunghi per Whisper e frasi tradotte a gruppi più grandi (<a href="#quanto-indietro-guardi-la-diretta">sezione 11</a>, con la spiegazione dei «20 o 10 secondi prima»). <strong>Correzione della trascrizione</strong>: solo le frasi incerte (di serie), tutte, o spenta. <strong>Modi di dire senza richieste in più</strong>: dal dizionario di Wiktionary (scaricato una volta per lingua), dalla stessa richiesta della traduzione, e quelli già visti, sottolineati nei sottotitoli; nelle schede <strong>🔎 Modi di dire con questa parola</strong>. Tolto il vecchio codice della riga IPA sotto i sottotitoli (non si vedeva più). Guida: quali modelli per quale compito, e modelli leggeri per Ollama.</li>
 <li><strong>1.5.4</strong>: <strong>⇄ Altro modello</strong> nelle schede (video e pagine): la stessa parola spiegata da un altro modello, per confrontare. Si apre l'elenco dei modelli pronti (con chiave e richieste di oggi) e scegli quale: una richiesta, solo a quello. Anche questa spiegazione resta nelle 🗂 salvate. <strong>Diretta sincronizzata, meno richieste</strong>: non si trascrive (e quindi non si traduce) più di 90 secondi avanti rispetto al video; se metti in pausa si ferma lì e riprende quando riparti (prima, a video fermo, continuava a consumare le richieste gratuite: nel tuo registro Gemini ha finito le 500 di oggi e la traduzione è passata da sola al servizio di riserva, Mistral, che rispondeva «rate limit»). Le frasi da tradurre si raccolgono in gruppi: si traducono insieme quando sono abbastanza o quando la prima sta per comparire. <strong>Modello sul computer (Ollama)</strong>: Ollama risponde a una richiesta alla volta, e la diretta gli mandava gruppi grandi di frasi: la spiegazione chiesta dalla scheda restava in coda dietro. Ora con Ollama i gruppi sono piccoli e, mentre aspetti una spiegazione, la diretta non gli manda altro. <strong>Groq Whisper</strong>: «prompt length must be 896 characters or fewer» con il giapponese (ogni carattere conta 3): il suggerimento per Whisper si accorcia da solo, e se non basta si riprova senza.</li>
 <li><strong>1.5.3</strong>: <strong>dirette sincronizzate</strong> (programma per yt-dlp <strong>1.9</strong>, rilancia l'installatore): il programma legge anche i 2 minuti di diretta già passati, non solo il punto più recente. Prima il pezzo che stavi guardando non era nell'audio letto (il video di YouTube è già indietro rispetto alla diretta), l'audio non si metteva a tempo e il video veniva portato indietro di 15 secondi alla volta: tolto. Nel registro, ogni 15 secondi, una <strong>misura</strong>: quanto audio è arrivato e a che velocità, quanto somiglia a quello del video e quanto è avanti. <strong>Etimologia</strong>: nell'🌳 albero ogni antenato ha il suo <strong>↗</strong> per aprirlo su Etymology Explorer (utile quando lì la parola moderna non c'è).</li>
 <li><strong>1.5.2</strong>: <strong>dirette sincronizzate</strong> (programma per yt-dlp <strong>1.8</strong>, rilancia l'installatore): trovate le due cause per cui yt-dlp «non rispondeva mai». La prima: si chiedeva un formato con audio e video insieme, che molte dirette non hanno (ora si chiede l'audio da solo). La seconda: su Windows yt-dlp e Deno ricevevano il canale del browser e il programma di appoggio restava bloccato invece di ricevere l'errore. Inoltre yt-dlp cerca l'indirizzo della diretta subito, insieme al primo tentativo; l'indirizzo trovato resta ricordato per qualche ora (riaprendo la stessa diretta, o riaccendendo ⏱, l'audio parte in un attimo); mentre cerca, il registro mostra da quanti secondi e l'ultima riga di yt-dlp. La traduzione rapida di Google riprova da sola dopo un errore momentaneo («500»).</li>
