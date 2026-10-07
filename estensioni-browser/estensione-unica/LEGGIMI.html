@@ -1,5 +1,5 @@
 <!doctype html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.6.1 — Guida</title><style>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.6.2 — Guida</title><style>
 :root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
 @media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
 *{box-sizing:border-box}
@@ -21,7 +21,7 @@ hr + h2{border-top:0;margin-top:.6em;padding-top:0}
 pre{white-space:pre-wrap;word-break:break-word}
 .toc-note{color:var(--soft)}
 </style></head>
-<body><main><p><em>Versione 1.6.1</em></p>
+<body><main><p><em>Versione 1.6.2</em></p>
 <h1 id="sottotitoli-doppi-parole-al-volo-estensione-per-il-browser">Sottotitoli Doppi + Parole al Volo — estensione per il browser</h1>
 <p><em>English version → <a href="GUIDE.en.html">GUIDE.en</a></em></p>
 <p><strong>Impara le lingue guardando video e leggendo.</strong> Una sola estensione per due cose:</p>
@@ -154,13 +154,13 @@ pre{white-space:pre-wrap;word-break:break-word}
 <h2 id="3-primi-passi-5-minuti">3. Primi passi (5 minuti)</h2>
 <ol>
 <li><strong>Apri il popup</strong> (clic sull'icona dell'estensione) e scegli <strong>Traduci in</strong>: la tua lingua.</li>
-<li>Nella sezione <strong>🌐 Traduzione e modelli → Traduci i sottotitoli con</strong> lascia <strong>Google Traduttore</strong> per cominciare subito, senza chiavi.</li>
+<li>Senza chiavi si usa <strong>Google Traduttore</strong>: puoi cominciare subito.</li>
 <li>Apri un video di YouTube nella lingua che studi e accendi i sottotitoli (<strong>CC</strong>). Compare la doppia riga.</li>
 <li>Passa il mouse su una parola della riga originale: il video si ferma e compare la scheda con il significato.</li>
 </ol>
 <p><strong>Per una traduzione molto migliore (consigliato, gratis):</strong>
 1. Vai su <strong>aistudio.google.com/apikey</strong> con il tuo account Google e premi <em>Create API key</em> (non serve la carta).
-2. Nel popup scegli <strong>Traduci i sottotitoli con → Gemini</strong>, incolla la chiave in <strong>Chiave API</strong> e premi Invio. Il modello si sceglie da solo.</p>
+2. Nel popup, <strong>🔑 Servizi → Gemini</strong>: incolla la chiave e premi Invio. Il modello si sceglie da solo; con la chiave i sottotitoli passano a Gemini (si cambia in <strong>📊 Consumo e modelli → Modello per ogni compito</strong>).</p>
 <p><strong>Sulle pagine</strong> non serve fare niente: passa il mouse su una parola di un articolo in un'altra lingua e compare la sua scheda (dettagli nella <a href="#8-sulle-pagine-web">sezione 8</a>).</p>
 <p><strong>Per i video senza sottotitoli</strong> serve anche una chiave <strong>Groq</strong>, gratuita: vedi la <a href="#11-video-senza-sottotitoli-la-trascrizione-dellaudio">sezione 11</a>.</p>
 <hr />
@@ -169,7 +169,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <ul>
 <li><strong>📜 Testo del video</strong> (tutte le frasi del video aperto, con la traduzione: <a href="#12-la-pagina-trascrizione-e-traduzione">sezione 12</a>), <strong>📒 Vocabolario</strong> e <strong>✓ Parole che conosco</strong>;</li>
 <li>i due interruttori generali: <strong>Sottotitoli doppi nei video</strong> e <strong>Parole al Volo sulle pagine e nei PDF</strong> (Alt+Maiusc+Y);</li>
-<li><strong>Traduci in</strong>: la tua lingua, per tutto. Sotto, <strong>Interfaccia in questa lingua</strong>: accesa, tutte le scritte dell'estensione (popup, schede, pagine del vocabolario, della trascrizione, del lettore PDF…) compaiono in quella lingua. La prima volta servono un paio di secondi (le scritte si traducono con Google, gratis), poi sono ricordate;</li>
+<li><strong>Traduci in</strong>: la tua lingua, per tutto (tutte le lingue di Google Traduttore, circa 130, con il nome anche nella lingua stessa). Sotto, <strong>Interfaccia in questa lingua</strong>: accesa, tutte le scritte dell'estensione (popup, schede, pagine del vocabolario, della trascrizione, del lettore PDF…) compaiono in quella lingua. La prima volta servono un paio di secondi (le scritte si traducono con Google, gratis), poi sono ricordate;</li>
 <li><strong>Consumo delle richieste</strong>: quanto l'estensione usa da sola i servizi con la chiave, dalla qualità migliore al consumo più basso (🏆 Qualità, ⚖️ Bilanciato, 💰 Risparmio, 🆓 Solo gratis: <a href="#14-consumo-delle-richieste">sezione 14</a>);</li>
 <li>quando guardi una <strong>diretta</strong>, il riquadro «🔴 Questo video è una diretta» con la scelta tra sottotitoli normali e sincronizzati.</li>
 </ul>
@@ -183,16 +183,16 @@ pre{white-space:pre-wrap;word-break:break-word}
 </thead>
 <tbody>
 <tr>
-<td><strong>🌐 Traduzione e modelli</strong></td>
-<td>Il servizio che traduce i sottotitoli, la chiave, il modello (<a href="#13-i-servizi-di-traduzione">sezione 13</a>).</td>
+<td><strong>🔑 Servizi</strong></td>
+<td>Solo le chiavi dei servizi (con Mostra, Copia, Crea una chiave), il modello predefinito di ognuno, l'indirizzo di Ollama/LM Studio e del server Whisper sul computer (<a href="#13-i-servizi-di-traduzione">sezione 13</a>).</td>
 </tr>
 <tr>
 <td><strong>📊 Consumo e modelli</strong></td>
-<td>Le scelte più tecniche: richieste di oggi per servizio, servizi di riserva, <strong>Modello per ogni compito</strong> (servizio e modello preciso), <strong>Ordine dei servizi</strong>, limite di richieste al giorno, anticipo massimo della diretta sincronizzata (<a href="#13-i-servizi-di-traduzione">sezioni 13</a> e <a href="#14-consumo-delle-richieste">14</a>).</td>
+<td>Chi fa ogni lavoro e le scelte più tecniche: richieste di oggi per servizio, servizi di riserva, <strong>Modello per ogni compito</strong> (per ogni compito, sottotitoli e trascrizione compresi, la tendina del servizio e quella del modello), <strong>Ordine dei servizi</strong>, limite di richieste al giorno, anticipo massimo della diretta sincronizzata (<a href="#13-i-servizi-di-traduzione">sezioni 13</a> e <a href="#14-consumo-delle-richieste">14</a>).</td>
 </tr>
 <tr>
 <td><strong>🎙 Trascrizione</strong></td>
-<td>Video senza sottotitoli: trascrivere questo video, rifare la trascrizione, la modalità, Whisper (Groq o sul computer), la lingua parlata, le dirette sincronizzate, il <strong>programma per yt-dlp</strong> (<a href="#11-video-senza-sottotitoli-la-trascrizione-dellaudio">sezione 11</a>).</td>
+<td>Video senza sottotitoli: trascrivere questo video, rifare la trascrizione, la modalità, la lingua parlata, le dirette sincronizzate, il <strong>programma per yt-dlp</strong> (<a href="#11-video-senza-sottotitoli-la-trascrizione-dellaudio">sezione 11</a>).</td>
 </tr>
 <tr>
 <td><strong>📄 Pagine e PDF</strong></td>
@@ -216,7 +216,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 </tr>
 <tr>
 <td><strong>🗃 Anki</strong></td>
-<td>Mazzi, invio automatico, immagini sulle carte.</td>
+<td>Mazzi, invio automatico, pronuncia e immagini sulle carte.</td>
 </tr>
 <tr>
 <td><strong>⚙ Altro</strong></td>
@@ -303,11 +303,11 @@ pre{white-space:pre-wrap;word-break:break-word}
 - <strong>«la conosco?»</strong>: premilo per le parole che sai già. Diventano <strong>verdi</strong> nei sottotitoli, e in cima al popup leggi <strong>quante parole del video conosci</strong> (per esempio "Conosci il 72% delle parole di questo video"). Anche "Segna come imparata" nel vocabolario la aggiunge.
 - <strong>Genere</strong> dei nomi (maschile, femminile, neutro; in tedesco anche <em>der/die/das</em>).
 - <strong>Giapponese</strong>: dal dizionario <strong>Jisho</strong> (gratis) la lettura in kana, il livello JLPT, se è una parola comune e il significato in inglese.
-- <strong>Kanji e caratteri cinesi uno per uno</strong>: nella scheda di una parola giapponese o cinese, la riga «Kanji uno per uno» ha un pulsante per ogni carattere. Cliccandolo vedi solo quel kanji: significato, letture nella lingua del testo e nelle altre (on/kun, pinyin, cantonese, coreano, vietnamita), parti e radicale cliccabili, forma semplificata/tradizionale, tratti, livelli JLPT/classe, HSK, hanja scolastico; «lo conosco?», Jisho, Wiktionary e «scheda del carattere ›» per aprirlo come una parola (vocabolario, Anki) e poi «‹ Torna alla parola». ☆ salva il kanji / ☆ salva tutti i kanji: i singoli caratteri nel vocabolario. Gratis, nessuna richiesta a Gemini o Groq.
+- <strong>Kanji e caratteri cinesi uno per uno</strong>: nella scheda di una parola giapponese o cinese, la riga «Kanji uno per uno» ha un pulsante per ogni carattere. Cliccandolo vedi solo quel kanji: significato, letture nella lingua del testo e nelle altre (on/kun, pinyin, cantonese, coreano, vietnamita), parti e radicale cliccabili, forma semplificata/tradizionale, tratti, livelli JLPT/classe, HSK, hanja scolastico; «lo conosco?», Jisho, Wiktionary e «scheda del carattere ›» per aprirlo come una parola (vocabolario, Anki) e poi «‹ Torna alla parola». ☆ salva il kanji / ☆ salva tutti i kanji: i singoli caratteri nel vocabolario. Tutto questo è gratis, senza richieste a Gemini o Groq. Solo se lo premi, <strong>✨ Spiega il kanji con …</strong> chiede al modello delle spiegazioni (una richiesta) significati, letture, parole comuni, parti, un trucco per ricordarlo e l'origine; la spiegazione resta salvata.
 - <strong>↺ a sinistra dei sottotitoli</strong>: riascolta la frase; se intanto il video è andato avanti (è giallo) torna alla frase che stavi leggendo.
 - <strong>Dirette sincronizzate</strong> (popup → 🎙 Trascrizione → «Dirette sincronizzate»): nelle dirette di YouTube il video resta indietro e il programma per yt-dlp legge l'audio più avanti, così i sottotitoli trascritti arrivano in orario invece che 5–10 secondi dopo. Serve il programma per yt-dlp (con ffmpeg, che l'installatore scarica da solo su Windows; su Mac e Linux va installato a parte). Quanto indietro: <a href="#quanto-indietro-guardi-la-diretta">sezione 11</a>.
 - <strong>Dirette: normali o sincronizzate</strong>: quando guardi una diretta, il popup mostra in alto «🔴 Questo video è una diretta» con la scelta; sul video il pulsante <strong>⏱</strong> accanto ai sottotitoli fa lo stesso.
-- <strong>Kanji e caratteri</strong>: nel riquadro di un kanji i distintivi si cliccano (ordine dei tratti, elenco di tutti i kanji di quel livello JLPT/classe/HSK, radicale…).
+- <strong>Kanji e caratteri</strong>: nel riquadro di un kanji i distintivi si cliccano (ordine dei tratti, elenco di tutti i kanji di quel livello JLPT/classe/HSK, radicale…). Nella <strong>pagina dei kanji</strong> la scheda del carattere cliccato compare <strong>accanto</strong> all'elenco (a destra; sullo schermo stretto in basso), anche se sei sceso molto; ✕ la chiude. Sulle caselle, passando il mouse, <strong>✓</strong> (lo conosco) e <strong>☆</strong> (salva nel vocabolario) senza aprire la scheda; nella scheda ☆ salva, «lo conosco?» e <strong>✨ Spiega</strong> con il modello. Il menu <strong>Mostra</strong> filtra: tutti, da imparare, conosciuti, salvati.
 - <strong>Scrittura</strong>: se la parola è scritta bene. Senza modello lo controlla LanguageTool (o, per le lingue che non conosce, il dizionario: "parola presente nel dizionario"); con <strong>✨ Spiega con …</strong> il modello dà anche un <strong>voto da 0 a 100</strong> e la forma corretta. Utile con i sottotitoli automatici, che a volte sbagliano.
 - <strong>Registrazione vera</strong>: quando Wiktionary ha la parola registrata da una persona, in alto nella scheda compare <strong>🔊</strong> accanto a 🔈 (si spegne con "Pronuncia di madrelingua" nel popup). Vale solo per la parola esatta, non per la forma base. Se la parola non ha una registrazione sua, si usa quella del suo <strong>lemma</strong> (lo stesso usato per l'etimologia: dalla pagina «forma di…», dalla tabella delle forme o scelto da te), e se non c'è nemmeno quella, la pronuncia registrata del dizionario di Google. In quel caso 🔊 è arancione e, passandoci sopra, dice di quale parola è la registrazione.
 - <strong>Etimologia</strong>: da Wiktionary, tradotta nella tua lingua (le parole straniere citate restano come sono). Quando Wiktionary dà solo un rimando («participio di <em>embarazar</em>», «dal portoghese <em>embaraçar</em>»), la scheda segue la catena fino a 3 passaggi, anche in altre lingue, e arriva alla radice (<em>embarazada</em> ← <em>embarazar</em> ← portoghese <em>embaraçar</em> ← <em>baraço</em>, «corda»). Vale per tutte le parole, gratis, senza modello.
@@ -411,6 +411,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <li>Le parole salvate compaiono <strong>sottolineate in azzurro</strong> nei sottotitoli di tutti i video e sulle pagine.</li>
 <li>Popup → <strong>📒 Vocabolario</strong>: cerca, riapri il video nel punto giusto, segna una parola come imparata (non viene più evidenziata in azzurro, e conta tra le parole che conosci) o eliminala.</li>
 <li><strong>Anki direttamente</strong> (consigliato): installa in Anki il componente aggiuntivo <strong>AnkiConnect</strong> (Strumenti → Componenti aggiuntivi → Scarica, codice <strong>2055492159</strong>) e riavvia Anki. Con Anki aperto premi <strong>Anki</strong> nella scheda della parola (o <strong>Manda ad Anki</strong> nel vocabolario); la prima volta Anki chiede il permesso: premi <strong>Yes</strong>. Popup → <strong>Anki</strong>: <strong>un mazzo per ogni lingua</strong> ("Lingue::Inglese", "Lingue::Ceco"…), oppure un mazzo unico; invio automatico quando salvi con ☆; prova del collegamento.</li>
+<li><strong>Pronuncia nelle carte di Anki</strong> (popup → Anki → «Metti la pronuncia nelle carte di Anki», accesa di serie): sul fronte della carta va l'audio della parola: la <strong>registrazione di un madrelingua</strong> (Wiktionary) se c'è per la parola esatta, altrimenti la <strong>voce sintetica</strong> di Google. Vale per il pulsante Anki della scheda, per l'invio automatico con ☆ (video e pagine) e per «Manda ad Anki» del vocabolario; il messaggio dice quale pronuncia è stata messa.</li>
 <li><strong>Immagine nelle carte di Anki</strong> (popup → Anki, spenta di serie): la carta riceve anche un'immagine della parola da Wikimedia Commons, da vedere e cambiare prima di salvare (‹ ›, altre…, ✕) e nel vocabolario (🖼).</li>
 <li><strong>Esporta per Anki</strong>: scarica un file di testo (con il mazzo di ogni carta). In Anki: <em>File → Importa</em> → scegli il file (tipo di nota "Base"). Sul fronte la parola con la frase, sul retro significato, traduzione e link al video.</li>
 </ul>
@@ -420,7 +421,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <h3 id="preparazione-una-volta-sola">Preparazione (una volta sola)</h3>
 <ol>
 <li>Crea una chiave gratuita su <strong>console.groq.com/keys</strong> (senza carta).</li>
-<li>Popup → <strong>🎙 Trascrizione → Chiave Groq</strong>: incollala e premi Invio.</li>
+<li>Popup → <strong>🔑 Servizi → Groq</strong>: incollala e premi Invio.</li>
 </ol>
 <h3 id="tre-modi-di-trascrivere-popup-trascrizione">Tre modi di trascrivere (popup → 🎙 Trascrizione)</h3>
 <ul>
@@ -457,7 +458,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 <p>Perché aspettare fino a 10 secondi prima invece di 20 fa risparmiare: le frasi da tradurre sono sempre le stesse (ogni frase si traduce una volta sola). Cambia solo <strong>in quante richieste</strong> si dividono. Esempio: la frase A è pronta 35 secondi prima di comparire. Se si traduce 20 secondi prima, si aspetta 15 secondi e insieme ad A partono le frasi arrivate in quei 15 secondi (circa 3). Se si traduce 10 secondi prima, si aspetta 25 secondi (circa 5 frasi). Stesse frasi, meno richieste; i token sono quasi uguali (anzi un po' meno: le istruzioni per il modello si ripetono meno volte). Le quote gratuite contano soprattutto le richieste. Se la traduzione buona arriva tardi, intanto c'è quella rapida di Google.</p>
 <p>In cambio, più sei indietro più vedi la diretta in ritardo (la chat va avanti rispetto a te). In pausa non si trascrive niente oltre l'<strong>anticipo massimo</strong> (di serie 90 s, in 📊 Consumo e modelli).</p>
 <h3 id="trascrivere-sul-tuo-computer">Trascrivere sul tuo computer</h3>
-<p>Con un server Whisper compatibile (per esempio Speaches): <strong>Trascrizione con → Server sul tuo computer</strong>, indirizzo (di solito <code>http://localhost:8000/v1</code>) e modello.</p>
+<p>Con un server Whisper compatibile (per esempio Speaches): l'indirizzo (di solito <code>http://localhost:8000/v1</code>) in <strong>🔑 Servizi → Server Whisper sul tuo computer</strong>, poi in <strong>📊 Consumo e modelli → Modello per ogni compito → Trascrizione dell'audio</strong> scegli «Server Whisper sul tuo computer» e il modello (↻ carica l'elenco del server).</p>
 <h3 id="firefox_1">Firefox</h3>
 <p>Per catturare l'audio Firefox deve ammutolire il video, e l'estensione lo rimanda subito alle casse. Se non senti l'audio o la trascrizione non parte, clicca una volta sul video.</p>
 <hr />
@@ -480,7 +481,7 @@ pre{white-space:pre-wrap;word-break:break-word}
 </ol>
 <hr />
 <h2 id="13-i-servizi-di-traduzione">13. I servizi di traduzione</h2>
-<p>Si scelgono nel popup, <strong>🌐 Traduzione e modelli → Traduci i sottotitoli con</strong>. Scegli il servizio, incolla la chiave in <strong>Chiave API</strong>, premi Invio: il modello si sceglie da solo (per cambiarlo: <strong>Carica modelli</strong>).</p>
+<p>Le chiavi si incollano nel popup, <strong>🔑 Servizi</strong>: ogni servizio ha la sua casella (con <strong>Crea una chiave</strong> per arrivare alla pagina giusta) e, per i modelli linguistici, la tendina <strong>Modello predefinito</strong> (<strong>↻ Carica modelli</strong> prende l'elenco vero dal servizio; «✎ un altro» per scrivere un nome a mano). Chi fa ogni lavoro (sottotitoli, pagine, trascrizione, spiegazioni…) si sceglie in <strong>📊 Consumo e modelli → Modello per ogni compito</strong>.</p>
 <table>
 <thead>
 <tr>
@@ -556,13 +557,13 @@ pre{white-space:pre-wrap;word-break:break-word}
 <p>Gemini, Groq, Mistral, OpenRouter, Claude e il modello sul computer sono <strong>modelli linguistici</strong>: oltre a tradurre capiscono il discorso, spiegano le parole nel contesto, trovano i modi di dire e correggono la trascrizione. Google, Microsoft e DeepL sono <strong>traduttori classici</strong>: traducono bene, ma non fanno il resto.</p>
 <p>Le chiavi si vedono e si copiano con i pulsanti <strong>Mostra</strong> e <strong>Copia</strong> accanto alla casella (utile per l'add-on di Kodi). Non mostrarle in video o in foto: chi le vede le può usare.</p>
 <h3 id="servizi-di-riserva">Servizi di riserva</h3>
-<p>Quando il servizio scelto ha finito le richieste gratuite di oggi, nel popup sotto «Traduci i sottotitoli con» compare un avviso giallo: dice a che ora tornano (le quote di Gemini si azzerano a mezzanotte della California, verso le 9 in Italia) e quale servizio si usa intanto. Con <strong>"Riprova … adesso"</strong> la traduzione del video riprende subito con il servizio scelto (utile se hai cambiato chiave o modello).
+<p>Quando il servizio scelto ha finito le richieste gratuite di oggi, nel popup compare un avviso giallo: dice a che ora tornano (le quote di Gemini si azzerano a mezzanotte della California, verso le 9 in Italia) e quale servizio si usa intanto. Con <strong>"Riprova … adesso"</strong> la traduzione del video riprende subito con il servizio scelto (utile se hai cambiato chiave o modello).
 Con <strong>Finite le richieste gratuite, passa a un altro servizio con la chiave</strong> (attiva di serie), quando un servizio esaurisce la quota del giorno l'estensione continua da sola con il primo altro servizio di cui hai inserito la chiave, nell'ordine di <strong>Ordine dei servizi</strong> (di serie <strong>Gemini → Groq → Mistral → OpenRouter → Ollama/LM Studio → Claude → Microsoft → DeepL</strong>), e alla fine <strong>Google</strong>. Il servizio esaurito viene saltato fino al giorno dopo. Con Gemini, Groq e Mistral si blocca solo il <strong>modello</strong> finito: prima si provano gli altri modelli dello stesso servizio (<a href="#modello-per-ogni-compito">Modello per ogni compito</a>); l'avviso giallo lo dice («finite per oggi le richieste di gemini-flash-lite-latest… intanto si usano gli altri modelli di Gemini»).</p>
 <h3 id="modello-per-ogni-compito">Modello per ogni compito</h3>
-<p>In <strong>📊 Consumo e modelli</strong>, il sottomenu <strong>Modello per ogni compito</strong> (si apre con un clic) ha una tendina per ogni lavoro: <strong>testi delle pagine e PDF</strong>, <strong>spiegazioni («✨ Spiega con…»)</strong> (anche le etimologie), <strong>correzione della trascrizione</strong>, <strong>pronuncia IPA del testo selezionato</strong> e <strong>collegamento parole e modi di dire</strong>. «Automatico» usa il primo modello pronto dell'<strong>Ordine dei servizi</strong>; se il modello scelto non risponde o ha finito le richieste di oggi, lo sostituisce il primo pronto. Il servizio dei <strong>sottotitoli dei video</strong> si sceglie in 🌐 Traduzione e modelli e quello della <strong>trascrizione dell'audio</strong> in 🎙 Trascrizione dell'audio: qui per i sottotitoli c'è solo il modello preciso.</p>
+<p>In <strong>📊 Consumo e modelli</strong>, il sottomenu <strong>Modello per ogni compito</strong> (si apre con un clic) ha una tendina del servizio per ogni lavoro: <strong>sottotitoli dei video</strong>, <strong>testi delle pagine e PDF</strong>, <strong>trascrizione dell'audio</strong> (Groq Whisper o il server sul computer, con la tendina del modello di Whisper), <strong>spiegazioni («✨ Spiega con…»)</strong> (anche le etimologie e le spiegazioni dei kanji), <strong>correzione della trascrizione</strong>, <strong>pronuncia IPA del testo selezionato</strong> e <strong>collegamento parole e modi di dire</strong>. «Automatico» usa il primo modello pronto dell'<strong>Ordine dei servizi</strong>; se il modello scelto non risponde o ha finito le richieste di oggi, lo sostituisce il primo pronto.</p>
 <p>Sotto ogni compito c'è l'<strong>elenco dei modelli</strong> del servizio che fa davvero quel compito adesso, in ordine. Si usa il primo pronto (in grassetto). Su Gemini, Groq e Mistral i limiti gratuiti sono <strong>per modello</strong>: quando un modello finisce le richieste di oggi si blocca solo quello (accanto compare «finito oggi») e si passa da soli al modello successivo; solo quando sono finiti tutti si passa al servizio successivo dell'<strong>Ordine dei servizi</strong>. Esempio: sottotitoli con Gemini Flash-Lite; finito Flash-Lite, si continua con Gemini Flash; finiti tutti e due, con Groq.
-- <strong>↑ ↓</strong> cambiano l'ordine; <strong>+ Aggiungi</strong> mette primo un altro modello (<strong>↻</strong> carica l'elenco dei modelli del servizio); <strong>✕</strong> toglie un modello che avevi aggiunto;
-- in fondo restano sempre, come riserva, il modello scelto per il servizio in 🌐 Traduzione e modelli e i modelli suggeriti per quel tipo di compito (per Gemini: Flash-Lite e Flash; per tradurre prima il più leggero, per spiegare prima il migliore).</p>
+- <strong>↑ ↓</strong> cambiano l'ordine; <strong>Aggiungi</strong> è una tendina con i modelli del servizio (<strong>↻</strong> carica l'elenco vero; «✎ un altro» per scriverne uno a mano): quello scelto va primo; <strong>✕</strong> toglie un modello che avevi aggiunto;
+- in fondo restano sempre, come riserva, il modello predefinito del servizio (in 🔑 Servizi) e i modelli suggeriti per quel tipo di compito (per Gemini: Flash-Lite e Flash; per tradurre prima il più leggero, per spiegare prima il migliore).</p>
 <p>Usando un modello leggero per tradurre e uno migliore per spiegare, le richieste si dividono tra i due.</p>
 <p>Quali modelli per quale compito (consigli):</p>
 <table>
@@ -607,10 +608,9 @@ Con <strong>Finite le richieste gratuite, passa a un altro servizio con la chiav
 - <strong>↑ ↓</strong> cambiano l'ordine; la <strong>casella</strong> spenta toglie il servizio dalla fila (non si usa mai da solo);
 - <strong>Usa adesso</strong> lo mette primo e lo sceglie subito anche per tradurre, poi fa una prova;
 - <strong>Prova</strong> traduce una frase di prova e dice <em>✓ Funziona</em> (con la traduzione e i secondi) o <em>✗ Non funziona</em> con il motivo (per Ollama: programma spento, OLLAMA_ORIGINS mancante, modello non scelto…).</p>
-<p>L'ordine vale per i servizi di riserva, per <strong>✨ Spiega con…</strong> (se traduci con Google, DeepL o Microsoft si usa il primo modello pronto della fila, sempre e solo quando premi il pulsante), per la pronuncia IPA e per la correzione della trascrizione. Per provare Ollama: scegli «Modello sul tuo computer», premi «Carica modelli», poi <strong>Usa adesso</strong>.</p>
+<p>L'ordine vale per i servizi di riserva, per <strong>✨ Spiega con…</strong> (se traduci con Google, DeepL o Microsoft si usa il primo modello pronto della fila, sempre e solo quando premi il pulsante), per la pronuncia IPA e per la correzione della trascrizione. Per provare Ollama: in 🔑 Servizi premi «Carica modelli» e scegli il modello, poi qui <strong>Usa adesso</strong>.</p>
 <p><strong>Spiegazioni («✨ Spiega con…»)</strong>, in Modello per ogni compito: un modello solo per le spiegazioni, diverso da quello dei sottotitoli. Per esempio sottotitoli con <strong>Gemini</strong> (veloce) e spiegazioni con <strong>Ollama</strong> (sul computer: nessun limite, nessuna richiesta consumata). Se il modello scelto non risponde o ha finito le richieste di oggi, la spiegazione la fa il primo modello pronto della fila, e la scheda lo dice; dopo 5 minuti si riprova con quello scelto.</p>
 <p>I modelli che «pensano» prima di rispondere (Gemma 4, Qwen 3…: in Ollama scrivono «Thinking…») con l'estensione rispondono senza ragionamento, molto più in fretta. Se il computer fatica (ventole, schermo esterno che si stacca), usa un modello più piccolo, per esempio <code>gemma4:e2b</code>.</p>
-<p>Per inserire più chiavi: scegli un servizio, incolla la sua chiave, poi torna al servizio che preferisci. Sotto la casella vedi l'elenco dei servizi pronti e di quelli finiti per oggi.</p>
 <hr />
 <h2 id="14-consumo-delle-richieste">14. Consumo delle richieste</h2>
 <p>In cima al popup, <strong>Consumo delle richieste</strong> sceglie quanto l'estensione usa da sola i servizi con la chiave. Imposta gli altri menu (diretta, correzione, modi di dire, modelli di Gemini); se poi ne cambi uno a mano, il menu mostra <strong>✎ Personalizzato</strong>.</p>
@@ -716,10 +716,10 @@ Con <strong>Finite le richieste gratuite, passa a un altro servizio con la chiav
    - <strong>Windows</strong>: nel prompt dei comandi <code>setx OLLAMA_ORIGINS "chrome-extension://*,moz-extension://*"</code>, poi chiudi Ollama (icona vicino all'orologio → Quit) e riaprilo;
    - <strong>Mac</strong>: <code>launchctl setenv OLLAMA_ORIGINS "chrome-extension://*,moz-extension://*"</code>, poi riapri Ollama;
    - <strong>Linux</strong>: <code>sudo systemctl edit ollama</code>, aggiungi <code>[Service]</code> e <code>Environment="OLLAMA_ORIGINS=chrome-extension://*,moz-extension://*"</code>, poi <code>sudo systemctl restart ollama</code>.</li>
-<li>Nel popup scegli <strong>Modello sul tuo computer</strong> (indirizzo <code>http://localhost:11434/v1</code>) e premi <strong>Carica modelli</strong>.</li>
+<li>Nel popup, <strong>🔑 Servizi → Ollama / LM Studio</strong>: indirizzo <code>http://localhost:11434/v1</code>, premi <strong>↻ Carica modelli</strong> e scegli il modello. Poi in <strong>📊 Consumo e modelli → Modello per ogni compito</strong> scegli dove usarlo.</li>
 </ol>
 <h3 id="con-lm-studio">Con LM Studio</h3>
-<p>Scarica un modello, nella sezione <em>Developer</em> avvia il server e attiva <strong>Enable CORS</strong>. Nel popup scrivi l'indirizzo <code>http://localhost:1234/v1</code> e premi <strong>Carica modelli</strong>.</p>
+<p>Scarica un modello, nella sezione <em>Developer</em> avvia il server e attiva <strong>Enable CORS</strong>. Nel popup (🔑 Servizi → Ollama / LM Studio) scrivi l'indirizzo <code>http://localhost:1234/v1</code> e premi <strong>↻ Carica modelli</strong>.</p>
 <hr />
 <h2 id="16-se-qualcosa-non-va">16. Se qualcosa non va</h2>
 <p>Guarda prima la <strong>riga di stato in fondo al popup</strong>: dice cosa sta facendo l'estensione e perché si è fermata.</p>
@@ -796,6 +796,7 @@ Con <strong>Finite le richieste gratuite, passa a un altro servizio con la chiav
 <hr />
 <h2 id="novita">Novità</h2>
 <ul>
+<li><strong>1.6.2</strong>: <strong>🔑 Servizi</strong> (prima «🌐 Traduzione e modelli») contiene solo le chiavi, il modello predefinito di ogni servizio e gli indirizzi dei programmi sul computer. <strong>📊 Consumo e modelli → Modello per ogni compito</strong>: ogni compito, anche sottotitoli e trascrizione, ha la tendina del servizio e sotto i modelli; tutti i menu dei modelli sono <strong>tendine</strong> (con «✎ un altro» per scrivere un nome). <strong>Tutte le lingue</strong> in «Traduci in» (circa 130); la prima chiave incollata fa passare i sottotitoli da Google a quel servizio. <strong>⇄ Altro modello</strong> nelle schede elenca ogni modello di ogni servizio (per esempio Gemini Flash e Flash-Lite, che hanno limiti separati). Il testo delle schede si <strong>seleziona e copia</strong>. <strong>✨ Spiega il kanji</strong> con il modello, nella scheda di un carattere e nella pagina dei kanji. <strong>Pagina dei kanji</strong>: la scheda resta accanto al kanji cliccato, ✓ e ☆ sulle caselle, salva nel vocabolario, filtro «Mostra». <strong>Anki</strong>: le carte ricevono la <strong>pronuncia</strong> (registrazione di un madrelingua se c'è, altrimenti voce sintetica). <strong>Gemini nelle spiegazioni</strong>: Flash rispondeva a metà (il ragionamento consumava la risposta) e la spiegazione falliva: ora risponde senza ragionamento, e se un modello non risponde si prova da soli il successivo.</li>
 <li><strong>1.6.1</strong>: <strong>un modello finito non ferma tutto il servizio</strong>. Su Gemini (e Groq, Mistral) i limiti gratuiti sono per modello: quando un modello finisce le richieste di oggi si blocca solo quello e si continua da soli con il modello successivo dello stesso servizio (per esempio Flash-Lite finito → Flash), anche per le spiegazioni, che si rifanno subito; solo quando sono finiti tutti si passa al servizio di riserva. In <strong>📊 Consumo e modelli → Modello per ogni compito</strong>, per ogni compito l'elenco dei modelli in ordine con lo stato di oggi («in uso», «pronto», «finito oggi»): ↑ ↓ per cambiare l'ordine, + Aggiungi per mettere primo un altro modello. L'avviso giallo dice quali modelli sono finiti e quali si usano.</li>
 <li><strong>1.6.0</strong>: <strong>Consumo delle richieste</strong>, in cima al popup: 🏆 Qualità, ⚖️ Bilanciato (di serie), 💰 Risparmio, 🆓 Solo gratis. Ogni modalità imposta da sola diretta, correzione, modi di dire e modelli di Gemini; aggiornando si passa a «Bilanciato» (<a href="#14-consumo-delle-richieste">sezione 14</a>). Nuova sezione <strong>📊 Consumo e modelli</strong>: richieste di oggi per servizio, servizi di riserva, <strong>Modello per ogni compito</strong> con il <strong>modello preciso</strong> per ogni compito (per esempio Gemini Flash-Lite per tradurre e Flash per spiegare: i limiti gratuiti di Gemini sono per modello), Ordine dei servizi, <strong>limite di richieste al giorno</strong> per servizio, anticipo massimo della diretta. <strong>Quanto indietro guardi la diretta</strong> (20 s, 45 s, 90 s, 2 min): più indietro, pezzi d'audio più lunghi per Whisper e frasi tradotte a gruppi più grandi (<a href="#quanto-indietro-guardi-la-diretta">sezione 11</a>, con la spiegazione dei «20 o 10 secondi prima»). <strong>Correzione della trascrizione</strong>: solo le frasi incerte (di serie), tutte, o spenta. <strong>Modi di dire senza richieste in più</strong>: dal dizionario di Wiktionary (scaricato una volta per lingua), dalla stessa richiesta della traduzione, e quelli già visti, sottolineati nei sottotitoli; nelle schede <strong>🔎 Modi di dire con questa parola</strong>. Tolto il vecchio codice della riga IPA sotto i sottotitoli (non si vedeva più). Guida: quali modelli per quale compito, e modelli leggeri per Ollama.</li>
 <li><strong>1.5.4</strong>: <strong>⇄ Altro modello</strong> nelle schede (video e pagine): la stessa parola spiegata da un altro modello, per confrontare. Si apre l'elenco dei modelli pronti (con chiave e richieste di oggi) e scegli quale: una richiesta, solo a quello. Anche questa spiegazione resta nelle 🗂 salvate. <strong>Diretta sincronizzata, meno richieste</strong>: non si trascrive (e quindi non si traduce) più di 90 secondi avanti rispetto al video; se metti in pausa si ferma lì e riprende quando riparti (prima, a video fermo, continuava a consumare le richieste gratuite: nel tuo registro Gemini ha finito le 500 di oggi e la traduzione è passata da sola al servizio di riserva, Mistral, che rispondeva «rate limit»). Le frasi da tradurre si raccolgono in gruppi: si traducono insieme quando sono abbastanza o quando la prima sta per comparire. <strong>Modello sul computer (Ollama)</strong>: Ollama risponde a una richiesta alla volta, e la diretta gli mandava gruppi grandi di frasi: la spiegazione chiesta dalla scheda restava in coda dietro. Ora con Ollama i gruppi sono piccoli e, mentre aspetti una spiegazione, la diretta non gli manda altro. <strong>Groq Whisper</strong>: «prompt length must be 896 characters or fewer» con il giapponese (ogni carattere conta 3): il suggerimento per Whisper si accorcia da solo, e se non basta si riprova senza.</li>
