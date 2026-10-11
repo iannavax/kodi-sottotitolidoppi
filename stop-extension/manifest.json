@@ -5,6 +5,7 @@
   "description": "Quando apri un sito per adulti compare Gesù con la mano bucata che ti dice: STOP.",
   "icons": {
     "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
@@ -59,5 +60,14 @@
       "verses.js",
       "background.js"
     ]
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Gesù dice STOP"
   }
 }
