@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Gesù dice STOP",
+  "version": "1.0.0",
+  "description": "Quando apri un sito per adulti compare Gesù con la mano bucata che ti dice: STOP.",
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["blocklist.js", "content.js"],
+      "css": ["overlay.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["jesus.svg", "fonts/UnifrakturCook-Bold.ttf"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

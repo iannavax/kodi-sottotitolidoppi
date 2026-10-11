@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" width="400" height="440">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#fff7c2" stop-opacity="1"/>
+      <stop offset="0.5" stop-color="#ffd54a" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ffd54a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f1c8a0"/>
+      <stop offset="1" stop-color="#d9a577"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6b4226"/>
+      <stop offset="1" stop-color="#3a2212"/>
+    </linearGradient>
+    <radialGradient id="blood" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#2a0000"/>
+      <stop offset="0.6" stop-color="#8b0000"/>
+      <stop offset="1" stop-color="#c40d0d"/>
+    </radialGradient>
+  </defs>
+
+  <!-- aureola di luce -->
+  <circle cx="200" cy="190" r="200" fill="url(#glow)"/>
+  <g stroke="#ffe27a" stroke-width="5" stroke-linecap="round" opacity="0.7">
+    <line x1="200" y1="190" x2="200" y2="-10"/><line x1="200" y1="190" x2="340" y2="40"/>
+    <line x1="200" y1="190" x2="60" y2="40"/><line x1="200" y1="190" x2="400" y2="150"/>
+    <line x1="200" y1="190" x2="0" y2="150"/>
+  </g>
+
+  <!-- capelli dietro -->
+  <path d="M120 150 C105 60 295 60 280 150 C300 230 295 330 310 400 L90 400 C105 330 100 230 120 150Z" fill="url(#hair)"/>
+
+  <!-- tunica -->
+  <path d="M60 440 C70 370 130 335 200 335 C270 335 330 370 340 440Z" fill="#f4f0e6"/>
+  <path d="M200 335 L170 440 M200 335 L235 440" stroke="#cfc7b2" stroke-width="3" fill="none"/>
+  <path d="M135 345 C170 380 230 380 265 345" fill="none" stroke="#b3202a" stroke-width="12"/>
+
+  <!-- collo -->
+  <rect x="172" y="250" width="56" height="95" fill="#d9a577"/>
+
+  <!-- viso -->
+  <ellipse cx="200" cy="170" rx="66" ry="84" fill="url(#skin)"/>
+
+  <!-- capelli frontali -->
+  <path d="M134 165 C130 80 270 80 266 165 C255 120 235 108 200 106 C165 108 145 120 134 165Z" fill="url(#hair)"/>
+
+  <!-- barba -->
+  <path d="M138 185 C140 260 170 285 200 285 C230 285 260 260 262 185 C250 215 235 222 200 222 C165 222 150 215 138 185Z" fill="#4a2c16"/>
+  <path d="M182 232 Q200 242 218 232" fill="none" stroke="#c0766b" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- occhi -->
+  <g>
+    <ellipse cx="175" cy="168" rx="11" ry="6" fill="#fff"/><circle cx="175" cy="168" r="5" fill="#3b2a1a"/>
+    <ellipse cx="225" cy="168" rx="11" ry="6" fill="#fff"/><circle cx="225" cy="168" r="5" fill="#3b2a1a"/>
+    <path d="M160 156 Q175 148 190 156 M210 156 Q225 148 240 156" stroke="#3a2212" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- naso -->
+  <path d="M200 170 L194 200 Q200 206 207 200" fill="none" stroke="#b07a52" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- corona di spine -->
+  <g fill="none" stroke="#3b2410" stroke-width="7" stroke-linecap="round">
+    <path d="M132 128 C160 108 240 108 268 128"/>
+    <path d="M134 138 C165 118 235 118 266 138" stroke-width="5"/>
+  </g>
+  <g stroke="#3b2410" stroke-width="3" stroke-linecap="round">
+    <path d="M150 118 l-8 -10 M175 112 l-3 -13 M205 110 l2 -13 M232 113 l7 -12 M255 123 l11 -8 M140 135 l-12 2 M262 138 l12 3"/>
+  </g>
+  <!-- gocce di sangue dalla corona -->
+  <path d="M168 128 q-3 14 0 22 q4 -8 0 -22Z M240 128 q-3 12 0 18 q4 -6 0 -18Z" fill="#b00" />
+
+  <!-- aureola dorata -->
+  <ellipse cx="200" cy="62" rx="78" ry="16" fill="none" stroke="#ffd700" stroke-width="9"/>
+  <ellipse cx="200" cy="62" rx="78" ry="16" fill="none" stroke="#fff6b0" stroke-width="3"/>
+
+  <!-- MANO "STOP" davanti al viso -->
+  <g transform="translate(40 20)">
+    <!-- polsino -->
+    <path d="M210 395 L215 330 L305 330 L310 395Z" fill="#f4f0e6"/>
+    <!-- dita -->
+    <g fill="url(#skin)" stroke="#a8764f" stroke-width="3">
+      <rect x="196" y="115" width="26" height="125" rx="13"/>
+      <rect x="226" y="88" width="28" height="150" rx="14"/>
+      <rect x="258" y="105" width="27" height="135" rx="13.5"/>
+      <rect x="289" y="148" width="24" height="95" rx="12"/>
+      <!-- pollice -->
+      <path d="M200 262 C170 250 150 215 160 200 C168 190 182 198 190 212 L208 240Z"/>
+      <!-- palmo -->
+      <path d="M198 215 L312 215 C322 260 318 310 300 335 L218 335 C198 310 192 260 198 215Z"/>
+    </g>
+    <!-- linee del palmo -->
+    <path d="M215 268 Q245 285 300 262 M222 296 Q250 308 296 292" fill="none" stroke="#b07a52" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+    <!-- BUCO delle stimmate -->
+    <ellipse cx="255" cy="262" rx="17" ry="20" fill="url(#blood)" stroke="#5a0000" stroke-width="3"/>
+    <ellipse cx="255" cy="262" rx="7" ry="9" fill="#150000"/>
+    <path d="M247 280 q-4 24 2 40 q8 -16 6 -40Z M266 282 q3 14 0 24 q-6 -10 0 -24Z" fill="#a00000"/>
+  </g>
+</svg>
