@@ -10,7 +10,6 @@ Per proseguire bisogna superare una prova scelta a caso (mai due uguali di fila)
 - **Il santo del giorno**: scegli chi si celebra oggi (calendario indicativo, in `games.js`).
 - **Completa il versetto**: scegli la parola mancante.
 - **Quiz biblico**: 3 domande di fila.
-- **Penitenza**: 40 secondi di silenzio guardando Gesù (il conto riparte se cambi scheda).
 
 Se sbagli, parte una nuova prova e il sito resta bloccato. Se la superi vieni
 rimandato a un versetto biblico a caso su sessualità, impurità e custodia del corpo (es. Genesi 38,9-10, Matteo 5,27-30, 1 Corinzi 6,15-20; elenco in `verses.js`, aperto su BibleGateway in

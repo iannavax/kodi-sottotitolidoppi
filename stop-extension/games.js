@@ -160,29 +160,5 @@ const GIOCHI = [
       };
       next();
     }
-  },
-  {
-    nome: "Penitenza: resta in silenzio e guarda Gesù",
-    start(box, win, fail) {
-      const SECONDI = 40;
-      let left = SECONDI;
-      const msg = el("div", "gesu-q");
-      const bar = el("div", "gesu-bar");
-      const fill = el("div", "gesu-bar-fill");
-      bar.appendChild(fill);
-      box.append(msg, bar);
-      const draw = () => {
-        msg.textContent = "Resta in silenzio... " + left + " secondi";
-        fill.style.width = ((SECONDI - left) / SECONDI * 100) + "%";
-      };
-      draw();
-      const t = setInterval(() => {
-        if (document.hidden) { left = SECONDI; return; } // vale solo se la scheda è in vista
-        left--;
-        draw();
-        if (left <= 0) { clearInterval(t); win(); }
-      }, 1000);
-      return () => clearInterval(t);
-    }
   }
 ];
