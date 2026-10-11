@@ -178,40 +178,37 @@ const QUIZ = [
   { q: "Chi era il figlio di Davide e Betsabea?", a: "Salomone", d: ["Assalonne", "Amnon", "Roboamo"] }
 ];
 
-const TRIVIA = [
-  { q: "Qual è la capitale della Francia?", a: "Parigi", d: ["Lione", "Marsiglia", "Bruxelles"] },
-  { q: "Chi dipinse la Cappella Sistina?", a: "Michelangelo", d: ["Raffaello", "Giotto", "Caravaggio"] },
-  { q: "Chi scrisse la Divina Commedia?", a: "Dante Alighieri", d: ["Petrarca", "Boccaccio", "Manzoni"] },
-  { q: "Qual è il pianeta più grande del sistema solare?", a: "Giove", d: ["Saturno", "Terra", "Nettuno"] },
-  { q: "In che anno l'uomo sbarcò sulla Luna?", a: "1969", d: ["1959", "1975", "1981"] },
-  { q: "Qual è il fiume più lungo d'Italia?", a: "Il Po", d: ["Il Tevere", "L'Arno", "L'Adige"] },
-  { q: "Qual è il simbolo chimico dell'ossigeno?", a: "O", d: ["Os", "Ox", "G"] },
-  { q: "Chi fu il primo re d'Italia?", a: "Vittorio Emanuele II", d: ["Umberto I", "Carlo Alberto", "Garibaldi"] },
-  { q: "Quanti giocatori per squadra scendono in campo in una partita di calcio?", a: "11", d: ["9", "10", "12"] },
-  { q: "Quale mare bagna Napoli?", a: "Il Tirreno", d: ["L'Adriatico", "Lo Ionio", "Il Mar Ligure"] },
-  { q: "Chi scrisse I promessi sposi?", a: "Alessandro Manzoni", d: ["Giacomo Leopardi", "Ugo Foscolo", "Giovanni Verga"] },
-  { q: "Qual è la capitale del Giappone?", a: "Tokyo", d: ["Kyoto", "Osaka", "Pechino"] },
-  { q: "Chi scoprì l'America nel 1492?", a: "Cristoforo Colombo", d: ["Amerigo Vespucci", "Marco Polo", "Vasco da Gama"] },
-  { q: "Quanti sono i pianeti del sistema solare?", a: "8", d: ["7", "9", "10"] },
-  { q: "Qual è l'animale terrestre più veloce?", a: "Il ghepardo", d: ["Il leone", "Il cavallo", "La gazzella"] },
-  { q: "Qual è il più grande oceano?", a: "Il Pacifico", d: ["L'Atlantico", "L'Indiano", "L'Artico"] },
-  { q: "Chi dipinse la Gioconda?", a: "Leonardo da Vinci", d: ["Michelangelo", "Botticelli", "Tiziano"] },
-  { q: "In quale città si trova la Torre pendente?", a: "Pisa", d: ["Siena", "Firenze", "Lucca"] },
-  { q: "Quale città è detta la Città Eterna?", a: "Roma", d: ["Atene", "Gerusalemme", "Venezia"] },
-  { q: "Qual è la capitale della Spagna?", a: "Madrid", d: ["Barcellona", "Lisbona", "Siviglia"] },
-  { q: "Qual è il simbolo chimico dell'oro?", a: "Au", d: ["Or", "Ag", "Go"] },
-  { q: "Quante corde ha una chitarra classica?", a: "6", d: ["4", "5", "8"] },
-  { q: "Quale nazione vinse i Mondiali di calcio del 2006?", a: "Italia", d: ["Francia", "Germania", "Brasile"] },
-  { q: "Qual è il deserto caldo più grande del mondo?", a: "Il Sahara", d: ["Il Gobi", "Il Kalahari", "L'Arabico"] },
-  { q: "Quanto fa 12 × 12?", a: "144", d: ["124", "132", "148"] },
-  { q: "Chi scrisse Romeo e Giulietta?", a: "William Shakespeare", d: ["Molière", "Goethe", "Dickens"] },
-  { q: "In quale città nacque San Francesco?", a: "Assisi", d: ["Perugia", "Roma", "Siena"] },
-  { q: "Qual è la montagna più alta delle Alpi?", a: "Il Monte Bianco", d: ["Il Cervino", "Il Monte Rosa", "L'Ortles"] },
-  { q: "Quale scienziato formulò la teoria della relatività?", a: "Albert Einstein", d: ["Isaac Newton", "Galileo Galilei", "Niels Bohr"] },
-  { q: "Quale città italiana è famosa per i canali e le gondole?", a: "Venezia", d: ["Mantova", "Ravenna", "Chioggia"] },
-  { q: "Qual è l'organo che pompa il sangue nel corpo?", a: "Il cuore", d: ["Il fegato", "I polmoni", "Lo stomaco"] },
-  { q: "Quanti sono i lati di un esagono?", a: "6", d: ["5", "7", "8"] },
-  { q: "Chi era il papa quando iniziò il Concilio Vaticano II?", a: "Giovanni XXIII", d: ["Pio XII", "Paolo VI", "Giovanni Paolo II"] }
+const FEDE = [
+  { q: "Quanti sono i sacramenti della Chiesa cattolica?", a: "7", d: ["5", "9", "12"] },
+  { q: "Quale sacramento si riceve per primo?", a: "Il Battesimo", d: ["La Cresima", "L'Eucaristia", "Il Matrimonio"] },
+  { q: "Quale apostolo è considerato il primo papa?", a: "Pietro", d: ["Paolo", "Giovanni", "Andrea"] },
+  { q: "Quali sono le tre virtù teologali?", a: "Fede, speranza e carità", d: ["Prudenza, giustizia e fortezza", "Umiltà, castità e pazienza", "Fede, forza e saggezza"] },
+  { q: "Quanti sono i vizi (peccati) capitali?", a: "7", d: ["5", "10", "12"] },
+  { q: "Quale di questi è un vizio capitale?", a: "La lussuria", d: ["La castità", "La pazienza", "L'umiltà"] },
+  { q: "Quale virtù si oppone alla lussuria?", a: "La castità", d: ["L'umiltà", "La pazienza", "La generosità"] },
+  { q: "Quale virtù si oppone alla superbia?", a: "L'umiltà", d: ["La castità", "La temperanza", "La giustizia"] },
+  { q: "Come si chiama il sacramento della confessione?", a: "Penitenza (o Riconciliazione)", d: ["Unzione degli infermi", "Ordine sacro", "Cresima"] },
+  { q: "Che cosa si celebra a Pasqua?", a: "La risurrezione di Gesù", d: ["La nascita di Gesù", "L'Ascensione", "La Pentecoste"] },
+  { q: "Quanti giorni dura la Quaresima, senza contare le domeniche?", a: "40", d: ["30", "50", "7"] },
+  { q: "Con quale giorno inizia la Quaresima?", a: "Mercoledì delle Ceneri", d: ["Giovedì Santo", "Domenica delle Palme", "Venerdì Santo"] },
+  { q: "Quale festa ricorda la discesa dello Spirito Santo sugli apostoli?", a: "La Pentecoste", d: ["L'Epifania", "L'Ascensione", "La Candelora"] },
+  { q: "Di quale colore sono i paramenti in Avvento e Quaresima?", a: "Viola", d: ["Rosso", "Verde", "Bianco"] },
+  { q: "Che cosa significa «Amen»?", a: "Così sia", d: ["Pace a voi", "Sia lodato", "Per sempre"] },
+  { q: "Nella numerazione cattolica, quale comandamento riguarda gli atti impuri?", a: "Il sesto", d: ["Il quarto", "L'ottavo", "Il decimo"] },
+  { q: "Nella numerazione cattolica, quale comandamento dice «Non desiderare la donna d'altri»?", a: "Il nono", d: ["Il sesto", "Il settimo", "Il quinto"] },
+  { q: "Quale santa è venerata come patrona della purezza?", a: "Maria Goretti", d: ["Teresa d'Avila", "Chiara d'Assisi", "Rita da Cascia"] },
+  { q: "Chi scrisse le «Confessioni»?", a: "Sant'Agostino", d: ["San Tommaso d'Aquino", "San Girolamo", "Sant'Ambrogio"] },
+  { q: "Chi tradusse la Bibbia in latino (la Vulgata)?", a: "San Girolamo", d: ["Sant'Agostino", "San Benedetto", "San Gregorio Magno"] },
+  { q: "Quale santo ricevette le stimmate, le ferite di Cristo sulle mani?", a: "San Francesco d'Assisi", d: ["Sant'Antonio di Padova", "San Domenico", "Sant'Ignazio di Loyola"] },
+  { q: "A quale giovane apparve la Madonna a Lourdes?", a: "Bernadette Soubirous", d: ["Lucia dos Santos", "Faustina Kowalska", "Rita da Cascia"] },
+  { q: "Chi è il patrono dei parroci?", a: "San Giovanni Maria Vianney", d: ["San Pio da Pietrelcina", "San Giovanni Bosco", "San Francesco di Sales"] },
+  { q: "Quale papa convocò il Concilio Vaticano II?", a: "Giovanni XXIII", d: ["Pio XII", "Paolo VI", "Giovanni Paolo II"] },
+  { q: "Chi scrisse la «Summa Theologiae»?", a: "San Tommaso d'Aquino", d: ["Sant'Agostino", "San Bonaventura", "San Bernardo"] },
+  { q: "Quale sacramento unisce un uomo e una donna?", a: "Il Matrimonio", d: ["L'Ordine sacro", "La Cresima", "L'Unzione degli infermi"] },
+  { q: "In quale Stato si trova la Basilica di San Pietro?", a: "Città del Vaticano", d: ["Italia", "Israele", "Malta"] },
+  { q: "Come si chiamano i misteri del Rosario che ricordano la Passione di Gesù?", a: "Dolorosi", d: ["Gaudiosi", "Gloriosi", "Luminosi"] },
+  { q: "Quanti sono i doni dello Spirito Santo?", a: "7", d: ["3", "9", "12"] },
+  { q: "Che cosa si celebra il 25 dicembre?", a: "Il Natale", d: ["L'Epifania", "La Pasqua", "L'Immacolata"] }
 ];
 
 // [affermazione, vera?]
@@ -288,7 +285,7 @@ function campioneDelGiorno(list, n, sale) {
 }
 
 const itemsQuiz = () => QUIZ.map(x => ({ q: x.q, a: x.a, d: x.d }));
-const itemsTrivia = () => TRIVIA.map(x => ({ q: x.q, a: x.a, d: x.d }));
+const itemsFede = () => FEDE.map(x => ({ q: x.q, a: x.a, d: x.d }));
 const itemsVF = () => VERO_FALSO.map(([t, v]) => ({
   q: "Vero o falso? " + t, a: v ? "Vero" : "Falso", d: [v ? "Falso" : "Vero"]
 }));
@@ -538,8 +535,8 @@ const GIOCHI = [
   giocoSerieAsync("Di che libro è questo versetto?", n => versettiNuovi(n, "libro"), 3),
   giocoSerie("Vero o falso", itemsVF, 5),
   giocoSerie("Quiz biblico", itemsQuiz, 3),
-  giocoSerie("Trivia", itemsTrivia, 3),
-  giocoSerie("Quiz del giorno", () => itemsQuiz().concat(itemsTrivia(), itemsVF(), itemsVersetto(), itemsLibro()), 5, true),
+  giocoSerie("Quiz di fede", itemsFede, 3),
+  giocoSerie("Quiz del giorno", () => itemsQuiz().concat(itemsFede(), itemsVF(), itemsVersetto(), itemsLibro()), 5, true),
   {
     nome: "Il santo del giorno",
     start(box, win, fail) {

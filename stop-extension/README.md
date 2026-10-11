@@ -7,7 +7,7 @@ font gotico: **"Figliolo, non col membro verrai, ma col cuore a santificare lo s
 Per proseguire bisogna superare una prova scelta a caso (mai due uguali di fila):
 
 - **Completa il versetto** (3 di fila) e **Di che libro è questo versetto?** (3 di fila): solo versetti su sessualità, seme, masturbazione (Onan), fornicazione, adulterio, sguardo e purezza.
-- **Vero o falso** (5), **Quiz biblico** (3), **Trivia** (3), **Il santo del giorno**.
+- **Vero o falso** (5), **Quiz biblico** (3), **Quiz di fede** (3, catechismo, santi, liturgia), **Il santo del giorno**.
 - **Quiz del giorno**: 5 domande scelte ogni giorno diverse da tutte le banche.
 
 Se sbagli, vedi la risposta giusta (e il versetto intero) e parte una nuova prova; il sito resta
