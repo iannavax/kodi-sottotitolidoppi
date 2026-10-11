@@ -44,7 +44,8 @@
     img.alt = "Gesù dice STOP";
 
     const stop = el("h1", "gesu-stop", "STOP");
-    const text = el("div", "gesu-text", "se hai il coraggio rimetti in ordine l'Ave Maria");
+    const text = el("div", "gesu-text", "Figliolo, non venire nel corpo: vieni con me nello spirito");
+    const sub = el("div", "gesu-sub", "Rimetti in ordine l'Ave Maria");
     const said = el("div", "gesu-said");
     const pieces = el("div", "gesu-pieces");
     const hint = el("div", "gesu-hint");
@@ -86,7 +87,7 @@
     }
 
     deal();
-    root.append(img, stop, text, said, pieces, hint);
+    root.append(img, stop, text, sub, said, pieces, hint);
     document.documentElement.appendChild(root);
     document.documentElement.style.overflow = "hidden";
   }

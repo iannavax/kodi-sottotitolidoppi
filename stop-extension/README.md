@@ -2,7 +2,7 @@
 
 Estensione per Chrome/Edge/Brave e **Firefox** (Manifest V3, stessa cartella). Quando apri un sito per adulti
 compare a tutto schermo Gesù con la mano bucata alzata ("STOP") e la scritta in
-font gotico: **"se hai il coraggio inseriscilo qui"**.
+font gotico: **"Figliolo, non venire nel corpo: vieni con me nello spirito"**.
 
 Per proseguire bisogna rimettere in ordine i pezzi dell'**Ave Maria**
 cliccandoli uno dopo l'altro. Se sbagli, si ricomincia da capo (e il sito resta

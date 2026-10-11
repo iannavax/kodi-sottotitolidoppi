@@ -15,9 +15,12 @@
   text-shadow: 0 0 10px #fff, 0 0 25px #ffd700, 3px 3px 0 #400;
 }
 #gesu-stop-overlay .gesu-text {
-  margin: 8px 0 16px; font-size: clamp(30px, 6vh, 64px); font-weight: 700; color: #fff9d6;
+  margin: 4px 0 6px; max-width: 94vw; font-size: clamp(26px, 5vh, 56px); font-weight: 700; color: #fff9d6;
   text-shadow: 0 0 6px #fff, 0 0 18px #ffd700, 0 0 42px #ffb300, 2px 2px 0 #5a3b00;
   animation: gesu-pulse 2.2s ease-in-out infinite;
+}
+#gesu-stop-overlay .gesu-sub {
+  margin: 0 0 12px; font-size: clamp(18px, 3vh, 28px); color: #4a2c00; text-shadow: 0 0 8px #fff, 0 0 16px #fff3a0;
 }
 #gesu-stop-overlay .gesu-said {
   min-height: 28px; max-width: min(900px, 92vw); font-size: clamp(16px, 2.6vh, 24px);
