@@ -5,7 +5,7 @@ compare a tutto schermo Gesù con la mano bucata alzata ("STOP") e la scritta in
 font gotico: **"se hai il coraggio inseriscilo qui"**.
 
 Per proseguire bisogna scrivere `ho il coraggio` nel campo e premere Invio
-(sblocca il sito solo per quella sessione della scheda). Cambia `PASS` in
+(sblocca il sito solo per quella sessione della scheda). Se scrivi altro, vieni rimandato a un versetto biblico a caso (lista in `verses.js`, aperto su BibleGateway in versione CEI). Cambia `PASS` in
 `content.js` per usare un'altra frase.
 
 ## Installazione

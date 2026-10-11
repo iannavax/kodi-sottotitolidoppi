@@ -15,6 +15,7 @@
       ],
       "js": [
         "blocklist.js",
+        "verses.js",
         "content.js"
       ],
       "css": [

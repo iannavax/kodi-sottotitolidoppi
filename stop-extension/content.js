@@ -43,8 +43,9 @@
         root.remove();
         document.documentElement.style.overflow = "";
       } else {
-        hint.textContent = "Non hai il coraggio. Chiudi la scheda. 🙏";
+        hint.textContent = "Non hai il coraggio. Ti porto un versetto... 🙏";
         input.value = "";
+        setTimeout(() => { location.href = versettoACaso(); }, 900);
       }
     });
 
