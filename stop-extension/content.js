@@ -1,38 +1,10 @@
 (function () {
   if (typeof isAdultHost !== "function" || !isAdultHost(location.hostname)) return;
 
-  // Ave Maria divisa in pezzi: vanno cliccati nell'ordine giusto.
-  const AVE_MARIA = [
-    "Ave, o Maria,",
-    "piena di grazia,",
-    "il Signore è con te.",
-    "Tu sei benedetta fra le donne",
-    "e benedetto è il frutto del tuo seno, Gesù.",
-    "Santa Maria, Madre di Dio,",
-    "prega per noi peccatori,",
-    "adesso e nell'ora della nostra morte.",
-    "Amen."
-  ];
-
   const font = new FontFace("GesuBlackletter", `url(${chrome.runtime.getURL("fonts/UnifrakturCook-Bold.ttf")})`);
   font.load().then(f => document.fonts.add(f)).catch(() => {});
 
-  function shuffled(list) {
-    const a = list.slice();
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    // evita di mostrare già l'ordine giusto
-    return a.every((x, i) => x === list[i]) ? shuffled(list) : a;
-  }
-
-  function el(tag, cls, text) {
-    const e = document.createElement(tag);
-    if (cls) e.className = cls;
-    if (text) e.textContent = text;
-    return e;
-  }
+  let ultimo = null; // per non ripetere subito lo stesso gioco
 
   function build() {
     if (document.getElementById("gesu-stop-overlay")) return;
@@ -44,50 +16,48 @@
     img.alt = "Gesù dice STOP";
 
     const stop = el("h1", "gesu-stop", "STOP");
-    const text = el("div", "gesu-text", "Figliolo, non venire nel corpo: vieni con me nello spirito");
-    const sub = el("div", "gesu-sub", "Rimetti in ordine l'Ave Maria");
-    const said = el("div", "gesu-said");
-    const pieces = el("div", "gesu-pieces");
+    const text = el("div", "gesu-text", "Figliolo, non venire col corpo, vieni con me nello spirito");
+    const sub = el("div", "gesu-sub");
+    const box = el("div", "gesu-box");
     const hint = el("div", "gesu-hint");
 
-    let step = 0;
+    let cleanup = null;
     let done = false;
 
-    function deal() {
-      pieces.textContent = "";
-      shuffled(AVE_MARIA).forEach(p => {
-        const b = el("button", "gesu-piece", p);
-        b.type = "button";
-        b.addEventListener("click", () => pick(b, p));
-        pieces.appendChild(b);
-      });
+    function nuovoGioco() {
+      if (cleanup) cleanup();
+      cleanup = null;
+      box.textContent = "";
+      hint.textContent = "";
+      const scelta = GIOCHI.filter(g => g.nome !== ultimo);
+      const g = scelta[Math.floor(Math.random() * scelta.length)];
+      ultimo = g.nome;
+      sub.textContent = g.nome;
+      cleanup = g.start(box, win, fail) || null;
     }
 
-    function pick(btn, piece) {
+    function win() {
       if (done) return;
-      if (piece === AVE_MARIA[step]) {
-        step++;
-        btn.remove();
-        said.textContent = AVE_MARIA.slice(0, step).join(" ");
-        hint.textContent = "";
-        if (step === AVE_MARIA.length) {
-          done = true;
-          hint.textContent = "Bravo. Ora leggi questo. 🙏";
-          setTimeout(() => { location.href = versettoACaso(); }, 1200);
-        }
-      } else {
-        step = 0;
-        said.textContent = "";
-        hint.textContent = "Sbagliato. Ricomincia dall'inizio, e pensa a cosa stai facendo.";
-        root.classList.remove("gesu-shake");
-        void root.offsetWidth;
-        root.classList.add("gesu-shake");
-        deal();
-      }
+      done = true;
+      if (cleanup) cleanup();
+      hint.textContent = "Bravo. Ora leggi questo. 🙏";
+      setTimeout(() => { location.href = versettoACaso(); }, 1200);
     }
 
-    deal();
-    root.append(img, stop, text, sub, said, pieces, hint);
+    function fail(messaggio) {
+      if (done) return;
+      hint.textContent = messaggio + " Nuova prova...";
+      root.classList.remove("gesu-shake");
+      void root.offsetWidth;
+      root.classList.add("gesu-shake");
+      if (cleanup) cleanup();
+      cleanup = null;
+      box.textContent = "";
+      setTimeout(() => { if (!done) nuovoGioco(); }, 1500);
+    }
+
+    nuovoGioco();
+    root.append(img, stop, text, sub, box, hint);
     document.documentElement.appendChild(root);
     document.documentElement.style.overflow = "hidden";
   }

@@ -40,3 +40,14 @@
 @keyframes gesu-shake { 25% { transform: translateX(-12px); } 75% { transform: translateX(12px); } }
 @keyframes gesu-float { 50% { transform: translateY(-12px); } }
 @keyframes gesu-pulse { 50% { text-shadow: 0 0 10px #fff, 0 0 30px #ffd700, 0 0 70px #ff9d00, 2px 2px 0 #5a3b00; } }
+
+#gesu-stop-overlay .gesu-box { display: flex; flex-direction: column; align-items: center; max-width: min(1000px, 94vw); }
+#gesu-stop-overlay .gesu-q {
+  font-size: clamp(20px, 3.4vh, 32px); color: #3a2300; margin: 0 0 12px; max-width: 94vw;
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff3a0;
+}
+#gesu-stop-overlay .gesu-bar {
+  width: min(520px, 85vw); height: 18px; border: 2px solid #ffd700; border-radius: 10px;
+  background: rgba(0,0,0,.35); overflow: hidden;
+}
+#gesu-stop-overlay .gesu-bar-fill { height: 100%; width: 0; background: linear-gradient(#fff3a0, #ffb300); transition: width 1s linear; }

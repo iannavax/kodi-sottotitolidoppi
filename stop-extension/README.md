@@ -2,13 +2,19 @@
 
 Estensione per Chrome/Edge/Brave e **Firefox** (Manifest V3, stessa cartella). Quando apri un sito per adulti
 compare a tutto schermo Gesù con la mano bucata alzata ("STOP") e la scritta in
-font gotico: **"Figliolo, non venire nel corpo: vieni con me nello spirito"**.
+font gotico: **"Figliolo, non venire col corpo, vieni con me nello spirito"**.
 
-Per proseguire bisogna rimettere in ordine i pezzi dell'**Ave Maria**
-cliccandoli uno dopo l'altro. Se sbagli, si ricomincia da capo (e il sito resta
-bloccato). Se la completi correttamente vieni rimandato a un versetto biblico a
-caso (lista in `verses.js`, aperto su BibleGateway in versione CEI). Il sito
-non viene mai sbloccato.
+Per proseguire bisogna superare una prova scelta a caso (mai due uguali di fila):
+
+- **Ave Maria** o **Padre Nostro**: rimetti i pezzi nell'ordine giusto.
+- **Il santo del giorno**: scegli chi si celebra oggi (calendario indicativo, in `games.js`).
+- **Completa il versetto**: scegli la parola mancante.
+- **Quiz biblico**: 3 domande di fila.
+- **Penitenza**: 40 secondi di silenzio guardando Gesù (il conto riparte se cambi scheda).
+
+Se sbagli, parte una nuova prova e il sito resta bloccato. Se la superi vieni
+rimandato a un versetto biblico a caso (`verses.js`, aperto su BibleGateway in
+versione CEI). Il sito non viene mai sbloccato.
 
 ## Installazione
 1. Apri `chrome://extensions` e attiva la *Modalità sviluppatore*.

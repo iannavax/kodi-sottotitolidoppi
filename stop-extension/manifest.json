@@ -16,6 +16,7 @@
       "js": [
         "blocklist.js",
         "verses.js",
+        "games.js",
         "content.js"
       ],
       "css": [
