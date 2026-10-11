@@ -16,7 +16,7 @@
     img.alt = "Gesù dice STOP";
 
     const stop = el("h1", "gesu-stop", "STOP");
-    const text = el("div", "gesu-text", "Figliolo, non venire col corpo, vieni con me nello spirito");
+    const text = el("div", "gesu-text", "Vieni con me a santificare lo spirito");
     const sub = el("div", "gesu-sub");
     const box = el("div", "gesu-box");
     const hint = el("div", "gesu-hint");

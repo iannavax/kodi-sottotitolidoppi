@@ -69,7 +69,7 @@ const VERSETTI = [
   { t: "Quando un uomo si sarà unito a una donna con emissione di seme, tutti e due si ____ nell'acqua e saranno impuri fino alla sera.", a: "laveranno", d: ["sposeranno", "nasconderanno", "benediranno"], r: "Levitico 15,18" },
   { t: "Chi ha un'emissione di seme non mangerà le cose sante finché non sia ____.", a: "puro", d: ["ricco", "vecchio", "sazio"], r: "Levitico 22,4" },
   { t: "Non avrai rapporti carnali con la moglie del tuo prossimo, rendendoti ____ con lei.", a: "impuro", d: ["felice", "ricco", "forte"], r: "Levitico 18,20" },
-  { t: "Se vi è fra voi un uomo che non è puro per un'emissione notturna, uscirà dall'____ e non vi rientrerà.", a: "accampamento", d: ["città", "tempio", "casa"], r: "Deuteronomio 23,11" },
+  { t: "Se vi è fra voi un uomo che non è puro per un'emissione notturna, uscirà dall'____ e non vi rientrerà.", a: "accampamento", d: ["altare", "esilio", "ovile"], r: "Deuteronomio 23,11" },
   { t: "Non commetterai ____.", a: "adulterio", d: ["omicidio", "furto", "falsa testimonianza"], r: "Deuteronomio 5,18" },
   { t: "Non desidererai la ____ del tuo prossimo.", a: "moglie", d: ["casa", "vigna", "tenda"], r: "Esodo 20,17" },
   { t: "Sia benedetta la tua ____ e trova gioia nella donna della tua giovinezza.", a: "sorgente", d: ["vigna", "casa", "terra"], r: "Proverbi 5,18" },
@@ -82,18 +82,18 @@ const VERSETTI = [
   { t: "Chi commette adulterio è privo di ____, chi fa così rovina se stesso.", a: "senno", d: ["pazienza", "fede", "denaro"], r: "Proverbi 6,32" },
   { t: "Egli va dietro a lei, d'improvviso, come un ____ va al macello.", a: "bue", d: ["agnello", "cane", "cavallo"], r: "Proverbi 7,22" },
   { t: "Le acque ____ sono dolci, il pane preso di nascosto è squisito.", a: "rubate", d: ["fresche", "pure", "chiare"], r: "Proverbi 9,17" },
-  { t: "Non destate, non scuotete l'____ finché non lo vogliate.", a: "amore", d: ["ira", "odio", "sonno"], r: "Cantico dei Cantici 2,7" },
-  { t: "Ho stretto un patto con i miei ____: come potrei fissare lo sguardo su una vergine?", a: "occhi", d: ["piedi", "labbra", "orecchi"], r: "Giobbe 31,1" },
+  { t: "Non destate, non scuotete l'____ finché non lo vogliate.", a: "amore", d: ["ira", "odio", "orgoglio"], r: "Cantico dei Cantici 2,7" },
+  { t: "Ho stretto un patto con i miei ____: come potrei fissare lo sguardo su una vergine?", a: "occhi", d: ["piedi", "orecchi", "denti"], r: "Giobbe 31,1" },
   { t: "Come potrei fare questo grande male e peccare contro ____?", a: "Dio", d: ["il re", "mio padre", "il mio padrone"], r: "Genesi 39,9" },
   { t: "Giuseppe le lasciò in mano il mantello, ____ e uscì.", a: "fuggì", d: ["rise", "pregò", "tacque"], r: "Genesi 39,12" },
-  { t: "Davide, dalla terrazza, vide una donna che faceva il ____; la donna era molto bella d'aspetto.", a: "bagno", d: ["pane", "bucato", "filo"], r: "2 Samuele 11,2" },
+  { t: "Davide, dalla terrazza, vide una donna che faceva il ____; la donna era molto bella d'aspetto.", a: "bagno", d: ["pane", "bucato", "vino"], r: "2 Samuele 11,2" },
   { t: "Come potrà un giovane tenere pura la sua via? Osservando la tua ____.", a: "parola", d: ["spada", "casa", "voce"], r: "Salmi 119,9" },
   { t: "Crea in me, o Dio, un cuore ____.", a: "puro", d: ["forte", "grande", "libero"], r: "Salmi 51,12" },
   { t: "Chiunque guarda una donna per ____, ha già commesso adulterio con lei nel suo cuore.", a: "desiderarla", d: ["ammirarla", "salutarla", "invidiarla"], r: "Matteo 5,28" },
   { t: "Se il tuo occhio destro ti è motivo di ____, cavalo e gettalo via da te.", a: "scandalo", d: ["gioia", "dolore", "vergogna"], r: "Matteo 5,29" },
-  { t: "E se la tua ____ destra ti è motivo di scandalo, tagliala e gettala via da te.", a: "mano", d: ["gamba", "spalla", "bocca"], r: "Matteo 5,30" },
+  { t: "E se la tua ____ destra ti è motivo di scandalo, tagliala e gettala via da te.", a: "mano", d: ["gamba", "spalla", "guancia"], r: "Matteo 5,30" },
   { t: "Se la tua mano ti è motivo di scandalo, tagliala: è meglio entrare nella vita con una mano sola, anziché andare nella ____, nel fuoco inestinguibile.", a: "Geenna", d: ["Galilea", "Giudea", "Samaria"], r: "Marco 9,43" },
-  { t: "Beati i puri di ____, perché vedranno Dio.", a: "cuore", d: ["corpo", "mente", "mani"], r: "Matteo 5,8" },
+  { t: "Beati i puri di ____, perché vedranno Dio.", a: "cuore", d: ["corpo", "mente", "spirito"], r: "Matteo 5,8" },
   { t: "Dal ____ provengono propositi di male, omicidi, adultèri, prostituzioni, furti, false testimonianze, calunnie.", a: "cuore", d: ["corpo", "cielo", "mondo"], r: "Matteo 15,19" },
   { t: "Dal di dentro, cioè dal cuore degli uomini, escono i propositi di male: le ____, i furti, gli omicidi, gli adultèri.", a: "fornicazioni", d: ["preghiere", "feste", "parole"], r: "Marco 7,21" },
   { t: "Neppure io ti condanno; va' e d'ora in poi non ____ più.", a: "peccare", d: ["tornare", "cadere", "parlare"], r: "Giovanni 8,11" },
@@ -350,7 +350,6 @@ function giocoSerieAsync(nome, daiItems, n) {
 // ---------------------------------------------------------------------------
 const PAROLE_SESSO = /fornic|adulter|\bseme\b|impur|prostitu|meretric|concupisc|lussuri|libertin|lasciv|nudit|disonest|concubin|giacque|si unì|incest|sodom|turp|carne|desider|corpo|puro/i;
 const STOP = new Set(["quello", "quella", "questo", "questa", "perché", "affinché", "quando", "dunque", "tuttavia", "nostro", "vostro", "queste", "questi", "quelli", "essere", "avere", "nella", "nelle", "negli", "della", "delle", "degli", "dello", "sopra", "contro", "anche", "ancora", "presso", "dentro", "verso", "stesso", "tutti", "tutte", "cosa", "sarà", "erano", "fatto", "perciò", "quindi", "poiché", "mentre", "invece", "ciascuno", "chiunque"]);
-const GENERICHE = ["peccato", "giustizia", "vergogna", "speranza", "preghiera", "fratelli", "giudizio", "benedizione", "misericordia", "tentazione"];
 const LETTERA = "A-Za-zÀ-ÖØ-öø-ÿ";
 
 const memoria = {};
@@ -383,9 +382,105 @@ function paroleCandidate(testo) {
   return Array.from(new Set(trovate.filter(w => !STOP.has(w.toLowerCase()))));
 }
 
-function sostituisciParola(testo, parola) {
-  const re = new RegExp("(^|[^" + LETTERA + "])" + parola + "(?![" + LETTERA + "])");
-  return testo.replace(re, "$1____");
+// Articoli e preposizioni articolate -> genere/numero e forma ("il", "lo", "l'" ...).
+const DET = {};
+[["MS", "il del al dal nel sul col"], ["MS", "un"], ["MSS", "lo dello allo dallo nello sullo uno"],
+ ["FS", "la della alla dalla nella sulla una"],
+ ["MP", "i dei ai dai nei sui coi"], ["MPS", "gli degli agli dagli negli sugli"],
+ ["FP", "le delle alle dalle nelle sulle"]
+].forEach(([c, lista]) => lista.split(" ").forEach(w => { DET[w] = c; }));
+const POSS = {};
+[["MS", "mio tuo suo nostro vostro proprio questo"], ["FS", "mia tua sua nostra vostra propria questa"],
+ ["MP", "miei tuoi suoi nostri vostri propri questi"], ["FP", "mie tue sue nostre vostre proprie queste"]
+].forEach(([c, lista]) => lista.split(" ").forEach(w => { POSS[w] = c; }));
+
+// Parole di appoggio per avere sempre abbastanza alternative dello stesso tipo.
+const SEMI = {
+  MS: "peccato cuore corpo giudizio regno tempio padre figlio timore dolore pane vino amore perdono sacrificio desiderio giorno popolo cammino spirito tesoro castigo silenzio rimorso peso",
+  FS: "carne giustizia fede speranza anima legge verità parola vergogna bellezza misericordia tentazione preghiera pace gloria casa vita morte terra luce salvezza passione colpa",
+  MP: "peccati giorni figli comandamenti desideri occhi segreti fratelli pensieri nemici giusti cuori corpi tesori sentieri",
+  FP: "opere parole passioni mani vie leggi azioni tentazioni labbra promesse anime colpe tenebre"
+};
+
+// "lo/uno/gli" vogliono s+consonante, z, gn, ps, x; "il/i/la" vogliono la consonante normale
+const speciale = w => /^(s[^aeiou\s]|z|gn|ps|x|pn|y)/i.test(w);
+const vocale = w => /^[aeiouàèéìòùh]/i.test(w);
+function concorda(det, w) {
+  if (!det) return true;
+  if (det === "un") return !speciale(w);
+  if (det === "una" || det === "la" || /^(della|alla|dalla|nella|sulla)$/.test(det)) return !vocale(w);
+  if (/^(lo|uno|dello|allo|dallo|nello|sullo)$/.test(det)) return speciale(w);
+  if (/^(il|del|al|dal|nel|sul|col|i|dei|ai|dai|nei|sui|coi)$/.test(det)) return !vocale(w) && !speciale(w);
+  if (/^(gli|degli|agli|dagli|negli|sugli)$/.test(det)) return vocale(w) || speciale(w);
+  return true;
+}
+
+// Parole che dopo un articolo non sono un nome (aggettivi, pronomi...): non vanno mai svuotate.
+const NON_NOME = new Set(["quale", "quali", "propri", "propria", "proprio", "proprie", "seconda", "secondo", "grande", "grandi", "giovane", "giovani", "primo", "prima", "ultimo", "ultima", "stesso", "stessa", "nuovo", "nuova", "vecchio", "vecchia", "vero", "vera", "veri", "vere", "altro", "altra", "altri", "altre", "molto", "molti", "molte", "poco", "pochi", "poche", "tanto", "tanti", "tante"]);
+// Dopo lo/la/le/gli possono esserci pronomi + verbo ("la tocchi", "lo vogliate"): si accettano solo nomi sicuri.
+const AMBIGUI = new Set(["lo", "la", "le", "gli", "li"]);
+const SUFFISSO_NOME = /(zione|sione|zioni|sioni|ezza|ezze|ità|età|mento|menti|anza|enza|ura|ure|ore|ori|trice|tore|tori|tù|ismo|logia)$/i;
+const SUFFISSO_VERBO = /(ò|ì|are|ere|ire|ando|endo|ato|ata|ati|ate|uto|uta|uti|ute|ito|ita|iti|ite|ava|eva|iva|avano|evano|ivano|isce|iscono)$/i;
+
+// Per ogni parola preceduta da articolo o possessivo ricava genere/numero.
+function classiNelTesto(testo) {
+  const toks = [];
+  const re = new RegExp("[" + LETTERA + "]+", "g");
+  let m;
+  while ((m = re.exec(testo))) {
+    toks.push({ w: m[0], i: m.index, f: m.index + m[0].length, elisa: /['’]/.test(testo[m.index - 1] || "") });
+  }
+  const out = [];
+  toks.forEach((t, k) => {
+    const lw = t.w.toLowerCase();
+    if (t.elisa || t.w.length < 5 || STOP.has(lw) || NON_NOME.has(lw) || POSS[lw] || DET[lw]) return;
+    const p = toks[k - 1];
+    if (!p || /\S/.test(testo.slice(p.f, t.i).replace(/\s/g, ""))) return;   // niente punteggiatura in mezzo
+    const pw = p.w.toLowerCase();
+    const noto = Object.values(SEMI).some(l => l.split(" ").includes(lw));
+    if (DET[pw]) {
+      if (AMBIGUI.has(pw) && !noto && !SUFFISSO_NOME.test(lw)) return;
+      if (SUFFISSO_VERBO.test(lw) && !noto && !SUFFISSO_NOME.test(lw) && !/(ato|ata|ati|ate)$/.test(lw)) return;
+      out.push({ ...t, classe: DET[pw].slice(0, 2), det: pw });
+    } else if (POSS[pw]) {
+      out.push({ ...t, classe: POSS[pw], det: null });
+    }
+  });
+  return out;
+}
+
+// Raccolta delle parole per tipo (MS/FS/MP/FP) da tutti i versetti.
+function poolClassi(versetti) {
+  const pool = { MS: new Set(), FS: new Set(), MP: new Set(), FP: new Set() };
+  Object.keys(SEMI).forEach(c => SEMI[c].split(" ").forEach(w => pool[c].add(w)));
+  versetti.forEach(v => classiNelTesto(v.testo).forEach(c => pool[c.classe].add(c.w.toLowerCase())));
+  return pool;
+}
+
+function variantiCloze(vers, pool) {
+  const out = [];
+  if (vers.curato) {
+    out.push({ id: vers.id + ":c", vId: vers.id, q: "Completa il versetto: " + vers.curato.t, a: vers.curato.a, d: vers.curato.d,
+      spiega: "Il versetto: \"" + vers.testo + "\" (" + vers.ref + ")." });
+  }
+  const parole = classiNelTesto(vers.testo);
+  const nelVerso = new Set((vers.testo.match(new RegExp("[" + LETTERA + "]+", "g")) || []).map(w => w.toLowerCase()));
+  const ordinate = parole.filter(c => PAROLE_SESSO.test(c.w)).concat(parole.filter(c => !PAROLE_SESSO.test(c.w))).slice(0, 6);
+  const fatte = new Set();
+  ordinate.forEach(c => {
+    const w = c.w.toLowerCase();
+    if (fatte.has(w) || (vers.curato && w === vers.curato.a.toLowerCase())) return;
+    const adatte = Array.from(pool[c.classe]).filter(x => x !== w && !nelVerso.has(x) && concorda(c.det, x) && x.slice(0, 4) !== w.slice(0, 4) && Math.abs(x.length - w.length) <= 5);
+    if (adatte.length < 3) return;                                   // meglio nessuna domanda che una sbagliata
+    fatte.add(w);
+    const d = sample(adatte, 3);
+    const maiusc = c.w[0] === c.w[0].toUpperCase();
+    const forma = x => maiusc ? x[0].toUpperCase() + x.slice(1) : x;
+    out.push({ id: vers.id + ":" + w, vId: vers.id,
+      q: "Completa il versetto: " + vers.testo.slice(0, c.i) + "____" + vers.testo.slice(c.f), a: c.w, d: d.map(forma),
+      spiega: "Il versetto: \"" + vers.testo + "\" (" + vers.ref + ")." });
+  });
+  return out;
 }
 
 // Tutti i versetti disponibili: quelli curati e quelli scaricati.
@@ -394,27 +489,6 @@ async function tuttiVersetti() {
   const online = await leggiStorage("versettiOnline", []);
   online.forEach(o => { if (o && o.testo && o.ref) lista.push({ id: "o" + o.id, ref: o.ref, testo: o.testo }); });
   return lista;
-}
-
-function variantiCloze(vers, poolParole) {
-  const out = [];
-  if (vers.curato) {
-    out.push({ id: vers.id + ":c", vId: vers.id, q: "Completa il versetto: " + vers.curato.t, a: vers.curato.a, d: vers.curato.d,
-      spiega: "Il versetto: \"" + vers.testo + "\" (" + vers.ref + ")." });
-  }
-  const cand = paroleCandidate(vers.testo);
-  const prime = cand.filter(w => PAROLE_SESSO.test(w)).concat(cand.filter(w => !PAROLE_SESSO.test(w))).slice(0, 4);
-  const inVerso = new Set(cand.map(w => w.toLowerCase()));
-  prime.forEach(w => {
-    if (vers.curato && w.toLowerCase() === vers.curato.a.toLowerCase()) return;
-    const maiusc = w[0] === w[0].toUpperCase();
-    const simili = poolParole.filter(x => !inVerso.has(x.toLowerCase()) && Math.abs(x.length - w.length) <= 3 && (x[0] === x[0].toUpperCase()) === maiusc);
-    const d = sample(Array.from(new Set(simili)), 3);
-    GENERICHE.forEach(g => { if (d.length < 3 && g !== w.toLowerCase() && !d.includes(g)) d.push(maiusc ? g[0].toUpperCase() + g.slice(1) : g); });
-    out.push({ id: vers.id + ":" + w.toLowerCase(), vId: vers.id, q: "Completa il versetto: " + sostituisciParola(vers.testo, w), a: w, d: d.slice(0, 3),
-      spiega: "Il versetto: \"" + vers.testo + "\" (" + vers.ref + ")." });
-  });
-  return out;
 }
 
 function itemLibro(vers, libri) {
@@ -430,7 +504,7 @@ async function versettiNuovi(n, tipo) {
   const chiave = "visti:" + oggiChiave() + ":" + tipo;
   const costruisci = async () => {
     const vers = await tuttiVersetti();
-    const pool = Array.from(new Set(vers.flatMap(v => paroleCandidate(v.testo))));
+    const pool = poolClassi(vers);
     const libri = Array.from(new Set(vers.map(v => libroDi({ r: v.ref }))));
     const items = tipo === "libro" ? vers.map(v => itemLibro(v, libri)) : vers.flatMap(v => variantiCloze(v, pool));
     return items;

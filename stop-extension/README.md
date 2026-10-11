@@ -2,7 +2,7 @@
 
 Estensione per Chrome/Edge/Brave e **Firefox** (Manifest V3, stessa cartella). Quando apri un sito per adulti
 compare a tutto schermo Gesù con la mano bucata alzata ("STOP") e la scritta in
-font gotico: **"Figliolo, non venire col corpo, vieni con me nello spirito"**.
+font gotico: **"Vieni con me a santificare lo spirito"**.
 
 Per proseguire bisogna superare una prova scelta a caso (mai due uguali di fila):
 
@@ -16,7 +16,8 @@ tutti i 1189 capitoli (`verses.js`, su BibleGateway in versione CEI). Il sito no
 
 ### Versetti sempre nuovi
 - Ci sono 65 versetti nella banca locale (`games.js`); da ognuno si generano più domande
-  togliendo parole diverse, e per ogni versetto/domanda vale "una sola volta al giorno".
+  togliendo parole diverse (solo nomi preceduti da articolo/possessivo, con alternative dello stesso genere e numero,
+  mai verbi o aggettivi), e per ogni versetto/domanda vale "una sola volta al giorno".
 - Quando quelli di oggi stanno per finire, `background.js` scarica da `api.getbible.net`
   (Riveduta, poi Diodati) i capitoli di ~85 passi sul tema, tiene solo i versetti con parole
   del tema (fornicazione, adulterio, seme, impurità...) e li salva in locale
