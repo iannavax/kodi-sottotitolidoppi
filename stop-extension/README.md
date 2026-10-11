@@ -8,7 +8,7 @@ Per proseguire bisogna superare una prova scelta a caso (mai due uguali di fila)
 
 - **Ave Maria** o **Padre Nostro**: rimetti i pezzi nell'ordine giusto.
 - **Il santo del giorno**: scegli chi si celebra oggi (calendario indicativo, in `games.js`).
-- **Completa il versetto**: scegli la parola mancante.
+- **Completa il versetto**: scegli la parola mancante in un versetto su sessualità, impurità, masturbazione (Onan) e fornicazione; completandolo vieni rimandato a quel versetto per intero.
 - **Quiz biblico**: 3 domande di fila.
 
 Se sbagli, parte una nuova prova e il sito resta bloccato. Se la superi vieni

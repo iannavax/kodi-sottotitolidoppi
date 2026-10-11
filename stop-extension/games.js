@@ -28,7 +28,13 @@ function domanda(box, testo, giusta, sbagliate, onResult) {
   shuffled([giusta].concat(sbagliate)).forEach(opt => {
     const b = el("button", "gesu-piece", opt);
     b.type = "button";
-    b.addEventListener("click", () => onResult(opt === giusta));
+    b.addEventListener("click", () => {
+      const ok = opt === giusta;
+      // evidenzia la risposta giusta (e quella sbagliata scelta) prima di andare avanti
+      [...row.children].forEach(x => { if (x.textContent === giusta) x.classList.add("gesu-ok"); });
+      if (!ok) b.classList.add("gesu-ko");
+      onResult(ok);
+    });
     row.appendChild(b);
   });
   box.appendChild(row);
@@ -46,7 +52,11 @@ function giocoOrdine(nome, pezzi, errore) {
         const b = el("button", "gesu-piece", p);
         b.type = "button";
         b.addEventListener("click", () => {
-          if (p !== pezzi[step]) return fail(errore);
+          if (p !== pezzi[step]) {
+            [...row.children].forEach(x => { if (x.textContent === pezzi[step]) x.classList.add("gesu-ok"); });
+            b.classList.add("gesu-ko");
+            return fail(errore + " Il pezzo giusto era: \"" + pezzi[step] + "\".");
+          }
           step++;
           b.remove();
           said.textContent = pezzi.slice(0, step).join(" ");
@@ -91,20 +101,25 @@ const SANTI = [
 ].map(m => m.split("|"));
 
 const VERSETTI = [
-  { t: "Il Signore è il mio ____: non manco di nulla.", a: "pastore", d: ["re", "giudice", "custode"], r: "Salmo 23,1" },
-  { t: "Venite a me, voi tutti che siete stanchi e oppressi, e io vi darò ____.", a: "ristoro", d: ["un tesoro", "un premio", "una casa"], r: "Matteo 11,28" },
-  { t: "Beati i puri di ____, perché vedranno Dio.", a: "cuore", d: ["mente", "corpo", "anima"], r: "Matteo 5,8" },
-  { t: "Vegliate e pregate, per non entrare in ____.", a: "tentazione", d: ["città", "casa", "battaglia"], r: "Matteo 26,41" },
-  { t: "Io sono la via, la ____ e la vita.", a: "verità", d: ["luce", "porta", "pace"], r: "Giovanni 14,6" },
-  { t: "Conoscerete la verità e la verità vi farà ____.", a: "liberi", d: ["ricchi", "forti", "saggi"], r: "Giovanni 8,32" },
-  { t: "Tutto posso in colui che mi dà la ____.", a: "forza", d: ["gioia", "pace", "vita"], r: "Filippesi 4,13" },
-  { t: "Il Signore è la mia luce e la mia ____: di chi avrò timore?", a: "salvezza", d: ["roccia", "difesa", "speranza"], r: "Salmo 27,1" },
-  { t: "Non sapete che il vostro corpo è ____ dello Spirito Santo?", a: "tempio", d: ["casa", "dono", "servo"], r: "1 Corinzi 6,19" },
-  { t: "____ la fornicazione!", a: "Fuggite", d: ["Ricordate", "Guardate", "Cercate"], r: "1 Corinzi 6,18" },
-  { t: "Amerai il Signore tuo Dio con tutto il cuore, con tutta l'____ e con tutta la mente.", a: "anima", d: ["forza", "vita", "voce"], r: "Matteo 22,37" },
+  { t: "Ma Onan sapeva che la prole non sarebbe stata considerata sua; così, ogni volta che si univa alla moglie del fratello, ____ per terra, per non dare discendenza al fratello.", a: "disperdeva", d: ["raccoglieva", "donava", "nascondeva"], r: "Genesi 38,9" },
+  { t: "Se un uomo ha un'emissione di seme, laverà tutto il suo corpo nell'acqua e sarà ____ fino alla sera.", a: "impuro", d: ["santo", "giusto", "felice"], r: "Levitico 15,16" },
   { t: "Chiunque guarda una donna per ____, ha già commesso adulterio con lei nel suo cuore.", a: "desiderarla", d: ["ammirarla", "salutarla", "invidiarla"], r: "Matteo 5,28" },
+  { t: "Se il tuo occhio destro ti è motivo di ____, cavalo e gettalo via da te.", a: "scandalo", d: ["gioia", "dolore", "vergogna"], r: "Matteo 5,29" },
+  { t: "Dal ____ provengono propositi di male, omicidi, adultèri, prostituzioni, furti, false testimonianze, calunnie.", a: "cuore", d: ["corpo", "cielo", "mondo"], r: "Matteo 15,19" },
+  { t: "Rivestitevi del Signore Gesù Cristo e non seguite la ____ nei suoi desideri.", a: "carne", d: ["gloria", "fretta", "folla"], r: "Romani 13,14" },
+  { t: "____ la fornicazione! Qualsiasi peccato l'uomo commetta, è fuori del suo corpo.", a: "Fuggite", d: ["Ricordate", "Guardate", "Cercate"], r: "1 Corinzi 6,18" },
+  { t: "Chi si dà alla fornicazione, pecca contro il proprio ____.", a: "corpo", d: ["fratello", "prossimo", "padre"], r: "1 Corinzi 6,18" },
+  { t: "Non sapete che il vostro corpo è ____ dello Spirito Santo, che è in voi?", a: "tempio", d: ["casa", "dono", "servo"], r: "1 Corinzi 6,19" },
   { t: "Siete stati comprati a caro ____: glorificate dunque Dio nel vostro corpo!", a: "prezzo", d: ["tempo", "sangue", "dono"], r: "1 Corinzi 6,20" },
-  { t: "Dio ha tanto amato il mondo da dare il suo Figlio ____.", a: "unigenito", d: ["primogenito", "diletto", "benedetto"], r: "Giovanni 3,16" }
+  { t: "Non sapete che gli ingiusti non erediteranno il ____ di Dio?", a: "regno", d: ["tempio", "amore", "perdono"], r: "1 Corinzi 6,9" },
+  { t: "Quanto alla fornicazione e a ogni specie di impurità, neppure si parli di voi fra voi, come si addice a ____.", a: "santi", d: ["fratelli", "giusti", "figli"], r: "Efesini 5,3" },
+  { t: "Fate ____ dunque quella parte di voi che appartiene alla terra: fornicazione, impurità, passioni, desideri cattivi.", a: "morire", d: ["vivere", "crescere", "tacere"], r: "Colossesi 3,5" },
+  { t: "Questa è la volontà di Dio, la vostra ____: che vi asteniate dall'impurità.", a: "santificazione", d: ["felicità", "salvezza", "libertà"], r: "1 Tessalonicesi 4,3" },
+  { t: "Fuggi le passioni giovanili, ricerca la ____, la fede, la carità e la pace.", a: "giustizia", d: ["ricchezza", "gloria", "saggezza"], r: "2 Timoteo 2,22" },
+  { t: "La concupiscenza concepisce e genera il peccato; il peccato, quando è consumato, produce la ____.", a: "morte", d: ["gioia", "pace", "vita"], r: "Giacomo 1,15" },
+  { t: "Chi commette adulterio è privo di ____, chi fa così rovina se stesso.", a: "senno", d: ["pazienza", "fede", "denaro"], r: "Proverbi 6,32" },
+  { t: "Ho stretto un patto con i miei ____: come potrei fissare lo sguardo su una vergine?", a: "occhi", d: ["piedi", "labbra", "orecchi"], r: "Giobbe 31,1" },
+  { t: "Il matrimonio sia rispettato da tutti e il talamo sia senza ____.", a: "macchia", d: ["peccato", "ombra", "fine"], r: "Ebrei 13,4" }
 ];
 
 const QUIZ = [
@@ -133,7 +148,7 @@ const GIOCHI = [
       const altri = sample(SANTI.flat().filter(s => s !== giusto), 3);
       const data = oggi.toLocaleDateString("it-IT", { day: "numeric", month: "long" });
       domanda(box, "Chi si celebra oggi, " + data + "?", giusto, altri,
-        ok => ok ? win() : fail("Non conosci nemmeno il santo di oggi."));
+        ok => ok ? win() : fail("Non conosci nemmeno il santo di oggi. La risposta giusta era: " + giusto + "."));
     }
   },
   {
@@ -141,7 +156,7 @@ const GIOCHI = [
     start(box, win, fail) {
       const v = VERSETTI[Math.floor(Math.random() * VERSETTI.length)];
       domanda(box, v.t + "  (" + v.r + ")", v.a, v.d,
-        ok => ok ? win() : fail("Sbagliato. La Parola va conosciuta."));
+        ok => ok ? win(urlVersetto(v.r)) : fail("Sbagliato. La risposta giusta era: " + v.a + ". Il versetto: \"" + v.t.replace("____", v.a) + "\" (" + v.r + ")."));
     }
   },
   {
@@ -154,7 +169,7 @@ const GIOCHI = [
         const q = domande[i];
         box.appendChild(el("div", "gesu-said", "Domanda " + (i + 1) + " di 3"));
         domanda(box, q.q, q.a, q.d, ok => {
-          if (!ok) return fail("Sbagliato. Si ricomincia da capo.");
+          if (!ok) return fail("Sbagliato. La risposta giusta era: " + q.a + ". Si ricomincia da capo.");
           if (++i === domande.length) win(); else next();
         });
       };

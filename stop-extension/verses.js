@@ -41,7 +41,11 @@ const VERSI = [
   "Apocalisse 21:8"
 ];
 
+// "Matteo 5,28" o "Matteo 5:28" -> pagina BibleGateway (CEI) con quel versetto.
+function urlVersetto(rif) {
+  return "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(rif.replace(",", ":")) + "&version=CEI";
+}
+
 function versettoACaso() {
-  const v = VERSI[Math.floor(Math.random() * VERSI.length)];
-  return "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(v) + "&version=CEI";
+  return urlVersetto(VERSI[Math.floor(Math.random() * VERSI.length)]);
 }

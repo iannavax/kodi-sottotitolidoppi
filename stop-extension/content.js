@@ -36,24 +36,25 @@
       cleanup = g.start(box, win, fail) || null;
     }
 
-    function win() {
+    function win(url) {
       if (done) return;
       done = true;
       if (cleanup) cleanup();
-      hint.textContent = "Bravo. Ora leggi questo. 🙏";
-      setTimeout(() => { location.href = versettoACaso(); }, 1200);
+      hint.textContent = "Bravo. Ora leggi il versetto intero. 🙏";
+      setTimeout(() => { location.href = url || versettoACaso(); }, 1200);
     }
 
     function fail(messaggio) {
       if (done) return;
-      hint.textContent = messaggio + " Nuova prova...";
+      hint.textContent = messaggio + " Nuova prova tra poco...";
+      root.classList.add("gesu-locked");
       root.classList.remove("gesu-shake");
       void root.offsetWidth;
       root.classList.add("gesu-shake");
       if (cleanup) cleanup();
       cleanup = null;
-      box.textContent = "";
-      setTimeout(() => { if (!done) nuovoGioco(); }, 1500);
+      // la risposta giusta resta visibile qualche secondo prima della nuova prova
+      setTimeout(() => { if (!done) { root.classList.remove("gesu-locked"); nuovoGioco(); } }, 5000);
     }
 
     nuovoGioco();

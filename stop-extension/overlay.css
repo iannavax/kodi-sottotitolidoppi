@@ -35,7 +35,10 @@
   box-shadow: 0 0 12px rgba(255, 215, 0, .7);
 }
 #gesu-stop-overlay .gesu-piece:hover { background: #fff3b0; }
-#gesu-stop-overlay .gesu-hint { margin-top: 10px; font-size: 18px; color: #fff3b0; min-height: 24px; }
+#gesu-stop-overlay .gesu-hint {
+  margin-top: 12px; font-size: clamp(16px, 2.6vh, 22px); color: #5a0000; font-weight: 700;
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff3a0; min-height: 24px; max-width: min(900px, 94vw);
+}
 #gesu-stop-overlay.gesu-shake { animation: gesu-shake .4s; }
 @keyframes gesu-shake { 25% { transform: translateX(-12px); } 75% { transform: translateX(12px); } }
 @keyframes gesu-float { 50% { transform: translateY(-12px); } }
@@ -46,3 +49,6 @@
   font-size: clamp(20px, 3.4vh, 32px); color: #3a2300; margin: 0 0 12px; max-width: 94vw;
   text-shadow: 0 0 8px #fff, 0 0 16px #fff3a0;
 }
+#gesu-stop-overlay.gesu-locked .gesu-piece { pointer-events: none; }
+#gesu-stop-overlay .gesu-piece.gesu-ok { background: #c8f7c5; border-color: #1f8a1f; box-shadow: 0 0 16px #3fd13f; }
+#gesu-stop-overlay .gesu-piece.gesu-ko { background: #ffd0d0; border-color: #b00000; box-shadow: 0 0 16px #ff4040; }
