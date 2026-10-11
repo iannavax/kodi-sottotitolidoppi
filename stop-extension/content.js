@@ -16,7 +16,8 @@
     img.alt = "Gesù dice STOP";
 
     const stop = el("h1", "gesu-stop", "STOP");
-    const text = el("div", "gesu-text", "Vieni con me a santificare lo spirito");
+    const text = el("div", "gesu-text", "Figliolo, non venire col corpo, vieni con me nello spirito");
+    const text2 = el("div", "gesu-text gesu-text2", "Vieni con me a santificare lo spirito");
     const sub = el("div", "gesu-sub");
     const box = el("div", "gesu-box");
     const hint = el("div", "gesu-hint");
@@ -58,7 +59,7 @@
     }
 
     nuovoGioco();
-    root.append(img, stop, text, sub, box, hint);
+    root.append(img, stop, text, text2, sub, box, hint);
     document.documentElement.appendChild(root);
     document.documentElement.style.overflow = "hidden";
   }

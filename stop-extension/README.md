@@ -2,7 +2,7 @@
 
 Estensione per Chrome/Edge/Brave e **Firefox** (Manifest V3, stessa cartella). Quando apri un sito per adulti
 compare a tutto schermo Gesù con la mano bucata alzata ("STOP") e la scritta in
-font gotico: **"Vieni con me a santificare lo spirito"**.
+font gotico: **"Figliolo, non venire col corpo, vieni con me nello spirito"** e sotto **"Vieni con me a santificare lo spirito"**.
 
 Per proseguire bisogna superare una prova scelta a caso (mai due uguali di fila):
 
