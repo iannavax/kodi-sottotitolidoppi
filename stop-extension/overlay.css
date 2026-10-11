@@ -52,5 +52,4 @@
 #gesu-stop-overlay.gesu-locked .gesu-piece { pointer-events: none; }
 #gesu-stop-overlay .gesu-piece.gesu-ok { background: #c8f7c5; border-color: #1f8a1f; box-shadow: 0 0 16px #3fd13f; }
 #gesu-stop-overlay .gesu-piece.gesu-ko { background: #ffd0d0; border-color: #b00000; box-shadow: 0 0 16px #ff4040; }
-#gesu-stop-overlay .gesu-text2 { margin-top: 0; font-size: clamp(22px, 4vh, 44px); }
 #gesu-stop-overlay { overflow-y: auto !important; }
