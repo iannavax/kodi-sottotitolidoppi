@@ -4,9 +4,11 @@ Estensione per Chrome/Edge/Brave e **Firefox** (Manifest V3, stessa cartella). Q
 compare a tutto schermo Gesù con la mano bucata alzata ("STOP") e la scritta in
 font gotico: **"se hai il coraggio inseriscilo qui"**.
 
-Per proseguire bisogna scrivere `ho il coraggio` nel campo e premere Invio
-(sblocca il sito solo per quella sessione della scheda). Se scrivi altro, vieni rimandato a un versetto biblico a caso (lista in `verses.js`, aperto su BibleGateway in versione CEI). Cambia `PASS` in
-`content.js` per usare un'altra frase.
+Per proseguire bisogna rimettere in ordine i pezzi dell'**Ave Maria**
+cliccandoli uno dopo l'altro. Se sbagli, si ricomincia da capo (e il sito resta
+bloccato). Se la completi correttamente vieni rimandato a un versetto biblico a
+caso (lista in `verses.js`, aperto su BibleGateway in versione CEI). Il sito
+non viene mai sbloccato.
 
 ## Installazione
 1. Apri `chrome://extensions` e attiva la *Modalità sviluppatore*.
