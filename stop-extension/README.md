@@ -6,14 +6,22 @@ font gotico: **"Figliolo, non venire col corpo, vieni con me nello spirito"**.
 
 Per proseguire bisogna superare una prova scelta a caso (mai due uguali di fila):
 
-- **Ave Maria** o **Padre Nostro**: rimetti i pezzi nell'ordine giusto.
-- **Il santo del giorno**: scegli chi si celebra oggi (calendario indicativo, in `games.js`).
-- **Completa il versetto**: scegli la parola mancante in un versetto su sessualità, impurità, masturbazione (Onan) e fornicazione; completandolo vieni rimandato a quel versetto per intero.
-- **Quiz biblico**: 3 domande di fila.
+- **Completa il versetto** (3 di fila) e **Di che libro è questo versetto?** (3 di fila): solo versetti su sessualità, seme, masturbazione (Onan), fornicazione, adulterio, sguardo e purezza.
+- **Vero o falso** (5), **Quiz biblico** (3), **Trivia** (3), **Il santo del giorno**.
+- **Quiz del giorno**: 5 domande scelte ogni giorno diverse da tutte le banche.
 
-Se sbagli, parte una nuova prova e il sito resta bloccato. Se la superi vieni
-rimandato a un versetto biblico a caso su sessualità, impurità e custodia del corpo (es. Genesi 38,9-10, Matteo 5,27-30, 1 Corinzi 6,15-20; elenco in `verses.js`, aperto su BibleGateway in
-versione CEI). Il sito non viene mai sbloccato.
+Se sbagli, vedi la risposta giusta (e il versetto intero) e parte una nuova prova; il sito resta
+bloccato. Se la superi vieni rimandato a un capitolo della Bibbia scelto **del tutto a caso** fra
+tutti i 1189 capitoli (`verses.js`, su BibleGateway in versione CEI). Il sito non viene mai sbloccato.
+
+### Versetti sempre nuovi
+- Ci sono 65 versetti nella banca locale (`games.js`); da ognuno si generano più domande
+  togliendo parole diverse, e per ogni versetto/domanda vale "una sola volta al giorno".
+- Quando quelli di oggi stanno per finire, `background.js` scarica da `api.getbible.net`
+  (Riveduta, poi Diodati) i capitoli di ~85 passi sul tema, tiene solo i versetti con parole
+  del tema (fornicazione, adulterio, seme, impurità...) e li salva in locale
+  (`chrome.storage.local`). Si pesca sempre da lì finché ce ne sono di nuovi; se anche
+  quelli finiscono ricomincia il giro. Senza rete si usano solo quelli locali.
 
 ## Installazione
 1. Apri `chrome://extensions` e attiva la *Modalità sviluppatore*.

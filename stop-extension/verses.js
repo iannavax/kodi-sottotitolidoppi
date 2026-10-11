@@ -1,51 +1,82 @@
-// Riferimenti biblici (libro, capitolo:versetto) a cui si viene rimandati dopo aver superato la prova.
-// Sono tutti sul tema di sessualità, impurità, fornicazione, sguardo, masturbazione (peccato di Onan)
-// e custodia del corpo.
-const VERSI = [
-  "Genesi 38:9-10",          // Onan e lo spargimento del seme a terra
-  "Levitico 15:16",          // emissione di seme e impurità
-  "Deuteronomio 23:10-11",   // impurità notturna
-  "Esodo 20:14",
-  "Giobbe 31:1",
-  "Salmi 119:9",
-  "Proverbi 5:3-5",
-  "Proverbi 5:15-23",
-  "Proverbi 6:25-28",
-  "Proverbi 6:32",
-  "Proverbi 7:21-23",
-  "Matteo 5:27-30",
-  "Matteo 15:19-20",
-  "Matteo 18:8-9",
-  "Marco 7:21-23",
-  "Romani 1:24",
-  "Romani 6:12-13",
-  "Romani 13:13-14",
-  "1 Corinzi 6:9-10",
-  "1 Corinzi 6:13",
-  "1 Corinzi 6:15-20",
-  "1 Corinzi 7:1-2",
-  "1 Corinzi 10:8",
-  "2 Corinzi 7:1",
-  "Galati 5:16-21",
-  "Efesini 5:3-5",
-  "Colossesi 3:5-6",
-  "1 Tessalonicesi 4:3-8",
-  "2 Timoteo 2:22",
-  "Tito 2:11-12",
-  "Ebrei 12:14-16",
-  "Ebrei 13:4",
-  "Giacomo 1:14-15",
-  "1 Pietro 2:11",
-  "2 Pietro 2:9-10",
-  "Giuda 1:7",
-  "Apocalisse 21:8"
+// Libri della Bibbia (66) con il numero di capitoli. Vinta la prova, si va a un capitolo
+// scelto completamente a caso fra tutti i 1189 capitoli.
+const LIBRI = [
+  ["Genesi", 50],
+  ["Esodo", 40],
+  ["Levitico", 27],
+  ["Numeri", 36],
+  ["Deuteronomio", 34],
+  ["Giosuè", 24],
+  ["Giudici", 21],
+  ["Rut", 4],
+  ["1 Samuele", 31],
+  ["2 Samuele", 24],
+  ["1 Re", 22],
+  ["2 Re", 25],
+  ["1 Cronache", 29],
+  ["2 Cronache", 36],
+  ["Esdra", 10],
+  ["Neemia", 13],
+  ["Ester", 10],
+  ["Giobbe", 42],
+  ["Salmi", 150],
+  ["Proverbi", 31],
+  ["Ecclesiaste", 12],
+  ["Cantico dei Cantici", 8],
+  ["Isaia", 66],
+  ["Geremia", 52],
+  ["Lamentazioni", 5],
+  ["Ezechiele", 48],
+  ["Daniele", 12],
+  ["Osea", 14],
+  ["Gioele", 3],
+  ["Amos", 9],
+  ["Abdia", 1],
+  ["Giona", 4],
+  ["Michea", 7],
+  ["Naum", 3],
+  ["Abacuc", 3],
+  ["Sofonia", 3],
+  ["Aggeo", 2],
+  ["Zaccaria", 14],
+  ["Malachia", 4],
+  ["Matteo", 28],
+  ["Marco", 16],
+  ["Luca", 24],
+  ["Giovanni", 21],
+  ["Atti", 28],
+  ["Romani", 16],
+  ["1 Corinzi", 16],
+  ["2 Corinzi", 13],
+  ["Galati", 6],
+  ["Efesini", 6],
+  ["Filippesi", 4],
+  ["Colossesi", 4],
+  ["1 Tessalonicesi", 5],
+  ["2 Tessalonicesi", 3],
+  ["1 Timoteo", 6],
+  ["2 Timoteo", 4],
+  ["Tito", 3],
+  ["Filemone", 1],
+  ["Ebrei", 13],
+  ["Giacomo", 5],
+  ["1 Pietro", 5],
+  ["2 Pietro", 3],
+  ["1 Giovanni", 5],
+  ["2 Giovanni", 1],
+  ["3 Giovanni", 1],
+  ["Giuda", 1],
+  ["Apocalisse", 22]
 ];
 
-// "Matteo 5,28" o "Matteo 5:28" -> pagina BibleGateway (CEI) con quel versetto.
-function urlVersetto(rif) {
-  return "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(rif.replace(",", ":")) + "&version=CEI";
-}
-
-function versettoACaso() {
-  return urlVersetto(VERSI[Math.floor(Math.random() * VERSI.length)]);
+function passoACaso() {
+  const totale = LIBRI.reduce((s, l) => s + l[1], 0);
+  let n = Math.floor(Math.random() * totale);
+  for (const [libro, capitoli] of LIBRI) {
+    if (n < capitoli) {
+      return "https://www.biblegateway.com/passage/?search=" +
+        encodeURIComponent(libro + " " + (n + 1)) + "&version=CEI";
+    }
+    n -= capitoli;
+  }
 }

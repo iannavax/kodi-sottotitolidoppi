@@ -49,5 +49,15 @@
         ]
       }
     }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "scripts": [
+      "verses.js",
+      "background.js"
+    ]
   }
 }

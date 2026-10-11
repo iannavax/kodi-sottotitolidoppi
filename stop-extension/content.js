@@ -36,12 +36,12 @@
       cleanup = g.start(box, win, fail) || null;
     }
 
-    function win(url) {
+    function win() {
       if (done) return;
       done = true;
       if (cleanup) cleanup();
-      hint.textContent = "Bravo. Ora leggi il versetto intero. 🙏";
-      setTimeout(() => { location.href = url || versettoACaso(); }, 1200);
+      hint.textContent = "Bravo. Ora leggi questo passo della Parola. 🙏";
+      setTimeout(() => { location.href = passoACaso(); }, 1200);
     }
 
     function fail(messaggio) {
