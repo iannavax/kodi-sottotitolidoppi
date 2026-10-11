@@ -9,14 +9,14 @@ function el(tag, cls, text) {
   return e;
 }
 
+// Fisher-Yates semplice: ogni ordine, compreso quello di partenza, è possibile.
 function shuffled(list) {
   const a = list.slice();
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
-  // evita di restituire lo stesso ordine di partenza
-  return a.length > 1 && a.every((x, i) => x === list[i]) ? shuffled(list) : a;
+  return a;
 }
 
 function sample(list, n) { return shuffled(list).slice(0, n); }
@@ -25,7 +25,9 @@ function sample(list, n) { return shuffled(list).slice(0, n); }
 function domanda(box, testo, giusta, sbagliate, onResult) {
   box.appendChild(el("div", "gesu-q", testo));
   const row = el("div", "gesu-pieces");
-  shuffled([giusta].concat(sbagliate)).forEach(opt => {
+  const opzioni = [giusta].concat(sbagliate);
+  const vf = opzioni.length === 2 && opzioni.includes("Vero") && opzioni.includes("Falso");
+  (vf ? ["Vero", "Falso"] : shuffled(opzioni)).forEach(opt => {
     const b = el("button", "gesu-piece", opt);
     b.type = "button";
     b.addEventListener("click", () => {
@@ -244,7 +246,25 @@ const VERO_FALSO = [
   ["Sodoma e Gomorra furono distrutte da fuoco e zolfo.", true],
   ["Mosè entrò nella terra promessa.", false],
   ["La pioggia del Diluvio durò quaranta giorni e quaranta notti.", true],
-  ["Gesù disse all'adultera: «Neppure io ti condanno; va' e non peccare più».", true]
+  ["Gesù disse all'adultera: «Neppure io ti condanno; va' e non peccare più».", true],
+  ["Mosè ricevette i dieci comandamenti sul monte Carmelo.", false],
+  ["Pietro fu l'apostolo che tradì Gesù.", false],
+  ["Secondo san Paolo il corpo del cristiano non ha niente a che fare con lo Spirito Santo.", false],
+  ["Nel Vangelo di Matteo, Gesù dice che chi guarda una donna per desiderarla ha rubato nel suo cuore.", false],
+  ["Il Cantico dei Cantici è un libro del Nuovo Testamento.", false],
+  ["Davide uccise Golia con la spada.", false],
+  ["Noè ebbe quattro figli.", false],
+  ["Santa Maria Goretti è venerata come patrona dei sacerdoti.", false],
+  ["La Pentecoste si celebra quaranta giorni dopo la Pasqua.", false],
+  ["Pietro era un pubblicano, cioè un esattore delle tasse, prima di seguire Gesù.", false],
+  ["I vizi capitali sono dieci.", false],
+  ["La Bibbia dei protestanti ha 73 libri.", false],
+  ["Il vizio capitale opposto alla castità è la lussuria.", true],
+  ["Il Levitico dice che dopo un'emissione di seme l'uomo è impuro fino alla sera e deve lavarsi.", true],
+  ["Dio disse a Giuseppe di fuggire con Maria e Gesù in Egitto.", true],
+  ["Gesù disse: «Vegliate e pregate, per non entrare in tentazione».", true],
+  ["Mosè morì senza entrare nella terra promessa.", true],
+  ["Il Salmo 51 chiede a Dio: «Crea in me un cuore puro».", true]
 ];
 
 // ---------------------------------------------------------------------------
@@ -533,7 +553,17 @@ async function versettiNuovi(n, tipo) {
 const GIOCHI = [
   giocoSerieAsync("Completa il versetto", n => versettiNuovi(n, "cloze"), 3),
   giocoSerieAsync("Di che libro è questo versetto?", n => versettiNuovi(n, "libro"), 3),
-  giocoSerie("Vero o falso", itemsVF, 5),
+  {
+    nome: "Vero o falso",
+    start(box, win, fail) {
+      // 5 affermazioni con vere e false in numero quasi pari, in ordine casuale
+      const tutti = itemsVF();
+      const veri = tutti.filter(i => i.a === "Vero");
+      const falsi = tutti.filter(i => i.a === "Falso");
+      const nVeri = 2 + Math.floor(Math.random() * 2);
+      eseguiSerie(box, shuffled(sample(veri, nVeri).concat(sample(falsi, 5 - nVeri))), win, fail);
+    }
+  },
   giocoSerie("Quiz biblico", itemsQuiz, 3),
   giocoSerie("Quiz di fede", itemsFede, 3),
   giocoSerie("Quiz del giorno", () => itemsQuiz().concat(itemsFede(), itemsVF(), itemsVersetto(), itemsLibro()), 5, true),
