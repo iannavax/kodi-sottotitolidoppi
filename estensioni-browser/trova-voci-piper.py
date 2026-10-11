@@ -2,7 +2,7 @@
 # Trova sul computer le voci Piper già scaricate (da un'altra estensione di Firefox, da Speaches, o file sciolti) e le copia
 # in una cartella con i nomi giusti, pronte per «📂 Ho già una voce Piper: importa i file» nel popup di Sottotitoli Doppi.
 # Non modifica e non cancella niente: legge e basta. Solo libreria standard di Python (nessuna installazione).
-#   Windows:  python trova-voci-piper.py          (poi apri la cartella «Voci-Piper-trovate» sul Desktop)
+#   Windows:  python trova-voci-piper.py          (crea la cartella «Voci-Piper-trovate» accanto allo script e la apre)
 #   Altra cartella di uscita:  python trova-voci-piper.py --out C:\Percorso\Cartella
 import argparse, glob, json, os, re, shutil, sqlite3, struct, sys, tempfile, urllib.parse
 
@@ -74,7 +74,7 @@ def uuid_names(raw):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default=os.path.join(os.path.expanduser("~"), "Desktop", "Voci-Piper-trovate"))
+    ap.add_argument("--out", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "Voci-Piper-trovate"))   # accanto allo script (il Desktop di Windows spesso sta in OneDrive)
     ap.add_argument("--profilo", help="cartella del profilo di Firefox (se non la trova da solo)")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
@@ -170,6 +170,17 @@ def main():
                 say(f"  {os.path.basename(origin)}: {tot // 1048576} MB")
     with open(os.path.join(a.out, "rapporto.txt"), "w", encoding="utf-8") as f: f.write("\n".join(rep))
     shutil.rmtree(tmp, ignore_errors=True)
+    say("\nCartella con i risultati (percorso completo): " + os.path.abspath(a.out))
     say("\nOra nel popup di Sottotitoli Doppi: 🔈 Voce → «📂 Ho già una voce Piper: importa i file» e scegli i file .onnx e .onnx.json di questa cartella.")
 
-main()
+try:
+    main()
+except Exception:
+    import traceback; traceback.print_exc()
+    print("\nSe vedi questo errore, copialo e mandalo a Claude.")
+finally:
+    out = next((sys.argv[i + 1] for i, x in enumerate(sys.argv) if x == "--out" and i + 1 < len(sys.argv)), os.path.join(os.path.dirname(os.path.abspath(__file__)), "Voci-Piper-trovate"))
+    try:
+        if os.name == "nt" and os.path.isdir(out): os.startfile(out)   # apre la cartella in Esplora risorse
+    except Exception: pass
+    if os.name == "nt" and sys.stdin and sys.stdin.isatty(): input("\nPremi Invio per chiudere…")
