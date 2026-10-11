@@ -102,6 +102,8 @@ const VERSETTI = [
   { t: "Non sapete che il vostro corpo è ____ dello Spirito Santo?", a: "tempio", d: ["casa", "dono", "servo"], r: "1 Corinzi 6,19" },
   { t: "____ la fornicazione!", a: "Fuggite", d: ["Ricordate", "Guardate", "Cercate"], r: "1 Corinzi 6,18" },
   { t: "Amerai il Signore tuo Dio con tutto il cuore, con tutta l'____ e con tutta la mente.", a: "anima", d: ["forza", "vita", "voce"], r: "Matteo 22,37" },
+  { t: "Chiunque guarda una donna per ____, ha già commesso adulterio con lei nel suo cuore.", a: "desiderarla", d: ["ammirarla", "salutarla", "invidiarla"], r: "Matteo 5,28" },
+  { t: "Siete stati comprati a caro ____: glorificate dunque Dio nel vostro corpo!", a: "prezzo", d: ["tempo", "sangue", "dono"], r: "1 Corinzi 6,20" },
   { t: "Dio ha tanto amato il mondo da dare il suo Figlio ____.", a: "unigenito", d: ["primogenito", "diletto", "benedetto"], r: "Giovanni 3,16" }
 ];
 

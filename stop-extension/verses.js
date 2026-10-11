@@ -1,13 +1,44 @@
-// Riferimenti biblici (libro, capitolo:versetto) a cui si viene rimandati se non si ha il coraggio.
+// Riferimenti biblici (libro, capitolo:versetto) a cui si viene rimandati dopo aver superato la prova.
+// Sono tutti sul tema di sessualità, impurità, fornicazione, sguardo, masturbazione (peccato di Onan)
+// e custodia del corpo.
 const VERSI = [
-  "Matteo 5:28", "Matteo 5:8", "Matteo 6:13", "Matteo 7:7", "Matteo 11:28", "Matteo 16:26",
-  "Matteo 26:41", "Marco 8:36", "Luca 15:20", "Luca 9:62", "Giovanni 8:11", "Giovanni 8:32",
-  "Giovanni 14:6", "Romani 6:12", "Romani 8:1", "Romani 12:2", "1 Corinzi 6:18", "1 Corinzi 6:19",
-  "1 Corinzi 10:13", "2 Corinzi 5:17", "Galati 5:16", "Galati 5:1", "Efesini 5:3", "Filippesi 4:8",
-  "Filippesi 4:13", "Colossesi 3:5", "1 Tessalonicesi 4:3", "2 Timoteo 2:22", "Ebrei 12:1",
-  "Giacomo 1:14", "Giacomo 4:7", "Giacomo 4:8", "1 Pietro 5:8", "1 Giovanni 1:9", "Salmi 51:12",
-  "Salmi 119:9", "Salmi 23:1", "Proverbi 4:23", "Proverbi 6:27", "Proverbi 28:13", "Giobbe 31:1",
-  "Isaia 1:18", "Isaia 41:10", "Genesi 39:12", "Geremia 29:11", "Apocalisse 3:20"
+  "Genesi 38:9-10",          // Onan e lo spargimento del seme a terra
+  "Levitico 15:16",          // emissione di seme e impurità
+  "Deuteronomio 23:10-11",   // impurità notturna
+  "Esodo 20:14",
+  "Giobbe 31:1",
+  "Salmi 119:9",
+  "Proverbi 5:3-5",
+  "Proverbi 5:15-23",
+  "Proverbi 6:25-28",
+  "Proverbi 6:32",
+  "Proverbi 7:21-23",
+  "Matteo 5:27-30",
+  "Matteo 15:19-20",
+  "Matteo 18:8-9",
+  "Marco 7:21-23",
+  "Romani 1:24",
+  "Romani 6:12-13",
+  "Romani 13:13-14",
+  "1 Corinzi 6:9-10",
+  "1 Corinzi 6:13",
+  "1 Corinzi 6:15-20",
+  "1 Corinzi 7:1-2",
+  "1 Corinzi 10:8",
+  "2 Corinzi 7:1",
+  "Galati 5:16-21",
+  "Efesini 5:3-5",
+  "Colossesi 3:5-6",
+  "1 Tessalonicesi 4:3-8",
+  "2 Timoteo 2:22",
+  "Tito 2:11-12",
+  "Ebrei 12:14-16",
+  "Ebrei 13:4",
+  "Giacomo 1:14-15",
+  "1 Pietro 2:11",
+  "2 Pietro 2:9-10",
+  "Giuda 1:7",
+  "Apocalisse 21:8"
 ];
 
 function versettoACaso() {
