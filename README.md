@@ -1,0 +1,801 @@
+[GUIDE.en.html](https://github.com/user-attachments/files/33385357/GUIDE.en.html)
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.7.38 — Guide</title><style>
+:root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
+@media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:40px 22px 80px;background:var(--paper);min-height:100vh;box-shadow:0 0 0 1px var(--line)}
+h1{font-size:2.1em;line-height:1.2;margin:.2em 0 .4em;border-bottom:3px solid var(--accent);padding-bottom:.3em}
+h2{font-size:1.45em;margin:2.2em 0 .6em;padding-top:.4em;border-top:1px solid var(--line)}
+h3{font-size:1.15em;margin:1.6em 0 .4em;color:var(--accent)}
+a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+p,li{color:var(--ink)} li{margin:.25em 0}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--accent);background:var(--code);border-radius:0 8px 8px 0}
+code{background:var(--code);padding:.1em .35em;border-radius:5px;font-size:.92em}
+pre{background:var(--code);padding:14px 16px;border-radius:10px;overflow:auto;line-height:1.45} pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--code)}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+hr + h2{border-top:0;margin-top:.6em;padding-top:0}
+pre{white-space:pre-wrap;word-break:break-word}
+.toc-note{color:var(--soft)}
+</style></head>
+<body><main><p><em>Version 1.7.38</em></p>
+<h1 id="sottotitoli-doppi-parole-al-volo-browser-extension">Sottotitoli Doppi + Parole al Volo — browser extension</h1>
+<p><em>Versione italiana → <a href="LEGGIMI.html">LEGGIMI</a></em></p>
+<p><strong>Learn languages by watching videos and reading.</strong> One extension for two things:</p>
+<ul>
+<li><strong>🎬 in videos</strong> (Sottotitoli Doppi): under the original subtitles you see the translation in your language, in a different colour. Every word can be hovered to see its meaning in that sentence, hear it and save it to your personal vocabulary. It works on YouTube and on almost every website with video or audio; if a video has no subtitles, the extension listens to the audio and writes them itself;</li>
+<li><strong>📄 on web pages and PDFs</strong> (Parole al Volo): hover a word on any page to get its card; select some text to translate it all at once.</li>
+</ul>
+<p>Vocabulary, known words, service keys, voices and Anki are shared by both.</p>
+<p>Browsers: <strong>Edge, Chrome, Brave</strong> (and other Chromium-based browsers) and <strong>Firefox</strong>.</p>
+<blockquote>
+<p><strong>Interface language.</strong> The extension's menus are in Italian. Tick <strong>Interfaccia in questa lingua</strong> (<em>interface in this language</em>) under <strong>Traduci in</strong> (<em>translate into</em>) in the popup and the whole interface — popup, cards, pages — is shown in the language you translate into (translated once with Google Translate and remembered). In this guide buttons are written as they appear in Italian, in <strong>bold</strong>, followed by their meaning.</p>
+</blockquote>
+<hr />
+<h2 id="contents">Contents</h2>
+<ol>
+<li><a href="#1-what-it-does">What it does</a></li>
+<li><a href="#2-installing-and-updating">Installing and updating</a></li>
+<li><a href="#3-getting-started-5-minutes">Getting started (5 minutes)</a></li>
+<li><a href="#4-the-popup">The popup</a></li>
+<li><a href="#5-where-it-works">Where it works</a></li>
+<li><a href="#6-subtitles-on-the-video">Subtitles on the video</a></li>
+<li><a href="#7-learning-with-words">Learning with words</a></li>
+<li><a href="#8-on-web-pages">On web pages</a></li>
+<li><a href="#9-pdf-files">PDF files</a></li>
+<li><a href="#10-your-vocabulary">Your vocabulary</a></li>
+<li><a href="#11-videos-without-subtitles-transcribing-the-audio">Videos without subtitles: transcribing the audio</a></li>
+<li><a href="#12-the-trascrizione-e-traduzione-page">The "Trascrizione e traduzione" page</a></li>
+<li><a href="#13-translation-services">Translation services</a></li>
+<li><a href="#14-request-usage">Request usage</a></li>
+<li><a href="#15-a-translation-model-on-your-own-computer">A translation model on your own computer</a></li>
+<li><a href="#16-troubleshooting">Troubleshooting</a></li>
+<li><a href="#17-privacy">Privacy</a></li>
+</ol>
+<hr />
+<h2 id="1-what-it-does">1. What it does</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🎬 <strong>Two lines</strong></td>
+<td>Original on top, translation below (or the other way round), right on the video.</td>
+</tr>
+<tr>
+<td>🧠 <strong>Translation that follows the conversation</strong></td>
+<td>With Gemini and the other AI models, each line is translated with the surrounding lines in mind.</td>
+</tr>
+<tr>
+<td>👆 <strong>Interactive words</strong></td>
+<td>Hover a word to see its meaning; <strong>✨ Spiega con…</strong> (<em>explain with…</em>) gives the full explanation in that sentence.</td>
+</tr>
+<tr>
+<td>🔗 <strong>Translation ↔ original</strong></td>
+<td>Hover a translated word and the original word it comes from lights up. Articles and prepositions that only the translation needs are marked.</td>
+</tr>
+<tr>
+<td>🗣️ <strong>Pronunciation</strong></td>
+<td>Hear any word; the video volume drops automatically while it speaks.</td>
+</tr>
+<tr>
+<td>⭐ <strong>Vocabulary</strong></td>
+<td>Save words and expressions with their sentence and the moment in the video; export everything to Anki.</td>
+</tr>
+<tr>
+<td>🎙️ <strong>Audio transcription</strong></td>
+<td>Video without subtitles? The audio is transcribed with Whisper (free with a Groq key).</td>
+</tr>
+<tr>
+<td>📄 <strong>Full text</strong></td>
+<td>A page with the whole text of the video, to read, copy or download (.txt, .srt).</td>
+</tr>
+<tr>
+<td>✏️ <strong>Corrections</strong></td>
+<td>Redo or fix a badly translated or transcribed line with one click.</td>
+</tr>
+<tr>
+<td>💸 <strong>Low usage</strong></td>
+<td>Everything is saved: watching a video again costs nothing. If a free service runs out of requests, another one takes over automatically.</td>
+</tr>
+<tr>
+<td>📄 <strong>Web pages</strong></td>
+<td>On any page: word card on hover, translation of the text you select.</td>
+</tr>
+<tr>
+<td>📕 <strong>PDF</strong></td>
+<td>A PDF reader of its own with the same cards (scanned books too, when they contain recognised text).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-installing-and-updating">2. Installing and updating</h2>
+<h3 id="edge-chrome-brave">Edge, Chrome, Brave</h3>
+<ol>
+<li>Unzip <code>sottotitoli-parole-chrome-vX.Y.Z.zip</code> into a folder you <strong>won't delete</strong> (for example <code>Documents\Sottotitoli Doppi</code>).</li>
+<li>Open <code>edge://extensions</code> (in Chrome: <code>chrome://extensions</code>).</li>
+<li>Turn on <strong>Developer mode</strong>.</li>
+<li>Click <strong>Load unpacked</strong> and choose the folder from step 1.</li>
+<li>Pin the extension icon to the toolbar (puzzle icon → pin) so the popup is one click away.</li>
+</ol>
+<h3 id="speaches-on-your-computer-whisper-and-piper-voices-without-internet">Speaches on your computer: Whisper and Piper voices without internet</h3>
+<p><strong>Speaches</strong> is a free program that runs on your computer, in a single server, two things the extension can use: <strong>transcription</strong> (Whisper, instead of Groq) and <strong>Piper voices</strong> (pronunciation). Important: <strong>Groq does not go "inside" Speaches</strong>, they are alternatives; Groq is an internet service with your key, Speaches does the same job (Whisper) on your computer, with no keys or request limits, but slower on a weak computer. You can keep both and choose which to use.</p>
+<p><strong>1. Install Speaches</strong> (once). The easiest way is <strong>Docker</strong> (docker.com, free):
+1. Install Docker Desktop and start it.
+2. Open a terminal (Windows: PowerShell; Mac: Terminal) and run: <code>docker run --rm -p 8000:8000 -v hf-hub-cache:/home/ubuntu/.cache/huggingface/hub ghcr.io/speaches-ai/speaches:latest-cpu</code> (with an NVIDIA graphics card: <code>latest-cuda</code> and <code>--gpus=all</code>).
+3. The server is at <code>http://localhost:8000</code>; keep the window open while you use it. Up-to-date instructions (also without Docker) are on the program's site, <strong>speaches.ai</strong>: commands may change between versions.</p>
+<p><strong>2. Download Whisper (transcription).</strong> In another terminal: <code>curl -X POST http://localhost:8000/v1/models/Systran/faster-whisper-small</code> ("small" is fine to start; "medium" and "large-v3" make fewer mistakes but are heavier). Then in the extension: popup → <strong>🔑 Services → Whisper server on your computer</strong>: address <code>http://localhost:8000/v1</code>; then <strong>📊 Usage and models → Model for each task → Audio transcription</strong> → "Whisper server on your computer" and the model.</p>
+<p><strong>3. Download Piper voices.</strong> No terminal needed: popup → <strong>🔈 Voice</strong>, turn on "Also show the Piper voices of my Speaches server", pick the language and press <strong>⬇ Install on the server</strong> (or, in a card's ⚙, <strong>⬇ install</strong> next to the voice). Speaches' Piper voices are those of the Piper project (speaches-ai); if one is not in the list it does not exist as a package for the server: use the same voice among "Free Piper voices (on the computer)", which downloads in the browser.</p>
+<p><strong>4. Anki cards.</strong> Pronunciation on cards uses the voice you chose for the language in the "Voice" menu (also a Speaches voice): for languages Google cannot read (e.g. Slovenian) this is how you get audio. The server must be running when you update the cards.</p>
+<h3 id="firefox">Firefox</h3>
+<ol>
+<li>Unsigned extensions only install in <strong>Firefox Nightly</strong> or <strong>Developer Edition</strong>: in <code>about:config</code> set <code>xpinstall.signatures.required</code> to <strong>false</strong>.</li>
+<li>Open <code>about:addons</code>, click the gear ⚙ → <strong>Install Add-on From File…</strong> and choose <code>sottotitoli-parole-firefox-vX.Y.Z.xpi</code>.</li>
+<li>In <code>about:addons</code> → the extension → <strong>Permissions</strong>, "Access your data for all websites" must be on. If <strong>Concedi accesso</strong> (<em>grant access</em>) appears in the popup, click it.</li>
+</ol>
+<h3 id="updating-without-losing-anything">Updating without losing anything</h3>
+<ul>
+<li><strong>Edge/Chrome:</strong> unzip the new version <strong>into the same folder</strong>, replacing the old files, then click ↻ on the extension's card in <code>edge://extensions</code> and reload open tabs.</li>
+<li><strong>Firefox:</strong> install the new .xpi over the old one.</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Never remove the extension to update it</strong>: removing it also deletes your keys, saved translations and vocabulary.</p>
+</blockquote>
+<h3 id="videos-and-audio-files-on-your-computer">Videos and audio files on your computer</h3>
+<p>For files opened in the browser (addresses starting with <code>file:///</code>): in <code>edge://extensions</code> open the extension's <strong>Details</strong> and turn on <strong>Allow access to file URLs</strong>.</p>
+<h3 id="if-you-used-the-two-separate-extensions">If you used the two separate extensions</h3>
+<p>Sottotitoli Doppi and Parole al Volo are no longer released separately: this one replaces both. It starts empty:
+1. install it next to the old ones (don't remove them yet);
+2. bring over your <strong>known words</strong> and <strong>vocabulary</strong>: here press <strong>⇄ Sincronizza adesso</strong> on the <strong>Parole che conosco</strong> page and <strong>⇄ Sincronizza con le altre estensioni</strong> in the vocabulary (needs Sottotitoli Doppi 5.20.1 / Parole al Volo 1.13.1 or later), or use <strong>Esporta in un file</strong> in the old one and <strong>Importa da un file…</strong> here (for the vocabulary: <strong>📒 Vocabolario → ⇄ Esporta</strong> in the old one and <strong>⇄ Importa…</strong> here);
+3. <strong>keys</strong> and <strong>settings</strong> come along with ⇄ (only those you haven't set here yet);
+4. for the yt-dlp helper: open its page from the popup (<strong>🎙 Trascrizione → ⚙ Programma per yt-dlp</strong>) and run the installer again, so it recognises this extension too;
+5. when everything works, remove the old two: with both active, cards appear twice.</p>
+<hr />
+<h2 id="3-getting-started-5-minutes">3. Getting started (5 minutes)</h2>
+<ol>
+<li><strong>Open the popup</strong> (click the extension icon) and at the top choose <strong>Traduci in</strong> (<em>translate into</em>): your language.</li>
+<li>With no keys <strong>Google Translate</strong> is used: you can start straight away.</li>
+<li>Open a YouTube video in the language you're learning and turn on subtitles (<strong>CC</strong>). The two lines appear.</li>
+<li>Hover a word in the original line: the video pauses and a card shows its meaning.</li>
+</ol>
+<p><strong>For much better translations (recommended, free):</strong>
+1. Go to <strong>aistudio.google.com/apikey</strong> with your Google account and click <em>Create API key</em> (no credit card needed).
+2. In the popup, <strong>🔑 Servizi → Gemini</strong> (<em>services</em>): paste the key and press Enter. The model is chosen automatically; with the first key, subtitles switch to Gemini (change it in <strong>📊 Consumo e modelli → Modello per ogni compito</strong>).</p>
+<p><strong>For videos without subtitles</strong> you also need a free <strong>Groq</strong> key: see <a href="#11-videos-without-subtitles-transcribing-the-audio">section 11</a>.</p>
+<hr />
+<h2 id="4-the-popup">4. The popup</h2>
+<p>The extension button opens a single popup, for videos and for pages alike. At the top:</p>
+<ul>
+<li><strong>📜 Testo del video</strong> (<em>the video's text</em>: every line of the open video, with its translation — <a href="#12-the-trascrizione-e-traduzione-page">section 12</a>), <strong>📒 Vocabolario</strong> (<em>vocabulary</em>) and <strong>✓ Parole che conosco</strong> (<em>words I know</em>);</li>
+<li>the two master switches: <strong>Sottotitoli doppi nei video</strong> (<em>dual subtitles in videos</em>) and <strong>Parole al Volo sulle pagine e nei PDF</strong> (<em>Parole al Volo on pages and in PDFs</em>, <strong>Alt+Shift+Y</strong>);</li>
+<li><strong>Traduci in</strong> (<em>translate into</em>): your language, for everything (every Google Translate language, about 130, also shown by its own name). Below it, <strong>Interfaccia in questa lingua</strong> (<em>interface in this language</em>): when ticked, all the extension's text (popup, cards, vocabulary, transcription and PDF reader pages…) is shown in that language. The first time takes a couple of seconds (the text is translated with Google, free), then it's remembered;</li>
+<li><strong>Consumo delle richieste</strong> (<em>request usage</em>): how much the extension uses the services with a key on its own, from best quality to lowest usage (🏆 Qualità, ⚖️ Bilanciato, 💰 Risparmio, 🆓 Solo gratis: <a href="#14-request-usage">section 14</a>);</li>
+<li>when you're watching a <strong>live stream</strong>, the «🔴 Questo video è una diretta» (<em>this video is a live stream</em>) box with the choice between normal and synced subtitles.</li>
+</ul>
+<p>Then the sections, each opening with a click:</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>What's inside</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🔑 Servizi</strong> (<em>services</em>)</td>
+<td>Only the services' keys (with Mostra, Copia, Crea una chiave — <em>create a key</em>), each service's default model, the address of Ollama/LM Studio and of the Whisper server on your computer (<a href="#13-translation-services">section 13</a>).</td>
+</tr>
+<tr>
+<td><strong>📊 Consumo e modelli</strong> (<em>usage and models</em>)</td>
+<td>Who does each job and the more technical choices: today's requests per service, backup services, <strong>Modello per ogni compito</strong> (<em>model for each task</em>: for every task, subtitles and transcription included, a service menu and a model menu; service and exact model), <strong>Ordine dei servizi</strong> (<em>service order</em>), daily request limit, maximum lead of synced live streams (<a href="#13-translation-services">sections 13</a> and <a href="#14-request-usage">14</a>).</td>
+</tr>
+<tr>
+<td><strong>🎙 Trascrizione</strong> (<em>transcription</em>)</td>
+<td>Videos without subtitles: transcribe this video, redo the transcription, the mode, the spoken language, synced live streams, the <strong>yt-dlp helper</strong> (<a href="#11-videos-without-subtitles-transcribing-the-audio">section 11</a>).</td>
+</tr>
+<tr>
+<td><strong>📄 Pagine e PDF</strong> (<em>pages and PDFs</em>)</td>
+<td>Card on hover, translation of selected text, the text language, the PDF reader (<a href="#8-on-web-pages">sections 8</a> and <a href="#9-pdf-files">9</a>).</td>
+</tr>
+<tr>
+<td><strong>📖 Scheda delle parole</strong> (<em>word card</em>)</td>
+<td>What the word card shows, in videos and on pages: IPA pronunciation, etymology, frequency, examples, tables, dictionaries… (<a href="#7-learning-with-words">section 7</a>).</td>
+</tr>
+<tr>
+<td><strong>🎨 Aspetto dei sottotitoli</strong> (<em>subtitle appearance</em>)</td>
+<td>What to show, sizes, colours, position, Latin letters above non-Latin alphabets.</td>
+</tr>
+<tr>
+<td><strong>🗒 Aspetto delle schede</strong> (<em>card appearance</em>)</td>
+<td>Text size, width, colours and position of the word cards (videos and pages).</td>
+</tr>
+<tr>
+<td><strong>🔈 Voce</strong> (<em>voice</em>)</td>
+<td>The pronunciation voice for each language.</td>
+</tr>
+<tr>
+<td><strong>🗃 Anki</strong></td>
+<td>Decks, automatic sending, pronunciation and images on cards, <strong>🔄 Aggiorna le carte già in Anki</strong> (<em>update the cards already in Anki</em>).</td>
+</tr>
+<tr>
+<td><strong>⚙ Altro</strong> (<em>more</em>)</td>
+<td>Hide the site's own subtitles, turn the extension off on a site, <strong>📋 Copia il registro per segnalare un problema</strong> (<em>copy the log to report a problem</em>), keyboard shortcuts.</td>
+</tr>
+</tbody>
+</table>
+<p>Everything is shared between videos and pages: keys, language, vocabulary, known words, voices, Anki, the yt-dlp helper. These have a setting of their own instead: the service for pages (under <strong>📊 Consumo e modelli → Modello per ogni compito → Testi delle pagine e PDF</strong>, <em>page and PDF text</em>), disabled sites, known words coloured on pages and the Latin letters in the page card.</p>
+<hr />
+<h2 id="5-where-it-works">5. Where it works</h2>
+<ul>
+<li><strong>YouTube</strong>, including YouTube videos embedded in other websites, and <strong>YouTube Music</strong> (music.youtube.com): the <strong>DS</strong> button and the dual subtitles appear there too.</li>
+<li><strong>Any website with video or audio</strong>: Vimeo, VK, news sites, podcasts, online courses, live TV sites. If the video has its own subtitles they are used and translated; otherwise you can have them transcribed.</li>
+<li><strong>Media files opened directly in the browser</strong>, from a link or from your computer (mp4, webm, mp3, m4a, ogg, wav, flac…): transcription starts by itself when you press Play.</li>
+<li><strong>It does not work</strong> on DRM-protected sites (Netflix, Disney+, Prime Video…): the browser doesn't let extensions listen to their audio. The popup's status line tells you.</li>
+<li>To turn the extension off on a particular site: popup → <strong>⚙ Altro → Attiva su questo sito</strong> (<em>more → enable on this site</em>) for videos, <strong>📄 Pagine e PDF → Attiva su questo sito</strong> for pages.</li>
+</ul>
+<hr />
+<h2 id="6-subtitles-on-the-video">6. Subtitles on the video</h2>
+<h3 id="turning-them-on-and-off-the-ds-button">Turning them on and off: the DS button</h3>
+<ul>
+<li><strong>On YouTube</strong> there's a <strong>DS</strong> button in the player's control bar, next to CC. <strong>On other sites</strong> it's a small "DS" in the top-right corner of the video.</li>
+<li><strong>On</strong> (yellow border): dual subtitles are shown. <strong>Off</strong>: they disappear and transcription stops, so no quota is used.</li>
+<li>If the dual subtitles disappear for any reason, press DS and they come back. Repeated or double clicks on DS count as one (before, they turned it on and off in a loop).</li>
+<li><strong>Steadier YouTube CC</strong>: if CC is on but the text doesn't reach Sottotitoli Doppi, after 6 seconds the extension turns CC off and on by itself (once per video); the subtitle text is downloaded again with three attempts and, when you turn CC back on, it is sent again even if it's the same as before.</li>
+<li>The same switch is in the popup: <strong>Sottotitoli doppi nei video</strong> (<em>dual subtitles in videos</em>).</li>
+</ul>
+<h3 id="the-two-buttons-next-to-the-subtitles">The two buttons next to the subtitles</h3>
+<p>Hover the subtitles and two buttons appear on the right:
+- <strong>⚑ — Wrong line?</strong> Opens a card with:
+  - <strong>↻ Ritraduci</strong> (<em>translate again</em>): asks for that line's translation again (it jumps the queue);
+  - <strong>🎙 Ritrascrivi</strong> (<em>transcribe again</em>, only for transcribed lines): Whisper listens to that line again with its most accurate model;
+  - <strong>✎ Correggi a mano</strong> (<em>correct by hand</em>): type the right original and/or translation yourself;
+  - <strong>✕ Togli</strong> (<em>remove</em>): for invented lines, e.g. during music.</p>
+<p>Corrections are saved with the video and are included in downloaded files.
+- <strong>⧉ — Copy or look up the line.</strong> Pauses the video and shows the line, which you can select with the mouse:
+  - <strong>Copia originale</strong>, <strong>Copia traduzione</strong>, <strong>Copia tutte e due</strong> (<em>copy original / translation / both</em>): if you select part of the text, only that part is copied;
+  - <strong>Apri in: Google Traduttore · DeepL · Reverso</strong> (<em>open in</em>): the line (or the selected part) opens in a new tab with the languages already set. Reverso shows words inside many real sentences. For language pairs Reverso can't open directly (e.g. Czech), the text is copied: just paste it into Reverso's box.</p>
+<h3 id="appearance">Appearance</h3>
+<p>Popup → <strong>🎨 Aspetto dei sottotitoli</strong> (<em>subtitle appearance</em>): what to show (both lines, original only, translation only), translation above or below, text size and translation size, colours, background, height on the video, font. Changes show immediately; <strong>Ripristina l'aspetto predefinito</strong> restores the defaults.</p>
+<p>Popup → <strong>⚙ Altro → Nascondi i sottotitoli del sito</strong>: hides the site's own subtitles so you don't see them twice.</p>
+<hr />
+<h2 id="7-learning-with-words">7. Learning with words</h2>
+<h3 id="the-word-card">The word card</h3>
+<ul>
+<li><strong>Hover</strong> a word in the original line: the video pauses and a card shows its meaning from Google's dictionary (free, no quota used).</li>
+<li><strong>Click</strong> the word: the card stays open, with Google's meaning (no tokens used).</li>
+<li><strong>✨ Spiega con …</strong> (<em>explain with…</em>, the button in the card): asks your chosen service (Gemini, Groq, Mistral, Claude…) for <strong>its meaning in that sentence</strong>: base form (e.g. <em>went → go</em>), part of speech, explanation and an example, plus pronunciation and etymology if missing. One request, <strong>only when you press the button</strong>: the model never starts by itself.</li>
+<li>On the card:</li>
+<li><strong>🔈</strong> pronunciation with the synthetic voice (the code next to it, e.g. <em>DA</em>, shows the language); when a real recording of the word exists (Wiktionary), <strong>🔊</strong> appears next to it. Everywhere: <strong>🔊</strong> = real recording, <strong>🔈</strong> = synthetic voice;</li>
+<li><strong>☆</strong> save to your vocabulary;</li>
+<li><strong>↺ Riascolta la frase</strong> (<em>replay the line</em>): goes back to the start of the line and stops at the end;</li>
+<li><strong>Copia la parola / Copia la frase</strong> (<em>copy word / line</em>);</li>
+<li><strong>Apri in:</strong> Google Translate, DeepL, Reverso, <strong>WordReference</strong> (between English and Italian, Spanish, French, German, Portuguese) and <strong>Wiktionary</strong> (explains almost any word in almost any language).</li>
+<li>Close the card with <strong>×</strong> or <strong>Esc</strong>. When you move the mouse away from the subtitles the video resumes (you can turn this off: <strong>📖 Scheda delle parole → Pausa del video quando passi sulle parole</strong>, <em>pause the video when hovering words</em>).</li>
+<li>Explanations are saved even after closing the browser: the same word in the same sentence is never requested twice.</li>
+</ul>
+<h3 id="learning-tools">Learning tools</h3>
+<p><strong>Google dictionary</strong> (same request as the translation, free): translations ranked by usage with reverse translations on hover, definitions in the word's own language, synonyms and "see also", and "Did you mean…" in the spelling check. Definitions also come from the Wiktionary edition of the word's language (or English Wiktionary), each with <strong>translate</strong>. <strong>Aa</strong> next to the subtitles shows Latin letters above each letter of Cyrillic, Greek, Armenian, Georgian, Hebrew, Japanese kana and Korean (above each word for Arabic, Persian, Urdu, Hindi): built-in tables, no service; kanji/Chinese lines get a whole-line reading from Google (free). Anki images can be checked and changed before saving (‹ ›, «altre…», ✕) and in the vocabulary (🖼); sources in popup → Anki. <strong>Parole che conosco</strong> (popup) opens the frequency list with import/export and <strong>⇄ Sincronizza adesso</strong> (direct sync of known words with Parole al Volo, no file); <strong>⇄</strong> in the vocabulary page moves vocabulary and known words to and from Parole al Volo. Level badges are clickable: «livello ≈ B1 ›» (indicative A1–C2 from the frequency rank) opens the words of that level, and for Japanese «JLPT N5 ›» opens the whole JLPT level word list (Jisho). <strong>Kanji / Chinese characters one by one</strong>: in the card of a Japanese or Chinese word, «Kanji uno per uno» has a button per character; it shows that character alone (meaning, readings in every language — on/kun, pinyin, Cantonese, Korean, Vietnamese —, clickable parts and radical, simplified/traditional form, strokes, JLPT/grade, HSK, Korean school hanja) with «scheda del carattere ›» to open it as a word (vocabulary, Anki) and «‹ Torna alla parola» to go back. Free (built-in Unihan/KANJIDIC/HSK data + Google), no model requests; «☆ salva il kanji» / «☆ salva tutti i kanji» save the single characters to the vocabulary. Only when you press it, <strong>✨ Spiega il kanji con …</strong> asks the explanations model (one request) for meanings, readings, common words, parts, a memory hint and the origin; the explanation is saved. In the <strong>kanji page</strong> the clicked character's card appears <strong>next to</strong> the list (on the right; at the bottom on narrow screens), even far down; ✕ closes it. On the tiles, on hover, <strong>✓</strong> (known) and <strong>☆</strong> (save to vocabulary) work without opening the card; in the card ☆, «lo conosco?» and <strong>✨ Spiega</strong>. The <strong>Mostra</strong> menu filters: all, to learn, known, saved. <strong>Pronunciation on Anki cards</strong> (popup → Anki → «Metti la pronuncia nelle carte di Anki», on by default): the card front gets the word's audio — a <strong>native speaker's recording</strong> (Wiktionary) when there is one for the exact word, otherwise Google's <strong>synthetic voice</strong> — from the card's Anki button, automatic sending with ☆ (videos and pages) and the vocabulary's «Manda ad Anki». <strong>↺</strong> left of the subtitles replays the sentence, or (yellow) jumps back to the sentence you were reading while the video moved on. <strong>Synced live streams</strong> (popup → <strong>🎙 Trascrizione → «Dirette sincronizzate»</strong>): on YouTube live streams the video is kept behind while the yt-dlp helper reads the audio further on, so transcribed subtitles appear on time (needs the yt-dlp helper with ffmpeg); how far behind: <a href="#how-far-behind-the-live-stream">section 11</a>. An orange <strong>🔊*</strong> means the recording is of another form of the word. <strong>⚑ Wrong translation?</strong> under the meaning lets you redo it with Google or the model, or fix it by hand.</p>
+<p>Below the meaning, the word card shows extra help, all <strong>free and without keys</strong>; each one can be switched off in the popup → <strong>📖 Scheda delle parole</strong> (<em>word card</em>): word <strong>frequency</strong>, <strong>"la conosco?"</strong> (known words turn green in the subtitles and the popup shows what percentage of the video's words you know), noun <strong>gender</strong>, a <strong>spelling check</strong> (LanguageTool or the dictionary; when you click the word, the model also gives a 0-100 score in the same request), the word's <strong>etymology</strong>, a <strong>native speaker recording</strong> (the 🔊 button at the top of the card) and a <strong>conjugation/declension table</strong> (Wiktionary), and up to 3 <strong>real example sentences</strong> (Tatoeba). Clicking the word, the single request to the model also brings <strong>false friends</strong> and <strong>related words</strong>. Next to "↺ Riascolta la frase" there are <strong>🐢 slow</strong> and <strong>🔁 ×3</strong>. Optional (off by default): an <strong>image</strong> from Wikimedia Commons on your Anki cards.</p>
+<h3 id="from-the-translation-back-to-the-original">From the translation back to the original</h3>
+<ul>
+<li><strong>Hover a word in the translation</strong>: the original word it comes from lights up and a label shows it. Click → card for the original word.</li>
+<li>By default Google makes the link (free, approximate: the label says "circa"). Turn on <strong>📖 Scheda delle parole → Modi di dire e collegamento tra le parole anche dal modello</strong> (<em>idioms and word linking from the model too</em>) in the popup to have the AI model make it precise (one request every 8 lines, while hovering).</li>
+<li><strong>Particles</strong>: articles, prepositions and auxiliaries that the translation adds but that don't translate any original word are <strong>dotted-underlined</strong>. Hover one and the "particella" label tells you which part of the original it belongs to.</li>
+<li><strong>The other way round</strong>: hovering an original word highlights its translation (particles more faintly); without the model, Google dictionary translations of the word are used, matched even with a different ending.</li>
+</ul>
+<h3 id="phrases-and-expressions">Phrases and expressions</h3>
+<ul>
+<li><strong>🎯 Rifai più precisa</strong> (<em>redo more precisely</em>): under a model's explanation, asks the same service again with more reasoning and knowing what was there before (meaning and explanation): for when it was vague or wrong. One request, only when you press it; the new one stays in the 🗂 saved ones.</li>
+<li><strong>Moving the card</strong>: drag the <strong>⠿</strong> grip at the top; the position stays for the next cards, double-click the grip = back where it was.</li>
+<li><strong>The sentence translation</strong> sits at the bottom of the card, small and in italics (as in Parole al Volo); if the model redid it together with the explanation, that one is shown.</li>
+<li><strong>📈 usage over time</strong>: the chart of how often the word (or idiom, up to 5 words) appears in books from 1800 to today (Google Books Ngram: English, French, German, Italian, Spanish, Russian, Hebrew, Chinese). It appears by itself at the bottom of the card after a moment (one free request to Google per word, remembered); <strong>hover the chart</strong>: a line follows the mouse, year and value appear next to the point, and the text below gives the times per million words. «Apri il grafico completo ↗» opens Google Books Ngram. Turn it off in popup → 📖 Scheda delle parole → «Grafico dell'uso nel tempo» (the 📈 button stays). Every entry in the 📒 vocabulary has its own <strong>📈 Uso nel tempo</strong>.</li>
+<li><strong>Idioms</strong>: expressions that can't be translated word by word (<em>break the ice</em>, <em>kick the bucket</em>…) are <strong>underlined in orange</strong>, with no extra requests: from Wiktionary's idiom dictionary (downloaded once per language, searched on your computer; simple inflections like «kicked the bucket» and person slots like «pulling my leg» are recognised), from the translation when a model translates the subtitles (it lists them <strong>in the same request</strong>), and the ones already seen. Hover one and the whole expression lights up with its meaning. In a word's card, <strong>🔎 Modi di dire con questa parola</strong> (<em>idioms with this word</em>) asks the model (one request). Asking the model on its own — <strong>Modi di dire e collegamento tra le parole anche dal modello</strong> (videos, one request every 8 lines on hover) and <strong>Modi di dire anche dal modello, da soli</strong> (pages) — is off by default and on only in «🏆 Qualità»; <strong>Modi di dire sottolineati nei sottotitoli (gratis)</strong> and <strong>Modi di dire sottolineati sulle pagine (gratis)</strong> turn the underlining off.</li>
+<li><strong>Select in the original</strong>: press on the first word and drag to the last → card with the meaning of the whole expression.</li>
+<li><strong>Select in the translation</strong>: drag across several translated words → the matching part of the original lights up; the label offers <strong>Spiega</strong> (<em>explain</em>), <strong>Copia</strong> (<em>copy</em>) and the lookup links. Close with Esc.</li>
+</ul>
+<h3 id="pronunciation">Pronunciation</h3>
+<p><strong>Voice per language</strong>: ⚙ next to 🔈 in the word card lets you pick the voice for that language (saved). <strong>Azure Speech</strong> (free key, 500,000 characters a month): Microsoft's "Natural" voices in any browser, Firefox included — popup → 🔈 Voce.</p>
+<p>The language is taken from the word or the video. The voice is your computer's (Edge's "Natural" voices are excellent); if missing, Google's online voice is used. While it speaks, the video is turned down and then restored.</p>
+<p>Popup → <strong>🔈 Voce</strong> (<em>voice</em>): language (searchable list of 98 languages), voice, <strong>Prova la voce</strong> (<em>test the voice</em>).</p>
+<p><strong>Free Piper voices (1.7.0).</strong> Piper (<a href="https://piper.ttstool.com/">piper.ttstool.com</a>) are free neural voices that run <strong>on your computer</strong>, with no keys or server, in about 35 languages (Italian, English, German, French, Spanish, Czech, Russian, Ukrainian, Polish, Turkish, Dutch, Arabic, Chinese…; Japanese and Korean are not available). In the popup → 🔈 Voce pick the language first: the voice menu then shows the group <strong>Voci Piper gratuite (sul computer)</strong> with that language's voices (name, quality, size). Pick one and press <strong>⬇ Scarica la voce</strong> (download; 20-110 MB from HuggingFace, once; it then stays in the browser and works offline), or it downloads itself the first time you use it. You can also pick it from the word card (<strong>⚙</strong> next to 🔈): voices still to download are marked «da scaricare», ready ones «✓». If Piper fails, the extension falls back to the next voice (computer, Google). <strong>Elimina dal computer</strong> (delete) removes a voice. <strong>Already have a voice:</strong> voices downloaded by other extensions (for example Read Aloud) cannot be read, because each extension has its own closed storage; if a voice's files are already on your computer (<code>.onnx</code> and <code>.onnx.json</code>, with the original names such as <code>it_IT-riccardo-x_low.onnx</code>), <strong>📂 Ho già una voce Piper: importa i file</strong> (import the files) copies them into the extension without downloading anything. If another extension registers its voices as system voices, they already appear under «Voci installate sul computer». The first sentence after start-up may take a second or two; memory is released after 3 minutes without speaking. The package is about 30 MB bigger because it contains the engine (onnxruntime-web, MIT) and the text-to-sounds converter (espeak-ng, GPL-3 licence, and piper-phonemize, MIT); the voices come from rhasspy/piper-voices (each voice has its own licence, usually permissive).</p>
+<p><strong>Piper voices on your Speaches server (1.7.0).</strong> If you use Speaches for on-computer transcription, turn on «Mostra anche le voci Piper del mio server Speaches» (popup → 🔈 Voce): its Piper voices for the chosen language appear, already installed (✓) or to install with one click (⬇ Installa sul server). The address is the same as on-computer transcription. Useful if you want the voices without the weight in the browser.</p>
+<hr />
+<h2 id="8-on-web-pages">8. On web pages</h2>
+<p>On any page (articles, Wikipedia, online books…) words in another language have their card. Over video subtitles these cards don't appear: the ones from <a href="#7-learning-with-words">section 7</a> are already there.</p>
+<ul>
+<li><strong>Hover a word</strong> (stay still a moment): the card shows the word, its translation and Google's dictionary, <strong>IPA pronunciation</strong> and Latin-letter transcription for other alphabets, <strong>etymology</strong> from Wiktionary (following the chain back to the root, even through other languages; for inflected forms taken from the parent word when the link is certain), the <strong>sentence</strong> with its translation, 🔈/🔊 to listen, ☆ to save, copy buttons and links to Google Translate, DeepL, Reverso, WordReference and Wiktionary, plus the same learning tools as in videos.</li>
+<li>With a <strong>Gemini or Groq</strong> key, <strong>"Spiega con Gemini"</strong> (<em>explain with…</em>, one request) gives the meaning <em>in that sentence</em>, the base form, whether it's part of an idiom, an example, and in the same request etymology, IPA, false friends (only real ones, compared with words of your language), related words and a spelling score. Everything is written in the language you translate into: an answer in the wrong language is asked again or dropped.</li>
+<li><strong>Idioms</strong>: the card reports the idiom the word belongs to (the other words get a light dashed underline): from Wiktionary's idiom dictionary (free, with a link to its page; the meaning comes with «Spiega con…»), or found earlier. <strong>🔎 Modi di dire con questa parola</strong> asks the model for the idioms of the sentence containing that word (one request). They are remembered, and <strong>☆ Salva il modo di dire</strong> (<em>save the idiom</em>) puts it in your vocabulary.</li>
+<li><strong>Selecting several words</strong> opens a panel with the translation of the whole text, transcription, IPA on request, listening, ☆ and Anki; with a model also <strong>"Traduci meglio"</strong> (<em>translate better</em>).</li>
+<li><strong>🔎 Modi di dire con questa parola</strong> (<em>idioms with this word</em>): finds the idioms that contain the word <strong>in general, also outside this sentence</strong>: first the free Wiktionary list, then the model (one request, only when you press it) with meaning and example for each. Those in the sentence stay underlined. <strong>Every word of a found idiom (and of an expression whose card you open) is a button</strong>: press it to look for other idioms with that word. ☆ saves an idiom in the vocabulary. If the model is busy (temporary error, «high demand») the request repeats by itself a couple of times and then moves to the next model.</li>
+<li><strong>⚑ Traduzione sbagliata?</strong> (<em>wrong translation?</em>): redo with Google or with the model, correct by hand (saved), or change the detected language (also for the whole site).</li>
+<li>Popup → <strong>📄 Pagine e PDF</strong> (<em>pages and PDFs</em>):</li>
+<li><strong>Parole al Volo sulle pagine e nei PDF</strong>, at the top of the popup, turns everything on and off (<strong>Alt+Shift+Y</strong>);</li>
+<li><strong>Scheda passando il mouse</strong> (<em>card on hover</em>, <strong>Alt+Shift+M</strong>) and <strong>Traduzione del testo selezionato</strong> (<em>translation of selected text</em>, <strong>Alt+Shift+S</strong>) work separately; shortcuts can be changed at <code>edge://extensions/shortcuts</code> (Chrome: <code>chrome://extensions/shortcuts</code>; Firefox: about:addons → ⚙ → Manage Extension Shortcuts);</li>
+<li><strong>Attiva su questo sito</strong> (<em>enable on this site</em>), when the card appears and after how long, <strong>Traduzione della frase nella scheda</strong> (<em>sentence translation in the card</em>) and <strong>Pronuncia la parola quando si apre la scheda</strong> (<em>speak the word when the card opens</em>);</li>
+<li><strong>Lingua del testo</strong> (<em>text language</em>): usually detected automatically; if it's often wrong, set it here for all sites or just the open one;</li>
+<li>known words in green on the page, vocabulary words underlined, idioms found and underlined, Latin letters in the card;</li>
+<li><strong>📄 Apri questo PDF qui</strong>, <strong>📄 Lettore PDF</strong> and <strong>Apri sempre i PDF nel lettore dell'estensione</strong> (<a href="#9-pdf-files">section 9</a>).</li>
+<li>The service for pages is chosen under <strong>📊 Consumo e modelli → Modello per ogni compito → Testi delle pagine e PDF</strong>. IPA, etymology and the other card tools are in <strong>📖 Scheda delle parole</strong>, shared with videos.</li>
+<li>Requests: Google is free; the model only when you press its buttons.</li>
+</ul>
+<hr />
+<h2 id="9-pdf-files">9. PDF files</h2>
+<p>The browser's PDF viewer doesn't let extensions in, so the extension has its own reader (Mozilla's pdf.js) with the same cards and selection translation.</p>
+<ul>
+<li>Popup → <strong>📄 Pagine e PDF → «📄 Apri questo PDF qui»</strong> (<em>open this PDF here</em>) when the tab shows a PDF, or <strong>«📄 Lettore PDF»</strong> → «📂 Apri un PDF…» for a file on your computer; <strong>«Apri sempre i PDF nel lettore dell'estensione»</strong> (<em>always open PDFs in the extension's reader</em>) opens every PDF there automatically.</li>
+<li><strong>Wrong characters</strong> («Pøíliš», «P¯ÌliöÌ», «Ïðèâåò» instead of «Příliš», «Привет»): many older PDFs store text in one encoding but declare another. The reader notices and fixes it by itself (Central European, Cyrillic, Greek, Turkish, Baltic, Hebrew, Arabic, Thai, Vietnamese, Mac and DOS encodings, double-encoded UTF-8, Chinese/Japanese/Korean); the bar says which encoding it fixed, and <strong>«Caratteri»</strong> lets you choose by hand. Accents written separately (LaTeX: «ˇcesk´y») are joined to their letter.</li>
+<li><strong>Scanned books</strong> (archive.org, Google Books…): the pages are images (JBIG2, JPEG 2000) and are shown; when the PDF contains the recognised text (OCR), cards work too.</li>
+</ul>
+<hr />
+<h2 id="10-your-vocabulary">10. Your vocabulary</h2>
+<ul>
+<li>On a word or expression card press <strong>☆</strong>: it's saved with the sentence, its translation and the moment in the video.</li>
+<li>Saved words are <strong>underlined in light blue</strong> in the subtitles of every video.</li>
+<li>Popup → <strong>📒 Vocabolario</strong> (<em>vocabulary</em>): search, reopen the video at the right moment, mark a word as learned (it's no longer highlighted) or delete it.</li>
+<li><strong>Card layout</strong> (one, for direct sending, the file and the update): front: the word in bold with its pronunciation, the sentence in italics with the word in bold, and the image, each on its own line; back: meaning in bold, base form and part of speech, /IPA/, small gender and etymology, the explanation (and the other saved explanations), idioms, the sentence translation in italics, and the link to the video or page. Pronunciation and image are files put in Anki (no longer glued to the end of the front).</li>
+<li><strong>Rimanda ad Anki</strong> (<em>send to Anki again</em>; the entry's button, or <strong>Anki</strong> in the card): if the card is already in Anki (same language and word) it <strong>updates</strong> it instead of duplicating; «Manda ad Anki» (all) leaves existing ones as they are and says how many. An error on one card doesn't stop the others: at the end you get the list of failed ones with the reason.</li>
+<li><strong>🔄 Aggiorna le carte già in Anki</strong> (popup → Anki, or the panel of the same name in the vocabulary): reads the cards tagged «sottotitoli-doppi» or «parole-al-volo» and redoes them: <strong>tidy layout</strong>, <strong>pronunciation</strong> (also where there is one already, if you want), <strong>missing data</strong> (meaning, base form, IPA, gender, etymology, sentence translation and idioms from the dictionary: free) and, only if you tick it, <strong>a new explanation, different from the ones already there</strong> (added below the others) and <strong>idioms with the word looked up by the model</strong> (one request each). Choose which cards (all, the language chosen above, only without pronunciation); <strong>Controlla</strong> (<em>check</em>) says what's missing without changing anything, <strong>Ferma</strong> (<em>stop</em>) interrupts and <strong>↩ Annulla l'ultimo aggiornamento</strong> (<em>undo the last update</em>) puts front and back back as they were. Cards that aren't in the vocabulary are read from the card itself (anything it doesn't recognise stays in the explanation).</li>
+<li><strong>✨ Completa</strong> (<em>complete</em>, on every vocabulary entry): adds the missing data (free); <strong>✨ + modello</strong> also a new explanation and idioms. Then «Rimanda ad Anki» updates the card.</li>
+<li><strong>Esporta per Anki</strong> (<em>export for Anki</em>): downloads a text file. In Anki: <em>File → Import</em> → choose the file (note type "Basic"). Front: the word with its sentence; back: meaning, translation and link to the video.</li>
+</ul>
+<hr />
+<h2 id="11-videos-without-subtitles-transcribing-the-audio">11. Videos without subtitles: transcribing the audio</h2>
+<p>If a video has no subtitles, the extension listens to the audio and transcribes it with <strong>Whisper</strong>; the lines are then translated like any others, with interactive words.</p>
+<h3 id="one-time-setup">One-time setup</h3>
+<ol>
+<li>Create a free key at <strong>console.groq.com/keys</strong> (no credit card).</li>
+<li>Popup → <strong>🔑 Servizi → Groq</strong>: paste it and press Enter.</li>
+</ol>
+<h3 id="three-ways-to-transcribe-popup-trascrizione">Three ways to transcribe (popup → 🎙 Trascrizione)</h3>
+<ul>
+<li><strong>Mentre guardo</strong> (<em>while watching</em>): transcribes what you're watching, a few seconds behind. A quick Google translation appears first (slightly transparent) and is then replaced by your chosen service's translation.</li>
+<li><strong>Completa</strong> (<em>complete</em>): as soon as you open the video, the whole audio is downloaded and transcribed in chunks, starting from where you are. Subtitles stay in sync even when you skip around. On YouTube, Vimeo and similar sites it needs the <strong>yt-dlp helper</strong> (below); direct media files don't.</li>
+<li><strong>Spenta</strong> (<em>off</em>): doesn't start by itself; start it with <strong>🎙 Trascrivi l'audio di questo video</strong> (<em>transcribe this video's audio</em>).</li>
+</ul>
+<p><strong>Normal videos, transcription starting midway</strong>: when the transcription starts (by itself, from the button or after «Rifai»), the video <strong>goes back 20 seconds</strong> (choose in popup → 🎙 Trascrizione → «Video normali: quando parte la trascrizione, torna indietro di…»: 0, 10, 20, 30, 60 s), as in synced live streams: the lines are ready when you get there. Once per video, not in the first seconds, and not if the transcript already covers that point.</p>
+<p><strong>Redoing the transcription</strong>: if it came out badly, <strong>🎙 Rifai la trascrizione</strong> (<em>redo the transcription</em>, in 🎙 Trascrizione or in the ⚑ card on the video) deletes it and starts again from scratch; with Groq there's also <strong>Rifalla con il modello più preciso</strong> (<em>redo it with the most accurate model</em>: whisper-large-v3, slower but makes fewer mistakes).</p>
+<p>You can choose a mode <strong>for all videos without subtitles</strong> and a different one <strong>for this video</strong>. «Completa» only for videos up to… minutes prevents a long film opened by mistake from using up your quota.</p>
+<h3 id="the-yt-dlp-helper">The yt-dlp helper</h3>
+<p>Browsers don't let extensions download audio from YouTube, so a small helper program is installed once. It's needed for <strong>Completa</strong> transcription on YouTube, Vimeo and similar sites and for <strong>synced live streams</strong>. <strong>Since 1.7.23 Python is no longer needed</strong>: the helper is a single executable file (Windows, Mac Intel and Apple, Linux Intel/AMD and ARM); the installer only downloads yt-dlp, Deno and, for live streams, ffmpeg. On Mac and Linux <code>curl</code> and <code>unzip</code> are needed (usually already there).
+1. Popup → <strong>🎙 Trascrizione → ⚙ Programma per yt-dlp: installa o controlla</strong> (<em>yt-dlp helper: install or check</em>).
+2. Download the installer and run it (on Windows double-click; if Windows warns you: <em>More info → Run anyway</em>).
+3. Go back to the page and press the check button: it must say it is installed and working.</p>
+<p>yt-dlp updates itself; when the extension needs a newer helper program, the page says so («vecchio: rilancia l'installatore», <em>old: run the installer again</em>). The audio is only used for transcription and then deleted (YouTube's terms don't allow downloading videos).</p>
+<h3 id="transcription-language">Transcription language</h3>
+<ul>
+<li><strong>Lingua parlata</strong> (<em>spoken language</em>): leave it on automatic detection. The extension decides the language from the first chunks with enough speech and then <strong>forces it on Whisper</strong>, so it doesn't switch languages or write an English translation instead of a transcription. Real language changes in the video are still followed.</li>
+<li>If Whisper gets a video's language wrong, choose it yourself (the list has a search box).</li>
+</ul>
+<h3 id="corrected-transcription">Corrected transcription</h3>
+<p><strong>✎ Correggi la trascrizione</strong> (<em>correct the transcription</em>): a model fixes the words Whisper misheard and removes sentences invented during music or noise, before translation (small corrections in the same language only).
+- <strong>solo le frasi incerte</strong> (<em>only uncertain sentences</em>, default): Whisper says how sure it is of each sentence; only the uncertain ones are corrected. About half the requests;
+- <strong>tutte le frasi</strong> (<em>all sentences</em>);
+- <strong>spenta</strong> (<em>off</em>): sentences stay as Whisper heard them.</p>
+<p>With Gemini and the other models that translate, the correction happens in the same request as the translation (no extra request). With Google, DeepL or Microsoft a separate model (Gemini or Groq) does it, in batches. DeepL translates very well, but it also translates the misheard words: the correction is still useful. With YouTube subtitles it's never needed (no Whisper).</p>
+<h3 id="how-far-behind-the-live-stream">How far behind the live stream</h3>
+<p>With <strong>synced live streams</strong> (popup → 🎙 Trascrizione → <strong>Quanto indietro guardi la diretta</strong>, <em>how far behind you watch the stream</em>): 20 s (fast), 45 s (balanced), 90 s (saving), 2 minutes (maximum saving).</p>
+<p>The further the video is behind the live edge, the more time there is to prepare subtitles before they're needed, and the less you spend:
+- audio goes to Whisper in <strong>longer pieces</strong> (about 5–10 s with 20 s; 20–30 s with 2 minutes): fewer Groq requests, and Whisper understands better with more context;
+- transcribed sentences <strong>wait and are translated in groups</strong>. A group is sent when there are enough sentences (12 with 20 s, up to 24 with 2 minutes) or when the first waiting sentence is about to appear on the video: <strong>20 seconds before</strong> with 20 s, <strong>15</strong> with 45 s, <strong>10</strong> with 90 s and 2 minutes.</p>
+<p>Why waiting until 10 seconds before instead of 20 saves requests: the sentences to translate are always the same (each one is translated once). Only <strong>how many requests</strong> they are split into changes. Example: sentence A is ready 35 seconds before it appears. Translating 20 seconds before means waiting 15 seconds and sending A with the sentences that arrived in those 15 seconds (about 3). Translating 10 seconds before means waiting 25 seconds (about 5 sentences). Same sentences, fewer requests; tokens are nearly the same (slightly fewer: the model's instructions are repeated less often). Free quotas mostly count requests. If the good translation arrives late, Google's quick one is shown meanwhile.</p>
+<p>In exchange, the further behind you are, the later you see the stream (the chat runs ahead of you). When paused nothing is transcribed beyond the <strong>maximum lead</strong> (90 s by default, in 📊 Consumo e modelli).</p>
+<h3 id="transcribing-on-your-own-computer">Transcribing on your own computer</h3>
+<p>With a Whisper server compatible with the OpenAI API (e.g. Speaches): its address (usually <code>http://localhost:8000/v1</code>) in <strong>🔑 Servizi → Server Whisper sul tuo computer</strong>, then in <strong>📊 Consumo e modelli → Modello per ogni compito → Trascrizione dell'audio</strong> choose «Server Whisper sul tuo computer» and the model (↻ loads the server's list).</p>
+<h3 id="firefox_1">Firefox</h3>
+<p>To capture audio Firefox has to mute the video; the extension immediately sends the sound back to your speakers. If you hear nothing or transcription doesn't start, click the video once.</p>
+<hr />
+<h2 id="12-the-trascrizione-e-traduzione-page">12. The "Trascrizione e traduzione" page</h2>
+<p>Open it from the popup with <strong>📜 Testo del video</strong> (<em>the video's text</em>). It contains the whole text of the current video.</p>
+<ul>
+<li><strong>Testo unico</strong> (<em>single text</em>): original and translation in paragraphs (or just one of them), for reading.</li>
+<li><strong>Frase per frase (e correzioni)</strong> (<em>line by line, with corrections</em>): every line with its time and the buttons <strong>⧉</strong> (copy), <strong>↻</strong> (translate again), <strong>🎙</strong> (transcribe again), <strong>✎</strong> (correct), <strong>✕</strong> (remove).</li>
+<li><strong>Select and copy</strong>: select part of the text with the mouse → a bar appears above it with <strong>Copia</strong> (<em>copy</em>) and links to Google Translate, DeepL, Reverso (if you select in the translation, the direction is reversed). The page never redraws while you're selecting.</li>
+<li><strong>Copia il testo</strong> (<em>copy the text</em>), <strong>Scarica testo (.txt)</strong>, <strong>Sottotitoli originali / tradotti / doppi (.srt)</strong>: to keep them or use them in another player.</li>
+<li><strong>Trascrivere un file intero</strong> (<em>transcribe a whole file</em>): from your computer or from the tab's video, without watching it. Works even with no video open.</li>
+<li><strong>Carica sottotitoli da file (.srt, .vtt)</strong>: for films that come with separate subtitle files.</li>
+<li><strong>🔁 Rifai solo la traduzione</strong> (<em>redo only the translation</em>, popup → 🎙 Trascrizione): deletes only the translation (of a transcript or of YouTube subtitles) and redoes it with the chosen service, leaving the text alone. If the transcription runs ahead and the translation stays behind (slow model, queued requests), after 5 seconds the lines already past get Google's quick translation and the queue restarts.</li>
+<li><strong>Rifai la traduzione / Rifai la trascrizione</strong> (<em>redo the translation / transcription</em>): deletes what's saved for the video and does it again (your manual corrections are kept).</li>
+</ul>
+<h3 id="translating-with-a-chat-without-using-any-quota">Translating with a chat, without using any quota</h3>
+<ol>
+<li>Press <strong>Copia trascrizione</strong> (<em>copy transcription</em>): it copies the numbered lines with instructions (long videos in parts of 250 lines: the button tells you which part it will copy).</li>
+<li>Paste them into a chat (ChatGPT, Claude, Gemini…) and copy its answer.</li>
+<li>Press <strong>Incolla traduzione</strong> (<em>paste translation</em>), paste the answer and confirm. The extension reads the numbered lines, checks that it really is a translation and uses it on the video. It stays saved.</li>
+</ol>
+<hr />
+<h2 id="13-translation-services">13. Translation services</h2>
+<p>Keys are pasted in the popup, <strong>🔑 Servizi</strong> (<em>services</em>): each service has its own box (with <strong>Crea una chiave</strong>, <em>create a key</em>, to reach the right page) and, for language models, the <strong>Modello predefinito</strong> (<em>default model</em>) menu (<strong>↻ Carica modelli</strong>, <em>load models</em>, fetches the real list from the service; «✎ un altro» to type a name). Who does each job (subtitles, pages, transcription, explanations…) is chosen in <strong>📊 Consumo e modelli → Modello per ogni compito</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Cost</th>
+<th>Quality</th>
+<th>What you need</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google Translate</td>
+<td>free</td>
+<td>fair</td>
+<td>nothing</td>
+</tr>
+<tr>
+<td><strong>Gemini</strong> ⭐ recommended</td>
+<td>free</td>
+<td>excellent, follows the conversation</td>
+<td>key from aistudio.google.com/apikey</td>
+</tr>
+<tr>
+<td>Groq</td>
+<td>free</td>
+<td>good, very fast</td>
+<td>key from console.groq.com/keys (the same as for transcription)</td>
+</tr>
+<tr>
+<td>Mistral</td>
+<td>free</td>
+<td>good, great for European languages</td>
+<td>key from console.mistral.ai</td>
+</tr>
+<tr>
+<td>OpenRouter</td>
+<td>free (":free" models)</td>
+<td>varies</td>
+<td>key from openrouter.ai/keys</td>
+</tr>
+<tr>
+<td>Microsoft Translator</td>
+<td>free up to 2 million characters a month</td>
+<td>very good</td>
+<td>Azure account, "Translator" resource on the F0 plan: key and <strong>region</strong> (e.g. <em>westeurope</em>)</td>
+</tr>
+<tr>
+<td>DeepL</td>
+<td>free up to a monthly limit</td>
+<td>very high</td>
+<td>"API Free" key from deepl.com/pro-api (asks for a card for verification)</td>
+</tr>
+<tr>
+<td>Model on your computer</td>
+<td>free, unlimited</td>
+<td>depends on your PC</td>
+<td>Ollama or LM Studio (<a href="#15-a-translation-model-on-your-own-computer">section 15</a>)</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>paid (a few cents per video)</td>
+<td>excellent</td>
+<td>key from console.anthropic.com</td>
+</tr>
+<tr>
+<td>YouTube line by line</td>
+<td>free</td>
+<td>poor</td>
+<td>nothing</td>
+</tr>
+</tbody>
+</table>
+<p>Gemini, Groq, Mistral, OpenRouter, Claude and local models are <strong>AI language models</strong>: besides translating, they understand the conversation, explain words in context, find idioms and correct transcriptions. Google, Microsoft and DeepL are <strong>classic translators</strong>: they translate well but don't do the rest.</p>
+<p>Keys can be shown and copied with the <strong>Mostra</strong> (<em>show</em>) and <strong>Copia</strong> (<em>copy</em>) buttons next to the box (handy for the Kodi add-on). Don't show them in videos or screenshots: anyone who sees a key can use it.</p>
+<h3 id="backup-services">Backup services</h3>
+<p>When the chosen service has used up today's free requests, a yellow notice appears in the popup: it says when they come back (Gemini quotas reset at midnight Pacific Time) and which service is used meanwhile. <strong>"Riprova … adesso"</strong> (<em>retry … now</em>) resumes the video's translation with the chosen service straight away (handy if you changed key or model).
+With <strong>Finite le richieste gratuite, passa a un altro servizio con la chiave</strong> (<em>when free requests run out, switch to another service with a key</em>, on by default), when a service uses up its daily quota the extension carries on with the first other service you've entered a key for, in the order set under <strong>Ordine dei servizi</strong> (by default <strong>Gemini → Groq → Mistral → OpenRouter → Ollama/LM Studio → Claude → Microsoft → DeepL</strong>), and finally <strong>Google</strong>. The exhausted service is skipped until the next day. With Gemini, Groq and Mistral only the used-up <strong>model</strong> is blocked: the other models of the same service are tried first (<a href="#model-for-each-task">Model for each task</a>); the yellow notice says so.</p>
+<h3 id="model-for-each-task">Model for each task</h3>
+<p>In <strong>📊 Consumo e modelli</strong>, the <strong>Modello per ogni compito</strong> sub-menu (opens with a click) has a service menu per job: <strong>video subtitles</strong>, <strong>page and PDF text</strong>, <strong>audio transcription</strong> (Groq Whisper or the server on your computer, with the Whisper model menu), <strong>explanations («✨ Spiega con…»)</strong> (etymologies and kanji explanations too), <strong>transcript correction</strong>, <strong>IPA for selected text</strong> and <strong>word and idiom linking</strong>. «Automatico» uses the first ready model in <strong>Ordine dei servizi</strong>; if the chosen model doesn't answer or is out of requests for today, the first ready one replaces it.</p>
+<p>Under each task there's the <strong>list of models</strong> of the service actually doing that task now, in order. The first ready one is used (in bold). On Gemini, Groq and Mistral free limits are <strong>per model</strong>: when a model runs out of today's requests only that model is blocked («finito oggi», <em>used up today</em>) and the next model is used automatically; only when all are used up does the next service in <strong>Ordine dei servizi</strong> take over. Example: subtitles with Gemini Flash-Lite; Flash-Lite used up → Gemini Flash; both used up → Groq.
+- <strong>↑ ↓</strong> change the order; <strong>Aggiungi</strong> (<em>add</em>) is a menu of the service's models (<strong>↻</strong> loads the real list; «✎ un altro» to type one): the chosen one goes first; <strong>✕</strong> removes a model you added;
+- at the bottom, as a backup, there are always the service's default model (in 🔑 Servizi) and the suggested models for that kind of task (for Gemini: Flash-Lite and Flash; lightest first for translating, best first for explaining).</p>
+<p>A light model for translating and a better one for explaining split the requests between the two.</p>
+<p>Which models for which task (suggestions):</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>What matters</th>
+<th>Suggested</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Video subtitles and live streams</td>
+<td>many lines, speed, many daily requests</td>
+<td><strong>gemini-flash-lite-latest</strong>; Groq (very fast); a light model on your computer (<a href="#15-a-translation-model-on-your-own-computer">section 15</a>)</td>
+</tr>
+<tr>
+<td>Explanations and etymologies</td>
+<td>quality, few requests</td>
+<td><strong>gemini-flash-latest</strong>; Mistral (European languages); Claude (paid)</td>
+</tr>
+<tr>
+<td>Transcript correction</td>
+<td>understanding misheard words</td>
+<td>gemini-flash-lite-latest or Groq</td>
+</tr>
+<tr>
+<td>Word and idiom linking</td>
+<td>speed</td>
+<td>as for subtitles</td>
+</tr>
+<tr>
+<td>IPA for selected text</td>
+<td>knowing phonetics</td>
+<td>gemini-flash-latest</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>request usage</strong> modes (section 14) set Gemini's models by themselves: Flash-Lite for translating and correcting, Flash for explaining (Flash for everything in «Qualità»).</p>
+<h3 id="service-order">Service order</h3>
+<p>The <strong>Ordine dei servizi</strong> (<em>service order</em>) sub-menu lists every service with its state (ready, key missing, model missing, used up for today):
+- <strong>↑ ↓</strong> change the order; unticking the <strong>box</strong> removes a service from the queue;
+- <strong>Usa adesso</strong> (<em>use now</em>) moves it to the top and selects it right away for translating too, then runs a test;
+- <strong>Prova</strong> (<em>test</em>) translates a sample sentence and shows <em>✓ Funziona</em> (with the translation and the seconds taken) or <em>✗ Non funziona</em> with the reason (for Ollama: program not running, OLLAMA_ORIGINS missing, no model chosen…).</p>
+<p>The order is used for backup services, for <strong>✨ Spiega con…</strong> (when translating with Google, DeepL or Microsoft, the first ready model in the queue — only when you press the button), for IPA pronunciation and for transcript correction. To try Ollama: in 🔑 Servizi press «Carica modelli» and pick the model, then here <strong>Usa adesso</strong>.</p>
+<p><strong>Spiegazioni («✨ Spiega con…»)</strong> (<em>explanations</em>), in Modello per ogni compito: a model used only for explanations, different from the subtitle one. For example subtitles with <strong>Gemini</strong> (fast) and explanations with <strong>Ollama</strong> (on your computer: no limits, no requests used up). If the chosen model doesn't answer or is out of requests for today, the first ready model in the queue explains instead, and the card says so; after 5 minutes the chosen one is tried again.</p>
+<p>Models that "think" before answering (Gemma 4, Qwen 3…: Ollama shows "Thinking…") answer without the reasoning when used by the extension, much faster. If your computer struggles (fans, external screen dropping out), use a smaller model such as <code>gemma4:e2b</code>.</p>
+<hr />
+<h2 id="14-request-usage">14. Request usage</h2>
+<p>At the top of the popup, <strong>Consumo delle richieste</strong> (<em>request usage</em>) chooses how much the extension uses the services with a key on its own. It sets the other menus (live stream, correction, idioms, Gemini models); if you then change one by hand, the menu shows <strong>✎ Personalizzato</strong> (<em>custom</em>).</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Synced live stream</th>
+<th>Transcript correction</th>
+<th>Idioms from the model, on its own</th>
+<th>Gemini models</th>
+<th>Gemini requests (about)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🏆 Qualità</strong> (<em>quality</em>)</td>
+<td>20 s behind</td>
+<td>all sentences</td>
+<td>yes</td>
+<td>Flash for everything</td>
+<td>150–250 per hour of live stream</td>
+</tr>
+<tr>
+<td><strong>⚖️ Bilanciato</strong> (<em>balanced</em>, recommended, default)</td>
+<td>45 s</td>
+<td>uncertain only</td>
+<td>no (dictionary and translation yes)</td>
+<td>Flash-Lite to translate, Flash to explain</td>
+<td>60–90 per hour of live stream; a video with subtitles about 10</td>
+</tr>
+<tr>
+<td><strong>💰 Risparmio</strong> (<em>saving</em>)</td>
+<td>90 s</td>
+<td>off</td>
+<td>no</td>
+<td>as Balanced</td>
+<td>30–60 per hour of live stream; a video with subtitles about 10</td>
+</tr>
+<tr>
+<td><strong>🆓 Solo gratis</strong> (<em>free only</em>)</td>
+<td>2 min</td>
+<td>off</td>
+<td>no</td>
+<td>—</td>
+<td>none on its own</td>
+</tr>
+</tbody>
+</table>
+<p>In <strong>Solo gratis</strong> Google Translate translates (your chosen service stays saved for when you change mode) and transcription of videos without subtitles only starts if you start it. Models work only when you press a button («✨ Spiega con…», «🔎 Modi di dire con questa parola»…).</p>
+<p>In <strong>📊 Consumo e modelli</strong>:
+- <strong>Richieste di oggi</strong> (<em>today's requests</em>) per service (Gemini, Groq Whisper…), counted by the extension. The quota day ends at midnight Pacific Time;
+- <strong>Limite di richieste al giorno</strong> (<em>daily request limit</em>) per service: once reached, the backup service takes over as when the free quota runs out (e.g. Gemini 300, to keep some for explanations);
+- <strong>Diretta sincronizzata: trascrivi al massimo così avanti rispetto al video</strong> (<em>maximum lead</em>, 60 s – 4 min): beyond that, audio waits; also when paused.</p>
+<p>Other ways to save:
+- <strong>Nothing is translated twice</strong>: translations, transcriptions, explanations and corrections are all saved. Watching a video again, even one you only partly watched, costs nothing.
+- Translations are requested in <strong>groups of 120 lines</strong>: a two-hour film costs about 12 Gemini requests.
+- Hovering uses Google's free dictionary; the AI model is only used when you click.
+- Gemini's default model is <strong>gemini-flash-lite-latest</strong>, the one with the most free daily requests.
+- Gemini quotas reset at midnight Pacific Time. You can see your usage at aistudio.google.com.
+- For a whole film without touching any quota: <strong>Copia trascrizione / Incolla traduzione</strong> with a chat (<a href="#12-the-trascrizione-e-traduzione-page">section 12</a>).</p>
+<hr />
+<h2 id="15-a-translation-model-on-your-own-computer">15. A translation model on your own computer</h2>
+<p>Free, unlimited and private. It's slower than online services, small models make more mistakes with less common languages, etymologies and long explanations, and it answers one request at a time. A good use: <strong>subtitles and live streams with the model on your computer, explanations with Gemini</strong> (📊 Consumo e modelli → Modello per ogni compito).</p>
+<p>Light models good for languages (approximate download sizes; the memory needed is about the size plus 1–2 GB, ideally on the graphics card; without one they work but much more slowly):</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Download</th>
+<th>Good for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen3:4b-instruct</code> (Qwen 3 4B, non-thinking version)</td>
+<td>about 2.5–3 GB</td>
+<td>good with Japanese and Chinese too; fast</td>
+</tr>
+<tr>
+<td><code>gemma4:e2b</code></td>
+<td>about 7 GB (<code>e2b-it-qat</code> version: about 4.3 GB)</td>
+<td>European languages, very light to run</td>
+</tr>
+<tr>
+<td><code>gemma4:e4b</code></td>
+<td>about 9.6 GB (<code>e4b-it-qat</code> version: about 6 GB)</td>
+<td>more accurate than e2b; needs an 8 GB graphics card</td>
+</tr>
+<tr>
+<td><code>gemma4:12b</code></td>
+<td>about 7 GB as <code>12b-it-qat</code></td>
+<td>good quality for explanations too; 12 GB graphics card</td>
+</tr>
+</tbody>
+</table>
+<p>For translating, avoid models that always "think" (non-instruct Qwen 3, QwQ, DeepSeek-R1): they answer much more slowly. Sizes change between versions: check the model's page on ollama.com. To delete a model: <code>ollama rm name</code> (e.g. <code>ollama rm gemma3:4b</code>); <code>ollama list</code> shows the downloaded ones.</p>
+<h3 id="with-ollama">With Ollama</h3>
+<ol>
+<li>Install Ollama from <strong>ollama.com</strong>.</li>
+<li>Download a model: for example <code>ollama pull qwen3:4b-instruct</code> (see the table above).</li>
+<li>Allow requests from the browser (without this Ollama refuses them):
+   - <strong>Windows</strong>: in a command prompt <code>setx OLLAMA_ORIGINS "chrome-extension://*,moz-extension://*"</code>, then quit Ollama (icon near the clock → Quit) and start it again;
+   - <strong>Mac</strong>: <code>launchctl setenv OLLAMA_ORIGINS "chrome-extension://*,moz-extension://*"</code>, then restart Ollama;
+   - <strong>Linux</strong>: <code>sudo systemctl edit ollama</code>, add <code>[Service]</code> and <code>Environment="OLLAMA_ORIGINS=chrome-extension://*,moz-extension://*"</code>, then <code>sudo systemctl restart ollama</code>.</li>
+<li>In the popup, <strong>🔑 Servizi → Ollama / LM Studio</strong>: address <code>http://localhost:11434/v1</code>, press <strong>↻ Carica modelli</strong> and pick the model. Then choose where to use it in <strong>📊 Consumo e modelli → Modello per ogni compito</strong>.</li>
+</ol>
+<h3 id="with-lm-studio">With LM Studio</h3>
+<p>Download a model, start the server in the <em>Developer</em> section and turn on <strong>Enable CORS</strong>. In the popup (🔑 Servizi → Ollama / LM Studio) enter the address <code>http://localhost:1234/v1</code> and press <strong>↻ Carica modelli</strong>.</p>
+<hr />
+<h2 id="16-troubleshooting">16. Troubleshooting</h2>
+<p>First look at the <strong>status line at the bottom of the popup</strong>: it says what the extension is doing and why it stopped.</p>
+<table>
+<thead>
+<tr>
+<th>What you see</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Nessun segnale da YouTube" (<em>no signal from YouTube</em>)</td>
+<td>Press <strong>Concedi accesso</strong> (<em>grant access</em>) if it appears, then reload the page.</td>
+</tr>
+<tr>
+<td>Dual subtitles don't appear</td>
+<td>Check that <strong>DS</strong> is on and the video's subtitles (CC) are on. On YouTube, if that's not enough, change the subtitle language in the gear menu and switch it back.</td>
+</tr>
+<tr>
+<td>"Hai finito i minuti di trascrizione" (<em>transcription minutes used up</em>, Groq)</td>
+<td>Groq's free Whisper quota is used up (hourly or daily): the message says when it frees up. Lines already transcribed stay.</td>
+</tr>
+<tr>
+<td>"Limite di richieste raggiunto" (<em>request limit reached</em>)</td>
+<td>The service refused because you exceeded its quota: the extension waits and retries (per-minute limit) or switches to a backup service (daily limit). Nothing is lost.</td>
+</tr>
+<tr>
+<td>"Chiave non valida" (<em>invalid key</em>)</td>
+<td>Copy the key again (use <strong>Mostra</strong> to check it).</td>
+</tr>
+<tr>
+<td>Transcription in the wrong language</td>
+<td>Set <strong>Lingua parlata</strong>, then on the "Trascrizione e traduzione" page press <strong>🎙 Rifai la trascrizione</strong> (also in the popup, under 🎙 Trascrizione).</td>
+</tr>
+<tr>
+<td>A line is badly translated or transcribed</td>
+<td><strong>⚑</strong> button on the subtitles → translate again, transcribe again or correct by hand.</td>
+</tr>
+<tr>
+<td>Netflix, Disney+, Prime Video</td>
+<td>Not possible: the browser protects these sites' audio.</td>
+</tr>
+<tr>
+<td>Firefox: the video stays muted</td>
+<td>Click the video once.</td>
+</tr>
+<tr>
+<td>No card on web pages</td>
+<td>Check in the popup the <strong>Parole al Volo sulle pagine e nei PDF</strong> switch, and under <strong>📄 Pagine e PDF</strong> «Scheda passando il mouse», «Traduzione del testo selezionato» and «Attiva su questo sito»; reload pages that were open before installing. Browser internal pages don't allow extensions.</td>
+</tr>
+<tr>
+<td>A PDF opens without cards</td>
+<td>Open it in the extension's reader (<a href="#9-pdf-files">section 9</a>); if words look wrong try «Caratteri»; a scan without recognised text has no words to read.</td>
+</tr>
+<tr>
+<td>Cards appear twice</td>
+<td>The old separate extensions are still on: remove them.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="17-privacy">17. Privacy</h2>
+<ul>
+<li>Your keys and everything you save (translations, vocabulary, corrections) stay <strong>in your browser</strong>. There is no server behind the extension.</li>
+<li>Text is only sent to the services you choose (Google, Gemini, Groq…). On free plans some services (e.g. Gemini) may use the text to improve their models.</li>
+<li>The yt-dlp helper downloads audio only to transcribe it and deletes it straight away.</li>
+</ul>
+<hr />
+<h2 id="whats-new">What's new</h2>
+<ul>
+<li><strong>1.6.6</strong>: <strong>card movable with the mouse</strong>, in videos and on pages: at the top of the card there is the <strong>⠿</strong> grip; drag it wherever you like. The position stays for the next cards (in videos as a fraction of the player, also in fullscreen; on pages in the window); <strong>double-click the grip</strong> to put it back where it was. <strong>Lighter cards</strong>: the word's frequency is computed by the background (before, every card loaded the whole 50,000-entry list in every page), Wiktionary pages arrive already cut to the language's section (dozens of languages and megabytes less to parse), pieces that arrive close together are drawn together instead of rebuilding the card each time (about 40% less work measured at opening), lighter shadow and card isolated from the rest of the page (<code>contain</code>).</li>
+<li>
+<p><strong>1.6.7</strong>: in the popup the <strong>🔑 Services</strong> section is now closed when it opens (one click opens it). <strong>«Explain with…» is a single request</strong>: in the same request as the explanation the model also looks for the <strong>idioms of the word in general</strong> (up to 6 common ones, with meaning and example, not only those in the sentence): they show at once in the idioms panel, those in the sentence are underlined as before, and the free Wiktionary list is added afterwards. No second request goes out. It also applies with the automatic search turned off, because you asked for the explanation.</p>
+</li>
+<li>
+<p><strong>1.7.0</strong>: <strong>free Piper voices</strong> for pronunciation, on this computer (downloaded once, then they work offline) and <strong>Piper voices of your Speaches server</strong>; in the popup → 🔈 Voce and in the card's ⚙. See «Free Piper voices» in the Pronunciation section. The package grows by about 30 MB (engine and converter in WebAssembly).</p>
+</li>
+<li><strong>1.7.1</strong>: Piper voices no longer disappear with the «Automatica» language (the menu tells you to pick a language first), and if they are unavailable the popup and the ⚙ menu say why; in Firefox the hidden voices page talks to the background through <code>postMessage</code>.</li>
+<li><strong>1.7.2</strong>: in the idioms panel, clicking a word opens a <strong>small card</strong> with the <strong>translation</strong> (free, Google), the <strong>Latin letters</strong> if the word is in another alphabet (Cyrillic, Greek, Arabic, Hebrew, Hindi, kana, hangul…), Google dictionary definitions when available, the <strong>✨ Spiega con…</strong> button (the model's explanation only if you press it) and the <strong>🔎 Altri modi di dire con «word»</strong> button; the search no longer starts by itself on click. A second click on the same word, or ×, closes the card.</li>
+<li><strong>1.7.3</strong>: <strong>cards much lighter for the browser</strong>. Pronunciation, etymology and saved explanations were each kept in one single block of data (up to megabytes) that every page read on load and that, each time a card opened, was rewritten whole and sent to every tab of the browser. They are now split <strong>by language</strong>: only the needed piece is read and written (a few hundred bytes). Your saved explanations and your etymology corrections move to the new pieces by themselves; the old pronunciation cache is rebuilt for free. <strong>Page underlines are leaner</strong>: the page is analysed once (in small slices, without blocking it); afterwards, when it changes, only the new or modified text is examined, at most every 1.5 seconds; a still page costs nothing and nothing is done while the tab is in the background. A full analysis is redone only if your words, idioms or options change.</li>
+<li><strong>1.7.4</strong>: Piper voices on the Speaches server: the server always wants the «voice» field (error 422 «Field required»); the extension now sends it (the voice's name, for example «rapunzelina»), and if the server does not accept it tries «default», «0» and the voices the server declares for that model; the one that works is remembered.</li>
+<li><strong>1.7.5</strong>: <strong>the card can be widened and shrunk with the mouse from its edges and corners</strong>, like a window (in videos and on pages). Double-arrow cursor on the edge; the size stays for the next cards; <strong>double-click the ⠿ grip</strong> at the top to go back to the previous position and size. Next to the <strong>Piper voices</strong> there is now <strong>⬇ 12k</strong> (how many times it was downloaded, by Speaches users) and <strong>★</strong> on the most used voice of the language; voices are sorted from the most used. It is only a hint: a much-used voice is usually good, but your ear decides.</li>
+<li><strong>1.7.6</strong>: <strong>Piper voice list updated to the current archive</strong> (before it was pinned to an old version, without the voices added later), with a <strong>🔄 Update the voice list</strong> button (it normally updates itself every 7 days) and the explanation: the archive is maintained by its authors, new voices appear from time to time but some may be moved or removed; voices already downloaded keep working, ones not yet downloaded cannot be downloaded any more if they disappear from the archive. Links to the <strong>🌐 Piper site</strong> and to the official archive, to download by hand the two files of a missing voice (<code>.onnx</code> and <code>.onnx.json</code>) and import them with «📂 Ho già una voce Piper». The Albanian voice <strong>Edon</strong> (medium) was added. <strong>Piper voices are steadier on single words</strong> (in Greek they sometimes made «strange noises»): the lone secondary stress that espeak-ng puts on a word becomes primary, very short phrases get a final full stop and lower sampling noise, and the sounds are taken from the voice's own table.</li>
+<li><strong>1.7.7</strong>: <strong>kanji, hanzi and hanja in a separate Anki sub-deck</strong>: entries that are a single Chinese character go to «Lingue::Giapponese::Kanji», «Lingue::Cinese::Hanzi», «Lingue::Coreano::Hanja» (multi-character words stay in the language's deck). Switch it on/off in popup → 🗃 Anki («Kanji, hanzi e hanja in un sottomazzo a parte»). For cards already in Anki: <strong>📦 Sposta i caratteri già in Anki nel sottomazzo…</strong> (it first tells you how many, then asks for confirmation; <strong>↩ Annulla lo spostamento</strong> puts the cards back where they were); «Aggiorna le carte già in Anki» and «Rimanda ad Anki» redo the content and bring the characters into the sub-deck. The card <strong>Width</strong> slider is gone from the popup (you now drag the card's edges). <strong>Speaches</strong>: the «Piper voices of the Speaches server» group only shows voices Speaches really has as a package (before, for example, Japanese gave a 404 «Model not found» error), and the error now says what to do. Piper voices that do not use espeak-ng (the Japanese ones use OpenJTalk) are refused with a clear message instead of sounding wrong.</li>
+<li><strong>1.7.8</strong>: <strong>the DS button on other sites' players</strong> (Wikipedia, Commons, course sites…): it only appeared after subtitles or a transcription already existed, so there was no way to start from there; it is now there at once on every visible video that is big enough (at least 200×110) and, when pressed, starts the transcription (or turns the video's subtitles on). <strong>Deleting single Piper voices</strong>: in the popup → 🔈 Voice, «Voci Piper scaricate» (downloaded Piper voices) lists every voice on the computer with its size and a 🗑 for each; in the card's ⚙ menu, next to each downloaded Piper voice there is a 🗑 (if it was the chosen voice, it goes back to the automatic voice).</li>
+<li><strong>1.7.25</strong>: <strong>Anki images on by default, from Google Images.</strong> The first time the extension is opened, "Put an image on Anki cards" is already on and the image comes from <strong>Google Images</strong>; Wikipedia, Wikimedia Commons and Openverse can be chosen later, in popup → Anki → "Images from" or in the card (more…). If Google's page gives no images (Google has no official interface), Wikipedia and Commons ones are added. If you had already chosen something else in the popup, your choice stays.</li>
+<li><strong>1.7.26</strong>: (1) <strong>The vocabulary tells languages apart</strong>: a saved word is underlined only in its own language (Czech "ne" no longer underlines Italian "ne"), in videos and on pages. (2) <strong>Whole Chinese names</strong>: when the model links the sentence to its translation and a name (e.g. Netanyahu) matches several small pieces (内塔尼亚胡), it becomes one word from then on, in every sentence (remembered). (3) <strong>Word-by-word reading</strong>: the Latin-letter line above ideograms is now split by word; hover a word to light it up in the original, click to open it. (4) <strong>"Keep the text still under the mouse"</strong> (popup, off by default): while the mouse is over the subtitles or the translation the sentence doesn't change, even if the video moves on. (5) <strong>The ⚑ button is always there</strong> on YouTube, even when no sentence shows: it offers to redo the transcription, translation and language. (6) <strong>Groq out → Speaches</strong>: when Groq's transcription quota runs out, transcription switches to Whisper on your Speaches server (if running), with a notice in "Usage and models" → "Audio transcription"; if the server doesn't answer, the notice says so. (7) <strong>Kokoro voices</strong>: with "Speaches" on in the voice menu, Kokoro voices appear (English, Italian, French, Spanish, Brazilian Portuguese, Hindi, Japanese, Chinese); one package on the server (about 330 MB), installed with "⬇ installa". They also work for Anki cards.</li>
+<li><strong>1.7.27</strong>: <strong>Kokoro voices are easier to find.</strong> They show in the popup "Voice" menu (group "Kokoro voices of the Speaches server") and in the ⚙ gear of cards, but only if "Speaches" is on (popup → Voice) <strong>and</strong> you picked a language Kokoro has (English, Italian, French, Spanish, Portuguese, Hindi, Japanese, Chinese). The group is now always there when Speaches is on, and says why it is empty (no language chosen, or a language without Kokoro voices).</li>
+<li><strong>1.7.28</strong>: (1) <strong>Search bar in the popup</strong> (at the top, "🔍 Cerca nelle opzioni…"): type a word (even just "kokoro", "images", "pause") and the options containing it appear with their section; a click opens the section, scrolls to the option and highlights it. (2) <strong>Empty box when there is nothing to show</strong>: the ⚑ button (and the language one) appear only when you move the mouse over the lower part of the video. (3) <strong>YouTube auto captions really corrected</strong>: the model is now told to add punctuation, capital letters and correct words (YouTube has none), "Also correct automatic captions" applies at once with the video open (on or off), and the ⚑ card has "✨ Correggili con il modello" even with the option off; if the model changes nothing, the status bar says so. Saved translations and transcripts stay saved and come back as usual. (4) <strong>Re-listen to the part without subtitles</strong>: in the ⚑ card opened where nothing shows (audio transcription) the button "🎙 Riascolta il pezzo senza sottotitoli (from–to)" re-listens with the most precise model to the space between the last subtitle and the next; if there was speech that was missed, it appears and gets translated.</li>
+<li><strong>1.7.29</strong>: (1) <strong>Messages on the video</strong> (top left): 🎙 transcription status, 🌐 how many sentences are translated, ℹ the latest messages (quotas, service changes, errors). Two switches in the popup; they disappear by themselves when the work is done. (2) <strong>With Whisper on your own computer</strong> (no key, no cost): by default the <strong>whole</strong> video is transcribed and translated right away, even while you watch, and the 60-minute limit does not apply; pausing a video without YouTube captions starts the full transcription at once. It needs the yt-dlp program; without it, things go on as before. Switch "With Whisper on my computer: transcribe the whole video at once" (popup → Transcription). (3) <strong>↺ arrow</strong>: no longer stays after changing video or going back before the sentence, lasts 3 minutes, and with no sentence on screen shows only with the mouse over the lower part. (4) <strong>YouTube auto captions</strong>: wider similarity threshold (0.6) and the status bar says how many sentences changed, were already equal or were discarded as too different.</li>
+<li><strong>1.7.32</strong>: (1) <strong>Full transcription with the server on your computer</strong>: long videos (even 3 hours) are transcribed in 3-minute pieces, one after the other, instead of one huge request that crashed the server; if the server restarts it waits and retries by itself. (2) The <strong>on-video message</strong> "🎙 Transcription…" always appears when a transcription starts, from the button or the "For this video" menu. (3) The buttons to <strong>change model</strong> in the card respond immediately (they light up and show "⏳").</li>
+<li><strong>1.7.38</strong>: (1) <strong>YouTube subtitles in the right language when you change video</strong>: YouTube's player sometimes remembers the language chosen for the previous video (an English video with "Polish auto-generated" subtitles); now, if the requested language is not among that video's tracks, it is not used: the player is asked for the right track (or it is downloaded directly). (2) An audio piece Whisper writes in another language is <strong>no longer skipped</strong>: the same video can have several languages. (3) With Whisper and a model on your computer, requests go through a <strong>queue, one at a time</strong> (first the explanation you asked for, then live transcription, then translation, then the pieces of the full transcription): no more freezes when the graphics card is busy. (4) If Whisper does not answer in time, the piece is <strong>retried</strong> instead of left as a gap. (5) The on-video messages say how long the server has been working on a piece and have a <strong>✕</strong> to hide them until the current job ends.</li>
+<li><strong>1.7.37</strong>: (1) <strong>The card opened by hovering closes as soon as the mouse leaves</strong>, without a click; a click inside the card keeps it (before, merely brushing its edge pinned it). Also in Parole al Volo. (2) The <strong>"Transcribe this video's audio" button no longer changes "For this video"</strong>: it stays "Same as the default". (3) With Whisper on your computer the <strong>live transcription no longer stops</strong> when the full one starts: it has priority on the same server (the full one's pieces make room). (4) Subtitle translation restarts from where you are <strong>even if you jump around in the video</strong>. (5) With Whisper on your computer the duration limit never applies (stated in the popup).</li>
+<li><strong>1.7.36</strong>: (1) when you change video, a full transcription left hanging (e.g. with the server stuck) no longer stays "in progress" on the new video, where it blocked the subtitles. (2) If the model on your computer does not answer for 3 minutes while correcting the automatic subtitles, the correction stops and translation goes on: before, everything stayed stuck. (3) A request to the transcription server on your computer with no answer for 12 minutes is abandoned with a clear message ("it may be stuck: restart it").</li>
+<li><strong>1.7.35</strong>: in the "Video subtitles" section the <strong>model</strong> is now picked from a drop-down like in "Services", with all the models already loaded (including the ones on your computer, Ollama / LM Studio); before, the box only showed models similar to what was typed. With a model on your computer the list is fetched by itself the first time.</li>
+<li><strong>1.7.34</strong>: (1) the green <strong>✓</strong> above words always disappears as soon as the mouse leaves. (2) With full transcription on the <strong>server on your computer</strong>, the "while you watch" transcription no longer runs in parallel: its requests queued ahead of the full transcription's pieces, which never arrived ("Whisper did not answer in time"). (3) If the model on your computer is slow to translate (e.g. the graphics card is busy transcribing) it now says so in the on-video messages.</li>
+<li><strong>1.7.33</strong>: at the bottom of the subtitle card there is now <strong>"Text language: … wrong? change"</strong>, identical to Parole al Volo: pick (with search) the language the word is translated <em>from</em>, the word is translated again, and "Remember for this video" keeps it for the other words of the same video.</li>
+<li><strong>1.7.30</strong>: seven additions, nearly all with their own switch in the popup. (1) <strong>Hide until I hover</strong> (Subtitle look): the original or the translation stays invisible until the mouse is over it, to test yourself. (2) <strong>🧠 Review</strong> in the vocabulary: cards with the word on one side and the meaning on the other (or reversed), Space and 1-4 keys; cards come back after 1, 3, 7, 14, 30, 60 days and at the end the word becomes "learned". (3) <strong>Colour by frequency level</strong> (switch): common as usual, then light blue, yellow, orange for the rarer ones. (4) <strong>Request counter</strong> at the top of the popup (switch): how many requests you made today to Gemini, Groq…, and how many are left if you set a limit in Usage and models; warns when a service is out. (5) <strong>.vtt</strong> besides .srt in the "📜 Text of the video" page. (6) <strong>Remember per site</strong> text size, translation size and height (switch): e.g. bigger on YouTube; popup sections open/closed are remembered too. (7) <strong>Test</strong> next to each key (🔑 Services) and <strong>Export / Import all settings</strong> to a file (popup → Other, keys only if you ask).</li>
+<li><strong>1.7.24</strong>: <strong>YouTube: with a card open, the card and the subtitles stay still.</strong> Before, if you kept the mouse still for a few seconds, YouTube hid the control bar and the card moved down with the subtitles, making it hard to click. Now, while the card is open, it no longer moves.</li>
+<li><strong>1.7.23</strong>: <strong>The yt-dlp helper no longer needs Python</strong>: it is a single executable (written in Go) for Windows, Mac (Intel and Apple) and Linux (Intel/AMD and ARM); the installer only downloads yt-dlp (the standalone build), Deno and ffmpeg and no longer looks for or installs Python. Run the installer again from the helper's page (🎙 Transcription → ⚙) to switch to the new version. <strong>Anki</strong>: card pronunciation also uses the voice chosen in the popup's "Voice" menu (e.g. the Slovenian Speaches voice), not only the one chosen in a card's ⚙. <strong>Guide</strong>: new section "Speaches on your computer" (Whisper and Piper voices without internet).</li>
+<li><strong>1.7.22</strong>: <strong>Anki, why pronunciation is missing</strong>: when a card stays without audio, the update log now says what happened to each voice tried (the chosen voice, Google, downloaded Piper voices, Azure), e.g. "the chosen voice is a computer voice: Anki cannot use it, Piper, Speaches or Azure is needed · Google (sl): … · no Piper voice downloaded for «sl»". System voices (Windows, macOS) can be heard in the card but cannot be saved as a file for Anki.</li>
+<li><strong>1.7.21</strong>: <strong>Anki, pronunciation for languages Google cannot read</strong> (e.g. Slovenian): when updating and on new cards, pronunciation now follows this order: native recording → the voice you chose for that language (Piper, Speaches or Azure) → Google → a Piper voice already downloaded for the language → Azure, if on. The file is .wav for Piper and Speaches. If no voice exists, the log says so and suggests downloading a Piper voice from the card's ⚙.</li>
+<li><strong>1.7.20</strong>: <strong>Anki</strong>: the <strong>word's language</strong> is written on the back of the card (🌐 English…). <strong>Updating cards already in Anki</strong> now adds <strong>pronunciation</strong> to <strong>phrase and idiom cards</strong> too (it used to skip them: they were most of the cards that did not update) and, when a card cannot get one, the log says why ("no pronunciation (no voice available for this language)", e.g. Inuktitut). New phrase and idiom cards also get pronunciation (texts up to about 190 characters).</li>
+<li><strong>1.7.19</strong>: <strong>"For this video" (Transcription) is remembered</strong>: the choice made in the menu (Same as default / Full / While watching / Off) stays for the next videos and in all windows and tabs (it is in the synced settings); the "For all videos without captions" menu never changes by itself. By default it stays on "Same as default". The automatic switch to a saved transcript no longer changes the menu either.</li>
+<li><strong>1.7.18</strong>: <strong>The translation is always below</strong>: if for a moment the "translation" was the original text (or the text before/after the model's correction), it is no longer shown (it stays "…" until the real one arrives). <strong>Anki images for idioms too</strong> (with the option on): in the expression card (even long ones), under the idiom found by the model and with a <strong>🖼</strong> button next to each one in the "Idioms with…" list; pick the image and ☆ saves with it (otherwise the first one found).</li>
+<li><strong>1.7.17</strong>: <strong>Saved transcript instead of auto captions</strong>: if a video was already transcribed from its audio (saved transcript), when YouTube only offers auto-generated captions the extension switches at once to the saved transcript (no redoing of parts already transcribed; if it was complete, no requests at all; without a Groq key it still shows). Switch off with "If the video has a saved transcript, use it…" in the popup. Captions made by a person (not automatic) are unchanged. <strong>Anki image</strong>: the automatic search also follows the model's new explanation: with "in English" or "in my language" it searches the model's meaning (not Google's), with "in the word's language" its base word (only if you haven't already picked or searched an image).</li>
+<li><strong>1.7.16</strong>: in the card's ⚙, next to every <strong>Speaches</strong> voice not yet on the server there is <strong>⬇ install</strong> (like ⬇ download for Piper voices): installs the voice on your Speaches server without opening the popup.</li>
+<li><strong>1.7.15</strong>: <strong>YouTube auto-generated captions fixed by the model</strong>: new option "Also fix YouTube's auto-generated captions with the model (uses requests)" (popup → Correction). When on, before translating, Gemini (or the model chosen for "Correction") fixes misheard words and punctuation, 30 sentences at a time (nearest to where you are first), up to 600 sentences per video; the result is saved per video and language and the line updates by itself as it arrives. Small corrections only (the sentence stays recognisable and in the same language). Off: captions stay as YouTube made them.</li>
+<li><strong>1.7.14</strong>: <strong>Piper voice and long texts</strong>: the Piper voice no longer stops after the first sentence (the text is split into sentences with a short pause between them). <strong>✨ Explain with … next to the word</strong>, in the card header (video and pages), always there: also after the explanation ("Redo with…") and when requests ran out ("retry"). The <strong>▾ menu</strong> lists every model of every service (for Gemini all the different models, loaded from the service's list the first time); the ones used up for now are greyed. The old bottom button and "⇄ Other model" are gone. <strong>Synonyms</strong> (and "See also") are <strong>clickable with a small card</strong>, like idiom words: translation, definitions, 🔈, "✨ Explain" and "More idioms with…". <strong>IPA for every variety</strong> Wiktionary gives (variety catalogue for English, Portuguese, French, Spanish, German, Dutch, Italian, Catalan, Arabic, Chinese, Korean, Japanese and more; unrecognised labels are still shown under their own name) and, in the popup, <strong>"Which varieties to show, per language"</strong>: choose per language which to see (and whether to show the others).</li>
+<li><strong>1.7.13</strong>: <strong>Long texts are read in full</strong>: highlighting several sentences and pressing 🔈 no longer stops after the first (Google's voice reads the text piece by piece, sentence by sentence). <strong>🐢 Slow</strong> also for highlighted text (on pages next to 🔈; on subtitles in the "Copy or look up the sentence" card, which also gets 🔈 Read). On the pages card the <strong>sentence translation</strong> is again right under the original sentence. The <strong>✨ Explain with…</strong> button no longer disappears when Gemini's requests run out (per minute or for the day): it stays as "requests used up, retry" and retries at once.</li>
+<li><strong>1.7.12</strong>: <strong>Model's base word</strong>: when "✨ Explain with…" arrives and the model's base word (lemma) differs from the one found by Google/Wiktionary, the lookups that depend on it are redone with it: etymology and Wiktionary data, Google dictionary (if it was empty) and the Anki image (unless you already picked or searched one). <strong>Piper voices from the card's ⚙</strong>: every Piper voice not yet downloaded has a <strong>⬇ download</strong> button (🗑 once it is); downloaded once, no need to open the popup.</li>
+<li><strong>1.7.11</strong>: <strong>IPA pronunciation by variety</strong> under the word, from Wiktionary: English American, British, Irish, Scottish (and Australian, Canadian…); Portuguese Brazilian, European and African; French European and Canadian; Spain/Latin-American Spanish, German, Dutch and others when Wiktionary has them (switch off with "IPA by variety" in the popup). <strong>One sound at a time</strong>: pressing 🔈 or 🔊 repeatedly plays only the last one; the previous stops. <strong>More alike cards</strong>: the pages card now has the same pills as the video card (⧉ Word, ⧉ Sentence, ↺ Replay, 🐢 Slow, 🔁 ×3), the sentence translation at the bottom and the language tag on 🔈. <strong>Idioms</strong>: with a model the separate "🔎 Idioms with this word" button is gone: "✨ Explain with…" brings them in the same request; it only remains without a model (free Wiktionary list).</li>
+<li><strong>1.7.10</strong>: <strong>Anki images</strong>: by default the word is now searched <strong>in its own language</strong> (it used to be translated to English), which finds more fitting pictures; Popup → Anki has "Search images with words in…" (word's language, English, my language) and the card's "more…" panel has a "Search in:" selector per search. New source <strong>Google Images</strong> (reads the results page, no key; may stop working if Google changes the page) and a <strong>🔍 Open Google Images ↗</strong> link that opens Google in a tab: pick a picture, "Copy image address" and paste it in the card. <strong>Resize handles</strong> are wider; the bottom-right one is always visible (three yellow lines), the others light up on hover.</li>
+<li><strong>1.7.9</strong>: <strong>✎ forma base</strong> (base form) in a word's card (subtitles and pages): choose the root an inflected form comes from (for example <em>сожалению</em> → <em>сожаление</em>, <em>walked</em> → <em>walk</em>). The panel offers the form found by the card and the Wiktionary words that have that form in their table (✓ = sure), or you type it; with one click (or Enter) <strong>the full card of that word opens</strong>, to view and save in the vocabulary (the sentence stays the inflected form's). <strong>‹ Torna alla parola</strong> (back to the word) returns to the starting form. The choice also stays saved for that form's etymology.</li>
+<li><strong>1.6.5</strong>: <strong>«Sottotitoli Doppi» note type</strong> in Anki (Fronte/Retro fields, clean template and style): with «Base» or other types the back could come out flat and monospaced (the template stripped the HTML). New cards use this type and «🔄 Aggiorna le carte già in Anki» (and «Rimanda») moves the old ones there too; «↩ Annulla» puts them back in their previous type. If you chose your own type in popup → Anki, that one stays.</li>
+<li><strong>1.6.4</strong>: <strong>properly laid-out Anki cards</strong>: centred blocks with their style inline (works on any note type, light and dark). Front: the word big and bold, the pronunciation under it, the sentence in italics with the word highlighted, and the image. Back: the meaning big and coloured, a small line with base form, part of speech and gender, the /IPA/, a rule, the explanation(s), the etymology, idioms, the sentence translation in italics, and a <strong>clickable button</strong> that reopens the video at the right moment (or the page). «🔄 Aggiorna le carte già in Anki» redoes with this layout also the cards made by earlier versions (it recognises them).</li>
+<li><strong>1.6.3</strong>: <strong>🔄 Aggiorna le carte già in Anki</strong> (popup → Anki, and in the vocabulary): redoes the cards with the tidy layout, pronunciation (native speaker or synthetic voice), missing data (free) and, if you want, a new different explanation and idioms looked up by the model; you can check first and <strong>undo</strong>. <strong>✨ Completa</strong> on every entry. «Rimanda ad Anki» updates the card instead of duplicating it; an error on one card doesn't stop the others; pronunciation and image are files put in the right place on the card. <strong>Idioms in general</strong>: 🔎 finds idioms with the word also outside the sentence (dictionary + model), every word of an idiom is a button to look for more, temporary model errors repeat by themselves. <strong>🎯 Rifai più precisa</strong> for the explanation. <strong>📈 Usage over time</strong> by itself in the card again (also for idioms), with year and value next to the mouse; also in the vocabulary. <strong>Sentence translation</strong> small at the bottom of the video card. <strong>🔁 Rifai solo la traduzione</strong> and automatic recovery when the translation stays behind. <strong>Normal videos</strong>: when the transcription starts the video goes back 20 seconds (selectable). <strong>YouTube</strong>: steadier CC (they turn back on by themselves if the text doesn't arrive), repeated clicks on DS count as one, <strong>YouTube Music</strong>. <strong>Lighter</strong>: the every-100-ms checks only where there is a video (before, on every page and frame), package without the duplicate .md files.</li>
+<li><strong>1.6.2</strong>: <strong>🔑 Servizi</strong> (<em>services</em>, formerly «🌐 Traduzione e modelli») holds only the keys, each service's default model and the addresses of programs on your computer. <strong>📊 Consumo e modelli → Modello per ogni compito</strong>: every task, subtitles and transcription included, has a service menu and its models below; all model choices are <strong>drop-down menus</strong> (with «✎ un altro» to type a name). <strong>Every language</strong> in «Traduci in» (about 130); the first key you paste switches subtitles from Google to that service. <strong>⇄ Altro modello</strong> in the cards lists every model of every service (e.g. Gemini Flash and Flash-Lite, which have separate limits). Card text can be <strong>selected and copied</strong>. <strong>✨ Spiega il kanji</strong> with the model, in a character's card and in the kanji page. <strong>Kanji page</strong>: the card stays next to the clicked kanji, ✓ and ☆ on the tiles, save to vocabulary, «Mostra» filter. <strong>Anki</strong>: cards get the <strong>pronunciation</strong> (native recording if there is one, otherwise synthetic voice). <strong>Gemini explanations</strong>: Flash answered halfway (its reasoning used up the answer) and the explanation failed: now it answers without reasoning, and if a model doesn't answer the next one is tried automatically.</li>
+<li><strong>1.6.1</strong>: <strong>a used-up model no longer stops the whole service</strong>. On Gemini (and Groq, Mistral) free limits are per model: when a model runs out of today's requests only that one is blocked and the next model of the same service is used automatically (e.g. Flash-Lite used up → Flash), explanations included (they're redone at once); only when all are used up does the backup service take over. In <strong>📊 Consumo e modelli → Modello per ogni compito</strong>, each task shows its list of models in order with today's state («in uso», «pronto», «finito oggi»): ↑ ↓ to reorder, + Aggiungi to put another model first. The yellow notice says which models are used up and which are being used.</li>
+<li><strong>1.6.0</strong>: <strong>Consumo delle richieste</strong> (<em>request usage</em>) at the top of the popup: 🏆 Qualità, ⚖️ Bilanciato (default), 💰 Risparmio, 🆓 Solo gratis. Each mode sets live stream, correction, idioms and Gemini models by itself; updating switches to «Bilanciato» (<a href="#14-request-usage">section 14</a>). New section <strong>📊 Consumo e modelli</strong>: today's requests per service, backup services, <strong>Modello per ogni compito</strong> with the <strong>exact model</strong> per task (e.g. Gemini Flash-Lite to translate and Flash to explain: Gemini's free limits are per model), service order, <strong>daily request limit</strong> per service, maximum lead of the live stream. <strong>Quanto indietro guardi la diretta</strong> (<em>how far behind</em>: 20 s, 45 s, 90 s, 2 min): further behind means longer audio pieces for Whisper and bigger translation groups (<a href="#how-far-behind-the-live-stream">section 11</a>, with the "20 or 10 seconds before" explanation). <strong>Transcript correction</strong>: uncertain sentences only (default), all, or off. <strong>Idioms with no extra requests</strong>: from Wiktionary's dictionary (downloaded once per language), from the translation request itself and the ones already seen, underlined in the subtitles; in the cards <strong>🔎 Modi di dire con questa parola</strong>. Removed the old IPA-line code under the subtitles (no longer shown). Guide: which models for which task, and light models for Ollama.</li>
+<li><strong>1.5.4</strong>: <strong>⇄ Other model</strong> in the cards (videos and pages): the same word explained by another model, to compare. It lists the ready models (with a key and requests left today) and you pick one: one request, only to that one. This explanation too stays in the 🗂 saved ones. <strong>Synced live streams, fewer requests</strong>: nothing is transcribed (so nothing translated) more than 90 seconds ahead of the video; if you pause, it stops there and resumes when you play (before, with the video paused it kept using the free requests: in your log Gemini used up today's 500 and translation moved by itself to the backup service, Mistral, which answered «rate limit»). Sentences to translate are collected in groups: translated together when there are enough or when the first is about to appear. <strong>Model on your computer (Ollama)</strong>: Ollama answers one request at a time, and the live stream sent it big groups of sentences: the explanation asked from the card waited behind them. Now with Ollama the groups are small and, while you wait for an explanation, the live stream sends it nothing else. <strong>Groq Whisper</strong>: «prompt length must be 896 characters or fewer» with Japanese (each character counts 3): the hint for Whisper shortens itself, and if that's not enough it retries without.</li>
+<li><strong>1.5.3</strong>: <strong>synced live streams</strong> (yt-dlp helper <strong>1.9</strong>, re-run the installer): the helper also reads the last 2 minutes of the stream, not only the most recent point. Before, the piece you were watching wasn't in the audio read (YouTube's video is already behind the live edge), the audio couldn't be aligned and the video was moved back 15 seconds at a time: removed. Every 15 seconds the log shows a <strong>measurement</strong>: how much audio arrived and how fast, how similar it is to the video's and how far ahead. <strong>Etymology</strong>: in the 🌳 tree every ancestor has its own <strong>↗</strong> to open it on Etymology Explorer (useful when the modern word isn't there).</li>
+<li><strong>1.5.2</strong>: <strong>synced live streams</strong> (yt-dlp helper <strong>1.8</strong>, re-run the installer): found the two reasons why yt-dlp «never answered». First: a format with audio and video together was requested, which many live streams don't have (now audio only is requested). Second: on Windows yt-dlp and Deno inherited the browser's channel and the helper stayed stuck instead of receiving the error. Also, yt-dlp looks for the stream address right away, together with the first attempt; the address found is remembered for a few hours (reopening the same stream, or turning ⏱ on again, starts the audio at once); while it searches, the log shows for how long and yt-dlp's last line. Google's quick translation retries by itself after a temporary error («500»).</li>
+<li><strong>1.5.1</strong>: <strong>Synced live streams</strong>, yt-dlp helper <strong>1.7</strong> (re-run the installer): YouTube refuses the stream pieces taken from the player's address («403»); the helper now notices within seconds and switches straight to the address given by yt-dlp, instead of waiting and giving up. <strong>🗒 Aspetto delle schede</strong> (<em>card appearance</em>, new popup section): text size, width, background, text and meaning colours, opacity, and position (in videos above the word or always left/right of the video; on pages near the word or always right/left). <strong>Etymology</strong>: «✨ Spiegala meglio con …» (<em>explain it better with…</em>) asks the model for a fuller explanation, kept next to Wiktionary's: switch between them with ‹ ›; next to «Wiktionary» there's also the <strong>Etymology Explorer</strong> link. <strong>Idioms</strong>: «✎ Correggi il modo di dire» (<em>correct the idiom</em>) changes the expression itself, not only its meaning; an idiom marked «non è un modo di dire» (<em>not an idiom</em>) can be restored from the card of one of its words («🚫 … annulla»).</li>
+<li><strong>1.5.0</strong>: <strong>one popup</strong>, for videos and pages (before there were the two tabs 🎬 Video and 📄 Pagine). At the top the two main switches and <strong>Traduci in</strong>; below, the sections 🌐 Traduzione e modelli, 🎙 Trascrizione, 📄 Pagine e PDF, 📖 Scheda delle parole, 🎨 Aspetto dei sottotitoli, 🔈 Voce, 🗃 Anki, ⚙ Altro. The word-card settings (IPA, etymology, learning tools) appear once and apply to videos and pages. <strong>Modello per ogni compito</strong> and <strong>Ordine dei servizi</strong> are folded into two sub-menus. Button and page texts reviewed (for example the yt-dlp helper, which serves both full transcription and synced live streams). Guide updated to the new popup.</li>
+<li><strong>1.4.13</strong>: <strong>🗂 saved explanations</strong>, in videos and on pages. Every explanation asked with «✨ Explain with…» stays saved (even after closing the browser): reopening the same word in the same sentence shows it at once, with no new requests, even if you changed model meanwhile. The card's <strong>🗂</strong> button (next to «Explain») lists all the explanations of that word: model, date and the sentence it was explained in; click one to see it, ✕ to remove it. «✨ Explain with…» stays available to ask a new one for the current sentence. The last 1200 explanations are kept (6 per word); those saved by older versions move here by themselves. <strong>More complete translated interface</strong>: with «Interfaccia in questa lingua» the labels made of pieces (e.g. «comune · tra le 5000 più usate», «🗂 2 spiegazioni salvate») and the language names are translated too. <strong>Words I know</strong>: the language menu is always at the top of the page (before it was hidden and the page stayed on the last video's language), with the «Solo le parole che conosco» box.</li>
+<li><strong>1.4.12</strong>: <strong>synced live, real cause found</strong>: the new ffmpeg (the one the installer downloads) rejects YouTube live segments because their addresses don't end in «.ts» (in the log: «Invalid data found when processing input»); for the same reason yt-dlp stayed silent too. Helper <strong>1.6</strong> (re-run the installer) downloads the stream itself and hands ffmpeg only the segments. <strong>Word card on pages</strong> (also a Google Books PDF in fullscreen): when it grows after «✨ Explain with…», the tree or the images it no longer runs off the bottom of the screen; it uses the space below or above the word and scrolls inside. <strong>🎙 Redo the transcription</strong>: an explicit button in the popup (under «Trascrivi l'audio di questo video», shown when the video already has a transcription) and in the ⚑ card on the video («Tutta la trascrizione di questo video è sbagliata?»). With Groq there is also «Rifalla con il modello più preciso» (whisper-large-v3: slower, fewer wrong words). <strong>📋 Copia il registro per il debug</strong> (popup, Video tab, at the top): copies what happened in the video tab (DS clicks, captions taken from YouTube, translation, transcription, errors), the current state and the failed requests; paste it when you report a problem. It contains no keys (only which services have one).</li>
+<li><strong>1.4.11</strong>: <strong>synced live without yt-dlp</strong>: the extension takes the stream address from the YouTube player and the helper (version <strong>1.5</strong>, re-run the installer) reads it directly with ffmpeg; yt-dlp remains as a fallback, with its step-by-step messages in the live log. Groq Whisper no longer stops with «il modello scelto non esiste più» when the popup still had a local server's model name.</li>
+<li><strong>1.4.10</strong>: <strong>synced live</strong>, yt-dlp helper <strong>1.4</strong> (re-run the installer): yt-dlp is no longer "silent" (its messages go to the live log, so you can see why no audio arrives) and, if no audio arrives within 25 s, there is a <strong>plan B</strong>: yt-dlp only gives the stream address and ffmpeg reads it directly. If YouTube refuses (error 403), the message says so.</li>
+<li><strong>1.4.9</strong>: <strong>word card</strong>: always stays inside the screen, even in fullscreen and when it grows after opening (etymology, tree, images: before, its end could no longer be reached); clicking the Anki image arrows keeps your place (before, it jumped back at every click). <strong>Prova</strong> says when a local model is slow because it reasons before every answer.</li>
+<li><strong>1.4.8</strong>: <strong>📈 usage over time</strong> shows again: on pages the curve disappeared and the years were black (the cards' base style wiped the drawing), and sites with their own drawing rules (YouTube too) could do the same; now colours and shapes are fixed on the chart. removed the «/no_think» added in 1.4.7: Ollama's <code>qwen3:4b</code> is the Qwen 3 version that always reasons and took it as text to translate. Now <strong>Prova</strong>, when the local model is slow because it reasons before every answer, says so and suggests a model without reasoning (e.g. <code>gemma3:4b</code>).</li>
+<li><strong>1.4.7</strong>: <strong>Qwen 3 on your computer</strong> no longer "thinks" before answering (before, with some Ollama versions, it wrote thousands of words of reasoning and took over a minute even for «good morning»): the extension adds Qwen's own switch, <code>/no_think</code>, which works with every version.</li>
+<li><strong>1.4.6</strong>: <strong>Whisper on your computer</strong> (Speaches, faster-whisper-server…): if the server doesn't know the model name (the default one is Groq's: before, every chunk failed with «il modello scelto non esiste più» and no subtitles appeared), the extension reads the server's models, picks the best (turbo) and remembers it; the popup has <strong>Carica modelli</strong> for transcription too. <strong>Model on your computer</strong> (Ollama, LM Studio): if the model written in the popup is gone (e.g. deleted), it picks an installed one and remembers it; if there is none it says so, with the command to download one.</li>
+<li><strong>1.4.5</strong>: <strong>📈 usage over time</strong> like the real chart: data from the 2022 Google Books collection (the one Ngram Viewer shows, up to 2022), a smooth curve instead of straight segments (no more steps and climbs that looked like glitches). <strong>Modello per ogni compito</strong> (<em>model for each task</em>) in the popup (above «Ordine dei servizi»): one menu per job, i.e. video subtitles, page and PDF text, audio transcription (Groq's Whisper or on your computer), explanations, transcript correction, IPA for selected text, word and idiom linking. «Automatico» uses the first ready model in the queue; a chosen model that doesn't answer or is out of requests is replaced by the first ready one. For example: subtitles with Gemini, explanations and pronunciation with Ollama, correction with Groq.</li>
+<li><strong>1.4.4</strong>: <strong>📈 usage over time</strong>: bigger, readable years, and the source below (Google Books Ngram Viewer) with «Apri il grafico completo ↗» (<em>open the full chart</em>). <strong>🌳 real Wiktionary etymology trees</strong> in every language, read from the data Wiktionary puts in the page (before, it came out empty, e.g. for <em>embarazado</em>). It reads top to bottom, from the oldest origin to the word: each step with the language, the word, the transliteration and the meaning, and between steps how it came (borrowing, learned borrowing, inherited, derived…); compound words («embarazado è formata da: embarazar + -ado») have each part's origin in a box that opens; influences are shown apart. <strong>Synced live</strong>: if yt-dlp sends no audio, after 20 s the log says so (with yt-dlp's last message) and after 60 s the mode stops and the video goes back to live, instead of staying half-way forever; the yt-dlp helper (1.3, re-run the installer) updates yt-dlp before reading a live stream.</li>
+<li><strong>1.4.3</strong>: <strong>synced live</strong>: subtitles no longer drift later during fast speech (each sentence appears exactly at its moment) and, when the audio read by yt-dlp shifts, sentences already prepared are re-timed too; the ⏱ notice above the subtitles is no longer squeezed (it wrapped after every word); when YouTube only jumps back part of the way, the rest is made up with a short pause (before, the video ended up too far behind), and alignment is no longer interrupted by a second jump too early. <strong>📈 uso nel tempo</strong> (<em>usage over time</em>) is clearer: years under the chart in the right place, a scale («times per million words»), a summary (peak year, trend over the last 50 years) and, on hover, each year's value.</li>
+<li><strong>1.4.2</strong>: <strong>Service order</strong> in the popup: move models up and down, turn them off, <strong>Usa adesso</strong> selects a service immediately (e.g. Ollama) and <strong>Prova</strong> tells you whether it answers. The <strong>📖 Google dictionary</strong> is removed (Google no longer provides it: it answered «400»); <strong>📈 uso nel tempo</strong> (<em>usage over time</em>) stays as its own button. <strong>Spiegazioni con</strong> (<em>explanations with</em>) a model different from the subtitle one (e.g. Gemini for subtitles and Ollama for explanations). Explanations from slow models (Ollama on your computer) no longer stop with «Receiving end does not exist»: the extension waits even for minutes. In the etymology tree, the parts of a word (e.g. на- + -чина́ть) go in a «formata da: …» line and are no longer mixed with the ancestors. <strong>synced live</strong>: when YouTube won't jump back, the video pauses for those seconds (with a countdown) and resumes behind the live edge instead of turning the mode off; live streams no longer restart from scratch (losing the subtitles) every time YouTube reloads the stream. <strong>🌳 Etymology tree</strong> almost always (built from Wiktionary's etymology chain, with cognates). <strong>Recordings from the lemma</strong> (and from the Google dictionary). <strong>🔍 cerca radice</strong> also suggests words with the same root and the "see also" words. The <strong>📖 Google dictionary</strong> now says why when it doesn't answer.</li>
+<li><strong>1.4.1</strong>: <strong>🌳 etymology trees</strong> from Wiktionary in the card (branches from the oldest root down to the word; the Google dictionary image when Wiktionary has none); no more Groq error «max_tokens must be less than or equal to 4096» (it retries with the model's limit by itself); an <strong>idiom</strong> is shown only if it really is part of the sentence, in its language (never a translated expression); <strong>the model never starts by itself</strong>: in videos the explanation comes only with the <strong>✨ Spiega con …</strong> (<em>explain with…</em>) button (before, clicking a word asked the model); model-based translation↔original linking and idioms are off by default (turn them on in the popup), and without the model hovering an original word still highlights its translation (Google dictionary). <strong>📖 Google dictionary</strong> in the card (the one in Google Search, Oxford Languages data): recorded pronunciation, meanings with examples, synonyms and antonyms, word forms, origin with the etymology tree when available, and <strong>📈 uso nel tempo</strong> (<em>use over time</em>, Google Books Ngram); its origin is used when Wiktionary has no etymology (🌳 tree button). Not an official Google service: if Google changes it, the row simply doesn't appear. Also: etymology taken from the parent word for inflected forms (cases, verb tenses: <em>подошве</em> → <em>подошва</em>), only when the link is certain — Wiktionary says it's a form of it, or the form really appears in the parent word's declension/conjugation table. The card says where it comes from; <strong>⚑ → lemma sbagliato?</strong> (<em>wrong lemma?</em>) lets you type the right one, or none; <strong>🔍 cerca radice</strong> (<em>search for the root</em>) lists the Wiktionary words containing that form, with ✓ on the certain ones, to pick with one click.</li>
+<li><strong>1.4.0</strong> (from now on only this extension is released, with this single guide):</li>
+<li><strong>Interface in the language you translate into</strong> (tick <strong>Interfaccia in questa lingua</strong> in the popup).</li>
+<li><strong>Explanations always in your language</strong>: an answer in another language is asked again or dropped; a false friend appears only when it is real and concerns a word of your language.</li>
+<li><strong>Idioms remembered</strong> in the card even when a redone explanation leaves them out, and <strong>☆ Salva il modo di dire</strong> to save them.</li>
+<li><strong>Fuller etymologies</strong>: the Wiktionary chain is followed back to the root, across languages too.</li>
+<li><strong>PDF</strong>: wrong characters fixed for all common encodings (including PDFs made with Word on the Mac); scanned books from archive.org no longer show blank pages.</li>
+<li><strong>1.3.0</strong>: translations in the wrong language (e.g. Arabic) are rejected, with "redo the whole translation" in ⚑; sturdier synced live streams; first fix for Czech PDFs.</li>
+</ul></main></body></html>
