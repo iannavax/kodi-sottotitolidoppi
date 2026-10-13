@@ -22,7 +22,7 @@ L'archivio `sottotitoli-doppi-progetto.zip` contiene tutto il codice sorgente e 
 |---|---|---|
 | Estensione browser (Chrome/Edge + Firefox) | **5.22.1** (non più consegnata da sola) | Ultima consegnata 5.22.0; ora vive dentro l'unica |
 | Estensione **Parole al Volo** (sorella per i testi) | **1.16.1** (non più consegnata da sola) | Ultima consegnata 1.16.0; ora vive dentro l'unica |
-| Estensione **unica** «Sottotitoli Doppi + Parole al Volo» (`unica/`) | **1.7.38** | **L'unica consegnata**; provata con le prove di tutte e due (Chromium); mai in Firefox vero |
+| Estensione **unica** «Sottotitoli Doppi + Parole al Volo» (`unica/`) | **1.7.39** | **L'unica consegnata**; provata con le prove di tutte e due (Chromium); mai in Firefox vero |
 | Add-on Kodi `script.sottotitolidoppi` | **1.12.0** (+ `service.subtitles.sottotitolidoppi` 1.0.0, `service.subtitles.subdl` 1.0.0) | Consegnato; provato con un Kodi simulato (prove 1–14), non su Kodi vero |
 | Repository Kodi `repository.sottotitolidoppi` | **1.0.0** | Pubblicato dall'utente (iannavax/kodi-sottotitolidoppi); da ricaricare con la cartella `kodi/kodi-sottotitolidoppi` rigenerata |
 | Add-on Stremio (server Node.js) | **1.3.0** | Consegnato; provato con servizi simulati, non con Stremio vero |
