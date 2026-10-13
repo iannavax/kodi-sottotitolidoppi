@@ -17,14 +17,14 @@ Funziona in tre posti. Scegli quello che usi per guardare:
 
 Traduce gratis con **Google Traduttore**, oppure molto meglio con **Gemini** (gratis con una chiave), Groq, Mistral, Claude, DeepL, Microsoft, OpenRouter o un modello sul tuo computer (Ollama / LM Studio). I video senza sottotitoli vengono trascritti dall'audio con Whisper (Groq, oppure un server sul tuo computer come Speaches), anche per tutto il video in una volta. Quello che viene tradotto o trascritto resta salvato: rivedere un video non costa niente.
 
-## 🌐 Estensione per il browser — versione 1.7.36
+## 🌐 Estensione per il browser — versione 1.7.37
 
 Una sola estensione per due cose: **Sottotitoli Doppi** nei video e **Parole al Volo** sulle pagine web e nei PDF (passi il mouse su una parola e vedi traduzione, pronuncia e spiegazione; selezioni un pezzo di testo e lo traduce tutto insieme).
 
 File in [`estensioni-browser/estensione-unica/`](estensioni-browser/estensione-unica/):
 
-- Edge / Chrome / Brave: `sottotitoli-parole-chrome-v1.7.36.zip`
-- Firefox: `sottotitoli-parole-firefox-v1.7.36.xpi`
+- Edge / Chrome / Brave: `sottotitoli-parole-chrome-v1.7.37.zip`
+- Firefox: `sottotitoli-parole-firefox-v1.7.37.xpi`
 
 **Installazione (Edge / Chrome / Brave):** estrai lo zip in una cartella che non cancellerai, apri `edge://extensions` o `chrome://extensions`, attiva *Modalità sviluppatore*, premi *Carica estensione non pacchettizzata* e scegli la cartella. **Firefox:** `about:addons` → ⚙ → *Installa componente aggiuntivo da file…* → il file `.xpi`.
 
@@ -66,7 +66,7 @@ It works in three places: **🌐 browser** (YouTube and almost any site with vid
 
 Translation is free with **Google Translate**, much better with **Gemini** (free with a key), Groq, Mistral, Claude, DeepL, Microsoft, OpenRouter, or a model on your own computer (Ollama / LM Studio). Videos without subtitles are transcribed from the audio with Whisper (Groq, or a server on your computer such as Speaches), also the whole video at once. Whatever is translated or transcribed is kept: watching a video again costs nothing.
 
-**Browser extension, version 1.7.36** — files in [`estensioni-browser/estensione-unica/`](estensioni-browser/estensione-unica/): `sottotitoli-parole-chrome-v1.7.36.zip` (Edge / Chrome / Brave, load it unpacked from the extensions page with Developer mode on) and `sottotitoli-parole-firefox-v1.7.36.xpi` (Firefox: `about:addons` → ⚙ → *Install Add-on From File…*). To update, install the new version over the old one; do **not** uninstall, or keys, saved translations and vocabulary are deleted. Full guide: [GUIDE](estensioni-browser/estensione-unica/GUIDE.en.html).
+**Browser extension, version 1.7.37** — files in [`estensioni-browser/estensione-unica/`](estensioni-browser/estensione-unica/): `sottotitoli-parole-chrome-v1.7.37.zip` (Edge / Chrome / Brave, load it unpacked from the extensions page with Developer mode on) and `sottotitoli-parole-firefox-v1.7.37.xpi` (Firefox: `about:addons` → ⚙ → *Install Add-on From File…*). To update, install the new version over the old one; do **not** uninstall, or keys, saved translations and vocabulary are deleted. Full guide: [GUIDE](estensioni-browser/estensione-unica/GUIDE.en.html).
 
 **Kodi:** add the repository page as a source (see [`index.html`](index.html)), then *Install from zip file* → `repository.sottotitolidoppi-1.0.0.zip`. **Stremio:** [`estensioni-browser/stremio/`](estensioni-browser/stremio/) (needs Node.js).
 
