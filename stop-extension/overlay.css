@@ -1,0 +1,55 @@
+#gesu-stop-overlay {
+  position: fixed !important; inset: 0 !important; z-index: 2147483647 !important;
+  display: flex !important; flex-direction: column; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 50% 35%, #fffbe0 0%, #ffe9a0 35%, #1a0f00 100%) !important;
+  text-align: center; overflow: hidden; margin: 0 !important; padding: 20px; box-sizing: border-box;
+  font-family: "GesuBlackletter", "UnifrakturCook", "Old English Text MT", serif !important;
+}
+#gesu-stop-overlay * { box-sizing: border-box; }
+#gesu-stop-overlay .gesu-img {
+  width: min(34vh, 60vw); height: auto; animation: gesu-float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 25px #ffd700) drop-shadow(0 0 60px #fff3a0);
+}
+#gesu-stop-overlay .gesu-stop {
+  margin: 0; font-size: clamp(48px, 9vh, 96px); color: #b00000; letter-spacing: 6px;
+  text-shadow: 0 0 10px #fff, 0 0 25px #ffd700, 3px 3px 0 #400;
+}
+#gesu-stop-overlay .gesu-text {
+  margin: 4px 0 6px; max-width: 94vw; font-size: clamp(26px, 5vh, 56px); font-weight: 700; color: #fff9d6;
+  text-shadow: 0 0 6px #fff, 0 0 18px #ffd700, 0 0 42px #ffb300, 2px 2px 0 #5a3b00;
+  animation: gesu-pulse 2.2s ease-in-out infinite;
+}
+#gesu-stop-overlay .gesu-sub {
+  margin: 0 0 12px; font-size: clamp(18px, 3vh, 28px); color: #4a2c00; text-shadow: 0 0 8px #fff, 0 0 16px #fff3a0;
+}
+#gesu-stop-overlay .gesu-said {
+  min-height: 28px; max-width: min(900px, 92vw); font-size: clamp(16px, 2.6vh, 24px);
+  color: #fff; text-shadow: 0 0 8px #ffd700; margin-bottom: 8px;
+}
+#gesu-stop-overlay .gesu-pieces {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: min(1000px, 94vw);
+}
+#gesu-stop-overlay .gesu-piece {
+  font-family: inherit; font-size: clamp(16px, 2.6vh, 22px); color: #2a1800; background: #fffdf0;
+  border: 2px solid #ffd700; border-radius: 10px; padding: 8px 14px; cursor: pointer;
+  box-shadow: 0 0 12px rgba(255, 215, 0, .7);
+}
+#gesu-stop-overlay .gesu-piece:hover { background: #fff3b0; }
+#gesu-stop-overlay .gesu-hint {
+  margin-top: 12px; font-size: clamp(16px, 2.6vh, 22px); color: #5a0000; font-weight: 700;
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff3a0; min-height: 24px; max-width: min(900px, 94vw);
+}
+#gesu-stop-overlay.gesu-shake { animation: gesu-shake .4s; }
+@keyframes gesu-shake { 25% { transform: translateX(-12px); } 75% { transform: translateX(12px); } }
+@keyframes gesu-float { 50% { transform: translateY(-12px); } }
+@keyframes gesu-pulse { 50% { text-shadow: 0 0 10px #fff, 0 0 30px #ffd700, 0 0 70px #ff9d00, 2px 2px 0 #5a3b00; } }
+
+#gesu-stop-overlay .gesu-box { display: flex; flex-direction: column; align-items: center; max-width: min(1000px, 94vw); }
+#gesu-stop-overlay .gesu-q {
+  font-size: clamp(20px, 3.4vh, 32px); color: #3a2300; margin: 0 0 12px; max-width: 94vw;
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff3a0;
+}
+#gesu-stop-overlay.gesu-locked .gesu-piece { pointer-events: none; }
+#gesu-stop-overlay .gesu-piece.gesu-ok { background: #c8f7c5; border-color: #1f8a1f; box-shadow: 0 0 16px #3fd13f; }
+#gesu-stop-overlay .gesu-piece.gesu-ko { background: #ffd0d0; border-color: #b00000; box-shadow: 0 0 16px #ff4040; }
+#gesu-stop-overlay { overflow-y: auto !important; }
