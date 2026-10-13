@@ -1,28 +1,4 @@
-[GUIDE.en.html](https://github.com/user-attachments/files/33385357/GUIDE.en.html)
-<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Sottotitoli Doppi + Parole al Volo 1.7.38 — Guide</title><style>
-:root{--bg:#f7f8fa;--paper:#ffffff;--ink:#1d2430;--soft:#4a5568;--line:#e2e6ec;--accent:#c98a00;--link:#0b6bcb;--code:#f0f2f5}
-@media (prefers-color-scheme:dark){:root{--bg:#141922;--paper:#1d2430;--ink:#eef1f5;--soft:#b6bfcc;--line:#323c4d;--accent:#f5c84b;--link:#7cc4ff;--code:#262f3d}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:860px;margin:0 auto;padding:40px 22px 80px;background:var(--paper);min-height:100vh;box-shadow:0 0 0 1px var(--line)}
-h1{font-size:2.1em;line-height:1.2;margin:.2em 0 .4em;border-bottom:3px solid var(--accent);padding-bottom:.3em}
-h2{font-size:1.45em;margin:2.2em 0 .6em;padding-top:.4em;border-top:1px solid var(--line)}
-h3{font-size:1.15em;margin:1.6em 0 .4em;color:var(--accent)}
-a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
-p,li{color:var(--ink)} li{margin:.25em 0}
-blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--accent);background:var(--code);border-radius:0 8px 8px 0}
-code{background:var(--code);padding:.1em .35em;border-radius:5px;font-size:.92em}
-pre{background:var(--code);padding:14px 16px;border-radius:10px;overflow:auto;line-height:1.45} pre code{background:none;padding:0}
-table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.95em;display:block;overflow-x:auto}
-th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
-th{background:var(--code)}
-hr{border:0;border-top:1px solid var(--line);margin:2em 0}
-hr + h2{border-top:0;margin-top:.6em;padding-top:0}
-pre{white-space:pre-wrap;word-break:break-word}
-.toc-note{color:var(--soft)}
-</style></head>
-<body><main><p><em>Version 1.7.38</em></p>
+
 <h1 id="sottotitoli-doppi-parole-al-volo-browser-extension">Sottotitoli Doppi + Parole al Volo — browser extension</h1>
 <p><em>Versione italiana → <a href="LEGGIMI.html">LEGGIMI</a></em></p>
 <p><strong>Learn languages by watching videos and reading.</strong> One extension for two things:</p>
