@@ -10,6 +10,14 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.9.0] — 2026-10-15
+
+### Aggiunto
+- **Pronunce di Forvo.** In 🔑 Servizi c'è il nuovo blocco «Forvo» (chiave dell'API di Forvo, piano gratuito o a pagamento, pulsante «Prova»). Con la chiave, nella scheda di una parola compare **🗣 Forvo**: elenca le registrazioni dei madrelingua (nome, paese, uomo/donna) e le suona. Una richiesta solo quando premi il pulsante, elenchi tenuti 6 ore in memoria, l'audio non viene salvato. Vale per i video e per le pagine.
+
+### Corretto
+- **Con i sottotitoli spenti non si spende più niente.** Con il pulsante DS spento, il sito disattivato o i CC di YouTube spenti, le richieste per correggere i sottotitoli automatici e per tradurli non partono (prima la correzione partiva lo stesso) e in alto a sinistra non compaiono più messaggi di traduzione. Il lavoro parte appena li riaccendi.
+
 ## [1.8.0] — 2026-10-14
 
 ### Aggiunto
