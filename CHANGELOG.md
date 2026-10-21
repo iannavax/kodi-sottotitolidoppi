@@ -10,6 +10,14 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.9.2] — 2026-10-22
+
+### Corretto
+- Se la memoria del browser tardava a rispondere o dava errore, l'estensione restava spenta nella pagina (caselle non spuntate, niente pulsante DS). Ora dopo 4 secondi parte con i valori di base.
+
+### Aggiunto
+- Il «Registro per il debug» ora ha un blocco DIAGNOSI: permesso sul sito, memoria delle impostazioni, prova di scrittura e risposta della scheda.
+
 ## [1.9.1] — 2026-10-21
 
 ### Corretto
