@@ -10,6 +10,12 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.9.1] — 2026-10-21
+
+### Corretto
+- **Aprire una scheda (o evidenziare qualcosa) non rallenta più tutto il browser.** Quando salvi una parola o un modo di dire, *tutte* le pagine aperte rifacevano l'analisi del testo (per sottolineare parole salvate e modi di dire) nello stesso momento, anche quelle in secondo piano: su una pagina grande costava circa un secondo di lavoro e 10 MB di memoria **per scheda**, con blocchi di mezzo secondo. Ora l'analisi è circa 10 volte più veloce (parole trovate con un'espressione regolare invece del segmentatore di Intl; i modi di dire cercati per prima parola invece di una sola espressione con 1500 alternative), costa meno di 1 MB per scheda, e le schede in secondo piano la rimandano a quando ci torni. Le sottolineature sono al massimo 6000 per pagina (modi di dire 2000).
+- Una selezione enorme (oltre 4000 caratteri: tutta la pagina, un capitolo) non apre più da sola la traduzione: compare un avviso.
+
 ## [1.9.0] — 2026-10-15
 
 ### Aggiunto
