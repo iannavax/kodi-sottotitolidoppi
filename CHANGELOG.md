@@ -10,6 +10,10 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.13.0]
+### Aggiunto
+- **Opzione «Usa la traduzione automatica di YouTube, se c'è»** (popup, vicino a «Se il video ha già la traduzione, unisci quella»; di serie spenta). Se il video non ha una traccia vera nella tua lingua ma YouTube sa tradurre i suoi sottotitoli, quella traduzione viene unita ai sottotitoli: niente richieste a Gemini o agli altri servizi. Si corregge frase per frase da ⚑. Se YouTube non la offre o non coincide in tempo, si traduce normalmente.
+
 ## [1.12.1]
 ### Corretto
 - **Con Gemini (e gli altri modelli) la traduzione non partiva, con Google sì.** Prima di correggere e tradurre i sottotitoli automatici, l'estensione leggeva alcune piccole voci dalla memoria locale (correzioni già fatte, preferenze del video, frasi già controllate); se la memoria era lenta una di queste letture non finiva mai e tutto restava fermo. Ora ognuna di queste letture aspetta al massimo 1,5 secondi e poi si va avanti; le correzioni salvate del video, se arrivano dopo, si uniscono a quelle già presenti.
