@@ -10,6 +10,12 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.9.3] — 2026-10-22
+
+### Corretto
+- In Firefox la memoria locale (`storage.local`) poteva non rispondere: il popup restava con le caselle vuote (e non salvava la vista) e la pagina partiva con le impostazioni di base, ignorando quelle vere. Ora le impostazioni si leggono subito e la memoria locale ha 2,5 secondi di tempo; se non risponde si va avanti senza.
+- Il registro per il debug dice se la memoria locale risponde.
+
 ## [1.9.2] — 2026-10-22
 
 ### Corretto
