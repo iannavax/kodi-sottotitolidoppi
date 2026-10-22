@@ -10,6 +10,15 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.10.0]
+### Aggiunto
+- **Pagina «💾 Dati salvati»** (pulsante nel popup): mostra quanto spazio occupano i dati salvati dall'estensione, divisi in gruppi (trascrizioni, traduzioni, dizionari scaricati, spiegazioni, vocabolario e impostazioni), voce per voce con dimensione e data.
+- Per ogni gruppo o voce: **guarda** il contenuto, **salva in un file** (in Chrome/Edge scegli la cartella o l'unità; in Firefox va nei download), **svuota**. Il gruppo «Vocabolario, parole note, chiavi e impostazioni» si può guardare e salvare, ma non svuotare da lì.
+- **Cancellazione automatica dopo un certo tempo** (1 giorno, 1 settimana, 2 settimane, 1 mese, 3 mesi, 6 mesi, 1 anno) per i gruppi scelti; parte da sola all'apertura del browser (al più ogni 6 ore) e c'è «Pulisci adesso».
+- Le voci che si possono rifare ora registrano la data di scrittura (`dsStamps`); quelle già presenti prendono la data della prima pulizia.
+### Corretto
+- Chrome: il limite di 3 secondi della 1.9.5 non funzionava con le letture «a callback» della memoria locale (ora sì).
+
 ## [1.9.5]
 ### Corretto
 - **Firefox: il pulsante DS non accendeva i sottotitoli.** Quando la memoria «local» di Firefox non risponde, la lettura delle trascrizioni salvate restava in attesa per sempre e il testo dei sottotitoli di YouTube non veniva mai usato. Ora ogni lettura di quella memoria ha un limite di 3 secondi e poi si va avanti.
