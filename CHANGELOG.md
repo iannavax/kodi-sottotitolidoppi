@@ -10,6 +10,10 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.14.2]
+### Aggiunto
+- **Allineamento automatico della traduzione di YouTube (riga per riga).** I tempi e i tagli della traduzione di YouTube non coincidono con quelli delle righe originali, e la traduzione risultava sfalsata. Ora ogni riga originale prende la traduzione che copre il suo punto di mezzo nel tempo (se una traduzione copre più righe, le ripete; se nessuna la copre, la più vicina entro 2,5 secondi). Opzione nel popup **«Allinea sempre la traduzione alle righe originali»**, accesa di serie. Le altre unioni (traccia nella tua lingua, traduzione automatica di YouTube unita alle frasi) allineano già per tempo.
+
 ## [1.14.1]
 ### Corretto
 - **Sottotitoli automatici di YouTube su due righe «a scorrimento».** Nella modalità riga per riga, le righe dei sottotitoli automatici si sovrappongono nel tempo (quella di sotto sale mentre la successiva si carica) e se ne mostravano due insieme. Ora si mostra una riga sola, la più recente, sia per l'originale sia per la traduzione.
