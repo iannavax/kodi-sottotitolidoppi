@@ -10,6 +10,10 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.12.1]
+### Corretto
+- **Con Gemini (e gli altri modelli) la traduzione non partiva, con Google sì.** Prima di correggere e tradurre i sottotitoli automatici, l'estensione leggeva alcune piccole voci dalla memoria locale (correzioni già fatte, preferenze del video, frasi già controllate); se la memoria era lenta una di queste letture non finiva mai e tutto restava fermo. Ora ognuna di queste letture aspetta al massimo 1,5 secondi e poi si va avanti; le correzioni salvate del video, se arrivano dopo, si uniscono a quelle già presenti.
+
 ## [1.12.0]
 ### Cambiato
 - **Le chiavi dei servizi ora stanno nella memoria veloce (`storage.sync`, voce `dsKeys`)** e non più nella memoria «local», che in Firefox può riempirsi e non rispondere. Compaiono subito nel popup e valgono in tutte le schede. Le chiavi già salvate vengono copiate una volta sola quando la memoria locale risponde. (Nota: con l'account del browser sincronizzato, le chiavi viaggiano con le impostazioni.)
