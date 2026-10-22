@@ -10,6 +10,11 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.9.4] — 2026-10-22
+
+### Corretto
+- «Copia il registro per il debug» in Firefox non copiava (il permesso del clic scadeva mentre si preparava il registro) e restava negli appunti il testo vecchio. Ora la copia parte subito; se il browser la rifiuta, il registro compare in una casella da copiare a mano.
+
 ## [1.9.3] — 2026-10-22
 
 ### Corretto
