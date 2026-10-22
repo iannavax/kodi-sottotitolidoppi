@@ -10,6 +10,13 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.12.0]
+### Cambiato
+- **Le chiavi dei servizi ora stanno nella memoria veloce (`storage.sync`, voce `dsKeys`)** e non più nella memoria «local», che in Firefox può riempirsi e non rispondere. Compaiono subito nel popup e valgono in tutte le schede. Le chiavi già salvate vengono copiate una volta sola quando la memoria locale risponde. (Nota: con l'account del browser sincronizzato, le chiavi viaggiano con le impostazioni.)
+- Il popup non aspetta più la memoria locale per mostrarsi: i dati di sola comodità (stato, contatori, elenchi di modelli) hanno un limite di 0,7 secondi.
+- «Dati salvati»: l'azzeramento della memoria locale è sempre in vista, con il tempo trascorso e, se resta fermo, le istruzioni per cancellare a mano la cartella del profilo.
+- Pulizia automatica: se non hai scelto nulla, trascrizioni, traduzioni e dizionari scaricati più vecchi di un mese si cancellano da soli.
+
 ## [1.11.1]
 ### Corretto
 - **Le chiavi sparivano.** Il limite di 3 secondi della 1.9.5 valeva anche per le chiavi: con la memoria lenta, incollando una chiave nuova il popup riscriveva solo quella e cancellava le altre. Ora il limite vale solo per i dati che si possono rifare (trascrizioni, traduzioni, dizionari); chiavi, vocabolario e impostazioni si leggono sempre per intero. Se la risposta arriva in ritardo, il popup si riapre una volta con i dati veri e la pagina aggiorna le chiavi.
