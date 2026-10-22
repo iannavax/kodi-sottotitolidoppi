@@ -10,6 +10,28 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.15.0]
+Revisione generale delle versioni dalla 1.6.3 alla 1.14.2: quattro revisioni del codice (memoria, sottotitoli, popup, schede/Anki) confrontate con la 1.6.2; ogni difetto verificato nel codice prima di correggerlo.
+### Aggiunto
+- **🎯 Messa in fase della traduzione con il modello.** Le traduzioni già pronte (traduzione automatica di YouTube, traccia nella tua lingua, file .srt/.vtt) si uniscono prima alle frasi per tempo e poi il modello (Gemini, o quello di «Collegamento parole») dà a ogni frase la sua parte, a gruppi di 25 frasi da dove sei. Il risultato e i pezzi si salvano per video: la volta dopo si riprende da lì senza nuove richieste. Le frasi corrette a mano restano come sono. Opzione «Metti in fase la traduzione con il modello» (accesa); in ⚑ il pulsante «🎯 Mettila in fase con il modello».
+- **Sezione «📺 Sottotitoli di YouTube»** nel popup: traduzione del video, traduzione automatica di YouTube, messa in fase, correzione dei sottotitoli automatici, trascrizione salvata (prima erano in «Trascrizione dell'audio»).
+### Cambiato
+- «YouTube» come servizio di traduzione non è più la modalità «riga per riga» su due righe: è la traduzione automatica di YouTube unita alle frasi e messa in fase; se il video non la offre si traduce con Google. Tolti l'allineamento «a secondi» della 1.14.2 e lo spostamento a mano di N frasi.
+- La pulizia automatica dei dati salvati parte solo se l'hai scelta in «Dati salvati» (prima, dalla 1.12.0, cancellava da sola dopo un mese senza che la pagina lo dicesse).
+- Popup: pulsanti in alto su due colonne, tolta la barra vuota sotto la ricerca, «Sottotitoli doppi su …» e «Parole al Volo su …» al posto di due «Attiva su …», testi vecchi corretti, la ricerca non trova più opzioni nascoste. Tolta la scorciatoia Alt+Maiusc+Y (le estensioni sono sempre accese).
+- «Dati salvati»: traducibile come le altre pagine, l'azzeramento d'emergenza in fondo e chiuso, le istruzioni per la cartella solo in Firefox; azzerare non fa più ripartire gli aggiornamenti delle impostazioni.
+### Corretto
+- **Il pulsante DS spegneva invece di accendere** quando DS era acceso ma non si vedeva niente (CC spenti, testo non ancora arrivato): serviva un secondo clic.
+- **Dati sovrascritti con la memoria lenta.** Le letture con limite di tempo (1.9.5–1.14.x) davano «vuoto» e chi riscriveva cancellava i dati veri: spiegazioni ed etimologie salvate (anche le tue correzioni), trascrizioni, correzioni dei sottotitoli, preferenze per video, contatori delle richieste. Ora una voce letta «a vuoto» non si riscrive finché la lettura vera non arriva; preferenze per video e contatori si leggono senza limite.
+- **Vocabolario:** due ☆ di seguito con la memoria lenta non si cancellano più a vicenda, e una parola già salvata non viene sostituita (ripassi, immagine, «in Anki» restano); se il salvataggio non riesce lo dice. Parole al Volo aggiorna la stella quando il vocabolario arriva in ritardo.
+- Chiavi: nessuna risposta «vuota» finta (poteva cancellarle tutte); non finiscono più nelle impostazioni esportate senza chiavi né in quelle passate all'altra estensione; importando un file le tue chiavi attuali restano; la vecchia chiave di Claude (versione 2) viene recuperata.
+- Sottotitoli spenti a metà lavoro: traduzione e correzione si fermano (niente richieste) e riprendono quando li riaccendi; con DS spento la trascrizione salvata non fa partire Whisper.
+- Riaccendendo i sottotitoli, cambiando chiave o modello, o cambiando le opzioni della traduzione del video, prima si usa la traduzione già pronta del video: niente traduzioni pagate per frasi che l'hanno già. Le opzioni valgono subito, senza ricaricare.
+- Una traccia del video di prima arrivata in ritardo non sostituisce più quella del video nuovo.
+- Unione con una traccia di YouTube: una frase poteva prendersi il pezzetto di traduzione di una riga (stessa chiave); la pagina «Trascrizione e traduzione» mostra le traduzioni unite.
+- Impostazioni: se la memoria sincronizzata è lenta, al posto delle tue non si usano più quelle di base.
+- Pulsante «Trascrivi / Ferma» del popup che con l'interfaccia tradotta non si fermava più; spiegazione arrivata in ritardo che finiva sulla scheda di un'altra parola; «collegamento parole» richiesto a ogni passaggio del mouse quando il modello rispondeva vuoto.
+
 ## [1.14.2]
 ### Aggiunto
 - **Allineamento automatico della traduzione di YouTube (riga per riga).** I tempi e i tagli della traduzione di YouTube non coincidono con quelli delle righe originali, e la traduzione risultava sfalsata. Ora ogni riga originale prende la traduzione che copre il suo punto di mezzo nel tempo (se una traduzione copre più righe, le ripete; se nessuna la copre, la più vicina entro 2,5 secondi). Opzione nel popup **«Allinea sempre la traduzione alle righe originali»**, accesa di serie. Le altre unioni (traccia nella tua lingua, traduzione automatica di YouTube unita alle frasi) allineano già per tempo.
