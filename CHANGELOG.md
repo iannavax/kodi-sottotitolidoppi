@@ -10,6 +10,10 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.15.1]
+### Corretto
+- **La traduzione automatica di YouTube non compariva: si traduceva con Google.** YouTube rifiuta spesso con «429» (troppe richieste) la traduzione automatica chiesta direttamente dall'estensione, anche dopo tre tentativi. Ora, se succede, la si chiede al lettore di YouTube (come quando scegli «Traduzione automatica» nelle impostazioni del video), che la ottiene; poi il lettore torna alla traccia di prima. Se non arriva neanche così, intanto si traduce con il servizio di riserva e dopo un minuto si riprova: se arriva, prende il posto di quella fatta nel frattempo.
+
 ## [1.15.0]
 Revisione generale delle versioni dalla 1.6.3 alla 1.14.2: quattro revisioni del codice (memoria, sottotitoli, popup, schede/Anki) confrontate con la 1.6.2; ogni difetto verificato nel codice prima di correggerlo.
 ### Aggiunto
