@@ -10,6 +10,12 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.11.1]
+### Corretto
+- **Le chiavi sparivano.** Il limite di 3 secondi della 1.9.5 valeva anche per le chiavi: con la memoria lenta, incollando una chiave nuova il popup riscriveva solo quella e cancellava le altre. Ora il limite vale solo per i dati che si possono rifare (trascrizioni, traduzioni, dizionari); chiavi, vocabolario e impostazioni si leggono sempre per intero. Se la risposta arriva in ritardo, il popup si riapre una volta con i dati veri e la pagina aggiorna le chiavi.
+### Cambiato
+- **Tolte le due caselle «Sottotitoli doppi nei video» e «Parole al Volo sulle pagine e nei PDF»** dal popup: le estensioni sono sempre accese (restano il pulsante DS nel video e «Attiva su questo sito»). Chi le aveva spente le ritrova accese, una volta sola. La scorciatoia Alt+Maiusc+Y non spegne più.
+
 ## [1.11.0]
 ### Aggiunto
 - **«🗄 Cosa salvare»** nella pagina «Dati salvati»: scegli quali gruppi l'estensione può tenere salvati (trascrizioni, traduzioni, dizionari scaricati, spiegazioni ed etimologie). Un gruppo spento non si salva più; quello che c'è già resta finché non lo svuoti. Vocabolario, parole note, chiavi e impostazioni si salvano sempre.
