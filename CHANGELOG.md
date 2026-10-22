@@ -10,6 +10,10 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.11.0]
+### Aggiunto
+- **«🗄 Cosa salvare»** nella pagina «Dati salvati»: scegli quali gruppi l'estensione può tenere salvati (trascrizioni, traduzioni, dizionari scaricati, spiegazioni ed etimologie). Un gruppo spento non si salva più; quello che c'è già resta finché non lo svuoti. Vocabolario, parole note, chiavi e impostazioni si salvano sempre.
+
 ## [1.10.0]
 ### Aggiunto
 - **Pagina «💾 Dati salvati»** (pulsante nel popup): mostra quanto spazio occupano i dati salvati dall'estensione, divisi in gruppi (trascrizioni, traduzioni, dizionari scaricati, spiegazioni, vocabolario e impostazioni), voce per voce con dimensione e data.
