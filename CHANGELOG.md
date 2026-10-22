@@ -10,6 +10,17 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.14.1]
+### Corretto
+- **Sottotitoli automatici di YouTube su due righe «a scorrimento».** Nella modalità riga per riga, le righe dei sottotitoli automatici si sovrappongono nel tempo (quella di sotto sale mentre la successiva si carica) e se ne mostravano due insieme. Ora si mostra una riga sola, la più recente, sia per l'originale sia per la traduzione.
+
+## [1.14.0]
+### Aggiunto
+- **YouTube nell'«Ordine dei servizi»**: in cima alla fila c'è la riga «YouTube: traduzione automatica dei sottotitoli» (stessa impostazione della casella «Usa la traduzione automatica di YouTube, se c'è» del popup: le due restano allineate). Provata per prima, senza chiavi né richieste; se il video non la offre si usa il primo servizio della fila.
+### Corretto
+- **La stellina (☆) non salvava e non mandava ad Anki** quando la memoria locale del browser era lenta: aspettava di leggere tutto il vocabolario. Ora il vocabolario cambia subito in memoria (la stella si riempie) e il salvataggio avviene in sottofondo; la carta per Anki parte senza aspettare. Vale per i sottotitoli e per le pagine/PDF.
+- Parole al Volo (pagine e PDF) non restava spenta finché la memoria locale non rispondeva: ora parte dopo al massimo 2,5 secondi e i dati salvati si aggiungono appena arrivano.
+
 ## [1.13.0]
 ### Aggiunto
 - **Opzione «Usa la traduzione automatica di YouTube, se c'è»** (popup, vicino a «Se il video ha già la traduzione, unisci quella»; di serie spenta). Se il video non ha una traccia vera nella tua lingua ma YouTube sa tradurre i suoi sottotitoli, quella traduzione viene unita ai sottotitoli: niente richieste a Gemini o agli altri servizi. Si corregge frase per frase da ⚑. Se YouTube non la offre o non coincide in tempo, si traduce normalmente.
