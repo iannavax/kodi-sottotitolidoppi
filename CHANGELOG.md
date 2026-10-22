@@ -10,6 +10,10 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.9.5]
+### Corretto
+- **Firefox: il pulsante DS non accendeva i sottotitoli.** Quando la memoria «local» di Firefox non risponde, la lettura delle trascrizioni salvate restava in attesa per sempre e il testo dei sottotitoli di YouTube non veniva mai usato. Ora ogni lettura di quella memoria ha un limite di 3 secondi e poi si va avanti.
+
 ## [1.9.4] — 2026-10-22
 
 ### Corretto
