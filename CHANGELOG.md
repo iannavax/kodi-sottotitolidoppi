@@ -10,6 +10,23 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.16.0]
+**Ritorno alla stabilità della 1.9.0, con le funzioni aggiunte dopo.** Il codice riparte dalla 1.9.0: tutto quello che è stato cambiato dopo nel funzionamento di base (memoria, avvio, condizioni per far partire la traduzione, prestazioni della 1.9.1) torna com'era; restano solo le funzioni nuove.
+### Resta (dalle versioni 1.9.2–1.15.1)
+- Traduzione automatica di YouTube (popup → 📺 Sottotitoli di YouTube e in cima a «Ordine dei servizi»), chiesta al lettore di YouTube quando YouTube rifiuta la richiesta diretta (429); «YouTube» come servizio usa questa.
+- 🎯 Messa in fase con il modello delle traduzioni già pronte (YouTube, un'altra traccia, un file), anche dal pulsante in ⚑.
+- Chiavi dei servizi uguali in tutte le finestre (memoria sincronizzata), anche nelle impostazioni esportate solo se lo chiedi.
+- Estensioni sempre accese (niente caselle di accensione; restano DS nel video e «… su questo sito»).
+- Pagina «💾 Dati salvati»: dimensioni, guarda, salva su file, svuota, «Cosa salvare», pulizia automatica (solo se la scegli).
+- «Copia il registro per il debug» che funziona anche in Firefox, con la diagnosi in fondo.
+- Il pulsante DS accende i sottotitoli anche quando i CC sono spenti (prima serviva un secondo clic).
+- Popup: sezione 📺, pulsanti in alto su due colonne, testi corretti, pulsante «Trascrivi / Ferma» che funziona anche con l'interfaccia tradotta.
+### Tolto (tornato come nella 1.9.0)
+- I limiti di tempo sulle letture della memoria e le letture «tardive» (1.9.2–1.15.0): con la memoria a posto non servono, e causavano sottotitoli che non partivano o dati sovrascritti.
+- Le condizioni aggiunte nella 1.15.0 che fermavano traduzione e correzione quando l'estensione credeva i sottotitoli spenti, e quella che scartava le tracce di un video «diverso».
+- Il salvataggio «in fila» del vocabolario (1.14.0–1.15.0) e l'avvio ritardato di Parole al Volo: di nuovo come nella 1.9.0.
+- Le modifiche di prestazioni della 1.9.1 sulle pagine (analisi del testo, schede in secondo piano, limite di 4000 caratteri).
+
 ## [1.15.1]
 ### Corretto
 - **La traduzione automatica di YouTube non compariva: si traduceva con Google.** YouTube rifiuta spesso con «429» (troppe richieste) la traduzione automatica chiesta direttamente dall'estensione, anche dopo tre tentativi. Ora, se succede, la si chiede al lettore di YouTube (come quando scegli «Traduzione automatica» nelle impostazioni del video), che la ottiene; poi il lettore torna alla traccia di prima. Se non arriva neanche così, intanto si traduce con il servizio di riserva e dopo un minuto si riprova: se arriva, prende il posto di quella fatta nel frattempo.
