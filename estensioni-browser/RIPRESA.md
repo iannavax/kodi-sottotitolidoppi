@@ -24,11 +24,13 @@ L'archivio `sottotitoli-doppi-progetto.zip` contiene tutto il codice sorgente e 
 |---|---|---|
 | Estensione browser (Chrome/Edge + Firefox) | **5.22.1** (non più consegnata da sola) | Ultima consegnata 5.22.0; ora vive dentro l'unica |
 | Estensione **Parole al Volo** (sorella per i testi) | **1.16.1** (non più consegnata da sola) | Ultima consegnata 1.16.0; ora vive dentro l'unica |
-| Estensione **unica** «Sottotitoli Doppi + Parole al Volo» (`unica/`) | **1.16.0** | **L'unica consegnata**; provata con le prove di tutte e due (Chromium); mai in Firefox vero |
+| Estensione **unica** «Sottotitoli Doppi + Parole al Volo» (`unica/`) | **1.17.0** | **L'unica consegnata**; provata con le prove di tutte e due (Chromium); mai in Firefox vero |
 | Add-on Kodi `script.sottotitolidoppi` | **1.15.0** (+ `service.subtitles.sottotitolidoppi` 1.0.0, `service.subtitles.subdl` 1.0.0) | Consegnato; provato con un Kodi simulato (prove 1–14), non su Kodi vero |
 | Repository Kodi `repository.sottotitolidoppi` | **1.0.0** | Pubblicato dall'utente (iannavax/kodi-sottotitolidoppi); da ricaricare con la cartella `kodi/kodi-sottotitolidoppi` rigenerata |
 | Add-on Stremio (server Node.js) | **1.3.0** | Consegnato; provato con servizi simulati, non con Stremio vero |
 | Programma per yt-dlp (dentro l'estensione) | 1.0 | Provato su Linux con yt-dlp finto. **Installatore Windows mai eseguito** (solo riletto) |
+
+> **1.17.0 (07/11/2026):** lettore PDF riscritto (`parole-al-volo/src/pdf.html`, `pdf-viewer.js`: barra, pannello miniature/indice/evidenziate, zoom con pizzico = rotella+Ctrl con anteprima CSS e ridisegno, cerca con `fold()`, evidenziatore in localStorage `pavPdfHl:<fingerprint>`, posizione `pavPdfPos:<fingerprint>`, link con `convertToViewportPoint`, stampa via immagini, file:// → `readViaHelper` con `connectNative` e comando «readfile» del programma di appoggio 2.1 in `estensione/helper-go/main.go`; binari rifatti con `estensione/tools/build-helper.sh`). La parte sulle codifiche è invariata. Prove nuove: PDF di prova generato da script (6 pagine, indice, link) + Playwright con `executable_path` /opt/pw-browsers; le prove `test-volo/tpdf_*` passano. Il banco /home/claude/e2e dei sottotitoli è andato perso con il riavvio dell'ambiente (va rifatto per le prove dei video).
 
 > **1.16.0 (24/10/2026):** il codice è ripartito dalla 1.9.0 (sorgenti nel commit 067b3bc, `sottotitoli-doppi-progetto65.zip`) e sono state rimesse solo le funzioni nuove: traduzione automatica di YouTube (+ lettore, 429), messa in fase con il modello (alignTrans/dsAiAlign), chiavi in storage.sync (dsKeys, senza limiti di tempo), Dati salvati (dsCacheOff, dsStamps), sempre accese, registro per il debug, pulsante DS con solo ⚑. Niente limiti di tempo sulle letture, niente dsStale/dsLocalGet/dsStillWanted, vocabolario e volo.js come nella 1.9.0. Copia della 1.15.1 in /home/claude/snap1151.
 

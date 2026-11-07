@@ -10,6 +10,14 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e le v
 
 Prima della 1.8.0 il terzo numero saliva a ogni consegna, anche per funzioni nuove: quelle versioni restano com'erano.
 
+## [1.17.0]
+### Aggiunto
+- **Lettore PDF completo**, come un programma per PDF: pannello laterale con miniature, indice del documento ed evidenziazioni; pagina n / N con frecce; zoom − / + e menu (adatta larghezza, adatta pagina, dimensioni reali, 50–400%); rotazione; ricerca nel PDF (senza maiuscole né accenti, risultato segnato sulla pagina, «1 di N», ↑ ↓); evidenziatore con colori e note (salvate nel browser per ogni PDF); stampa; salva una copia; schermo intero; lettura notturna; link interni ed esterni del PDF; trascinare un PDF nella finestra; scorciatoie da tastiera (← →, Home/Fine, Ctrl+F/P/S/O, Ctrl++/−/0, H, R, F4); pagina, zoom e rotazione ricordati per ogni PDF.
+- **Programma di appoggio 2.1**: legge i PDF del computer per il lettore (comando «readfile», solo file .pdf, a pezzi come l'audio).
+### Corretto
+- **«NetworkError when attempting to fetch resource» aprendo un PDF dal gestore dei file.** Firefox non lascia leggere alle estensioni gli indirizzi `file://`: ora il PDF lo legge il programma di appoggio (va reinstallato/aggiornato alla 2.1); senza il programma, il lettore mostra il pulsante «📂 Scegli …» e accetta il PDF trascinato, invece dell'errore.
+- **Pizzico del trackpad e Ctrl+rotella**: prima ingrandivano la pagina del browser e il PDF diventava sgranato; ora ingrandiscono il PDF intorno al punto sotto le dita e lo ridisegnano nitido. I pulsanti + e − ora tengono fermo il punto che stai leggendo.
+
 ## [1.16.0]
 **Ritorno alla stabilità della 1.9.0, con le funzioni aggiunte dopo.** Il codice riparte dalla 1.9.0: tutto quello che è stato cambiato dopo nel funzionamento di base (memoria, avvio, condizioni per far partire la traduzione, prestazioni della 1.9.1) torna com'era; restano solo le funzioni nuove.
 ### Resta (dalle versioni 1.9.2–1.15.1)
